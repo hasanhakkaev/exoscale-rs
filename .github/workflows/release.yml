@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Release Please
+        uses: google-github-actions/release-please-action@v3.7.12
+        id: release
+        with:
+          release-type: rust
+
+      - name: Install stable toolchain
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Login to crates.io
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions-rs/cargo@v1
+        with:
+          command: login
+          args: ${{ secrets.CRATES_IO_API_KEY }}
+
+      - name: Publish to crates.io
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions-rs/cargo@v1
+        with:
+          command: publish
