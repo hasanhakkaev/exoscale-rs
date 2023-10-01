@@ -20,23 +20,19 @@ pub struct Configuration {
     pub api_key: String,
     pub api_secret: String,
     pub expiration: Duration,
+    pub zone: String,
 }
 
 impl Configuration {
-    pub fn new() -> Configuration {
-        Configuration::default()
-    }
-}
-
-impl Default for Configuration {
-    fn default() -> Self {
+    pub fn new(zone: &str) -> Configuration {
         Configuration {
-            base_path: "https://api-ch-gva-2.exoscale.com/v2".to_owned(),
+            base_path: format!("https://api-{}.exoscale.com/v2", zone),
             user_agent: Some("OpenAPI-Generator/2.0.0/rust".to_owned()),
             client: reqwest::Client::new(),
             api_key: "".into(),
             api_secret: "".into(),
             expiration: Duration::from_secs(600),
+            zone: zone.to_owned(),
         }
     }
 }

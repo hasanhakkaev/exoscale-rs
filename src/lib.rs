@@ -94,7 +94,6 @@ pub fn sign_request(
 #[cfg(test)]
 pub(crate) mod test {
     use super::*;
-    use crate::models::Template;
 
     use reqwest::{Method, Url};
 
@@ -103,16 +102,12 @@ pub(crate) mod test {
     pub fn test_config() -> Configuration {
         Configuration {
             base_path: BASE_URL.parse::<Url>().unwrap().to_string(),
+            user_agent: None,
+            client: Default::default(),
             api_key: env!("EXOSCALE_API_KEY").into(),
             api_secret: env!("EXOSCALE_API_SECRET").into(),
-            ..Default::default()
-        }
-    }
-
-    pub fn test_template() -> Template {
-        Template {
-            id: env!("EXOSCALE_TEMPLATE").to_string().into(),
-            ..Default::default()
+            expiration: Default::default(),
+            zone: env!("EXOSCALE_ZONE").into(),
         }
     }
 
