@@ -108,6 +108,7 @@ pub(crate) mod test {
             api_secret: env!("EXOSCALE_API_SECRET").into(),
             expiration: Default::default(),
             zone: env!("EXOSCALE_ZONE").into(),
+            content_type: None,
         }
     }
 
