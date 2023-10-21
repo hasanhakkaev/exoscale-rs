@@ -1110,9 +1110,11 @@ pub async fn create_dbaas_integration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_integration_request);
 
@@ -1162,9 +1164,11 @@ pub async fn create_dbaas_kafka_schema_registry_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_kafka_schema_registry_acl_entry);
 
@@ -1214,9 +1218,11 @@ pub async fn create_dbaas_kafka_topic_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_kafka_topic_acl_entry);
 
@@ -1266,9 +1272,11 @@ pub async fn create_dbaas_kafka_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_kafka_user_request);
 
@@ -1318,9 +1326,11 @@ pub async fn create_dbaas_mysql_database(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_mysql_database_request);
 
@@ -1370,9 +1380,11 @@ pub async fn create_dbaas_mysql_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_mysql_user_request);
 
@@ -1422,9 +1434,11 @@ pub async fn create_dbaas_opensearch_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_kafka_user_request);
 
@@ -1475,9 +1489,11 @@ pub async fn create_dbaas_pg_connection_pool(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_pg_connection_pool_request);
 
@@ -1527,9 +1543,11 @@ pub async fn create_dbaas_pg_database(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_pg_database_request);
 
@@ -1580,9 +1598,11 @@ pub async fn create_dbaas_pg_upgrade_check(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_pg_upgrade_check_request);
 
@@ -1632,9 +1652,11 @@ pub async fn create_dbaas_postgres_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_postgres_user_request);
 
@@ -1685,9 +1707,11 @@ pub async fn create_dbaas_service_grafana(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_grafana_request);
 
@@ -1738,9 +1762,11 @@ pub async fn create_dbaas_service_kafka(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_kafka_request);
 
@@ -1791,9 +1817,11 @@ pub async fn create_dbaas_service_mysql(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_mysql_request);
 
@@ -1844,9 +1872,11 @@ pub async fn create_dbaas_service_opensearch(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_opensearch_request);
 
@@ -1896,9 +1926,11 @@ pub async fn create_dbaas_service_pg(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_pg_request);
 
@@ -1949,9 +1981,11 @@ pub async fn create_dbaas_service_redis(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_redis_request);
 
@@ -2003,9 +2037,11 @@ pub async fn create_dbaas_task_migration_check(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_task_migration_check_request);
 
@@ -2055,9 +2091,11 @@ pub async fn delete_dbaas_integration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2107,9 +2145,11 @@ pub async fn delete_dbaas_kafka_schema_registry_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2159,9 +2199,11 @@ pub async fn delete_dbaas_kafka_topic_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2211,9 +2253,11 @@ pub async fn delete_dbaas_kafka_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2263,9 +2307,11 @@ pub async fn delete_dbaas_mysql_database(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2315,9 +2361,11 @@ pub async fn delete_dbaas_mysql_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2367,9 +2415,11 @@ pub async fn delete_dbaas_opensearch_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2420,9 +2470,11 @@ pub async fn delete_dbaas_pg_connection_pool(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2472,9 +2524,11 @@ pub async fn delete_dbaas_pg_database(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2524,9 +2578,11 @@ pub async fn delete_dbaas_postgres_user(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2575,9 +2631,11 @@ pub async fn delete_dbaas_service(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2625,9 +2683,11 @@ pub async fn delete_dbaas_service_grafana(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2675,9 +2735,11 @@ pub async fn delete_dbaas_service_kafka(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2725,9 +2787,11 @@ pub async fn delete_dbaas_service_mysql(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2775,9 +2839,11 @@ pub async fn delete_dbaas_service_opensearch(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2825,9 +2891,11 @@ pub async fn delete_dbaas_service_pg(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2875,9 +2943,11 @@ pub async fn delete_dbaas_service_redis(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2920,9 +2990,11 @@ pub async fn get_dbaas_ca_certificate(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -2971,9 +3043,11 @@ pub async fn get_dbaas_integration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3021,9 +3095,11 @@ pub async fn get_dbaas_kafka_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3072,9 +3148,11 @@ pub async fn get_dbaas_migration_status(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3122,9 +3200,11 @@ pub async fn get_dbaas_opensearch_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3172,9 +3252,11 @@ pub async fn get_dbaas_service_grafana(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3222,9 +3304,11 @@ pub async fn get_dbaas_service_kafka(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3274,9 +3358,11 @@ pub async fn get_dbaas_service_logs(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&get_dbaas_service_logs_request);
 
@@ -3327,9 +3413,11 @@ pub async fn get_dbaas_service_metrics(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&get_dbaas_service_metrics_request);
 
@@ -3379,9 +3467,11 @@ pub async fn get_dbaas_service_mysql(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3430,9 +3520,11 @@ pub async fn get_dbaas_service_opensearch(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3481,9 +3573,11 @@ pub async fn get_dbaas_service_pg(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3532,9 +3626,11 @@ pub async fn get_dbaas_service_redis(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3583,9 +3679,11 @@ pub async fn get_dbaas_service_type(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3632,9 +3730,11 @@ pub async fn get_dbaas_settings_grafana(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3677,9 +3777,11 @@ pub async fn get_dbaas_settings_kafka(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3722,9 +3824,11 @@ pub async fn get_dbaas_settings_mysql(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3773,9 +3877,11 @@ pub async fn get_dbaas_settings_opensearch(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3818,9 +3924,11 @@ pub async fn get_dbaas_settings_pg(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3863,9 +3971,11 @@ pub async fn get_dbaas_settings_redis(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3916,9 +4026,11 @@ pub async fn get_dbaas_task(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -3974,9 +4086,11 @@ pub async fn list_dbaas_integration_settings(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4025,9 +4139,11 @@ pub async fn list_dbaas_integration_types(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4070,9 +4186,11 @@ pub async fn list_dbaas_service_types(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4115,9 +4233,11 @@ pub async fn list_dbaas_services(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4170,9 +4290,11 @@ pub async fn reset_dbaas_kafka_user_password(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder =
         local_var_req_builder.json(&reset_dbaas_opensearch_user_password_request);
@@ -4226,9 +4348,11 @@ pub async fn reset_dbaas_mysql_user_password(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_mysql_user_password_request);
 
@@ -4282,9 +4406,11 @@ pub async fn reset_dbaas_opensearch_user_password(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder =
         local_var_req_builder.json(&reset_dbaas_opensearch_user_password_request);
@@ -4339,9 +4465,11 @@ pub async fn reset_dbaas_postgres_user_password(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder =
         local_var_req_builder.json(&reset_dbaas_opensearch_user_password_request);
@@ -4391,9 +4519,11 @@ pub async fn start_dbaas_grafana_maintenance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4441,9 +4571,11 @@ pub async fn start_dbaas_kafka_maintenance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4491,9 +4623,11 @@ pub async fn start_dbaas_mysql_maintenance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4541,9 +4675,11 @@ pub async fn start_dbaas_opensearch_maintenance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4591,9 +4727,11 @@ pub async fn start_dbaas_pg_maintenance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4641,9 +4779,11 @@ pub async fn start_dbaas_redis_maintenance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4691,9 +4831,11 @@ pub async fn stop_dbaas_mysql_migration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4741,9 +4883,11 @@ pub async fn stop_dbaas_pg_migration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4791,9 +4935,11 @@ pub async fn stop_dbaas_redis_migration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -4843,9 +4989,11 @@ pub async fn update_dbaas_integration(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_integration_request);
 
@@ -4895,9 +5043,11 @@ pub async fn update_dbaas_opensearch_acl_config(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_opensearch_acl_config);
 
@@ -4950,9 +5100,11 @@ pub async fn update_dbaas_pg_connection_pool(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_pg_connection_pool_request);
 
@@ -5005,9 +5157,11 @@ pub async fn update_dbaas_postgres_allow_replication(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder =
         local_var_req_builder.json(&update_dbaas_postgres_allow_replication_request);
@@ -5058,9 +5212,11 @@ pub async fn update_dbaas_service_grafana(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_service_grafana_request);
 
@@ -5111,9 +5267,11 @@ pub async fn update_dbaas_service_kafka(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_service_kafka_request);
 
@@ -5164,9 +5322,11 @@ pub async fn update_dbaas_service_mysql(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_service_mysql_request);
 
@@ -5217,9 +5377,11 @@ pub async fn update_dbaas_service_opensearch(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_service_opensearch_request);
 
@@ -5270,9 +5432,11 @@ pub async fn update_dbaas_service_pg(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_service_pg_request);
 
@@ -5323,9 +5487,11 @@ pub async fn update_dbaas_service_redis(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dbaas_service_redis_request);
 

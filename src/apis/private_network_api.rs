@@ -160,9 +160,11 @@ pub async fn attach_instance_to_private_network(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&attach_instance_to_private_network_request);
 
@@ -208,9 +210,11 @@ pub async fn create_private_network(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_private_network_request);
 
@@ -260,9 +264,11 @@ pub async fn delete_private_network(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -313,9 +319,11 @@ pub async fn detach_instance_from_private_network(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder =
         local_var_req_builder.json(&detach_instance_from_private_network_request);
@@ -366,9 +374,11 @@ pub async fn get_private_network(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -411,9 +421,11 @@ pub async fn list_private_networks(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -464,9 +476,11 @@ pub async fn reset_private_network_field(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -516,9 +530,11 @@ pub async fn update_private_network(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_private_network_request);
 
@@ -570,9 +586,11 @@ pub async fn update_private_network_instance_ip(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_private_network_instance_ip_request);
 

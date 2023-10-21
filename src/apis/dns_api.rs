@@ -164,9 +164,11 @@ pub async fn create_dns_domain(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dns_domain_request);
 
@@ -217,9 +219,11 @@ pub async fn create_dns_domain_record(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&create_dns_domain_record_request);
 
@@ -269,9 +273,11 @@ pub async fn delete_dns_domain(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -322,9 +328,11 @@ pub async fn delete_dns_domain_record(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -373,9 +381,11 @@ pub async fn get_dns_domain(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -426,9 +436,11 @@ pub async fn get_dns_domain_record(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -477,9 +489,11 @@ pub async fn get_dns_domain_zone_file(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -528,9 +542,11 @@ pub async fn list_dns_domain_records(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -573,9 +589,11 @@ pub async fn list_dns_domains(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -627,9 +645,11 @@ pub async fn update_dns_domain_record(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_dns_domain_record_request);
 

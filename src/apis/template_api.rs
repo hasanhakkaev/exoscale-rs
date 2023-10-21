@@ -135,9 +135,11 @@ pub async fn copy_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&copy_template_request);
 
@@ -187,9 +189,11 @@ pub async fn delete_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -238,9 +242,11 @@ pub async fn get_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -294,9 +300,11 @@ pub async fn list_templates(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -346,9 +354,11 @@ pub async fn promote_snapshot_to_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&promote_snapshot_to_template_request);
 
@@ -394,9 +404,11 @@ pub async fn register_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&register_template_request);
 
@@ -447,9 +459,11 @@ pub async fn update_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
-    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder
-            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
     }
     local_var_req_builder = local_var_req_builder.json(&update_template_request);
 
