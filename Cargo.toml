@@ -1,6 +1,6 @@
 [package]
 name = "exoscale-rs"
-version = "2.0.2"
+version = "2.0.3"
 authors = ["Hasan Hakkaev <hasan.hakkaev@gmx.at>"]
 description = " A client library for Exoscale API generated using openapi-generator"
 license = "MIT"
