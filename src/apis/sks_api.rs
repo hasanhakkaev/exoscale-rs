@@ -317,6 +317,11 @@ pub async fn create_sks_cluster(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&create_sks_cluster_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -365,6 +370,11 @@ pub async fn create_sks_nodepool(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&create_sks_nodepool_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -411,6 +421,11 @@ pub async fn delete_sks_cluster(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -461,6 +476,11 @@ pub async fn delete_sks_nodepool(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -508,6 +528,11 @@ pub async fn evict_sks_nodepool_members(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&evict_sks_nodepool_members_request);
 
@@ -560,6 +585,11 @@ pub async fn generate_sks_cluster_kubeconfig(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&sks_kubeconfig_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -606,6 +636,11 @@ pub async fn get_sks_cluster(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -659,6 +694,11 @@ pub async fn get_sks_cluster_authority_cert(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -705,6 +745,11 @@ pub async fn get_sks_nodepool(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -756,6 +801,11 @@ pub async fn list_sks_cluster_deprecated_resources(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -802,6 +852,11 @@ pub async fn list_sks_cluster_versions(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -840,6 +895,11 @@ pub async fn list_sks_clusters(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -888,6 +948,11 @@ pub async fn reset_sks_cluster_field(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -940,6 +1005,11 @@ pub async fn reset_sks_nodepool_field(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -986,6 +1056,11 @@ pub async fn rotate_sks_ccm_credentials(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1030,6 +1105,11 @@ pub async fn rotate_sks_operators_ca(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -1080,6 +1160,11 @@ pub async fn scale_sks_nodepool(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&scale_sks_nodepool_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -1127,6 +1212,11 @@ pub async fn update_sks_cluster(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&update_sks_cluster_request);
 
@@ -1178,6 +1268,11 @@ pub async fn update_sks_nodepool(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&update_sks_nodepool_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -1226,6 +1321,11 @@ pub async fn upgrade_sks_cluster(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&upgrade_sks_cluster_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -1272,6 +1372,11 @@ pub async fn upgrade_sks_cluster_service_level(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;

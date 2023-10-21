@@ -21,6 +21,7 @@ pub struct Configuration {
     pub api_secret: String,
     pub expiration: Duration,
     pub zone: String,
+    pub content_type: Option<String>,
 }
 
 impl Configuration {
@@ -28,6 +29,7 @@ impl Configuration {
         Configuration {
             base_path: format!("https://api-{}.exoscale.com/v2", zone),
             user_agent: Some("OpenAPI-Generator/2.0.0/rust".to_owned()),
+            content_type: Some("application/json".to_owned()),
             client: reqwest::Client::new(),
             api_key: "".into(),
             api_secret: "".into(),

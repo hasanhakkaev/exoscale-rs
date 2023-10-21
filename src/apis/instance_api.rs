@@ -282,6 +282,11 @@ pub async fn add_instance_protection(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -322,6 +327,11 @@ pub async fn create_instance(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&create_instance_request);
 
@@ -371,6 +381,11 @@ pub async fn create_snapshot(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -417,6 +432,11 @@ pub async fn delete_instance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -461,6 +481,11 @@ pub async fn get_instance(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -519,6 +544,11 @@ pub async fn list_instances(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -563,6 +593,11 @@ pub async fn reboot_instance(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -611,6 +646,11 @@ pub async fn remove_instance_protection(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -656,6 +696,11 @@ pub async fn reset_instance(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&reset_instance_request);
 
@@ -707,6 +752,11 @@ pub async fn reset_instance_field(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -751,6 +801,11 @@ pub async fn reset_instance_password(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -798,6 +853,11 @@ pub async fn resize_instance_disk(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&resize_instance_disk_request);
 
@@ -847,6 +907,11 @@ pub async fn reveal_instance_password(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -892,6 +957,11 @@ pub async fn revert_instance_to_snapshot(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&revert_instance_to_snapshot_request);
 
@@ -941,6 +1011,11 @@ pub async fn scale_instance(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&scale_instance_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -988,6 +1063,11 @@ pub async fn start_instance(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&start_instance_request);
 
@@ -1037,6 +1117,11 @@ pub async fn stop_instance(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -1082,6 +1167,11 @@ pub async fn update_instance(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&update_instance_request);
 

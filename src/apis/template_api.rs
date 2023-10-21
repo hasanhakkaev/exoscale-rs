@@ -134,6 +134,11 @@ pub async fn copy_template(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&copy_template_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -182,6 +187,11 @@ pub async fn delete_template(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -226,6 +236,11 @@ pub async fn get_template(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -279,6 +294,11 @@ pub async fn list_templates(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -325,6 +345,11 @@ pub async fn promote_snapshot_to_template(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&promote_snapshot_to_template_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -367,6 +392,11 @@ pub async fn register_template(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&register_template_request);
 
@@ -415,6 +445,11 @@ pub async fn update_template(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&update_template_request);
 

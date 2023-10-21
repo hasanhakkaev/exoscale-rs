@@ -234,6 +234,11 @@ pub async fn create_access_key(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&create_access_key_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -275,6 +280,11 @@ pub async fn create_api_key(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&create_api_key_request);
 
@@ -318,6 +328,11 @@ pub async fn create_iam_role(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&create_iam_role_request);
 
@@ -366,6 +381,11 @@ pub async fn delete_api_key(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -410,6 +430,11 @@ pub async fn delete_iam_role(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -458,6 +483,11 @@ pub async fn get_access_key(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -503,6 +533,11 @@ pub async fn get_api_key(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -544,6 +579,11 @@ pub async fn get_iam_organization_policy(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -592,6 +632,11 @@ pub async fn get_iam_role(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -636,6 +681,11 @@ pub async fn list_access_key_known_operations(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -684,6 +734,11 @@ pub async fn list_access_key_operations(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -722,6 +777,11 @@ pub async fn list_access_keys(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -763,6 +823,11 @@ pub async fn list_api_keys(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -801,6 +866,11 @@ pub async fn list_iam_roles(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -849,6 +919,11 @@ pub async fn revoke_access_key(
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
 
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
+
     let mut local_var_req = local_var_req_builder.build()?;
     let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -892,6 +967,11 @@ pub async fn update_iam_organization_policy(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&iam_policy);
 
@@ -941,6 +1021,11 @@ pub async fn update_iam_role(
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
+    }
     local_var_req_builder = local_var_req_builder.json(&update_iam_role_request);
 
     let mut local_var_req = local_var_req_builder.build()?;
@@ -988,6 +1073,11 @@ pub async fn update_iam_role_policy(
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
+    }
+
+    if let Some(ref local_var_user_agent) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder
+            .header(reqwest::header::CONTENT_TYPE, local_var_user_agent.clone());
     }
     local_var_req_builder = local_var_req_builder.json(&iam_policy);
 
