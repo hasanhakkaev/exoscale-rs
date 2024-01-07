@@ -69,8 +69,6 @@ pub fn sign_request(
 
     write!(&mut buffer, "{}", expiration).unwrap();
 
-    println!("{}", buffer);
-
     let mut mac = Hmac::<Sha256>::new_from_slice(secret.as_bytes())?;
 
     mac.update(buffer.as_bytes());
