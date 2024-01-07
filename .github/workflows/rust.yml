@@ -24,8 +24,9 @@ jobs:
         run: cargo test --verbose
         env:
           EXOSCALE_API_KEY: ${{ secrets.EXOSCALE_API_KEY }}
-          EXOSCALE_SECRET: ${{ secrets.EXOSCALE_SECRET }}
+          EXOSCALE_API_SECRET: ${{ secrets.EXOSCALE_API_SECRET }}
           EXOSCALE_TEMPLATE: ${{ secrets.EXOSCALE_TEMPLATE }}
+          EXOSCALE_ZONE: ${{ env.EXOSCALE_ZONE }}
 
 
   cargo-deny:

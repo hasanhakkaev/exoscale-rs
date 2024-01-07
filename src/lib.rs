@@ -93,9 +93,10 @@ pub fn sign_request(
 pub(crate) mod test {
     use super::*;
 
+    use crate::models::Template;
     use reqwest::{Method, Url};
 
-    static BASE_URL: &str = "https://api-ch-gva-2.exoscale.com/v2";
+    static BASE_URL: &str = "https://api-at-vie-1.exoscale.com/v2";
 
     pub fn test_config() -> Configuration {
         Configuration {
@@ -107,6 +108,28 @@ pub(crate) mod test {
             expiration: Default::default(),
             zone: env!("EXOSCALE_ZONE").into(),
             content_type: None,
+        }
+    }
+
+    pub fn test_template() -> Template {
+        Template {
+            maintainer: None,
+            description: None,
+            ssh_key_enabled: None,
+            family: None,
+            name: env!("EXOSCALE_TEMPLATE").to_string().into(),
+            default_user: None,
+            size: None,
+            password_enabled: None,
+            build: None,
+            checksum: None,
+            boot_mode: None,
+            id: None,
+            zones: None,
+            url: None,
+            version: None,
+            created_at: None,
+            visibility: None,
         }
     }
 
