@@ -54,55 +54,6 @@ pub enum PromoteSnapshotToTemplateError {
     UnknownValue(serde_json::Value),
 }
 
-pub async fn create_snapshot(
-    configuration: &configuration::Configuration,
-    id: &str,
-) -> Result<models::Operation, Error<CreateSnapshotError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!(
-        "{}/instance/{id}:create-snapshot",
-        local_var_configuration.base_path,
-        id = crate::apis::urlencode(id)
-    );
-    let mut local_var_req_builder =
-        local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder =
-            local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-
-    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
-        local_var_req_builder = local_var_req_builder.header(
-            reqwest::header::CONTENT_TYPE,
-            local_var_content_type.clone(),
-        );
-    }
-
-    let mut local_var_req = local_var_req_builder.build()?;
-    let _ = sign_request(&mut local_var_req, configuration);
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<CreateSnapshotError> =
-            serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent {
-            status: local_var_status,
-            content: local_var_content,
-            entity: local_var_entity,
-        };
-        Err(Error::ResponseError(local_var_error))
-    }
-}
-
 pub async fn delete_snapshot(
     configuration: &configuration::Configuration,
     id: &str,

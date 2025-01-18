@@ -128,7 +128,15 @@ pub async fn attach_block_storage_volume_to_instance(
     local_var_req_builder =
         local_var_req_builder.json(&attach_block_storage_volume_to_instance_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -171,7 +179,15 @@ pub async fn create_block_storage_snapshot(
     }
     local_var_req_builder = local_var_req_builder.json(&create_block_storage_snapshot_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -209,7 +225,15 @@ pub async fn create_block_storage_volume(
     }
     local_var_req_builder = local_var_req_builder.json(&create_block_storage_volume_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -593,7 +617,15 @@ pub async fn resize_block_storage_volume(
     }
     local_var_req_builder = local_var_req_builder.json(&resize_block_storage_volume_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -636,7 +668,15 @@ pub async fn update_block_storage_snapshot(
     }
     local_var_req_builder = local_var_req_builder.json(&update_block_storage_snapshot_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -679,7 +719,15 @@ pub async fn update_block_storage_volume(
     }
     local_var_req_builder = local_var_req_builder.json(&update_block_storage_volume_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();

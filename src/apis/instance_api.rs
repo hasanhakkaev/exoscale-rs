@@ -9,8 +9,7 @@
  */
 
 use super::{configuration, Error};
-use crate::sign_request;
-use crate::{apis::ResponseContent, models};
+use crate::{apis::ResponseContent, models, sign_request};
 use reqwest;
 
 /// struct for typed errors of method [`add_instance_protection`]

@@ -897,7 +897,15 @@ pub async fn attach_dbaas_service_to_endpoint(
     }
     local_var_req_builder = local_var_req_builder.json(&attach_dbaas_service_to_endpoint_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -941,7 +949,15 @@ pub async fn create_dbaas_external_endpoint_datadog(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_datadog_input_create);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -985,7 +1001,15 @@ pub async fn create_dbaas_external_endpoint_elasticsearch(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_elasticsearch_input_create);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1029,7 +1053,15 @@ pub async fn create_dbaas_external_endpoint_opensearch(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_opensearch_input_create);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1073,7 +1105,15 @@ pub async fn create_dbaas_external_endpoint_prometheus(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_prometheus_payload);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1117,7 +1157,15 @@ pub async fn create_dbaas_external_endpoint_rsyslog(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_rsyslog_input_create);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1156,7 +1204,15 @@ pub async fn create_dbaas_integration(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_integration_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1199,7 +1255,15 @@ pub async fn create_dbaas_kafka_schema_registry_acl_config(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_kafka_schema_registry_acl_entry);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1242,7 +1306,15 @@ pub async fn create_dbaas_kafka_topic_acl_config(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_kafka_topic_acl_entry);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1285,7 +1357,15 @@ pub async fn create_dbaas_kafka_user(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_kafka_user_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1328,7 +1408,15 @@ pub async fn create_dbaas_mysql_database(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_mysql_database_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1371,7 +1459,15 @@ pub async fn create_dbaas_mysql_user(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_mysql_user_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1414,7 +1510,15 @@ pub async fn create_dbaas_opensearch_user(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_kafka_user_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1457,7 +1561,15 @@ pub async fn create_dbaas_pg_connection_pool(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_pg_connection_pool_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1500,7 +1612,15 @@ pub async fn create_dbaas_pg_database(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_pg_database_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1544,7 +1664,15 @@ pub async fn create_dbaas_pg_upgrade_check(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_pg_upgrade_check_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1587,7 +1715,15 @@ pub async fn create_dbaas_postgres_user(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_postgres_user_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1630,7 +1766,15 @@ pub async fn create_dbaas_redis_user(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_kafka_user_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1674,7 +1818,15 @@ pub async fn create_dbaas_service_grafana(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_grafana_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1718,7 +1870,15 @@ pub async fn create_dbaas_service_kafka(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_kafka_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1762,7 +1922,15 @@ pub async fn create_dbaas_service_mysql(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_mysql_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1806,7 +1974,15 @@ pub async fn create_dbaas_service_opensearch(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_opensearch_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1849,7 +2025,15 @@ pub async fn create_dbaas_service_pg(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_pg_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1893,7 +2077,15 @@ pub async fn create_dbaas_service_redis(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_service_redis_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -1937,7 +2129,15 @@ pub async fn create_dbaas_task_migration_check(
     }
     local_var_req_builder = local_var_req_builder.json(&create_dbaas_task_migration_check_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -3135,7 +3335,15 @@ pub async fn detach_dbaas_service_from_endpoint(
     }
     local_var_req_builder = local_var_req_builder.json(&detach_dbaas_service_from_endpoint_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -3930,7 +4138,15 @@ pub async fn get_dbaas_service_logs(
     }
     local_var_req_builder = local_var_req_builder.json(&get_dbaas_service_logs_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -3974,7 +4190,15 @@ pub async fn get_dbaas_service_metrics(
     }
     local_var_req_builder = local_var_req_builder.json(&get_dbaas_service_metrics_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -4943,7 +5167,15 @@ pub async fn reset_dbaas_grafana_user_password(
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_grafana_user_password_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -4989,7 +5221,15 @@ pub async fn reset_dbaas_kafka_user_password(
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_grafana_user_password_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -5035,7 +5275,15 @@ pub async fn reset_dbaas_mysql_user_password(
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_mysql_user_password_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -5081,7 +5329,15 @@ pub async fn reset_dbaas_opensearch_user_password(
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_grafana_user_password_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -5127,7 +5383,15 @@ pub async fn reset_dbaas_postgres_user_password(
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_grafana_user_password_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -5173,7 +5437,15 @@ pub async fn reset_dbaas_redis_user_password(
     }
     local_var_req_builder = local_var_req_builder.json(&reset_dbaas_grafana_user_password_request);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -6013,7 +6285,15 @@ pub async fn update_dbaas_external_endpoint_datadog(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_datadog_input_update);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -6057,7 +6337,15 @@ pub async fn update_dbaas_external_endpoint_elasticsearch(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_elasticsearch_input_update);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -6101,7 +6389,15 @@ pub async fn update_dbaas_external_endpoint_opensearch(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_opensearch_input_update);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -6145,7 +6441,15 @@ pub async fn update_dbaas_external_endpoint_prometheus(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_prometheus_payload);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -6189,7 +6493,15 @@ pub async fn update_dbaas_external_endpoint_rsyslog(
     }
     local_var_req_builder = local_var_req_builder.json(&dbaas_endpoint_rsyslog_input_update);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
@@ -6234,7 +6546,15 @@ pub async fn update_dbaas_external_integration_settings_datadog(
     local_var_req_builder =
         local_var_req_builder.json(&get_dbaas_external_integration_settings_datadog200_response);
 
-    let local_var_req = local_var_req_builder.build()?;
+    if let Some(ref local_var_content_type) = local_var_configuration.content_type {
+        local_var_req_builder = local_var_req_builder.header(
+            reqwest::header::CONTENT_TYPE,
+            local_var_content_type.clone(),
+        );
+    }
+
+    let mut local_var_req = local_var_req_builder.build()?;
+    let _ = sign_request(&mut local_var_req, configuration);
     let local_var_resp = local_var_client.execute(local_var_req).await?;
 
     let local_var_status = local_var_resp.status();
