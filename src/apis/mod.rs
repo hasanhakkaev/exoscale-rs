@@ -58,7 +58,7 @@ impl<T> From<std::io::Error> for Error<T> {
 }
 
 pub fn urlencode<T: AsRef<str>>(s: T) -> String {
-    ::url::form_urlencoded::byte_serialize(s.as_ref().as_bytes()).collect()
+    url::form_urlencoded::byte_serialize(s.as_ref().as_bytes()).collect()
 }
 
 pub fn parse_deep_object(prefix: &str, value: &serde_json::Value) -> Vec<(String, String)> {
@@ -93,7 +93,7 @@ pub fn parse_deep_object(prefix: &str, value: &serde_json::Value) -> Vec<(String
 }
 
 pub mod anti_affinity_group_api;
-pub mod compute_api;
+pub mod block_storage_api;
 pub mod dbaas_api;
 pub mod deploy_target_api;
 pub mod dns_api;
@@ -105,6 +105,7 @@ pub mod instance_pool_api;
 pub mod instance_type_api;
 pub mod network_load_balancer_api;
 pub mod operation_api;
+pub mod organization_api;
 pub mod private_network_api;
 pub mod quotas_api;
 pub mod reverse_dns_api;

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## attach_instance_to_elastic_ip
 
-> crate::models::Operation attach_instance_to_elastic_ip(id, detach_instance_from_elastic_ip_request)
+> models::Operation attach_instance_to_elastic_ip(id, attach_block_storage_volume_to_instance_request)
 Attach a Compute instance to an Elastic IP
 
 
@@ -28,11 +28,11 @@ Attach a Compute instance to an Elastic IP
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** |  | [required] |
-**detach_instance_from_elastic_ip_request** | [**DetachInstanceFromElasticIpRequest**](DetachInstanceFromElasticIpRequest.md) |  | [required] |
+**attach_block_storage_volume_to_instance_request** | [**AttachBlockStorageVolumeToInstanceRequest**](AttachBlockStorageVolumeToInstanceRequest.md) |  | [required] |
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ No authorization required
 
 ## create_elastic_ip
 
-> crate::models::Operation create_elastic_ip(create_elastic_ip_request)
+> models::Operation create_elastic_ip(create_elastic_ip_request)
 Create an Elastic IP
 
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ No authorization required
 
 ## delete_elastic_ip
 
-> crate::models::Operation delete_elastic_ip(id)
+> models::Operation delete_elastic_ip(id)
 Delete an Elastic IP
 
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ No authorization required
 
 ## detach_instance_from_elastic_ip
 
-> crate::models::Operation detach_instance_from_elastic_ip(id, detach_instance_from_elastic_ip_request)
+> models::Operation detach_instance_from_elastic_ip(id, attach_block_storage_volume_to_instance_request)
 Detach a Compute instance from an Elastic IP
 
 
@@ -119,11 +119,11 @@ Detach a Compute instance from an Elastic IP
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** |  | [required] |
-**detach_instance_from_elastic_ip_request** | [**DetachInstanceFromElasticIpRequest**](DetachInstanceFromElasticIpRequest.md) |  | [required] |
+**attach_block_storage_volume_to_instance_request** | [**AttachBlockStorageVolumeToInstanceRequest**](AttachBlockStorageVolumeToInstanceRequest.md) |  | [required] |
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ No authorization required
 
 ## get_elastic_ip
 
-> crate::models::ElasticIp get_elastic_ip(id)
+> models::ElasticIp get_elastic_ip(id)
 Retrieve Elastic IP details
 
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ElasticIp**](elastic-ip.md)
+[**models::ElasticIp**](elastic-ip.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ No authorization required
 
 ## list_elastic_ips
 
-> crate::models::ListElasticIps200Response list_elastic_ips()
+> models::ListElasticIps200Response list_elastic_ips()
 List Elastic IPs
 
 
@@ -180,7 +180,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListElasticIps200Response**](list_elastic_ips_200_response.md)
+[**models::ListElasticIps200Response**](list_elastic_ips_200_response.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ No authorization required
 
 ## reset_elastic_ip_field
 
-> crate::models::Operation reset_elastic_ip_field(id, field)
+> models::Operation reset_elastic_ip_field(id, field)
 Reset an Elastic IP field to its default value
 
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ No authorization required
 
 ## update_elastic_ip
 
-> crate::models::Operation update_elastic_ip(id, update_elastic_ip_request)
+> models::Operation update_elastic_ip(id, update_elastic_ip_request)
 Update an Elastic IP
 
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

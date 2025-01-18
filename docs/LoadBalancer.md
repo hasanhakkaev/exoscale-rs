@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **state** | Option<**String**> | Load Balancer state | [optional][readonly]
 **created_at** | Option<**String**> | Load Balancer creation date | [optional][readonly]
 **ip** | Option<**String**> | Load Balancer public IP | [optional][readonly]
-**services** | Option<[**Vec<crate::models::LoadBalancerService>**](load-balancer-service.md)> | Load Balancer Services | [optional]
-**labels** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
+**services** | Option<[**Vec<models::LoadBalancerService>**](load-balancer-service.md)> | Load Balancer Services | [optional]
+**labels** | Option<**std::collections::HashMap<String, String>**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

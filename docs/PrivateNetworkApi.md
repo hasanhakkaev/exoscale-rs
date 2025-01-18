@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## attach_instance_to_private_network
 
-> crate::models::Operation attach_instance_to_private_network(id, attach_instance_to_private_network_request)
+> models::Operation attach_instance_to_private_network(id, attach_instance_to_private_network_request)
 Attach a Compute instance to a Private Network
 
 
@@ -33,7 +33,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -49,7 +49,7 @@ No authorization required
 
 ## create_private_network
 
-> crate::models::Operation create_private_network(create_private_network_request)
+> models::Operation create_private_network(create_private_network_request)
 Create a Private Network
 
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ No authorization required
 
 ## delete_private_network
 
-> crate::models::Operation delete_private_network(id)
+> models::Operation delete_private_network(id)
 Delete a Private Network
 
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ No authorization required
 
 ## detach_instance_from_private_network
 
-> crate::models::Operation detach_instance_from_private_network(id, detach_instance_from_private_network_request)
+> models::Operation detach_instance_from_private_network(id, detach_instance_from_private_network_request)
 Detach a Compute instance from a Private Network
 
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ No authorization required
 
 ## get_private_network
 
-> crate::models::PrivateNetwork get_private_network(id)
+> models::PrivateNetwork get_private_network(id)
 Retrieve Private Network details
 
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::PrivateNetwork**](private-network.md)
+[**models::PrivateNetwork**](private-network.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ No authorization required
 
 ## list_private_networks
 
-> crate::models::ListPrivateNetworks200Response list_private_networks()
+> models::ListPrivateNetworks200Response list_private_networks()
 List Private Networks
 
 
@@ -181,7 +181,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListPrivateNetworks200Response**](list_private_networks_200_response.md)
+[**models::ListPrivateNetworks200Response**](list_private_networks_200_response.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 
 ## reset_private_network_field
 
-> crate::models::Operation reset_private_network_field(id, field)
+> models::Operation reset_private_network_field(id, field)
 Reset Private Network field
 
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ No authorization required
 
 ## update_private_network
 
-> crate::models::Operation update_private_network(id, update_private_network_request)
+> models::Operation update_private_network(id, update_private_network_request)
 Update a Private Network
 
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ No authorization required
 
 ## update_private_network_instance_ip
 
-> crate::models::Operation update_private_network_instance_ip(id, update_private_network_instance_ip_request)
+> models::Operation update_private_network_instance_ip(id, update_private_network_instance_ip_request)
 Update the IP address of an instance attached to a managed private network
 
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

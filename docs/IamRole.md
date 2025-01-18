@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **name** | Option<**String**> | IAM Role name | [optional]
 **description** | Option<**String**> | IAM Role description | [optional]
 **permissions** | Option<**Vec<String>**> | IAM Role permissions | [optional]
-**labels** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
+**labels** | Option<**std::collections::HashMap<String, String>**> |  | [optional]
 **editable** | Option<**bool**> | IAM Role mutability | [optional]
-**policy** | Option<[**crate::models::IamPolicy**](iam-policy.md)> |  | [optional]
+**policy** | Option<[**models::IamPolicy**](iam-policy.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **checksum** | Option<**String**> | Template MD5 checksum | [optional]
 **boot_mode** | Option<**String**> | Boot mode (default: legacy) | [optional]
 **id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Template ID | [optional][readonly]
-**zones** | Option<[**Vec<crate::models::ZoneName>**](zone_name.md)> | Zones availability | [optional]
+**zones** | Option<[**Vec<models::ZoneName>**](zone-name.md)> | Zones availability | [optional]
 **url** | Option<**String**> | Template source URL | [optional]
 **version** | Option<**String**> | Template version | [optional][readonly]
 **created_at** | Option<**String**> | Template creation date | [optional][readonly]

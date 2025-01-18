@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## create_snapshot
 
-> crate::models::Operation create_snapshot(id)
+> models::Operation create_snapshot(id)
 Create a Snapshot of a Compute instance
 
 
@@ -29,7 +29,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -45,7 +45,7 @@ No authorization required
 
 ## delete_snapshot
 
-> crate::models::Operation delete_snapshot(id)
+> models::Operation delete_snapshot(id)
 Delete a Snapshot
 
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 
 ## export_snapshot
 
-> crate::models::Operation export_snapshot(id)
+> models::Operation export_snapshot(id)
 Export a Snapshot
 
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 
 ## get_snapshot
 
-> crate::models::Snapshot get_snapshot(id)
+> models::Snapshot get_snapshot(id)
 Retrieve Snapshot details
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Snapshot**](snapshot.md)
+[**models::Snapshot**](snapshot.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ No authorization required
 
 ## list_snapshots
 
-> crate::models::ListSnapshots200Response list_snapshots()
+> models::ListSnapshots200Response list_snapshots()
 List Snapshots
 
 
@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListSnapshots200Response**](list_snapshots_200_response.md)
+[**models::ListSnapshots200Response**](list_snapshots_200_response.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ No authorization required
 
 ## promote_snapshot_to_template
 
-> crate::models::Operation promote_snapshot_to_template(id, promote_snapshot_to_template_request)
+> models::Operation promote_snapshot_to_template(id, promote_snapshot_to_template_request)
 Promote a Snapshot to a Template
 
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

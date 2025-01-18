@@ -103,21 +103,21 @@ pub(crate) mod test {
             base_path: BASE_URL.parse::<Url>().unwrap().to_string(),
             user_agent: None,
             client: Default::default(),
-            api_key: env!("EXOSCALE_API_KEY").into(),
-            api_secret: env!("EXOSCALE_API_SECRET").into(),
+            api_key: std::env::var("EXOSCALE_API_KEY").unwrap(),
+            api_secret: std::env::var("EXOSCALE_API_SECRET").unwrap(),
             expiration: Default::default(),
-            zone: env!("EXOSCALE_ZONE").into(),
+            zone: std::env::var("EXOSCALE_ZONE").unwrap(),
             content_type: None,
         }
     }
-
+    #[allow(dead_code)]
     pub fn test_template() -> Template {
         Template {
             maintainer: None,
             description: None,
             ssh_key_enabled: None,
             family: None,
-            name: env!("EXOSCALE_TEMPLATE").to_string().into(),
+            name: Option::from(std::env::var("EXOSCALE_TEMPLATE").unwrap()),
             default_user: None,
             size: None,
             password_enabled: None,
@@ -138,7 +138,7 @@ pub(crate) mod test {
         let url: Url = format!("{}/{}", BASE_URL, "instance").parse().unwrap();
         let configuration = test_config();
 
-        let mut request = reqwest::Request::new(Method::GET, url);
+        let mut request = Request::new(Method::GET, url);
 
         sign_request(&mut request, &configuration).expect("failed to sign request");
 

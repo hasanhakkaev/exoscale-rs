@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## get_sos_presigned_url
 
-> crate::models::GetSosPresignedUrl200Response get_sos_presigned_url(bucket, key)
+> models::GetSosPresignedUrl200Response get_sos_presigned_url(bucket, key)
 Retrieve Presigned Download URL for SOS object
 
 Generates Presigned Download URL for SOS object
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::GetSosPresignedUrl200Response**](get_sos_presigned_url_200_response.md)
+[**models::GetSosPresignedUrl200Response**](get_sos_presigned_url_200_response.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ No authorization required
 
 ## list_sos_buckets_usage
 
-> crate::models::ListSosBucketsUsage200Response list_sos_buckets_usage()
+> models::ListSosBucketsUsage200Response list_sos_buckets_usage()
 List SOS Buckets Usage
 
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListSosBucketsUsage200Response**](list_sos_buckets_usage_200_response.md)
+[**models::ListSosBucketsUsage200Response**](list_sos_buckets_usage_200_response.md)
 
 ### Authorization
 

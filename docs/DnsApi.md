@@ -5,21 +5,21 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_dns_domain**](DnsApi.md#create_dns_domain) | **POST** /dns-domain | Create DNS domain
-[**create_dns_domain_record**](DnsApi.md#create_dns_domain_record) | **POST** /dns-domain/{domain_id}/record | Create DNS domain record
+[**create_dns_domain_record**](DnsApi.md#create_dns_domain_record) | **POST** /dns-domain/{domain-id}/record | Create DNS domain record
 [**delete_dns_domain**](DnsApi.md#delete_dns_domain) | **DELETE** /dns-domain/{id} | Delete DNS Domain
-[**delete_dns_domain_record**](DnsApi.md#delete_dns_domain_record) | **DELETE** /dns-domain/{domain_id}/record/{record_id} | Delete DNS domain record
+[**delete_dns_domain_record**](DnsApi.md#delete_dns_domain_record) | **DELETE** /dns-domain/{domain-id}/record/{record-id} | Delete DNS domain record
 [**get_dns_domain**](DnsApi.md#get_dns_domain) | **GET** /dns-domain/{id} | Retrieve DNS domain details
-[**get_dns_domain_record**](DnsApi.md#get_dns_domain_record) | **GET** /dns-domain/{domain_id}/record/{record_id} | Retrieve DNS domain record details
+[**get_dns_domain_record**](DnsApi.md#get_dns_domain_record) | **GET** /dns-domain/{domain-id}/record/{record-id} | Retrieve DNS domain record details
 [**get_dns_domain_zone_file**](DnsApi.md#get_dns_domain_zone_file) | **GET** /dns-domain/{id}/zone | Retrieve DNS domain zone file
-[**list_dns_domain_records**](DnsApi.md#list_dns_domain_records) | **GET** /dns-domain/{domain_id}/record | List DNS domain records
+[**list_dns_domain_records**](DnsApi.md#list_dns_domain_records) | **GET** /dns-domain/{domain-id}/record | List DNS domain records
 [**list_dns_domains**](DnsApi.md#list_dns_domains) | **GET** /dns-domain | List DNS domains
-[**update_dns_domain_record**](DnsApi.md#update_dns_domain_record) | **PUT** /dns-domain/{domain_id}/record/{record_id} | Update DNS domain record
+[**update_dns_domain_record**](DnsApi.md#update_dns_domain_record) | **PUT** /dns-domain/{domain-id}/record/{record-id} | Update DNS domain record
 
 
 
 ## create_dns_domain
 
-> crate::models::DnsDomain create_dns_domain(create_dns_domain_request)
+> models::DnsDomain create_dns_domain(create_dns_domain_request)
 Create DNS domain
 
 
@@ -33,7 +33,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DnsDomain**](dns-domain.md)
+[**models::DnsDomain**](dns-domain.md)
 
 ### Authorization
 
@@ -49,7 +49,7 @@ No authorization required
 
 ## create_dns_domain_record
 
-> crate::models::Operation create_dns_domain_record(domain_id, create_dns_domain_record_request)
+> models::Operation create_dns_domain_record(domain_id, create_dns_domain_record_request)
 Create DNS domain record
 
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ No authorization required
 
 ## delete_dns_domain
 
-> crate::models::Operation delete_dns_domain(id)
+> models::Operation delete_dns_domain(id)
 Delete DNS Domain
 
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ No authorization required
 
 ## delete_dns_domain_record
 
-> crate::models::Operation delete_dns_domain_record(domain_id, record_id)
+> models::Operation delete_dns_domain_record(domain_id, record_id)
 Delete DNS domain record
 
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ No authorization required
 
 ## get_dns_domain
 
-> crate::models::DnsDomain get_dns_domain(id)
+> models::DnsDomain get_dns_domain(id)
 Retrieve DNS domain details
 
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DnsDomain**](dns-domain.md)
+[**models::DnsDomain**](dns-domain.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ No authorization required
 
 ## get_dns_domain_record
 
-> crate::models::DnsDomainRecord get_dns_domain_record(domain_id, record_id)
+> models::DnsDomainRecord get_dns_domain_record(domain_id, record_id)
 Retrieve DNS domain record details
 
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DnsDomainRecord**](dns-domain-record.md)
+[**models::DnsDomainRecord**](dns-domain-record.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 
 ## get_dns_domain_zone_file
 
-> crate::models::GetDnsDomainZoneFile200Response get_dns_domain_zone_file(id)
+> models::GetDnsDomainZoneFile200Response get_dns_domain_zone_file(id)
 Retrieve DNS domain zone file
 
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::GetDnsDomainZoneFile200Response**](get_dns_domain_zone_file_200_response.md)
+[**models::GetDnsDomainZoneFile200Response**](get_dns_domain_zone_file_200_response.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ No authorization required
 
 ## list_dns_domain_records
 
-> crate::models::ListDnsDomainRecords200Response list_dns_domain_records(domain_id)
+> models::ListDnsDomainRecords200Response list_dns_domain_records(domain_id)
 List DNS domain records
 
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListDnsDomainRecords200Response**](list_dns_domain_records_200_response.md)
+[**models::ListDnsDomainRecords200Response**](list_dns_domain_records_200_response.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ No authorization required
 
 ## list_dns_domains
 
-> crate::models::ListDnsDomains200Response list_dns_domains()
+> models::ListDnsDomains200Response list_dns_domains()
 List DNS domains
 
 
@@ -273,7 +273,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListDnsDomains200Response**](list_dns_domains_200_response.md)
+[**models::ListDnsDomains200Response**](list_dns_domains_200_response.md)
 
 ### Authorization
 
@@ -289,7 +289,7 @@ No authorization required
 
 ## update_dns_domain_record
 
-> crate::models::Operation update_dns_domain_record(domain_id, record_id, update_dns_domain_record_request)
+> models::Operation update_dns_domain_record(domain_id, record_id, update_dns_domain_record_request)
 Update DNS domain record
 
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## copy_template
 
-> crate::models::Operation copy_template(id, copy_template_request)
+> models::Operation copy_template(id, copy_template_request)
 Copy a Template from a zone to another
 
 
@@ -31,7 +31,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -47,7 +47,7 @@ No authorization required
 
 ## delete_template
 
-> crate::models::Operation delete_template(id)
+> models::Operation delete_template(id)
 Delete a Template
 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 
 ## get_template
 
-> crate::models::Template get_template(id)
+> models::Template get_template(id)
 Retrieve Template details
 
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Template**](template.md)
+[**models::Template**](template.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ No authorization required
 
 ## list_templates
 
-> crate::models::ListTemplates200Response list_templates(visibility, family)
+> models::ListTemplates200Response list_templates(visibility, family)
 List Templates
 
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListTemplates200Response**](list_templates_200_response.md)
+[**models::ListTemplates200Response**](list_templates_200_response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ No authorization required
 
 ## promote_snapshot_to_template
 
-> crate::models::Operation promote_snapshot_to_template(id, promote_snapshot_to_template_request)
+> models::Operation promote_snapshot_to_template(id, promote_snapshot_to_template_request)
 Promote a Snapshot to a Template
 
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -169,7 +169,7 @@ No authorization required
 
 ## register_template
 
-> crate::models::Operation register_template(register_template_request)
+> models::Operation register_template(register_template_request)
 Register a Template
 
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ No authorization required
 
 ## update_template
 
-> crate::models::Operation update_template(id, update_template_request)
+> models::Operation update_template(id, update_template_request)
 Update template attributes
 
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

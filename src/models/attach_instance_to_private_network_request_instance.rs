@@ -9,10 +9,7 @@
  */
 
 /// AttachInstanceToPrivateNetworkRequestInstance : Compute instance
-
-
-
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AttachInstanceToPrivateNetworkRequestInstance {
     /// Instance ID
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
@@ -22,10 +19,6 @@ pub struct AttachInstanceToPrivateNetworkRequestInstance {
 impl AttachInstanceToPrivateNetworkRequestInstance {
     /// Compute instance
     pub fn new() -> AttachInstanceToPrivateNetworkRequestInstance {
-        AttachInstanceToPrivateNetworkRequestInstance {
-            id: None,
-        }
+        AttachInstanceToPrivateNetworkRequestInstance { id: None }
     }
 }
-
-

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## list_events
 
-> Vec<crate::models::Event> list_events(from, to)
+> Vec<models::Event> list_events(from, to)
 List Events
 
 Retrieve Mutation Events for a given date range. Defaults to retrieving Events for the past 24 hours.          Both a `from` and `to` arguments can be specified to filter Events over a specific period.          Events will be the the most descriptive possible but not all fields are mandatory
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<crate::models::Event>**](event.md)
+[**Vec<models::Event>**](event.md)
 
 ### Authorization
 

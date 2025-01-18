@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_type** | [**crate::models::EnumIntegrationTypes**](enum-integration-types.md) |  | 
+**integration_type** | [**models::EnumIntegrationTypes**](enum-integration-types.md) |  | 
 **source_service** | **String** |  | 
 **dest_service** | **String** |  | 
 **settings** | Option<[**serde_json::Value**](.md)> | Integration settings | [optional]

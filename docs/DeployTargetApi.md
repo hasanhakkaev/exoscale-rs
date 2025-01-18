@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## get_deploy_target
 
-> crate::models::DeployTarget get_deploy_target(id)
+> models::DeployTarget get_deploy_target(id)
 Retrieve Deploy Target details
 
 
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::DeployTarget**](deploy-target.md)
+[**models::DeployTarget**](deploy-target.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ No authorization required
 
 ## list_deploy_targets
 
-> crate::models::ListDeployTargets200Response list_deploy_targets()
+> models::ListDeployTargets200Response list_deploy_targets()
 List Deploy Targets
 
 
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListDeployTargets200Response**](list_deploy_targets_200_response.md)
+[**models::ListDeployTargets200Response**](list_deploy_targets_200_response.md)
 
 ### Authorization
 

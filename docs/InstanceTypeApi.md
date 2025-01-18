@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## get_instance_type
 
-> crate::models::InstanceType get_instance_type(id)
+> models::InstanceType get_instance_type(id)
 Retrieve Instance Type details
 
 
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InstanceType**](instance-type.md)
+[**models::InstanceType**](instance-type.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ No authorization required
 
 ## list_instance_types
 
-> crate::models::ListInstanceTypes200Response list_instance_types()
+> models::ListInstanceTypes200Response list_instance_types()
 List Compute instance Types
 
 
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListInstanceTypes200Response**](list_instance_types_200_response.md)
+[**models::ListInstanceTypes200Response**](list_instance_types_200_response.md)
 
 ### Authorization
 

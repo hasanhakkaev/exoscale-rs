@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## list_zones
 
-> crate::models::ListZones200Response list_zones()
+> models::ListZones200Response list_zones()
 List Zones
 
 
@@ -21,7 +21,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListZones200Response**](list_zones_200_response.md)
+[**models::ListZones200Response**](list_zones_200_response.md)
 
 ### Authorization
 

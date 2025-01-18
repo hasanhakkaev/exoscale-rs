@@ -10,8 +10,6 @@
 
 /// SecondaryVolumeTarget : Target secondary volume
 
-
-
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SecondaryVolumeTarget {
     /// Secondary volume ID
@@ -20,12 +18,9 @@ pub struct SecondaryVolumeTarget {
 }
 
 impl SecondaryVolumeTarget {
+    #[allow(dead_code)]
     /// Target secondary volume
     pub fn new() -> SecondaryVolumeTarget {
-        SecondaryVolumeTarget {
-            id: None,
-        }
+        SecondaryVolumeTarget { id: None }
     }
 }
-
-

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## delete_ssh_key
 
-> crate::models::Operation delete_ssh_key(name)
+> models::Operation delete_ssh_key(name)
 Delete a SSH key
 
 
@@ -27,7 +27,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -43,7 +43,7 @@ No authorization required
 
 ## get_ssh_key
 
-> crate::models::SshKey get_ssh_key(name)
+> models::SshKey get_ssh_key(name)
 Retrieve SSH key details
 
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SshKey**](ssh-key.md)
+[**models::SshKey**](ssh-key.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 
 ## list_ssh_keys
 
-> crate::models::ListSshKeys200Response list_ssh_keys()
+> models::ListSshKeys200Response list_ssh_keys()
 List SSH keys
 
 
@@ -84,7 +84,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListSshKeys200Response**](list_ssh_keys_200_response.md)
+[**models::ListSshKeys200Response**](list_ssh_keys_200_response.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 
 ## register_ssh_key
 
-> crate::models::Operation register_ssh_key(register_ssh_key_request)
+> models::Operation register_ssh_key(register_ssh_key_request)
 Import SSH key
 
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

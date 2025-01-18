@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**add_rule_to_security_group**](SecurityGroupApi.md#add_rule_to_security_group) | **POST** /security-group/{id}/rules | Create a Security Group rule
 [**attach_instance_to_security_group**](SecurityGroupApi.md#attach_instance_to_security_group) | **PUT** /security-group/{id}:attach | Attach a Compute instance to a Security Group
 [**create_security_group**](SecurityGroupApi.md#create_security_group) | **POST** /security-group | Create a Security Group
-[**delete_rule_from_security_group**](SecurityGroupApi.md#delete_rule_from_security_group) | **DELETE** /security-group/{id}/rules/{rule_id} | Delete a Security Group rule
+[**delete_rule_from_security_group**](SecurityGroupApi.md#delete_rule_from_security_group) | **DELETE** /security-group/{id}/rules/{rule-id} | Delete a Security Group rule
 [**delete_security_group**](SecurityGroupApi.md#delete_security_group) | **DELETE** /security-group/{id} | Delete a Security Group
 [**detach_instance_from_security_group**](SecurityGroupApi.md#detach_instance_from_security_group) | **PUT** /security-group/{id}:detach | Detach a Compute instance from a Security Group
 [**get_security_group**](SecurityGroupApi.md#get_security_group) | **GET** /security-group/{id} | Retrieve Security Group details
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## add_external_source_to_security_group
 
-> crate::models::Operation add_external_source_to_security_group(id, add_external_source_to_security_group_request)
+> models::Operation add_external_source_to_security_group(id, add_external_source_to_security_group_request)
 Add an external source as a member of a Security Group
 
 
@@ -34,7 +34,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -50,7 +50,7 @@ No authorization required
 
 ## add_rule_to_security_group
 
-> crate::models::Operation add_rule_to_security_group(id, add_rule_to_security_group_request)
+> models::Operation add_rule_to_security_group(id, add_rule_to_security_group_request)
 Create a Security Group rule
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 
 ## attach_instance_to_security_group
 
-> crate::models::Operation attach_instance_to_security_group(id, detach_instance_from_private_network_request)
+> models::Operation attach_instance_to_security_group(id, detach_instance_from_private_network_request)
 Attach a Compute instance to a Security Group
 
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ No authorization required
 
 ## create_security_group
 
-> crate::models::Operation create_security_group(create_security_group_request)
+> models::Operation create_security_group(create_security_group_request)
 Create a Security Group
 
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ No authorization required
 
 ## delete_rule_from_security_group
 
-> crate::models::Operation delete_rule_from_security_group(id, rule_id)
+> models::Operation delete_rule_from_security_group(id, rule_id)
 Delete a Security Group rule
 
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ No authorization required
 
 ## delete_security_group
 
-> crate::models::Operation delete_security_group(id)
+> models::Operation delete_security_group(id)
 Delete a Security Group
 
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ No authorization required
 
 ## detach_instance_from_security_group
 
-> crate::models::Operation detach_instance_from_security_group(id, detach_instance_from_private_network_request)
+> models::Operation detach_instance_from_security_group(id, detach_instance_from_private_network_request)
 Detach a Compute instance from a Security Group
 
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ No authorization required
 
 ## get_security_group
 
-> crate::models::SecurityGroup get_security_group(id)
+> models::SecurityGroup get_security_group(id)
 Retrieve Security Group details
 
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SecurityGroup**](security-group.md)
+[**models::SecurityGroup**](security-group.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ No authorization required
 
 ## list_security_groups
 
-> crate::models::ListSecurityGroups200Response list_security_groups(visibility)
+> models::ListSecurityGroups200Response list_security_groups(visibility)
 List Security Groups.
 
 Lists security groups. When visibility is set to public, lists public security groups. Public security groups are objects maintained by Exoscale which contain source addresses for relevant services hosted by Exoscale. They can be used a source in ingress rules and as a destination in egress rules.
@@ -278,7 +278,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListSecurityGroups200Response**](list_security_groups_200_response.md)
+[**models::ListSecurityGroups200Response**](list_security_groups_200_response.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ No authorization required
 
 ## remove_external_source_from_security_group
 
-> crate::models::Operation remove_external_source_from_security_group(id, remove_external_source_from_security_group_request)
+> models::Operation remove_external_source_from_security_group(id, remove_external_source_from_security_group_request)
 Remove an external source from a Security Group
 
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

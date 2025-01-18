@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## create_anti_affinity_group
 
-> crate::models::Operation create_anti_affinity_group(create_anti_affinity_group_request)
+> models::Operation create_anti_affinity_group(create_anti_affinity_group_request)
 Create an Anti-affinity Group
 
 
@@ -27,7 +27,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -43,7 +43,7 @@ No authorization required
 
 ## delete_anti_affinity_group
 
-> crate::models::Operation delete_anti_affinity_group(id)
+> models::Operation delete_anti_affinity_group(id)
 Delete an Anti-affinity Group
 
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ No authorization required
 
 ## get_anti_affinity_group
 
-> crate::models::AntiAffinityGroup get_anti_affinity_group(id)
+> models::AntiAffinityGroup get_anti_affinity_group(id)
 Retrieve Anti-affinity Group details
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::AntiAffinityGroup**](anti-affinity-group.md)
+[**models::AntiAffinityGroup**](anti-affinity-group.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ No authorization required
 
 ## list_anti_affinity_groups
 
-> crate::models::ListAntiAffinityGroups200Response list_anti_affinity_groups()
+> models::ListAntiAffinityGroups200Response list_anti_affinity_groups()
 List Anti-affinity Groups
 
 
@@ -114,7 +114,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListAntiAffinityGroups200Response**](list_anti_affinity_groups_200_response.md)
+[**models::ListAntiAffinityGroups200Response**](list_anti_affinity_groups_200_response.md)
 
 ### Authorization
 
