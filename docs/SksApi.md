@@ -7,22 +7,23 @@ Method | HTTP request | Description
 [**create_sks_cluster**](SksApi.md#create_sks_cluster) | **POST** /sks-cluster | Create an SKS cluster
 [**create_sks_nodepool**](SksApi.md#create_sks_nodepool) | **POST** /sks-cluster/{id}/nodepool | Create a new SKS Nodepool
 [**delete_sks_cluster**](SksApi.md#delete_sks_cluster) | **DELETE** /sks-cluster/{id} | Delete an SKS cluster
-[**delete_sks_nodepool**](SksApi.md#delete_sks_nodepool) | **DELETE** /sks-cluster/{id}/nodepool/{sks_nodepool_id} | Delete an SKS Nodepool
-[**evict_sks_nodepool_members**](SksApi.md#evict_sks_nodepool_members) | **PUT** /sks-cluster/{id}/nodepool/{sks_nodepool_id}:evict | Evict Nodepool members
+[**delete_sks_nodepool**](SksApi.md#delete_sks_nodepool) | **DELETE** /sks-cluster/{id}/nodepool/{sks-nodepool-id} | Delete an SKS Nodepool
+[**evict_sks_nodepool_members**](SksApi.md#evict_sks_nodepool_members) | **PUT** /sks-cluster/{id}/nodepool/{sks-nodepool-id}:evict | Evict Nodepool members
 [**generate_sks_cluster_kubeconfig**](SksApi.md#generate_sks_cluster_kubeconfig) | **POST** /sks-cluster-kubeconfig/{id} | Generate a new Kubeconfig file for a SKS cluster
 [**get_sks_cluster**](SksApi.md#get_sks_cluster) | **GET** /sks-cluster/{id} | Retrieve SKS cluster details
 [**get_sks_cluster_authority_cert**](SksApi.md#get_sks_cluster_authority_cert) | **GET** /sks-cluster/{id}/authority/{authority}/cert | Get the certificate for a SKS cluster authority
-[**get_sks_nodepool**](SksApi.md#get_sks_nodepool) | **GET** /sks-cluster/{id}/nodepool/{sks_nodepool_id} | Retrieve SKS Nodepool details
+[**get_sks_cluster_inspection**](SksApi.md#get_sks_cluster_inspection) | **GET** /sks-cluster/{id}/inspection | Get the latest inspection result
+[**get_sks_nodepool**](SksApi.md#get_sks_nodepool) | **GET** /sks-cluster/{id}/nodepool/{sks-nodepool-id} | Retrieve SKS Nodepool details
 [**list_sks_cluster_deprecated_resources**](SksApi.md#list_sks_cluster_deprecated_resources) | **GET** /sks-cluster-deprecated-resources/{id} | Resources that are scheduled to be removed in future kubernetes releases
 [**list_sks_cluster_versions**](SksApi.md#list_sks_cluster_versions) | **GET** /sks-cluster-version | List available versions for SKS clusters
 [**list_sks_clusters**](SksApi.md#list_sks_clusters) | **GET** /sks-cluster | List SKS clusters
 [**reset_sks_cluster_field**](SksApi.md#reset_sks_cluster_field) | **DELETE** /sks-cluster/{id}/{field} | Reset an SKS cluster field to its default value
-[**reset_sks_nodepool_field**](SksApi.md#reset_sks_nodepool_field) | **DELETE** /sks-cluster/{id}/nodepool/{sks_nodepool_id}/{field} | Reset an SKS Nodepool field to its default value
+[**reset_sks_nodepool_field**](SksApi.md#reset_sks_nodepool_field) | **DELETE** /sks-cluster/{id}/nodepool/{sks-nodepool-id}/{field} | Reset an SKS Nodepool field to its default value
 [**rotate_sks_ccm_credentials**](SksApi.md#rotate_sks_ccm_credentials) | **PUT** /sks-cluster/{id}/rotate-ccm-credentials | Rotate Exoscale CCM credentials
 [**rotate_sks_operators_ca**](SksApi.md#rotate_sks_operators_ca) | **PUT** /sks-cluster/{id}/rotate-operators-ca | Rotate operators certificate authority
-[**scale_sks_nodepool**](SksApi.md#scale_sks_nodepool) | **PUT** /sks-cluster/{id}/nodepool/{sks_nodepool_id}:scale | Scale a SKS Nodepool
+[**scale_sks_nodepool**](SksApi.md#scale_sks_nodepool) | **PUT** /sks-cluster/{id}/nodepool/{sks-nodepool-id}:scale | Scale a SKS Nodepool
 [**update_sks_cluster**](SksApi.md#update_sks_cluster) | **PUT** /sks-cluster/{id} | Update an SKS cluster
-[**update_sks_nodepool**](SksApi.md#update_sks_nodepool) | **PUT** /sks-cluster/{id}/nodepool/{sks_nodepool_id} | Update an SKS Nodepool
+[**update_sks_nodepool**](SksApi.md#update_sks_nodepool) | **PUT** /sks-cluster/{id}/nodepool/{sks-nodepool-id} | Update an SKS Nodepool
 [**upgrade_sks_cluster**](SksApi.md#upgrade_sks_cluster) | **PUT** /sks-cluster/{id}/upgrade | Upgrade an SKS cluster
 [**upgrade_sks_cluster_service_level**](SksApi.md#upgrade_sks_cluster_service_level) | **PUT** /sks-cluster/{id}/upgrade-service-level | Upgrade a SKS cluster to pro
 
@@ -30,7 +31,7 @@ Method | HTTP request | Description
 
 ## create_sks_cluster
 
-> crate::models::Operation create_sks_cluster(create_sks_cluster_request)
+> models::Operation create_sks_cluster(create_sks_cluster_request)
 Create an SKS cluster
 
 
@@ -44,7 +45,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -60,7 +61,7 @@ No authorization required
 
 ## create_sks_nodepool
 
-> crate::models::Operation create_sks_nodepool(id, create_sks_nodepool_request)
+> models::Operation create_sks_nodepool(id, create_sks_nodepool_request)
 Create a new SKS Nodepool
 
 
@@ -75,7 +76,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -91,7 +92,7 @@ No authorization required
 
 ## delete_sks_cluster
 
-> crate::models::Operation delete_sks_cluster(id)
+> models::Operation delete_sks_cluster(id)
 Delete an SKS cluster
 
 
@@ -105,7 +106,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -121,7 +122,7 @@ No authorization required
 
 ## delete_sks_nodepool
 
-> crate::models::Operation delete_sks_nodepool(id, sks_nodepool_id)
+> models::Operation delete_sks_nodepool(id, sks_nodepool_id)
 Delete an SKS Nodepool
 
 
@@ -136,7 +137,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -152,7 +153,7 @@ No authorization required
 
 ## evict_sks_nodepool_members
 
-> crate::models::Operation evict_sks_nodepool_members(id, sks_nodepool_id, evict_sks_nodepool_members_request)
+> models::Operation evict_sks_nodepool_members(id, sks_nodepool_id, evict_sks_nodepool_members_request)
 Evict Nodepool members
 
 This operation evicts the specified Compute instances member from the Nodepool, shrinking it to `&lt;current nodepool size&gt; - &lt;# evicted members&gt;`.
@@ -168,7 +169,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -184,7 +185,7 @@ No authorization required
 
 ## generate_sks_cluster_kubeconfig
 
-> crate::models::GenerateSksClusterKubeconfig200Response generate_sks_cluster_kubeconfig(id, sks_kubeconfig_request)
+> models::GenerateSksClusterKubeconfig200Response generate_sks_cluster_kubeconfig(id, sks_kubeconfig_request)
 Generate a new Kubeconfig file for a SKS cluster
 
 This operation returns a Kubeconfig file encoded in base64.
@@ -199,7 +200,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::GenerateSksClusterKubeconfig200Response**](generate_sks_cluster_kubeconfig_200_response.md)
+[**models::GenerateSksClusterKubeconfig200Response**](generate_sks_cluster_kubeconfig_200_response.md)
 
 ### Authorization
 
@@ -215,7 +216,7 @@ No authorization required
 
 ## get_sks_cluster
 
-> crate::models::SksCluster get_sks_cluster(id)
+> models::SksCluster get_sks_cluster(id)
 Retrieve SKS cluster details
 
 
@@ -229,7 +230,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SksCluster**](sks-cluster.md)
+[**models::SksCluster**](sks-cluster.md)
 
 ### Authorization
 
@@ -245,7 +246,7 @@ No authorization required
 
 ## get_sks_cluster_authority_cert
 
-> crate::models::GetSksClusterAuthorityCert200Response get_sks_cluster_authority_cert(id, authority)
+> models::GetSksClusterAuthorityCert200Response get_sks_cluster_authority_cert(id, authority)
 Get the certificate for a SKS cluster authority
 
 This operation returns the certificate for the given SKS cluster authority encoded in base64.
@@ -260,7 +261,37 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::GetSksClusterAuthorityCert200Response**](get_sks_cluster_authority_cert_200_response.md)
+[**models::GetSksClusterAuthorityCert200Response**](get_sks_cluster_authority_cert_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_sks_cluster_inspection
+
+> std::collections::HashMap<String, serde_json::Value> get_sks_cluster_inspection(id)
+Get the latest inspection result
+
+Helps troubleshoot common problems when deploying a kubernetes cluster. Inspections run every couple of minutes.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 
@@ -276,7 +307,7 @@ No authorization required
 
 ## get_sks_nodepool
 
-> crate::models::SksNodepool get_sks_nodepool(id, sks_nodepool_id)
+> models::SksNodepool get_sks_nodepool(id, sks_nodepool_id)
 Retrieve SKS Nodepool details
 
 
@@ -291,7 +322,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::SksNodepool**](sks-nodepool.md)
+[**models::SksNodepool**](sks-nodepool.md)
 
 ### Authorization
 
@@ -307,7 +338,7 @@ No authorization required
 
 ## list_sks_cluster_deprecated_resources
 
-> Vec<::std::collections::HashMap<String, String>> list_sks_cluster_deprecated_resources(id)
+> Vec<std::collections::HashMap<String, String>> list_sks_cluster_deprecated_resources(id)
 Resources that are scheduled to be removed in future kubernetes releases
 
 This operation returns the deprecated resources for a given cluster
@@ -321,7 +352,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<::std::collections::HashMap<String, String>>**](map.md)
+[**Vec<std::collections::HashMap<String, String>>**](std::collections::HashMap.md)
 
 ### Authorization
 
@@ -337,7 +368,7 @@ No authorization required
 
 ## list_sks_cluster_versions
 
-> crate::models::ListSksClusterVersions200Response list_sks_cluster_versions(include_deprecated)
+> models::ListSksClusterVersions200Response list_sks_cluster_versions(include_deprecated)
 List available versions for SKS clusters
 
 
@@ -351,7 +382,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ListSksClusterVersions200Response**](list_sks_cluster_versions_200_response.md)
+[**models::ListSksClusterVersions200Response**](list_sks_cluster_versions_200_response.md)
 
 ### Authorization
 
@@ -367,7 +398,7 @@ No authorization required
 
 ## list_sks_clusters
 
-> crate::models::ListSksClusters200Response list_sks_clusters()
+> models::ListSksClusters200Response list_sks_clusters()
 List SKS clusters
 
 
@@ -378,7 +409,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListSksClusters200Response**](list_sks_clusters_200_response.md)
+[**models::ListSksClusters200Response**](list_sks_clusters_200_response.md)
 
 ### Authorization
 
@@ -394,7 +425,7 @@ No authorization required
 
 ## reset_sks_cluster_field
 
-> crate::models::Operation reset_sks_cluster_field(id, field)
+> models::Operation reset_sks_cluster_field(id, field)
 Reset an SKS cluster field to its default value
 
 
@@ -409,7 +440,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -425,7 +456,7 @@ No authorization required
 
 ## reset_sks_nodepool_field
 
-> crate::models::Operation reset_sks_nodepool_field(id, sks_nodepool_id, field)
+> models::Operation reset_sks_nodepool_field(id, sks_nodepool_id, field)
 Reset an SKS Nodepool field to its default value
 
 
@@ -441,7 +472,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -457,7 +488,7 @@ No authorization required
 
 ## rotate_sks_ccm_credentials
 
-> crate::models::Operation rotate_sks_ccm_credentials(id)
+> models::Operation rotate_sks_ccm_credentials(id)
 Rotate Exoscale CCM credentials
 
 
@@ -471,7 +502,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -487,7 +518,7 @@ No authorization required
 
 ## rotate_sks_operators_ca
 
-> crate::models::Operation rotate_sks_operators_ca(id)
+> models::Operation rotate_sks_operators_ca(id)
 Rotate operators certificate authority
 
 
@@ -501,7 +532,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -517,7 +548,7 @@ No authorization required
 
 ## scale_sks_nodepool
 
-> crate::models::Operation scale_sks_nodepool(id, sks_nodepool_id, scale_sks_nodepool_request)
+> models::Operation scale_sks_nodepool(id, sks_nodepool_id, scale_sks_nodepool_request)
 Scale a SKS Nodepool
 
 
@@ -533,7 +564,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -549,7 +580,7 @@ No authorization required
 
 ## update_sks_cluster
 
-> crate::models::Operation update_sks_cluster(id, update_sks_cluster_request)
+> models::Operation update_sks_cluster(id, update_sks_cluster_request)
 Update an SKS cluster
 
 
@@ -564,7 +595,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -580,7 +611,7 @@ No authorization required
 
 ## update_sks_nodepool
 
-> crate::models::Operation update_sks_nodepool(id, sks_nodepool_id, update_sks_nodepool_request)
+> models::Operation update_sks_nodepool(id, sks_nodepool_id, update_sks_nodepool_request)
 Update an SKS Nodepool
 
 
@@ -596,7 +627,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -612,7 +643,7 @@ No authorization required
 
 ## upgrade_sks_cluster
 
-> crate::models::Operation upgrade_sks_cluster(id, upgrade_sks_cluster_request)
+> models::Operation upgrade_sks_cluster(id, upgrade_sks_cluster_request)
 Upgrade an SKS cluster
 
 
@@ -627,7 +658,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -643,7 +674,7 @@ No authorization required
 
 ## upgrade_sks_cluster_service_level
 
-> crate::models::Operation upgrade_sks_cluster_service_level(id)
+> models::Operation upgrade_sks_cluster_service_level(id)
 Upgrade a SKS cluster to pro
 
 
@@ -657,7 +688,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

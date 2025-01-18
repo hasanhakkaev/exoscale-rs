@@ -9,8 +9,7 @@
  */
 
 /// AccessKeyResource : Access key resource
-
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AccessKeyResource {
     /// Resource domain
     #[serde(rename = "domain", skip_serializing_if = "Option::is_none")]
@@ -19,7 +18,7 @@ pub struct AccessKeyResource {
     #[serde(rename = "resource-type", skip_serializing_if = "Option::is_none")]
     pub resource_type: Option<ResourceType>,
     /// Resource name
-    #[serde(rename = "resource_name", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "resource-name", skip_serializing_if = "Option::is_none")]
     pub resource_name: Option<String>,
 }
 
@@ -33,7 +32,6 @@ impl AccessKeyResource {
         }
     }
 }
-
 /// Resource domain
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Domain {

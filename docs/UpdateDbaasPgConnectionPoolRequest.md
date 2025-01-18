@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **database_name** | Option<**String**> |  | [optional]
-**mode** | Option<[**crate::models::EnumPgPoolMode**](enum-pg-pool-mode.md)> |  | [optional]
+**mode** | Option<[**models::EnumPgPoolMode**](enum-pg-pool-mode.md)> |  | [optional]
 **size** | Option<**i64**> |  | [optional]
 **username** | Option<**String**> |  | [optional]
 

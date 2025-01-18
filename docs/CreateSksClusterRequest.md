@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | Option<**String**> | Cluster description | [optional]
-**labels** | Option<**::std::collections::HashMap<String, String>**> |  | [optional]
+**labels** | Option<**std::collections::HashMap<String, String>**> |  | [optional]
 **cni** | Option<**String**> | Cluster CNI | [optional]
 **auto_upgrade** | Option<**bool**> | Enable auto upgrade of the control plane to the latest patch version available | [optional]
-**oidc** | Option<[**crate::models::SksOidc**](sks-oidc.md)> |  | [optional]
+**oidc** | Option<[**models::SksOidc**](sks-oidc.md)> |  | [optional]
 **name** | **String** | Cluster name | 
 **level** | **String** | Cluster service level | 
 **addons** | Option<**Vec<String>**> | Cluster addons | [optional]

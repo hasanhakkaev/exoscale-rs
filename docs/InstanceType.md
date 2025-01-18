@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **gpus** | Option<**i64**> | GPU count | [optional][readonly]
 **authorized** | Option<**bool**> | Requires authorization or publicly available | [optional][readonly]
 **memory** | Option<**i64**> | Available memory | [optional][readonly]
-**zones** | Option<[**Vec<crate::models::ZoneName>**](zone_name.md)> | Instance Type available zones | [optional][readonly]
+**zones** | Option<[**Vec<models::ZoneName>**](zone-name.md)> | Instance Type available zones | [optional][readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

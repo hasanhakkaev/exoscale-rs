@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## get_quota
 
-> crate::models::Quota get_quota(entity)
+> models::Quota get_quota(entity)
 Retrieve Resource Quota
 
 
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Quota**](quota.md)
+[**models::Quota**](quota.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ No authorization required
 
 ## list_quotas
 
-> crate::models::ListQuotas200Response list_quotas()
+> models::ListQuotas200Response list_quotas()
 List Organization Quotas
 
 
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListQuotas200Response**](list_quotas_200_response.md)
+[**models::ListQuotas200Response**](list_quotas_200_response.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## get_operation
 
-> crate::models::Operation get_operation(id)
+> models::Operation get_operation(id)
 Retrieve Operation details
 
 
@@ -24,7 +24,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

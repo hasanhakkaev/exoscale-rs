@@ -1,0 +1,11 @@
+# DbaasEndpointPrometheusSecrets
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**basic_auth_password** | Option<**String**> | Prometheus basic authentication password | [optional]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

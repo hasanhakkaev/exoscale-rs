@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## create_instance_pool
 
-> crate::models::Operation create_instance_pool(create_instance_pool_request)
+> models::Operation create_instance_pool(create_instance_pool_request)
 Create an Instance Pool
 
 
@@ -31,7 +31,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -47,7 +47,7 @@ No authorization required
 
 ## delete_instance_pool
 
-> crate::models::Operation delete_instance_pool(id)
+> models::Operation delete_instance_pool(id)
 Delete an Instance Pool
 
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 
 ## evict_instance_pool_members
 
-> crate::models::Operation evict_instance_pool_members(id, evict_instance_pool_members_request)
+> models::Operation evict_instance_pool_members(id, evict_instance_pool_members_request)
 Evict Instance Pool members
 
 This operation evicts the specified Compute instances member from the Instance Pool, shrinking it to `&lt;current pool size&gt; - &lt;# evicted members&gt;`.
@@ -92,7 +92,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ No authorization required
 
 ## get_instance_pool
 
-> crate::models::InstancePool get_instance_pool(id)
+> models::InstancePool get_instance_pool(id)
 Retrieve Instance Pool details
 
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::InstancePool**](instance-pool.md)
+[**models::InstancePool**](instance-pool.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ No authorization required
 
 ## list_instance_pools
 
-> crate::models::ListInstancePools200Response list_instance_pools()
+> models::ListInstancePools200Response list_instance_pools()
 List Instance Pools
 
 
@@ -149,7 +149,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListInstancePools200Response**](list_instance_pools_200_response.md)
+[**models::ListInstancePools200Response**](list_instance_pools_200_response.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ No authorization required
 
 ## reset_instance_pool_field
 
-> crate::models::Operation reset_instance_pool_field(id, field)
+> models::Operation reset_instance_pool_field(id, field)
 Reset an Instance Pool field to its default value
 
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ No authorization required
 
 ## scale_instance_pool
 
-> crate::models::Operation scale_instance_pool(id, scale_instance_pool_request)
+> models::Operation scale_instance_pool(id, scale_instance_pool_request)
 Scale an Instance Pool
 
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ No authorization required
 
 ## update_instance_pool
 
-> crate::models::Operation update_instance_pool(id, update_instance_pool_request)
+> models::Operation update_instance_pool(id, update_instance_pool_request)
 Update an Instance Pool
 
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

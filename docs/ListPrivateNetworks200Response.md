@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**private_networks** | Option<[**Vec<crate::models::PrivateNetwork>**](private-network.md)> |  | [optional]
+**private_networks** | Option<[**Vec<models::PrivateNetwork>**](private-network.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

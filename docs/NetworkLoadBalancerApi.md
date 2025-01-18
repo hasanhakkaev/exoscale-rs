@@ -7,20 +7,20 @@ Method | HTTP request | Description
 [**add_service_to_load_balancer**](NetworkLoadBalancerApi.md#add_service_to_load_balancer) | **POST** /load-balancer/{id}/service | Add a Load Balancer Service
 [**create_load_balancer**](NetworkLoadBalancerApi.md#create_load_balancer) | **POST** /load-balancer | Create a Load Balancer
 [**delete_load_balancer**](NetworkLoadBalancerApi.md#delete_load_balancer) | **DELETE** /load-balancer/{id} | Delete a Load Balancer
-[**delete_load_balancer_service**](NetworkLoadBalancerApi.md#delete_load_balancer_service) | **DELETE** /load-balancer/{id}/service/{service_id} | Delete a Load Balancer Service
+[**delete_load_balancer_service**](NetworkLoadBalancerApi.md#delete_load_balancer_service) | **DELETE** /load-balancer/{id}/service/{service-id} | Delete a Load Balancer Service
 [**get_load_balancer**](NetworkLoadBalancerApi.md#get_load_balancer) | **GET** /load-balancer/{id} | Retrieve Load Balancer details
-[**get_load_balancer_service**](NetworkLoadBalancerApi.md#get_load_balancer_service) | **GET** /load-balancer/{id}/service/{service_id} | Retrieve Load Balancer Service details
+[**get_load_balancer_service**](NetworkLoadBalancerApi.md#get_load_balancer_service) | **GET** /load-balancer/{id}/service/{service-id} | Retrieve Load Balancer Service details
 [**list_load_balancers**](NetworkLoadBalancerApi.md#list_load_balancers) | **GET** /load-balancer | List Load Balancers
 [**reset_load_balancer_field**](NetworkLoadBalancerApi.md#reset_load_balancer_field) | **DELETE** /load-balancer/{id}/{field} | Reset a Load Balancer field to its default value
-[**reset_load_balancer_service_field**](NetworkLoadBalancerApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service_id}/{field} | Reset a Load Balancer Service field to its default value
+[**reset_load_balancer_service_field**](NetworkLoadBalancerApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service-id}/{field} | Reset a Load Balancer Service field to its default value
 [**update_load_balancer**](NetworkLoadBalancerApi.md#update_load_balancer) | **PUT** /load-balancer/{id} | Update a Load Balancer
-[**update_load_balancer_service**](NetworkLoadBalancerApi.md#update_load_balancer_service) | **PUT** /load-balancer/{id}/service/{service_id} | Update a Load Balancer Service
+[**update_load_balancer_service**](NetworkLoadBalancerApi.md#update_load_balancer_service) | **PUT** /load-balancer/{id}/service/{service-id} | Update a Load Balancer Service
 
 
 
 ## add_service_to_load_balancer
 
-> crate::models::Operation add_service_to_load_balancer(id, add_service_to_load_balancer_request)
+> models::Operation add_service_to_load_balancer(id, add_service_to_load_balancer_request)
 Add a Load Balancer Service
 
 
@@ -35,7 +35,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -51,7 +51,7 @@ No authorization required
 
 ## create_load_balancer
 
-> crate::models::Operation create_load_balancer(create_load_balancer_request)
+> models::Operation create_load_balancer(create_load_balancer_request)
 Create a Load Balancer
 
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ No authorization required
 
 ## delete_load_balancer
 
-> crate::models::Operation delete_load_balancer(id)
+> models::Operation delete_load_balancer(id)
 Delete a Load Balancer
 
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ No authorization required
 
 ## delete_load_balancer_service
 
-> crate::models::Operation delete_load_balancer_service(id, service_id)
+> models::Operation delete_load_balancer_service(id, service_id)
 Delete a Load Balancer Service
 
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ No authorization required
 
 ## get_load_balancer
 
-> crate::models::LoadBalancer get_load_balancer(id)
+> models::LoadBalancer get_load_balancer(id)
 Retrieve Load Balancer details
 
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::LoadBalancer**](load-balancer.md)
+[**models::LoadBalancer**](load-balancer.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ No authorization required
 
 ## get_load_balancer_service
 
-> crate::models::LoadBalancerService get_load_balancer_service(id, service_id)
+> models::LoadBalancerService get_load_balancer_service(id, service_id)
 Retrieve Load Balancer Service details
 
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::LoadBalancerService**](load-balancer-service.md)
+[**models::LoadBalancerService**](load-balancer-service.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ No authorization required
 
 ## list_load_balancers
 
-> crate::models::ListLoadBalancers200Response list_load_balancers()
+> models::ListLoadBalancers200Response list_load_balancers()
 List Load Balancers
 
 
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**crate::models::ListLoadBalancers200Response**](list_load_balancers_200_response.md)
+[**models::ListLoadBalancers200Response**](list_load_balancers_200_response.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ No authorization required
 
 ## reset_load_balancer_field
 
-> crate::models::Operation reset_load_balancer_field(id, field)
+> models::Operation reset_load_balancer_field(id, field)
 Reset a Load Balancer field to its default value
 
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ No authorization required
 
 ## reset_load_balancer_service_field
 
-> crate::models::Operation reset_load_balancer_service_field(id, service_id, field)
+> models::Operation reset_load_balancer_service_field(id, service_id, field)
 Reset a Load Balancer Service field to its default value
 
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ No authorization required
 
 ## update_load_balancer
 
-> crate::models::Operation update_load_balancer(id, update_load_balancer_request)
+> models::Operation update_load_balancer(id, update_load_balancer_request)
 Update a Load Balancer
 
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ No authorization required
 
 ## update_load_balancer_service
 
-> crate::models::Operation update_load_balancer_service(id, service_id, update_load_balancer_service_request)
+> models::Operation update_load_balancer_service(id, service_id, update_load_balancer_service_request)
 Update a Load Balancer Service
 
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 

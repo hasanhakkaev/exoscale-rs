@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Operation ID | [optional][readonly]
 **reason** | Option<**String**> | Operation failure reason | [optional][readonly]
-**reference** | Option<[**crate::models::OperationReference**](operation_reference.md)> |  | [optional]
+**reference** | Option<[**models::OperationReference**](operation_reference.md)> |  | [optional]
 **message** | Option<**String**> | Operation message | [optional][readonly]
 **state** | Option<**String**> | Operation status | [optional][readonly]
 

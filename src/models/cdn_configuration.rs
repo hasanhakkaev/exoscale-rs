@@ -10,8 +10,6 @@
 
 /// CdnConfiguration : CDN configuration
 
-
-
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CdnConfiguration {
     /// CDN configuration bucket name
@@ -27,6 +25,7 @@ pub struct CdnConfiguration {
 
 impl CdnConfiguration {
     /// CDN configuration
+    #[allow(dead_code)]
     pub fn new() -> CdnConfiguration {
         CdnConfiguration {
             bucket: None,
@@ -52,4 +51,3 @@ impl Default for Status {
         Self::Deactivated
     }
 }
-

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## delete_reverse_dns_elastic_ip
 
-> crate::models::Operation delete_reverse_dns_elastic_ip(id)
+> models::Operation delete_reverse_dns_elastic_ip(id)
 Delete the PTR DNS record for an elastic IP
 
 
@@ -29,7 +29,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -45,7 +45,7 @@ No authorization required
 
 ## delete_reverse_dns_instance
 
-> crate::models::Operation delete_reverse_dns_instance(id)
+> models::Operation delete_reverse_dns_instance(id)
 Delete the PTR DNS record for an instance
 
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 
 ## get_reverse_dns_elastic_ip
 
-> crate::models::ReverseDnsRecord get_reverse_dns_elastic_ip(id)
+> models::ReverseDnsRecord get_reverse_dns_elastic_ip(id)
 Query the PTR DNS records for an elastic IP
 
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ReverseDnsRecord**](reverse-dns-record.md)
+[**models::ReverseDnsRecord**](reverse-dns-record.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 
 ## get_reverse_dns_instance
 
-> crate::models::ReverseDnsRecord get_reverse_dns_instance(id)
+> models::ReverseDnsRecord get_reverse_dns_instance(id)
 Query the PTR DNS records for an instance
 
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::ReverseDnsRecord**](reverse-dns-record.md)
+[**models::ReverseDnsRecord**](reverse-dns-record.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ No authorization required
 
 ## update_reverse_dns_elastic_ip
 
-> crate::models::Operation update_reverse_dns_elastic_ip(id, update_reverse_dns_elastic_ip_request)
+> models::Operation update_reverse_dns_elastic_ip(id, update_reverse_dns_elastic_ip_request)
 Update/Create the PTR DNS record for an elastic IP
 
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ No authorization required
 
 ## update_reverse_dns_instance
 
-> crate::models::Operation update_reverse_dns_instance(id, update_reverse_dns_elastic_ip_request)
+> models::Operation update_reverse_dns_instance(id, update_reverse_dns_elastic_ip_request)
 Update/Create the PTR DNS record for an instance
 
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**crate::models::Operation**](operation.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
