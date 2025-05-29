@@ -18,7 +18,7 @@ jobs:
         uses: Swatinem/rust-cache@v2.0.0
 
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Unit tests
         run: cargo test --verbose
@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Run cargo deny
         uses: EmbarkStudios/cargo-deny-action@v1
