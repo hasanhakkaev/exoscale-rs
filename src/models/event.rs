@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Event: A notable Mutation Event which happened on the infrastructure
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Event {
     #[serde(rename = "iam-user", skip_serializing_if = "Option::is_none")]

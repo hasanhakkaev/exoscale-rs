@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsRedis200ResponseSettingsRedis: Redis configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsRedis200ResponseSettingsRedis {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

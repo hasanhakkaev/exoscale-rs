@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// AddRuleToSecurityGroupRequestIcmp: ICMP details (default: -1 (ANY))
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AddRuleToSecurityGroupRequestIcmp {
     #[serde(rename = "code", skip_serializing_if = "Option::is_none")]

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UpdateDbaasServiceMysqlRequestMaintenance: Automatic maintenance settings
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceMysqlRequestMaintenance {
     /// Day of week for installing updates

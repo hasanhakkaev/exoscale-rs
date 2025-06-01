@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasIntegrationTypeSettings: A JSON schema of additional settings of the integration.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasIntegrationTypeSettings {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

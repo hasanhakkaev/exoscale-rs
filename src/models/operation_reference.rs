@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// OperationReference: Related resource reference
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OperationReference {
     /// Reference ID

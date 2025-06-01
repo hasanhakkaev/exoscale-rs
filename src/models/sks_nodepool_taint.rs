@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SksNodepoolTaint: Nodepool taint
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SksNodepoolTaint {
     /// Nodepool taint value

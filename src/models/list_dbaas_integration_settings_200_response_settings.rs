@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ListDbaasIntegrationSettings200ResponseSettings: The JSON schema representing the settings for the given integration type, source, and destination service types.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListDbaasIntegrationSettings200ResponseSettings {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// BlockStorageSnapshotTarget: Target block storage snapshot
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct BlockStorageSnapshotTarget {
     /// Block storage snapshot ID

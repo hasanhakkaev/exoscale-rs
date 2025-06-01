@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasExternalIntegration: Integrations with other services
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasExternalIntegration {
     /// Description of the integration

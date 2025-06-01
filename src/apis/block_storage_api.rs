@@ -123,7 +123,7 @@ pub async fn attach_block_storage_volume_to_instance(configuration: &configurati
     let local_var_attach_block_storage_volume_to_instance_request = attach_block_storage_volume_to_instance_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -143,7 +143,7 @@ pub async fn create_block_storage_snapshot(configuration: &configuration::Config
     let local_var_create_block_storage_snapshot_request = create_block_storage_snapshot_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -180,7 +180,7 @@ pub async fn delete_block_storage_snapshot(configuration: &configuration::Config
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -199,7 +199,7 @@ pub async fn delete_block_storage_volume(configuration: &configuration::Configur
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -218,7 +218,7 @@ pub async fn detach_block_storage_volume(configuration: &configuration::Configur
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -237,7 +237,7 @@ pub async fn get_block_storage_snapshot(configuration: &configuration::Configura
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -256,7 +256,7 @@ pub async fn get_block_storage_volume(configuration: &configuration::Configurati
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -314,7 +314,7 @@ pub async fn resize_block_storage_volume(configuration: &configuration::Configur
     let local_var_resize_block_storage_volume_request = resize_block_storage_volume_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -334,7 +334,7 @@ pub async fn update_block_storage_snapshot(configuration: &configuration::Config
     let local_var_update_block_storage_snapshot_request = update_block_storage_snapshot_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -354,7 +354,7 @@ pub async fn update_block_storage_volume(configuration: &configuration::Configur
     let local_var_update_block_storage_volume_request = update_block_storage_volume_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

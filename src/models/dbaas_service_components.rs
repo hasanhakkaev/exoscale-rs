@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasServiceComponents: Service component information objects
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasServiceComponents {
     /// Service component name

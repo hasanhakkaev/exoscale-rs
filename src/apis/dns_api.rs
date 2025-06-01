@@ -117,7 +117,7 @@ pub async fn create_dns_domain_record(configuration: &configuration::Configurati
     let local_var_create_dns_domain_record_request = create_dns_domain_record_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(&local_var_domain_id));
+                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(local_var_domain_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -136,7 +136,7 @@ pub async fn delete_dns_domain(configuration: &configuration::Configuration, id:
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -156,8 +156,8 @@ pub async fn delete_dns_domain_record(configuration: &configuration::Configurati
     let local_var_record_id = record_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(&local_var_domain_id));
-                path_params_map.insert("record_id".to_string(), crate::apis::urlencode(&local_var_record_id));
+                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(local_var_domain_id));
+                path_params_map.insert("record_id".to_string(), crate::apis::urlencode(local_var_record_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -176,7 +176,7 @@ pub async fn get_dns_domain(configuration: &configuration::Configuration, id: St
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -196,8 +196,8 @@ pub async fn get_dns_domain_record(configuration: &configuration::Configuration,
     let local_var_record_id = record_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(&local_var_domain_id));
-                path_params_map.insert("record_id".to_string(), crate::apis::urlencode(&local_var_record_id));
+                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(local_var_domain_id));
+                path_params_map.insert("record_id".to_string(), crate::apis::urlencode(local_var_record_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -216,7 +216,7 @@ pub async fn get_dns_domain_zone_file(configuration: &configuration::Configurati
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -235,7 +235,7 @@ pub async fn list_dns_domain_records(configuration: &configuration::Configuratio
     let local_var_domain_id = domain_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(&local_var_domain_id));
+                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(local_var_domain_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -273,8 +273,8 @@ pub async fn update_dns_domain_record(configuration: &configuration::Configurati
     let local_var_update_dns_domain_record_request = update_dns_domain_record_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(&local_var_domain_id));
-                path_params_map.insert("record_id".to_string(), crate::apis::urlencode(&local_var_record_id));
+                path_params_map.insert("domain_id".to_string(), crate::apis::urlencode(local_var_domain_id));
+                path_params_map.insert("record_id".to_string(), crate::apis::urlencode(local_var_record_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

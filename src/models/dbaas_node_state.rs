@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasNodeState: Automatic maintenance settings
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasNodeState {
     /// Name of the service node

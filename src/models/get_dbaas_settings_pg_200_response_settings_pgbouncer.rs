@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsPg200ResponseSettingsPgbouncer: PGBouncer connection pooling settings
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsPg200ResponseSettingsPgbouncer {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

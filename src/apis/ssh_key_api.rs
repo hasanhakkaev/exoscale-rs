@@ -50,7 +50,7 @@ pub async fn delete_ssh_key(configuration: &configuration::Configuration, name: 
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -69,7 +69,7 @@ pub async fn get_ssh_key(configuration: &configuration::Configuration, name: &st
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SksOidc: SKS Cluster OpenID config map
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SksOidc {
     /// OpenID client ID

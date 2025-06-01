@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Zone: Zone
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Zone {
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]

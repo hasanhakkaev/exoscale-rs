@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsKafka200ResponseSettingsKafka: Kafka broker configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsKafka200ResponseSettingsKafka {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

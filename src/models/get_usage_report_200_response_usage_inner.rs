@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetUsageReport200ResponseUsageInner: Usage
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetUsageReport200ResponseUsageInner {
     /// Period Start Date

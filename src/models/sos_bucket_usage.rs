@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SosBucketUsage: SOS Bucket usage
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SosBucketUsage {
     /// SOS Bucket name

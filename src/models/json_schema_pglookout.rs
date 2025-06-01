@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// JsonSchemaPglookout: System-wide settings for pglookout.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct JsonSchemaPglookout {
     /// Number of seconds of master unavailability before triggering database failover to standby

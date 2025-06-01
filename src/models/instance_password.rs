@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// InstancePassword: Instance password
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct InstancePassword {
     /// Password

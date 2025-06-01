@@ -135,10 +135,10 @@ pub {{#supportAsync}}async {{/supportAsync}}fn {{{operationId}}}(configuration: 
     let mut path_params_map = std::collections::HashMap::new();
     {{#pathParams}}
         {{#vendorExtensions.x-group-parameters}}
-                path_params_map.insert("{{baseName}}".to_string(), crate::apis::urlencode(&params.{{{paramName}}}));
+                path_params_map.insert("{{baseName}}".to_string(), crate::apis::urlencode(params.{{{paramName}}}));
         {{/vendorExtensions.x-group-parameters}}
         {{^vendorExtensions.x-group-parameters}}
-                path_params_map.insert("{{baseName}}".to_string(), crate::apis::urlencode(&local_var_{{{paramName}}}));
+                path_params_map.insert("{{baseName}}".to_string(), crate::apis::urlencode(local_var_{{{paramName}}}));
         {{/vendorExtensions.x-group-parameters}}
     {{/pathParams}}
 

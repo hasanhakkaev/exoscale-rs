@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ListInstances200ResponseInstancesInner: Instance
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListInstances200ResponseInstancesInner {
     #[serde(rename = "public-ip-assignment", skip_serializing_if = "Option::is_none")]

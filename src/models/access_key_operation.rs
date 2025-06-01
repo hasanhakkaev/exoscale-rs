@@ -10,7 +10,7 @@
 
 use crate::models;
 use serde::{Deserialize, Serialize};
-/// AccessKeyOperation: Access key operation
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AccessKeyOperation {
     /// Name of the operation
@@ -30,3 +30,4 @@ impl AccessKeyOperation {
         }
     }
 }
+

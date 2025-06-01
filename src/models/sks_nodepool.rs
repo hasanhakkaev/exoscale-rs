@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SksNodepool: SKS Nodepool
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SksNodepool {
     /// Nodepool Anti-affinity Groups

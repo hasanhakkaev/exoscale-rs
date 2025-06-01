@@ -2,7 +2,7 @@
 name = "exoscale-rs"
 version = "2.1.0"
 authors = ["api@exoscale.com"]
-description = " Infrastructure automation API, allowing programmatic access to all Exoscale products and services.  The [OpenAPI Specification](http://spec.openapis.org/oas/v3.0.3.html) source of this documentation can be obtained here: * [JSON format](https://openapi-v2.exoscale.com/source.json) * [YAML format](https://openapi-v2.exoscale.com/source.yaml)"
+description = " Infrastructure automation API, allowing programmatic access to all Exoscale products and services.  The [OpenAPI Specification](http://spec.openapis.org/oas/v3.0.3.html) source of this documentation can be obtained here:  * [JSON format](https://openapi-v2.exoscale.com/source.json) * [YAML format](https://openapi-v2.exoscale.com/source.yaml)"
 license = "MIT"
 edition = "2021"
 repository = "https://github.com/hasanhakkaev/exoscale-rs"

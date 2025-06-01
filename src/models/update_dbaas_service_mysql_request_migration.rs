@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UpdateDbaasServiceMysqlRequestMigration: Migrate data from existing server
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceMysqlRequestMigration {
     /// Hostname or IP address of the server where to migrate data from

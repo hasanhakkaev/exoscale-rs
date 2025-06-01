@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ElasticIpHealthcheck: Elastic IP address healthcheck
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ElasticIpHealthcheck {
     /// Number of attempts before considering the target healthy (default: 2)

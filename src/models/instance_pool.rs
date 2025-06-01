@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// InstancePool: Instance Pool
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct InstancePool {
     /// Instance Pool Anti-affinity Groups

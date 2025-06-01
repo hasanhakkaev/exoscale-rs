@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsKafka200ResponseSettingsSchemaRegistry: Schema Registry configuration
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsKafka200ResponseSettingsSchemaRegistry {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

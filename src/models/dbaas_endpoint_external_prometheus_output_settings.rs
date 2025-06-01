@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasEndpointExternalPrometheusOutputSettings: External integration Prometheus configuration
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasEndpointExternalPrometheusOutputSettings {
     /// Prometheus basic authentication username

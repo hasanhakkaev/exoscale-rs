@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SksKubeconfigRequest: Kubeconfig request for a SKS cluster
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SksKubeconfigRequest {
     /// Validity in seconds of the Kubeconfig user certificate (default: 30 days)

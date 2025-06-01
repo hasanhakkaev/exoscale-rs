@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasBackupConfig: DBaaS plan backup config
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasBackupConfig {
     /// Maximum number of backups to keep. Zero when no backups are created.

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Resource: Resource
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Resource {
     /// Resource ID

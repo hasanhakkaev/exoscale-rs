@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// IamRole: IAM Role
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IamRole {
     /// IAM Role ID

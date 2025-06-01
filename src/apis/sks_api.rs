@@ -221,7 +221,7 @@ pub async fn create_sks_nodepool(configuration: &configuration::Configuration, i
     let local_var_create_sks_nodepool_request = create_sks_nodepool_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -240,7 +240,7 @@ pub async fn delete_sks_cluster(configuration: &configuration::Configuration, id
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -260,8 +260,8 @@ pub async fn delete_sks_nodepool(configuration: &configuration::Configuration, i
     let local_var_sks_nodepool_id = sks_nodepool_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(&local_var_sks_nodepool_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -282,8 +282,8 @@ pub async fn evict_sks_nodepool_members(configuration: &configuration::Configura
     let local_var_evict_sks_nodepool_members_request = evict_sks_nodepool_members_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(&local_var_sks_nodepool_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -303,7 +303,7 @@ pub async fn generate_sks_cluster_kubeconfig(configuration: &configuration::Conf
     let local_var_sks_kubeconfig_request = sks_kubeconfig_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -322,7 +322,7 @@ pub async fn get_sks_cluster(configuration: &configuration::Configuration, id: S
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -342,8 +342,8 @@ pub async fn get_sks_cluster_authority_cert(configuration: &configuration::Confi
     let local_var_authority = authority;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("authority".to_string(), crate::apis::urlencode(&local_var_authority));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("authority".to_string(), crate::apis::urlencode(local_var_authority));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -362,7 +362,7 @@ pub async fn get_sks_cluster_inspection(configuration: &configuration::Configura
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -382,8 +382,8 @@ pub async fn get_sks_nodepool(configuration: &configuration::Configuration, id: 
     let local_var_sks_nodepool_id = sks_nodepool_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(&local_var_sks_nodepool_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -402,7 +402,7 @@ pub async fn list_sks_cluster_deprecated_resources(configuration: &configuration
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -460,8 +460,8 @@ pub async fn reset_sks_cluster_field(configuration: &configuration::Configuratio
     let local_var_field = field;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(&local_var_field));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -482,9 +482,9 @@ pub async fn reset_sks_nodepool_field(configuration: &configuration::Configurati
     let local_var_field = field;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(&local_var_sks_nodepool_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(&local_var_field));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
+                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -503,7 +503,7 @@ pub async fn rotate_sks_ccm_credentials(configuration: &configuration::Configura
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -522,7 +522,7 @@ pub async fn rotate_sks_csi_credentials(configuration: &configuration::Configura
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -541,7 +541,7 @@ pub async fn rotate_sks_operators_ca(configuration: &configuration::Configuratio
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -562,8 +562,8 @@ pub async fn scale_sks_nodepool(configuration: &configuration::Configuration, id
     let local_var_scale_sks_nodepool_request = scale_sks_nodepool_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(&local_var_sks_nodepool_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -583,7 +583,7 @@ pub async fn update_sks_cluster(configuration: &configuration::Configuration, id
     let local_var_update_sks_cluster_request = update_sks_cluster_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -604,8 +604,8 @@ pub async fn update_sks_nodepool(configuration: &configuration::Configuration, i
     let local_var_update_sks_nodepool_request = update_sks_nodepool_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(&local_var_sks_nodepool_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -625,7 +625,7 @@ pub async fn upgrade_sks_cluster(configuration: &configuration::Configuration, i
     let local_var_upgrade_sks_cluster_request = upgrade_sks_cluster_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -644,7 +644,7 @@ pub async fn upgrade_sks_cluster_service_level(configuration: &configuration::Co
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

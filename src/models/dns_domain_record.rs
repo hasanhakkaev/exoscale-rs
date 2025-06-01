@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DnsDomainRecord: DNS domain record
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DnsDomainRecord {
     /// DNS domain record update date

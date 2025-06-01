@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsValkey200ResponseSettingsValkey: Valkey configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsValkey200ResponseSettingsValkey {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

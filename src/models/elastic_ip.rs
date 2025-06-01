@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ElasticIp: Elastic IP
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ElasticIp {
     /// Elastic IP ID

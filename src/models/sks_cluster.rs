@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// SksCluster: SKS Cluster
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SksCluster {
     /// Cluster description

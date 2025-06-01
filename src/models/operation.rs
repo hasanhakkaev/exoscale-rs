@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Operation: Operation
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Operation {
     /// Operation ID

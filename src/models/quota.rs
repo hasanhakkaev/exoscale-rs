@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Quota: Organization Quota
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Quota {
     /// Resource Name

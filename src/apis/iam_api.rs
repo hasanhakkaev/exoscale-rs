@@ -208,7 +208,7 @@ pub async fn delete_api_key(configuration: &configuration::Configuration, id: &s
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -227,7 +227,7 @@ pub async fn delete_iam_role(configuration: &configuration::Configuration, id: S
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -246,7 +246,7 @@ pub async fn delete_user(configuration: &configuration::Configuration, id: Strin
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -265,7 +265,7 @@ pub async fn get_api_key(configuration: &configuration::Configuration, id: &str)
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -301,7 +301,7 @@ pub async fn get_iam_role(configuration: &configuration::Configuration, id: Stri
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -407,7 +407,7 @@ pub async fn update_iam_role(configuration: &configuration::Configuration, id: S
     let local_var_update_iam_role_request = update_iam_role_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -427,7 +427,7 @@ pub async fn update_iam_role_policy(configuration: &configuration::Configuration
     let local_var_iam_policy = iam_policy;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -447,7 +447,7 @@ pub async fn update_user_role(configuration: &configuration::Configuration, id: 
     let local_var_update_user_role_request = update_user_role_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

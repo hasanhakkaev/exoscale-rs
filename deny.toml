@@ -8,7 +8,9 @@ allow = [
     "BSL-1.0",
     "Zlib",
     "Unicode-3.0",
-    "BSD-3-Clause"
+    "BSD-3-Clause",
+    "ISC",
+    "CDLA-Permissive-2.0"
 ]
 
 [sources]

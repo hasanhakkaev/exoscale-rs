@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasUserKafkaConnectSecrets: Kafka Connect secrets
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasUserKafkaConnectSecrets {
     /// Kafka Connect username

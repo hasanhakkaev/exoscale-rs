@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasServiceValkeyConnectionInfo: Valkey connection information properties
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasServiceValkeyConnectionInfo {
     #[serde(rename = "uri", skip_serializing_if = "Option::is_none")]

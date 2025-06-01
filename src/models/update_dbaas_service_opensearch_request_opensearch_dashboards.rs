@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UpdateDbaasServiceOpensearchRequestOpensearchDashboards: OpenSearch Dashboards settings
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceOpensearchRequestOpensearchDashboards {
     /// Timeout in milliseconds for requests made by OpenSearch Dashboards towards OpenSearch (default: 30000)

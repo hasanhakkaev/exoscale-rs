@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// BlockStorageVolumeTarget: Target block storage volume
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct BlockStorageVolumeTarget {
     /// Block storage volume ID

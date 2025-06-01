@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsPg200ResponseSettingsPg: postgresql.conf configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsPg200ResponseSettingsPg {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

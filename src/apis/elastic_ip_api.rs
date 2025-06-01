@@ -83,7 +83,7 @@ pub async fn attach_instance_to_elastic_ip(configuration: &configuration::Config
     let local_var_attach_block_storage_volume_to_instance_request = attach_block_storage_volume_to_instance_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -120,7 +120,7 @@ pub async fn delete_elastic_ip(configuration: &configuration::Configuration, id:
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -140,7 +140,7 @@ pub async fn detach_instance_from_elastic_ip(configuration: &configuration::Conf
     let local_var_attach_block_storage_volume_to_instance_request = attach_block_storage_volume_to_instance_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -159,7 +159,7 @@ pub async fn get_elastic_ip(configuration: &configuration::Configuration, id: St
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -196,8 +196,8 @@ pub async fn reset_elastic_ip_field(configuration: &configuration::Configuration
     let local_var_field = field;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(&local_var_field));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -217,7 +217,7 @@ pub async fn update_elastic_ip(configuration: &configuration::Configuration, id:
     let local_var_update_elastic_ip_request = update_elastic_ip_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

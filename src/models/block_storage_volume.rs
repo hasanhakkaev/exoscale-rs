@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// BlockStorageVolume: Block storage volume
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct BlockStorageVolume {
     #[serde(rename = "labels", skip_serializing_if = "Option::is_none")]

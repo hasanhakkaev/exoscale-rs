@@ -16,7 +16,7 @@ pull-oapi-spec:
 generate:
 	openapi-generator generate -i ./static/source.yaml -g rust -o ./ -c config.yaml
 	cargo fix --lib -p exoscale-rs --allow-dirty
-	rm -rf git_push.sh .travis.yml .openapi-generator-ignore
+	rm -rf git_push.sh .travis.yml
 
 .PHONY: test
 test:

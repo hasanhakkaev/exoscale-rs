@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// UpdateDbaasServiceKafkaRequestAuthenticationMethods: Kafka authentication methods
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceKafkaRequestAuthenticationMethods {
     /// Enable certificate/SSL authentication

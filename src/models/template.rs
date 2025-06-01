@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Template: Instance template
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Template {
     /// Template maintainer

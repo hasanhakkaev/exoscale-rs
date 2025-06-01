@@ -107,7 +107,7 @@ pub async fn add_service_to_load_balancer(configuration: &configuration::Configu
     let local_var_add_service_to_load_balancer_request = add_service_to_load_balancer_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -144,7 +144,7 @@ pub async fn delete_load_balancer(configuration: &configuration::Configuration, 
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -164,8 +164,8 @@ pub async fn delete_load_balancer_service(configuration: &configuration::Configu
     let local_var_service_id = service_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(&local_var_service_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(local_var_service_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -184,7 +184,7 @@ pub async fn get_load_balancer(configuration: &configuration::Configuration, id:
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -204,8 +204,8 @@ pub async fn get_load_balancer_service(configuration: &configuration::Configurat
     let local_var_service_id = service_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(&local_var_service_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(local_var_service_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -242,8 +242,8 @@ pub async fn reset_load_balancer_field(configuration: &configuration::Configurat
     let local_var_field = field;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(&local_var_field));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -264,9 +264,9 @@ pub async fn reset_load_balancer_service_field(configuration: &configuration::Co
     let local_var_field = field;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(&local_var_service_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(&local_var_field));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(local_var_service_id));
+                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -286,7 +286,7 @@ pub async fn update_load_balancer(configuration: &configuration::Configuration, 
     let local_var_update_load_balancer_request = update_load_balancer_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -307,8 +307,8 @@ pub async fn update_load_balancer_service(configuration: &configuration::Configu
     let local_var_update_load_balancer_service_request = update_load_balancer_service_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
-                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(&local_var_service_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+                path_params_map.insert("service_id".to_string(), crate::apis::urlencode(local_var_service_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsOpensearch200ResponseSettingsOpensearch: OpenSearch configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsOpensearch200ResponseSettingsOpensearch {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// IamApiKey: IAM API Key
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IamApiKey {
     /// IAM API Key name

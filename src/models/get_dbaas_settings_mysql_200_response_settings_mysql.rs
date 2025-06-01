@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsMysql200ResponseSettingsMysql: mysql.conf configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsMysql200ResponseSettingsMysql {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

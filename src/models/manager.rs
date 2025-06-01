@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Manager: Resource manager
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Manager {
     /// Manager ID

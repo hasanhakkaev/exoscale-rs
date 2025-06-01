@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// KubeletImageGc: Kubelet image GC options
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct KubeletImageGc {
     #[serde(rename = "high-threshold", skip_serializing_if = "Option::is_none")]

@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasServiceMysqlBackupSchedule: Backup schedule
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasServiceMysqlBackupSchedule {
     /// The hour of day (in UTC) when backup for the service is started. New backup is only started if previous backup has already completed.

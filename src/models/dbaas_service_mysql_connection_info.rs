@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasServiceMysqlConnectionInfo: MySQL connection information properties
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasServiceMysqlConnectionInfo {
     #[serde(rename = "uri", skip_serializing_if = "Option::is_none")]

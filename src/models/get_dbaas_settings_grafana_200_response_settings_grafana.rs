@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// GetDbaasSettingsGrafana200ResponseSettingsGrafana: Grafana configuration values
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDbaasSettingsGrafana200ResponseSettingsGrafana {
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]

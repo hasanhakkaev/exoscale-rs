@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// IamPolicy: Policy
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct IamPolicy {
     /// IAM default service strategy

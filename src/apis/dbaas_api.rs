@@ -1099,7 +1099,7 @@ pub async fn attach_dbaas_service_to_endpoint(configuration: &configuration::Con
     let local_var_attach_dbaas_service_to_endpoint_request = attach_dbaas_service_to_endpoint_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("source_service_name".to_string(), crate::apis::urlencode(&local_var_source_service_name));
+                path_params_map.insert("source_service_name".to_string(), crate::apis::urlencode(local_var_source_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1119,7 +1119,7 @@ pub async fn create_dbaas_external_endpoint_datadog(configuration: &configuratio
     let local_var_dbaas_endpoint_datadog_input_create = dbaas_endpoint_datadog_input_create;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1139,7 +1139,7 @@ pub async fn create_dbaas_external_endpoint_elasticsearch(configuration: &config
     let local_var_dbaas_endpoint_elasticsearch_input_create = dbaas_endpoint_elasticsearch_input_create;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1159,7 +1159,7 @@ pub async fn create_dbaas_external_endpoint_opensearch(configuration: &configura
     let local_var_dbaas_endpoint_opensearch_input_create = dbaas_endpoint_opensearch_input_create;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1179,7 +1179,7 @@ pub async fn create_dbaas_external_endpoint_prometheus(configuration: &configura
     let local_var_dbaas_endpoint_prometheus_payload = dbaas_endpoint_prometheus_payload;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1199,7 +1199,7 @@ pub async fn create_dbaas_external_endpoint_rsyslog(configuration: &configuratio
     let local_var_dbaas_endpoint_rsyslog_input_create = dbaas_endpoint_rsyslog_input_create;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1237,7 +1237,7 @@ pub async fn create_dbaas_kafka_schema_registry_acl_config(configuration: &confi
     let local_var_dbaas_kafka_schema_registry_acl_entry = dbaas_kafka_schema_registry_acl_entry;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1257,7 +1257,7 @@ pub async fn create_dbaas_kafka_topic_acl_config(configuration: &configuration::
     let local_var_dbaas_kafka_topic_acl_entry = dbaas_kafka_topic_acl_entry;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1277,7 +1277,7 @@ pub async fn create_dbaas_kafka_user(configuration: &configuration::Configuratio
     let local_var_create_dbaas_kafka_user_request = create_dbaas_kafka_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1297,7 +1297,7 @@ pub async fn create_dbaas_mysql_database(configuration: &configuration::Configur
     let local_var_create_dbaas_mysql_database_request = create_dbaas_mysql_database_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1317,7 +1317,7 @@ pub async fn create_dbaas_mysql_user(configuration: &configuration::Configuratio
     let local_var_create_dbaas_mysql_user_request = create_dbaas_mysql_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1337,7 +1337,7 @@ pub async fn create_dbaas_opensearch_user(configuration: &configuration::Configu
     let local_var_create_dbaas_kafka_user_request = create_dbaas_kafka_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1357,7 +1357,7 @@ pub async fn create_dbaas_pg_connection_pool(configuration: &configuration::Conf
     let local_var_create_dbaas_pg_connection_pool_request = create_dbaas_pg_connection_pool_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1377,7 +1377,7 @@ pub async fn create_dbaas_pg_database(configuration: &configuration::Configurati
     let local_var_create_dbaas_pg_database_request = create_dbaas_pg_database_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1397,7 +1397,7 @@ pub async fn create_dbaas_pg_upgrade_check(configuration: &configuration::Config
     let local_var_create_dbaas_pg_upgrade_check_request = create_dbaas_pg_upgrade_check_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service".to_string(), crate::apis::urlencode(&local_var_service));
+                path_params_map.insert("service".to_string(), crate::apis::urlencode(local_var_service));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1417,7 +1417,7 @@ pub async fn create_dbaas_postgres_user(configuration: &configuration::Configura
     let local_var_create_dbaas_postgres_user_request = create_dbaas_postgres_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1437,7 +1437,7 @@ pub async fn create_dbaas_redis_user(configuration: &configuration::Configuratio
     let local_var_create_dbaas_kafka_user_request = create_dbaas_kafka_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1457,7 +1457,7 @@ pub async fn create_dbaas_service_grafana(configuration: &configuration::Configu
     let local_var_create_dbaas_service_grafana_request = create_dbaas_service_grafana_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1477,7 +1477,7 @@ pub async fn create_dbaas_service_kafka(configuration: &configuration::Configura
     let local_var_create_dbaas_service_kafka_request = create_dbaas_service_kafka_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1497,7 +1497,7 @@ pub async fn create_dbaas_service_mysql(configuration: &configuration::Configura
     let local_var_create_dbaas_service_mysql_request = create_dbaas_service_mysql_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1517,7 +1517,7 @@ pub async fn create_dbaas_service_opensearch(configuration: &configuration::Conf
     let local_var_create_dbaas_service_opensearch_request = create_dbaas_service_opensearch_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1537,7 +1537,7 @@ pub async fn create_dbaas_service_pg(configuration: &configuration::Configuratio
     let local_var_create_dbaas_service_pg_request = create_dbaas_service_pg_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1557,7 +1557,7 @@ pub async fn create_dbaas_service_redis(configuration: &configuration::Configura
     let local_var_create_dbaas_service_redis_request = create_dbaas_service_redis_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1577,7 +1577,7 @@ pub async fn create_dbaas_service_valkey(configuration: &configuration::Configur
     let local_var_create_dbaas_service_valkey_request = create_dbaas_service_valkey_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1597,7 +1597,7 @@ pub async fn create_dbaas_task_migration_check(configuration: &configuration::Co
     let local_var_create_dbaas_task_migration_check_request = create_dbaas_task_migration_check_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service".to_string(), crate::apis::urlencode(&local_var_service));
+                path_params_map.insert("service".to_string(), crate::apis::urlencode(local_var_service));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1617,7 +1617,7 @@ pub async fn create_dbaas_valkey_user(configuration: &configuration::Configurati
     let local_var_create_dbaas_kafka_user_request = create_dbaas_kafka_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1636,7 +1636,7 @@ pub async fn delete_dbaas_external_endpoint_datadog(configuration: &configuratio
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1655,7 +1655,7 @@ pub async fn delete_dbaas_external_endpoint_elasticsearch(configuration: &config
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1674,7 +1674,7 @@ pub async fn delete_dbaas_external_endpoint_opensearch(configuration: &configura
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1693,7 +1693,7 @@ pub async fn delete_dbaas_external_endpoint_prometheus(configuration: &configura
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1712,7 +1712,7 @@ pub async fn delete_dbaas_external_endpoint_rsyslog(configuration: &configuratio
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1731,7 +1731,7 @@ pub async fn delete_dbaas_integration(configuration: &configuration::Configurati
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1751,8 +1751,8 @@ pub async fn delete_dbaas_kafka_schema_registry_acl_config(configuration: &confi
     let local_var_acl_id = acl_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
-                path_params_map.insert("acl_id".to_string(), crate::apis::urlencode(&local_var_acl_id));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+                path_params_map.insert("acl_id".to_string(), crate::apis::urlencode(local_var_acl_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1772,8 +1772,8 @@ pub async fn delete_dbaas_kafka_topic_acl_config(configuration: &configuration::
     let local_var_acl_id = acl_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
-                path_params_map.insert("acl_id".to_string(), crate::apis::urlencode(&local_var_acl_id));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+                path_params_map.insert("acl_id".to_string(), crate::apis::urlencode(local_var_acl_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1793,8 +1793,8 @@ pub async fn delete_dbaas_kafka_user(configuration: &configuration::Configuratio
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1814,8 +1814,8 @@ pub async fn delete_dbaas_mysql_database(configuration: &configuration::Configur
     let local_var_database_name = database_name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("database_name".to_string(), crate::apis::urlencode(&local_var_database_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("database_name".to_string(), crate::apis::urlencode(local_var_database_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1835,8 +1835,8 @@ pub async fn delete_dbaas_mysql_user(configuration: &configuration::Configuratio
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1856,8 +1856,8 @@ pub async fn delete_dbaas_opensearch_user(configuration: &configuration::Configu
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1877,8 +1877,8 @@ pub async fn delete_dbaas_pg_connection_pool(configuration: &configuration::Conf
     let local_var_connection_pool_name = connection_pool_name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("connection_pool_name".to_string(), crate::apis::urlencode(&local_var_connection_pool_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("connection_pool_name".to_string(), crate::apis::urlencode(local_var_connection_pool_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1898,8 +1898,8 @@ pub async fn delete_dbaas_pg_database(configuration: &configuration::Configurati
     let local_var_database_name = database_name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("database_name".to_string(), crate::apis::urlencode(&local_var_database_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("database_name".to_string(), crate::apis::urlencode(local_var_database_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1919,8 +1919,8 @@ pub async fn delete_dbaas_postgres_user(configuration: &configuration::Configura
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1940,8 +1940,8 @@ pub async fn delete_dbaas_redis_user(configuration: &configuration::Configuratio
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1960,7 +1960,7 @@ pub async fn delete_dbaas_service(configuration: &configuration::Configuration, 
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1979,7 +1979,7 @@ pub async fn delete_dbaas_service_grafana(configuration: &configuration::Configu
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -1998,7 +1998,7 @@ pub async fn delete_dbaas_service_kafka(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2017,7 +2017,7 @@ pub async fn delete_dbaas_service_mysql(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2036,7 +2036,7 @@ pub async fn delete_dbaas_service_opensearch(configuration: &configuration::Conf
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2055,7 +2055,7 @@ pub async fn delete_dbaas_service_pg(configuration: &configuration::Configuratio
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2074,7 +2074,7 @@ pub async fn delete_dbaas_service_redis(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2093,7 +2093,7 @@ pub async fn delete_dbaas_service_valkey(configuration: &configuration::Configur
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2113,8 +2113,8 @@ pub async fn delete_dbaas_valkey_user(configuration: &configuration::Configurati
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2134,7 +2134,7 @@ pub async fn detach_dbaas_service_from_endpoint(configuration: &configuration::C
     let local_var_detach_dbaas_service_from_endpoint_request = detach_dbaas_service_from_endpoint_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("source_service_name".to_string(), crate::apis::urlencode(&local_var_source_service_name));
+                path_params_map.insert("source_service_name".to_string(), crate::apis::urlencode(local_var_source_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2153,7 +2153,7 @@ pub async fn enable_dbaas_mysql_writes(configuration: &configuration::Configurat
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2189,7 +2189,7 @@ pub async fn get_dbaas_external_endpoint_datadog(configuration: &configuration::
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2208,7 +2208,7 @@ pub async fn get_dbaas_external_endpoint_elasticsearch(configuration: &configura
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2227,7 +2227,7 @@ pub async fn get_dbaas_external_endpoint_opensearch(configuration: &configuratio
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2246,7 +2246,7 @@ pub async fn get_dbaas_external_endpoint_prometheus(configuration: &configuratio
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2265,7 +2265,7 @@ pub async fn get_dbaas_external_endpoint_rsyslog(configuration: &configuration::
     let local_var_endpoint_id = endpoint_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2284,7 +2284,7 @@ pub async fn get_dbaas_external_integration(configuration: &configuration::Confi
     let local_var_integration_id = integration_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("integration_id".to_string(), crate::apis::urlencode(&local_var_integration_id));
+                path_params_map.insert("integration_id".to_string(), crate::apis::urlencode(local_var_integration_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2303,7 +2303,7 @@ pub async fn get_dbaas_external_integration_settings_datadog(configuration: &con
     let local_var_integration_id = integration_id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("integration_id".to_string(), crate::apis::urlencode(&local_var_integration_id));
+                path_params_map.insert("integration_id".to_string(), crate::apis::urlencode(local_var_integration_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2322,7 +2322,7 @@ pub async fn get_dbaas_integration(configuration: &configuration::Configuration,
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2341,7 +2341,7 @@ pub async fn get_dbaas_kafka_acl_config(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2360,7 +2360,7 @@ pub async fn get_dbaas_migration_status(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2379,7 +2379,7 @@ pub async fn get_dbaas_opensearch_acl_config(configuration: &configuration::Conf
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2398,7 +2398,7 @@ pub async fn get_dbaas_service_grafana(configuration: &configuration::Configurat
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2417,7 +2417,7 @@ pub async fn get_dbaas_service_kafka(configuration: &configuration::Configuratio
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2437,7 +2437,7 @@ pub async fn get_dbaas_service_logs(configuration: &configuration::Configuration
     let local_var_get_dbaas_service_logs_request = get_dbaas_service_logs_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2457,7 +2457,7 @@ pub async fn get_dbaas_service_metrics(configuration: &configuration::Configurat
     let local_var_get_dbaas_service_metrics_request = get_dbaas_service_metrics_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2476,7 +2476,7 @@ pub async fn get_dbaas_service_mysql(configuration: &configuration::Configuratio
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2495,7 +2495,7 @@ pub async fn get_dbaas_service_opensearch(configuration: &configuration::Configu
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2514,7 +2514,7 @@ pub async fn get_dbaas_service_pg(configuration: &configuration::Configuration, 
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2533,7 +2533,7 @@ pub async fn get_dbaas_service_redis(configuration: &configuration::Configuratio
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2552,7 +2552,7 @@ pub async fn get_dbaas_service_type(configuration: &configuration::Configuration
     let local_var_service_type_name = service_type_name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_type_name".to_string(), crate::apis::urlencode(&local_var_service_type_name));
+                path_params_map.insert("service_type_name".to_string(), crate::apis::urlencode(local_var_service_type_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2571,7 +2571,7 @@ pub async fn get_dbaas_service_valkey(configuration: &configuration::Configurati
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2710,8 +2710,8 @@ pub async fn get_dbaas_task(configuration: &configuration::Configuration, servic
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service".to_string(), crate::apis::urlencode(&local_var_service));
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("service".to_string(), crate::apis::urlencode(local_var_service));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2764,7 +2764,7 @@ pub async fn list_dbaas_external_integrations(configuration: &configuration::Con
     let local_var_service_name = service_name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2785,9 +2785,9 @@ pub async fn list_dbaas_integration_settings(configuration: &configuration::Conf
     let local_var_dest_type = dest_type;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("integration_type".to_string(), crate::apis::urlencode(&local_var_integration_type));
-                path_params_map.insert("source_type".to_string(), crate::apis::urlencode(&local_var_source_type));
-                path_params_map.insert("dest_type".to_string(), crate::apis::urlencode(&local_var_dest_type));
+                path_params_map.insert("integration_type".to_string(), crate::apis::urlencode(local_var_integration_type));
+                path_params_map.insert("source_type".to_string(), crate::apis::urlencode(local_var_source_type));
+                path_params_map.insert("dest_type".to_string(), crate::apis::urlencode(local_var_dest_type));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2859,8 +2859,8 @@ pub async fn reset_dbaas_grafana_user_password(configuration: &configuration::Co
     let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2881,8 +2881,8 @@ pub async fn reset_dbaas_kafka_user_password(configuration: &configuration::Conf
     let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2903,8 +2903,8 @@ pub async fn reset_dbaas_mysql_user_password(configuration: &configuration::Conf
     let local_var_reset_dbaas_mysql_user_password_request = reset_dbaas_mysql_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2925,8 +2925,8 @@ pub async fn reset_dbaas_opensearch_user_password(configuration: &configuration:
     let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2947,8 +2947,8 @@ pub async fn reset_dbaas_postgres_user_password(configuration: &configuration::C
     let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2969,8 +2969,8 @@ pub async fn reset_dbaas_redis_user_password(configuration: &configuration::Conf
     let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -2991,8 +2991,8 @@ pub async fn reset_dbaas_valkey_user_password(configuration: &configuration::Con
     let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3012,8 +3012,8 @@ pub async fn reveal_dbaas_grafana_user_password(configuration: &configuration::C
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3032,7 +3032,7 @@ pub async fn reveal_dbaas_kafka_connect_password(configuration: &configuration::
     let local_var_service_name = service_name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3052,8 +3052,8 @@ pub async fn reveal_dbaas_kafka_user_password(configuration: &configuration::Con
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3073,8 +3073,8 @@ pub async fn reveal_dbaas_mysql_user_password(configuration: &configuration::Con
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3094,8 +3094,8 @@ pub async fn reveal_dbaas_opensearch_user_password(configuration: &configuration
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3115,8 +3115,8 @@ pub async fn reveal_dbaas_postgres_user_password(configuration: &configuration::
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3136,8 +3136,8 @@ pub async fn reveal_dbaas_redis_user_password(configuration: &configuration::Con
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3157,8 +3157,8 @@ pub async fn reveal_dbaas_valkey_user_password(configuration: &configuration::Co
     let local_var_username = username;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3177,7 +3177,7 @@ pub async fn start_dbaas_grafana_maintenance(configuration: &configuration::Conf
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3196,7 +3196,7 @@ pub async fn start_dbaas_kafka_maintenance(configuration: &configuration::Config
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3215,7 +3215,7 @@ pub async fn start_dbaas_mysql_maintenance(configuration: &configuration::Config
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3234,7 +3234,7 @@ pub async fn start_dbaas_opensearch_maintenance(configuration: &configuration::C
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3253,7 +3253,7 @@ pub async fn start_dbaas_pg_maintenance(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3272,7 +3272,7 @@ pub async fn start_dbaas_redis_maintenance(configuration: &configuration::Config
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3291,7 +3291,7 @@ pub async fn start_dbaas_redis_to_valkey_upgrade(configuration: &configuration::
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3310,7 +3310,7 @@ pub async fn start_dbaas_valkey_maintenance(configuration: &configuration::Confi
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3329,7 +3329,7 @@ pub async fn stop_dbaas_mysql_migration(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3348,7 +3348,7 @@ pub async fn stop_dbaas_pg_migration(configuration: &configuration::Configuratio
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3367,7 +3367,7 @@ pub async fn stop_dbaas_redis_migration(configuration: &configuration::Configura
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3386,7 +3386,7 @@ pub async fn stop_dbaas_valkey_migration(configuration: &configuration::Configur
     let local_var_name = name;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3406,7 +3406,7 @@ pub async fn update_dbaas_external_endpoint_datadog(configuration: &configuratio
     let local_var_dbaas_endpoint_datadog_input_update = dbaas_endpoint_datadog_input_update;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3426,7 +3426,7 @@ pub async fn update_dbaas_external_endpoint_elasticsearch(configuration: &config
     let local_var_dbaas_endpoint_elasticsearch_input_update = dbaas_endpoint_elasticsearch_input_update;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3446,7 +3446,7 @@ pub async fn update_dbaas_external_endpoint_opensearch(configuration: &configura
     let local_var_dbaas_endpoint_opensearch_input_update = dbaas_endpoint_opensearch_input_update;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3466,7 +3466,7 @@ pub async fn update_dbaas_external_endpoint_prometheus(configuration: &configura
     let local_var_dbaas_endpoint_prometheus_payload = dbaas_endpoint_prometheus_payload;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3486,7 +3486,7 @@ pub async fn update_dbaas_external_endpoint_rsyslog(configuration: &configuratio
     let local_var_dbaas_endpoint_rsyslog_input_update = dbaas_endpoint_rsyslog_input_update;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(&local_var_endpoint_id));
+                path_params_map.insert("endpoint_id".to_string(), crate::apis::urlencode(local_var_endpoint_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3506,7 +3506,7 @@ pub async fn update_dbaas_external_integration_settings_datadog(configuration: &
     let local_var_get_dbaas_external_integration_settings_datadog200_response = get_dbaas_external_integration_settings_datadog200_response;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("integration_id".to_string(), crate::apis::urlencode(&local_var_integration_id));
+                path_params_map.insert("integration_id".to_string(), crate::apis::urlencode(local_var_integration_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3526,7 +3526,7 @@ pub async fn update_dbaas_integration(configuration: &configuration::Configurati
     let local_var_update_dbaas_integration_request = update_dbaas_integration_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(&local_var_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3546,7 +3546,7 @@ pub async fn update_dbaas_opensearch_acl_config(configuration: &configuration::C
     let local_var_dbaas_opensearch_acl_config = dbaas_opensearch_acl_config;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3567,8 +3567,8 @@ pub async fn update_dbaas_pg_connection_pool(configuration: &configuration::Conf
     let local_var_update_dbaas_pg_connection_pool_request = update_dbaas_pg_connection_pool_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("connection_pool_name".to_string(), crate::apis::urlencode(&local_var_connection_pool_name));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("connection_pool_name".to_string(), crate::apis::urlencode(local_var_connection_pool_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3589,8 +3589,8 @@ pub async fn update_dbaas_postgres_allow_replication(configuration: &configurati
     let local_var_update_dbaas_postgres_allow_replication_request = update_dbaas_postgres_allow_replication_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(&local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(&local_var_username));
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3610,7 +3610,7 @@ pub async fn update_dbaas_service_grafana(configuration: &configuration::Configu
     let local_var_update_dbaas_service_grafana_request = update_dbaas_service_grafana_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3630,7 +3630,7 @@ pub async fn update_dbaas_service_kafka(configuration: &configuration::Configura
     let local_var_update_dbaas_service_kafka_request = update_dbaas_service_kafka_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3650,7 +3650,7 @@ pub async fn update_dbaas_service_mysql(configuration: &configuration::Configura
     let local_var_update_dbaas_service_mysql_request = update_dbaas_service_mysql_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3670,7 +3670,7 @@ pub async fn update_dbaas_service_opensearch(configuration: &configuration::Conf
     let local_var_update_dbaas_service_opensearch_request = update_dbaas_service_opensearch_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3690,7 +3690,7 @@ pub async fn update_dbaas_service_pg(configuration: &configuration::Configuratio
     let local_var_update_dbaas_service_pg_request = update_dbaas_service_pg_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3710,7 +3710,7 @@ pub async fn update_dbaas_service_redis(configuration: &configuration::Configura
     let local_var_update_dbaas_service_redis_request = update_dbaas_service_redis_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -3730,7 +3730,7 @@ pub async fn update_dbaas_service_valkey(configuration: &configuration::Configur
     let local_var_update_dbaas_service_valkey_request = update_dbaas_service_valkey_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(&local_var_name));
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};

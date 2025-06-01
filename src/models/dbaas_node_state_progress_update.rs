@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasNodeStateProgressUpdate: Extra information regarding the progress for current state
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasNodeStateProgressUpdate {
     /// Indicates whether this phase has been completed or not

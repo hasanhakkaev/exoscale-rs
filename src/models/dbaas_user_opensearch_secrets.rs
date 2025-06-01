@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// DbaasUserOpensearchSecrets: Opensearch User secrets
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasUserOpensearchSecrets {
     /// Opensearch username

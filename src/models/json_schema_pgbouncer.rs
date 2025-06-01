@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// JsonSchemaPgbouncer: System-wide settings for pgbouncer.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct JsonSchemaPgbouncer {
     #[serde(rename = "min_pool_size", skip_serializing_if = "Option::is_none")]

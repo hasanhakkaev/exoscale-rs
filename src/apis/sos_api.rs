@@ -35,7 +35,7 @@ pub async fn get_sos_presigned_url(configuration: &configuration::Configuration,
     let local_var_key = key;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("bucket".to_string(), crate::apis::urlencode(&local_var_bucket));
+                path_params_map.insert("bucket".to_string(), crate::apis::urlencode(local_var_bucket));
 
     let mut query_params_vec: Vec<(&str, String)> = Vec::new();
                         if let Some(value) = &local_var_key {

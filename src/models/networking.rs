@@ -11,7 +11,6 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// Networking: Cluster networking configuration.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Networking {
     /// CIDR Range for Pods in cluster. This must not overlap with any IP ranges assigned to pods. Max of two, comma-separated, dual-stack CIDRs is allowed.               If not specified, defaults to 192.168.0.0/16.
