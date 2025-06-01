@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**create_instance**](InstanceApi.md#create_instance) | **POST** /instance | Create a Compute instance
 [**create_snapshot**](InstanceApi.md#create_snapshot) | **POST** /instance/{id}:create-snapshot | Create a Snapshot of a Compute instance
 [**delete_instance**](InstanceApi.md#delete_instance) | **DELETE** /instance/{id} | Delete a Compute instance
+[**enable_tpm**](InstanceApi.md#enable_tpm) | **POST** /instance/{id}:enable-tpm | Enable tpm for the instance.
 [**get_console_proxy_url**](InstanceApi.md#get_console_proxy_url) | **GET** /console/{id} | Retrieve signed url valid for 60 seconds to connect via console-proxy websocket to VM VNC console.
 [**get_instance**](InstanceApi.md#get_instance) | **GET** /instance/{id} | Retrieve Compute instance details
 [**list_instances**](InstanceApi.md#list_instances) | **GET** /instance | List Compute instances
@@ -18,7 +19,7 @@ Method | HTTP request | Description
 [**reset_instance_password**](InstanceApi.md#reset_instance_password) | **PUT** /instance/{id}:reset-password | Reset a compute instance password
 [**resize_instance_disk**](InstanceApi.md#resize_instance_disk) | **PUT** /instance/{id}:resize-disk | Resize a Compute instance disk
 [**reveal_instance_password**](InstanceApi.md#reveal_instance_password) | **GET** /instance/{id}:password | Reveal the password used during instance creation or the latest password reset.
-[**revert_instance_to_snapshot**](InstanceApi.md#revert_instance_to_snapshot) | **POST** /instance/{instance-id}:revert-snapshot | Revert a snapshot for an instance
+[**revert_instance_to_snapshot**](InstanceApi.md#revert_instance_to_snapshot) | **POST** /instance/{instance_id}:revert-snapshot | Revert a snapshot for an instance
 [**scale_instance**](InstanceApi.md#scale_instance) | **PUT** /instance/{id}:scale | Scale a Compute instance to a new Instance Type
 [**start_instance**](InstanceApi.md#start_instance) | **PUT** /instance/{id}:start | Start a Compute instance
 [**stop_instance**](InstanceApi.md#stop_instance) | **PUT** /instance/{id}:stop | Stop a Compute instance
@@ -120,6 +121,36 @@ No authorization required
 
 > models::Operation delete_instance(id)
 Delete a Compute instance
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## enable_tpm
+
+> models::Operation enable_tpm(id)
+Enable tpm for the instance.
 
 
 

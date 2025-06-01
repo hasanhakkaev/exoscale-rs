@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**max_index_count** | Option<**i64**> | Maximum number of indexes to keep | [optional]
+**max_index_count** | Option<**u64**> | Maximum number of indexes to keep | [optional]
 **sorting_algorithm** | Option<**String**> | Deletion sorting algorithm | [optional]
 **pattern** | Option<**String**> | fnmatch pattern | [optional]
 

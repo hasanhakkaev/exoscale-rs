@@ -234,7 +234,7 @@ No authorization required
 
 ## get_block_storage_volume
 
-> models::BlockStorageVolumeDetails get_block_storage_volume(id)
+> models::BlockStorageVolume get_block_storage_volume(id)
 Retrieve block storage volume details
 
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::BlockStorageVolumeDetails**](block-storage-volume-details.md)
+[**models::BlockStorageVolume**](block-storage-volume.md)
 
 ### Authorization
 

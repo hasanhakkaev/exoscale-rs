@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **host** | **String** | Hostname or IP address of the server where to migrate data from | 
-**port** | **i64** | Port number of the server where to migrate data from | 
+**port** | **u64** | Port number of the server where to migrate data from | 
 **password** | Option<**String**> | Password for authentication with the server where to migrate data from | [optional]
 **ssl** | Option<**bool**> | The server where to migrate data from is secured with SSL | [optional]
 **username** | Option<**String**> | User name for authentication with the server where to migrate data from | [optional]

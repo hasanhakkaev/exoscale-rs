@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**limit** | Option<**i64**> | How many log entries to receive at most, up to 500 (default: 100) | [optional]
+**limit** | Option<**u64**> | How many log entries to receive at most, up to 500 (default: 100) | [optional]
 **sort_order** | Option<[**models::EnumSortOrder**](enum-sort-order.md)> |  | [optional]
 **offset** | Option<**String**> | Opaque offset identifier | [optional]
 

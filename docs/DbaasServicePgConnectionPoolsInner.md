@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **database** | **String** |  | 
 **mode** | [**models::EnumPgPoolMode**](enum-pg-pool-mode.md) |  | 
 **name** | **String** |  | 
-**size** | **i64** |  | 
+**size** | **u64** |  | 
 **username** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**list_api_keys**](IamApi.md#list_api_keys) | **GET** /api-key | List API keys
 [**list_iam_roles**](IamApi.md#list_iam_roles) | **GET** /iam-role | List IAM Roles
 [**list_users**](IamApi.md#list_users) | **GET** /user | List Users
+[**reset_iam_organization_policy**](IamApi.md#reset_iam_organization_policy) | **POST** /iam-organization-policy:reset | Reset IAM Organization Policy
 [**update_iam_organization_policy**](IamApi.md#update_iam_organization_policy) | **PUT** /iam-organization-policy | Update IAM Organization Policy
 [**update_iam_role**](IamApi.md#update_iam_role) | **PUT** /iam-role/{id} | Update IAM Role
 [**update_iam_role_policy**](IamApi.md#update_iam_role_policy) | **PUT** /iam-role/{id}:policy | Update IAM Role Policy
@@ -344,6 +345,33 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::ListUsers200Response**](list_users_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## reset_iam_organization_policy
+
+> models::Operation reset_iam_organization_policy()
+Reset IAM Organization Policy
+
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::Operation**](operation.md)
 
 ### Authorization
 

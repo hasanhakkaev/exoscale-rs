@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **security_group** | Option<[**models::SecurityGroupResource**](security-group-resource.md)> |  | [optional]
 **protocol** | **String** | Network protocol | 
 **icmp** | Option<[**models::AddRuleToSecurityGroupRequestIcmp**](add_rule_to_security_group_request_icmp.md)> |  | [optional]
-**start_port** | Option<**i64**> | Start port of the range | [optional]
-**end_port** | Option<**i64**> | End port of the range | [optional]
+**start_port** | Option<**u64**> | Start port of the range | [optional]
+**end_port** | Option<**u64**> | End port of the range | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

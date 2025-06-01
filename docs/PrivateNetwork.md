@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **start_ip** | Option<**String**> | Private Network start IP address | [optional]
 **leases** | Option<[**Vec<models::PrivateNetworkLease>**](private-network-lease.md)> | Private Network leased IP addresses | [optional][readonly]
 **id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Private Network ID | [optional][readonly]
-**vni** | Option<**i64**> | Private Network VXLAN ID | [optional]
+**vni** | Option<**u64**> | Private Network VXLAN ID | [optional]
 **netmask** | Option<**String**> | Private Network netmask | [optional]
 **options** | Option<[**models::PrivateNetworkOptions**](private-network-options.md)> |  | [optional]
 **end_ip** | Option<**String**> | Private Network end IP address | [optional]

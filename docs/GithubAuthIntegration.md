@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **client_id** | **String** |  | 
 **client_secret** | **String** |  | 
 **skip_org_role_sync** | Option<**bool**> |  | [optional]
-**team_ids** | Option<**Vec<i32>**> |  | [optional]
+**team_ids** | Option<**Vec<u64>**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,0 +1,20 @@
+bestFitInt: true
+enablePostProcessFile: true
+packageName: exoscale-rs
+packageVersion: 3.0.0
+preferUnsignedInt: true
+supportAsync: true
+supportMiddleware: true
+supportMultipleResponses: false
+supportingFiles: static/utils.rs, static/signing.rs, static/middleware.rs
+templateDir: static/templates
+files:
+  static/signing.rs:
+    templateType: SupportingFiles
+    destinationFilename: src/signing.rs
+  static/utils.rs:
+    templateType: SupportingFiles
+    destinationFilename: src/utils.rs
+  static/middleware.rs:
+    templateType: SupportingFiles
+    destinationFilename: src/middleware.rs

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **from_name** | Option<**String**> |  | [optional]
 **host** | **String** |  | 
 **password** | Option<**String**> |  | [optional]
-**port** | **i32** |  | 
+**port** | **u16** |  | 
 **skip_verify** | Option<**bool**> |  | [optional]
 **starttls_policy** | Option<**String**> |  | [optional]
 **username** | Option<**String**> |  | [optional]

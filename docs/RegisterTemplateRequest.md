@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ssh_key_enabled** | **bool** | Enable SSH key-based login | 
 **name** | **String** | Template name | 
 **default_user** | Option<**String**> | Template default user | [optional]
-**size** | Option<**i64**> | Template size | [optional]
+**size** | Option<**u64**> | Template size | [optional]
 **password_enabled** | **bool** | Enable password-based login | 
 **build** | Option<**String**> | Template build | [optional]
 **checksum** | **String** | Template MD5 checksum | 

@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **name** | **String** | Nodepool name, lowercase only | 
 **instance_type** | [**models::InstanceType**](instance-type.md) |  | 
 **private_networks** | Option<[**Vec<models::PrivateNetwork>**](private-network.md)> | Nodepool Private Networks | [optional]
-**size** | **i64** | Number of instances | 
+**size** | **u64** | Number of instances | 
 **kubelet_image_gc** | Option<[**models::KubeletImageGc**](kubelet-image-gc.md)> |  | [optional]
 **instance_prefix** | Option<**String**> | Prefix to apply to instances names (default: pool), lowercase only | [optional]
 **deploy_target** | Option<[**models::DeployTarget**](deploy-target.md)> |  | [optional]
 **addons** | Option<**Vec<String>**> | Nodepool addons | [optional]
-**disk_size** | **i64** | Nodepool instances disk size in GiB | 
+**disk_size** | **u64** | Nodepool instances disk size in GiB | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

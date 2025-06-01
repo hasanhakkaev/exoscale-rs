@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | Option<**String**> | DbaaS service description | [optional]
-**max_index_count** | Option<**i64**> | Maximum number of indexes to keep before deleting the oldest one | [optional]
+**max_index_count** | Option<**u64**> | Maximum number of indexes to keep before deleting the oldest one | [optional]
 **updated_at** | Option<**String**> | Service last update timestamp (ISO 8601) | [optional]
-**node_count** | Option<**i64**> | Number of service nodes in the active plan | [optional]
+**node_count** | Option<**u64**> | Number of service nodes in the active plan | [optional]
 **connection_info** | Option<[**models::DbaasServiceOpensearchConnectionInfo**](dbaas_service_opensearch_connection_info.md)> |  | [optional]
-**node_cpu_count** | Option<**i64**> | Number of CPUs for each node | [optional]
+**node_cpu_count** | Option<**u64**> | Number of CPUs for each node | [optional]
+**prometheus_uri** | [**models::DbaasServiceMysqlPrometheusUri**](dbaas_service_mysql_prometheus_uri.md) |  | 
 **integrations** | Option<[**Vec<models::DbaasIntegration>**](dbaas-integration.md)> | Service integrations | [optional]
 **zone** | Option<**String**> | The zone where the service is running | [optional]
 **node_states** | Option<[**Vec<models::DbaasNodeState>**](dbaas-node-state.md)> | State of individual service nodes | [optional]
@@ -25,8 +26,8 @@ Name | Type | Description | Notes
 **index_patterns** | Option<[**Vec<models::UpdateDbaasServiceOpensearchRequestIndexPatternsInner>**](update_dbaas_service_opensearch_request_index_patterns_inner.md)> | Allows you to create glob style patterns and set a max number of indexes matching this pattern you want to keep. Creating indexes exceeding this value will cause the oldest one to get deleted. You could for example create a pattern looking like 'logs.?' and then create index logs.1, logs.2 etc, it will delete logs.1 once you create logs.6. Do note 'logs.?' does not apply to logs.10. Note: Setting max_index_count to 0 will do nothing and the pattern gets ignored. | [optional]
 **maintenance** | Option<[**models::DbaasServiceMaintenance**](dbaas-service-maintenance.md)> |  | [optional]
 **index_template** | Option<[**models::UpdateDbaasServiceOpensearchRequestIndexTemplate**](update_dbaas_service_opensearch_request_index_template.md)> |  | [optional]
-**disk_size** | Option<**i64**> | TODO UNIT disk space for data storage | [optional]
-**node_memory** | Option<**i64**> | TODO UNIT of memory for each node | [optional]
+**disk_size** | Option<**u64**> | TODO UNIT disk space for data storage | [optional]
+**node_memory** | Option<**u64**> | TODO UNIT of memory for each node | [optional]
 **uri** | Option<**String**> | URI for connecting to the service (may be absent) | [optional]
 **opensearch_settings** | Option<[**models::JsonSchemaOpensearch**](json-schema-opensearch.md)> |  | [optional]
 **uri_params** | Option<[**serde_json::Value**](.md)> | service_uri parameterized into key-value pairs | [optional]
