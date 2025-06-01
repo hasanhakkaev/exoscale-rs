@@ -8,6 +8,8 @@ The [OpenAPI Specification](http://spec.openapis.org/oas/v3.0.3.html) source of 
 * [JSON format](https://openapi-v2.exoscale.com/source.json)
 * [YAML format](https://openapi-v2.exoscale.com/source.yaml)
 
+This is version 2.0.0 of this API documentation. Last update on May 27, 2025.
+
 For more information, please visit [https://portal.exoscale.com/tickets](https://portal.exoscale.com/tickets)
 
 ## Overview
@@ -52,13 +54,13 @@ Class | Method | HTTP request | Description
 *BlockStorageApi* | [**update_block_storage_volume**](docs/BlockStorageApi.md#update_block_storage_volume) | **PUT** /block-storage/{id} | Update block storage volume
 *CcmApi* | [**list_quotas**](docs/CcmApi.md#list_quotas) | **GET** /quota | List Organization Quotas
 *ComputeApi* | [**reset_load_balancer_service_field**](docs/ComputeApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service_id}/{field} | Reset a Load Balancer Service field to its default value
-*DbaasApi* | [**attach_dbaas_service_to_endpoint**](docs/DbaasApi.md#attach_dbaas_service_to_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/attach | 
-*DbaasApi* | [**create_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#create_dbaas_external_endpoint_datadog) | **POST** /dbaas-external-endpoint-datadog/{name} | 
-*DbaasApi* | [**create_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#create_dbaas_external_endpoint_elasticsearch) | **POST** /dbaas-external-endpoint-elasticsearch/{name} | 
-*DbaasApi* | [**create_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#create_dbaas_external_endpoint_opensearch) | **POST** /dbaas-external-endpoint-opensearch/{name} | 
-*DbaasApi* | [**create_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#create_dbaas_external_endpoint_prometheus) | **POST** /dbaas-external-endpoint-prometheus/{name} | 
-*DbaasApi* | [**create_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#create_dbaas_external_endpoint_rsyslog) | **POST** /dbaas-external-endpoint-rsyslog/{name} | 
-*DbaasApi* | [**create_dbaas_integration**](docs/DbaasApi.md#create_dbaas_integration) | **POST** /dbaas-integration | 
+*DbaasApi* | [**attach_dbaas_service_to_endpoint**](docs/DbaasApi.md#attach_dbaas_service_to_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/attach |
+*DbaasApi* | [**create_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#create_dbaas_external_endpoint_datadog) | **POST** /dbaas-external-endpoint-datadog/{name} |
+*DbaasApi* | [**create_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#create_dbaas_external_endpoint_elasticsearch) | **POST** /dbaas-external-endpoint-elasticsearch/{name} |
+*DbaasApi* | [**create_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#create_dbaas_external_endpoint_opensearch) | **POST** /dbaas-external-endpoint-opensearch/{name} |
+*DbaasApi* | [**create_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#create_dbaas_external_endpoint_prometheus) | **POST** /dbaas-external-endpoint-prometheus/{name} |
+*DbaasApi* | [**create_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#create_dbaas_external_endpoint_rsyslog) | **POST** /dbaas-external-endpoint-rsyslog/{name} |
+*DbaasApi* | [**create_dbaas_integration**](docs/DbaasApi.md#create_dbaas_integration) | **POST** /dbaas-integration |
 *DbaasApi* | [**create_dbaas_kafka_schema_registry_acl_config**](docs/DbaasApi.md#create_dbaas_kafka_schema_registry_acl_config) | **POST** /dbaas-kafka/{name}/schema-registry/acl-config | Add a Kafka Schema Registry ACL entry
 *DbaasApi* | [**create_dbaas_kafka_topic_acl_config**](docs/DbaasApi.md#create_dbaas_kafka_topic_acl_config) | **POST** /dbaas-kafka/{name}/topic/acl-config | Add a Kafka topic ACL entry
 *DbaasApi* | [**create_dbaas_kafka_user**](docs/DbaasApi.md#create_dbaas_kafka_user) | **POST** /dbaas-kafka/{service_name}/user | Create a DBaaS Kafka user
@@ -67,24 +69,24 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**create_dbaas_opensearch_user**](docs/DbaasApi.md#create_dbaas_opensearch_user) | **POST** /dbaas-opensearch/{service_name}/user | Create a DBaaS OpenSearch user
 *DbaasApi* | [**create_dbaas_pg_connection_pool**](docs/DbaasApi.md#create_dbaas_pg_connection_pool) | **POST** /dbaas-postgres/{service_name}/connection-pool | Create a DBaaS PostgreSQL connection pool
 *DbaasApi* | [**create_dbaas_pg_database**](docs/DbaasApi.md#create_dbaas_pg_database) | **POST** /dbaas-postgres/{service_name}/database | Create a DBaaS Postgres database
-*DbaasApi* | [**create_dbaas_pg_upgrade_check**](docs/DbaasApi.md#create_dbaas_pg_upgrade_check) | **POST** /dbaas-postgres/{service}/upgrade-check | 
+*DbaasApi* | [**create_dbaas_pg_upgrade_check**](docs/DbaasApi.md#create_dbaas_pg_upgrade_check) | **POST** /dbaas-postgres/{service}/upgrade-check |
 *DbaasApi* | [**create_dbaas_postgres_user**](docs/DbaasApi.md#create_dbaas_postgres_user) | **POST** /dbaas-postgres/{service_name}/user | Create a DBaaS Postgres user
 *DbaasApi* | [**create_dbaas_redis_user**](docs/DbaasApi.md#create_dbaas_redis_user) | **POST** /dbaas-redis/{service_name}/user | Create a DBaaS Redis user
-*DbaasApi* | [**create_dbaas_service_grafana**](docs/DbaasApi.md#create_dbaas_service_grafana) | **POST** /dbaas-grafana/{name} | 
+*DbaasApi* | [**create_dbaas_service_grafana**](docs/DbaasApi.md#create_dbaas_service_grafana) | **POST** /dbaas-grafana/{name} |
 *DbaasApi* | [**create_dbaas_service_kafka**](docs/DbaasApi.md#create_dbaas_service_kafka) | **POST** /dbaas-kafka/{name} | Create a DBaaS Kafka service
 *DbaasApi* | [**create_dbaas_service_mysql**](docs/DbaasApi.md#create_dbaas_service_mysql) | **POST** /dbaas-mysql/{name} | Create a DBaaS MySQL service
 *DbaasApi* | [**create_dbaas_service_opensearch**](docs/DbaasApi.md#create_dbaas_service_opensearch) | **POST** /dbaas-opensearch/{name} | Create a DBaaS OpenSearch service
 *DbaasApi* | [**create_dbaas_service_pg**](docs/DbaasApi.md#create_dbaas_service_pg) | **POST** /dbaas-postgres/{name} | Create a DBaaS PostgreSQL service
 *DbaasApi* | [**create_dbaas_service_redis**](docs/DbaasApi.md#create_dbaas_service_redis) | **POST** /dbaas-redis/{name} | Create a DBaaS Redis service
 *DbaasApi* | [**create_dbaas_service_valkey**](docs/DbaasApi.md#create_dbaas_service_valkey) | **POST** /dbaas-valkey/{name} | Create a DBaaS Valkey service
-*DbaasApi* | [**create_dbaas_task_migration_check**](docs/DbaasApi.md#create_dbaas_task_migration_check) | **POST** /dbaas-task-migration-check/{service} | 
+*DbaasApi* | [**create_dbaas_task_migration_check**](docs/DbaasApi.md#create_dbaas_task_migration_check) | **POST** /dbaas-task-migration-check/{service} |
 *DbaasApi* | [**create_dbaas_valkey_user**](docs/DbaasApi.md#create_dbaas_valkey_user) | **POST** /dbaas-valkey/{service_name}/user | Create a DBaaS Valkey user
-*DbaasApi* | [**delete_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#delete_dbaas_external_endpoint_datadog) | **DELETE** /dbaas-external-endpoint-datadog/{endpoint_id} | 
-*DbaasApi* | [**delete_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#delete_dbaas_external_endpoint_elasticsearch) | **DELETE** /dbaas-external-endpoint-elasticsearch/{endpoint_id} | 
-*DbaasApi* | [**delete_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#delete_dbaas_external_endpoint_opensearch) | **DELETE** /dbaas-external-endpoint-opensearch/{endpoint_id} | 
-*DbaasApi* | [**delete_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#delete_dbaas_external_endpoint_prometheus) | **DELETE** /dbaas-external-endpoint-prometheus/{endpoint_id} | 
-*DbaasApi* | [**delete_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#delete_dbaas_external_endpoint_rsyslog) | **DELETE** /dbaas-external-endpoint-rsyslog/{endpoint_id} | 
-*DbaasApi* | [**delete_dbaas_integration**](docs/DbaasApi.md#delete_dbaas_integration) | **DELETE** /dbaas-integration/{id} | 
+*DbaasApi* | [**delete_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#delete_dbaas_external_endpoint_datadog) | **DELETE** /dbaas-external-endpoint-datadog/{endpoint_id} |
+*DbaasApi* | [**delete_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#delete_dbaas_external_endpoint_elasticsearch) | **DELETE** /dbaas-external-endpoint-elasticsearch/{endpoint_id} |
+*DbaasApi* | [**delete_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#delete_dbaas_external_endpoint_opensearch) | **DELETE** /dbaas-external-endpoint-opensearch/{endpoint_id} |
+*DbaasApi* | [**delete_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#delete_dbaas_external_endpoint_prometheus) | **DELETE** /dbaas-external-endpoint-prometheus/{endpoint_id} |
+*DbaasApi* | [**delete_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#delete_dbaas_external_endpoint_rsyslog) | **DELETE** /dbaas-external-endpoint-rsyslog/{endpoint_id} |
+*DbaasApi* | [**delete_dbaas_integration**](docs/DbaasApi.md#delete_dbaas_integration) | **DELETE** /dbaas-integration/{id} |
 *DbaasApi* | [**delete_dbaas_kafka_schema_registry_acl_config**](docs/DbaasApi.md#delete_dbaas_kafka_schema_registry_acl_config) | **DELETE** /dbaas-kafka/{name}/schema-registry/acl-config/{acl_id} | Delete a Kafka ACL entry
 *DbaasApi* | [**delete_dbaas_kafka_topic_acl_config**](docs/DbaasApi.md#delete_dbaas_kafka_topic_acl_config) | **DELETE** /dbaas-kafka/{name}/topic/acl-config/{acl_id} | Delete a Kafka ACL entry
 *DbaasApi* | [**delete_dbaas_kafka_user**](docs/DbaasApi.md#delete_dbaas_kafka_user) | **DELETE** /dbaas-kafka/{service_name}/user/{username} | Delete a DBaaS kafka user
@@ -104,17 +106,17 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**delete_dbaas_service_redis**](docs/DbaasApi.md#delete_dbaas_service_redis) | **DELETE** /dbaas-redis/{name} | Delete a Redis service
 *DbaasApi* | [**delete_dbaas_service_valkey**](docs/DbaasApi.md#delete_dbaas_service_valkey) | **DELETE** /dbaas-valkey/{name} | Delete a Valkey service
 *DbaasApi* | [**delete_dbaas_valkey_user**](docs/DbaasApi.md#delete_dbaas_valkey_user) | **DELETE** /dbaas-valkey/{service_name}/user/{username} | Delete a DBaaS Valkey user
-*DbaasApi* | [**detach_dbaas_service_from_endpoint**](docs/DbaasApi.md#detach_dbaas_service_from_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/detach | 
+*DbaasApi* | [**detach_dbaas_service_from_endpoint**](docs/DbaasApi.md#detach_dbaas_service_from_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/detach |
 *DbaasApi* | [**enable_dbaas_mysql_writes**](docs/DbaasApi.md#enable_dbaas_mysql_writes) | **PUT** /dbaas-mysql/{name}/enable/writes | Temporarily enable writes for MySQL services in read-only mode due to filled up storage
 *DbaasApi* | [**get_dbaas_ca_certificate**](docs/DbaasApi.md#get_dbaas_ca_certificate) | **GET** /dbaas-ca-certificate | Get DBaaS CA Certificate
-*DbaasApi* | [**get_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#get_dbaas_external_endpoint_datadog) | **GET** /dbaas-external-endpoint-datadog/{endpoint_id} | 
-*DbaasApi* | [**get_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#get_dbaas_external_endpoint_elasticsearch) | **GET** /dbaas-external-endpoint-elasticsearch/{endpoint_id} | 
-*DbaasApi* | [**get_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#get_dbaas_external_endpoint_opensearch) | **GET** /dbaas-external-endpoint-opensearch/{endpoint_id} | 
-*DbaasApi* | [**get_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#get_dbaas_external_endpoint_prometheus) | **GET** /dbaas-external-endpoint-prometheus/{endpoint_id} | 
-*DbaasApi* | [**get_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#get_dbaas_external_endpoint_rsyslog) | **GET** /dbaas-external-endpoint-rsyslog/{endpoint_id} | 
-*DbaasApi* | [**get_dbaas_external_integration**](docs/DbaasApi.md#get_dbaas_external_integration) | **GET** /dbaas-external-integration/{integration_id} | 
-*DbaasApi* | [**get_dbaas_external_integration_settings_datadog**](docs/DbaasApi.md#get_dbaas_external_integration_settings_datadog) | **GET** /dbaas-external-integration-settings-datadog/{integration_id} | 
-*DbaasApi* | [**get_dbaas_integration**](docs/DbaasApi.md#get_dbaas_integration) | **GET** /dbaas-integration/{id} | 
+*DbaasApi* | [**get_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#get_dbaas_external_endpoint_datadog) | **GET** /dbaas-external-endpoint-datadog/{endpoint_id} |
+*DbaasApi* | [**get_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#get_dbaas_external_endpoint_elasticsearch) | **GET** /dbaas-external-endpoint-elasticsearch/{endpoint_id} |
+*DbaasApi* | [**get_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#get_dbaas_external_endpoint_opensearch) | **GET** /dbaas-external-endpoint-opensearch/{endpoint_id} |
+*DbaasApi* | [**get_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#get_dbaas_external_endpoint_prometheus) | **GET** /dbaas-external-endpoint-prometheus/{endpoint_id} |
+*DbaasApi* | [**get_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#get_dbaas_external_endpoint_rsyslog) | **GET** /dbaas-external-endpoint-rsyslog/{endpoint_id} |
+*DbaasApi* | [**get_dbaas_external_integration**](docs/DbaasApi.md#get_dbaas_external_integration) | **GET** /dbaas-external-integration/{integration_id} |
+*DbaasApi* | [**get_dbaas_external_integration_settings_datadog**](docs/DbaasApi.md#get_dbaas_external_integration_settings_datadog) | **GET** /dbaas-external-integration-settings-datadog/{integration_id} |
+*DbaasApi* | [**get_dbaas_integration**](docs/DbaasApi.md#get_dbaas_integration) | **GET** /dbaas-integration/{id} |
 *DbaasApi* | [**get_dbaas_kafka_acl_config**](docs/DbaasApi.md#get_dbaas_kafka_acl_config) | **GET** /dbaas-kafka/{name}/acl-config | Get DBaaS kafka ACL configuration
 *DbaasApi* | [**get_dbaas_migration_status**](docs/DbaasApi.md#get_dbaas_migration_status) | **GET** /dbaas-migration-status/{name} | Get a DBaaS migration status
 *DbaasApi* | [**get_dbaas_opensearch_acl_config**](docs/DbaasApi.md#get_dbaas_opensearch_acl_config) | **GET** /dbaas-opensearch/{name}/acl-config | Get DBaaS OpenSearch ACL configuration
@@ -127,7 +129,7 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**get_dbaas_service_pg**](docs/DbaasApi.md#get_dbaas_service_pg) | **GET** /dbaas-postgres/{name} | Get a DBaaS PostgreSQL service
 *DbaasApi* | [**get_dbaas_service_redis**](docs/DbaasApi.md#get_dbaas_service_redis) | **GET** /dbaas-redis/{name} | Get a DBaaS Redis service
 *DbaasApi* | [**get_dbaas_service_type**](docs/DbaasApi.md#get_dbaas_service_type) | **GET** /dbaas-service-type/{service_type_name} | Get a DBaaS service type
-*DbaasApi* | [**get_dbaas_service_valkey**](docs/DbaasApi.md#get_dbaas_service_valkey) | **GET** /dbaas-valkey/{name} | 
+*DbaasApi* | [**get_dbaas_service_valkey**](docs/DbaasApi.md#get_dbaas_service_valkey) | **GET** /dbaas-valkey/{name} |
 *DbaasApi* | [**get_dbaas_settings_grafana**](docs/DbaasApi.md#get_dbaas_settings_grafana) | **GET** /dbaas-settings-grafana | Get DBaaS Grafana settings
 *DbaasApi* | [**get_dbaas_settings_kafka**](docs/DbaasApi.md#get_dbaas_settings_kafka) | **GET** /dbaas-settings-kafka | Get DBaaS Kafka settings
 *DbaasApi* | [**get_dbaas_settings_mysql**](docs/DbaasApi.md#get_dbaas_settings_mysql) | **GET** /dbaas-settings-mysql | Get DBaaS MySQL settings
@@ -136,11 +138,11 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**get_dbaas_settings_redis**](docs/DbaasApi.md#get_dbaas_settings_redis) | **GET** /dbaas-settings-redis | Get DBaaS Redis settings
 *DbaasApi* | [**get_dbaas_settings_valkey**](docs/DbaasApi.md#get_dbaas_settings_valkey) | **GET** /dbaas-settings-valkey | Get DBaaS Valkey settings
 *DbaasApi* | [**get_dbaas_task**](docs/DbaasApi.md#get_dbaas_task) | **GET** /dbaas-task/{service}/{id} | Get a DBaaS task
-*DbaasApi* | [**list_dbaas_external_endpoint_types**](docs/DbaasApi.md#list_dbaas_external_endpoint_types) | **GET** /dbaas-external-endpoint-types | 
-*DbaasApi* | [**list_dbaas_external_endpoints**](docs/DbaasApi.md#list_dbaas_external_endpoints) | **GET** /dbaas-external-endpoints | 
-*DbaasApi* | [**list_dbaas_external_integrations**](docs/DbaasApi.md#list_dbaas_external_integrations) | **GET** /dbaas-external-integrations/{service_name} | 
-*DbaasApi* | [**list_dbaas_integration_settings**](docs/DbaasApi.md#list_dbaas_integration_settings) | **GET** /dbaas-integration-settings/{integration_type}/{source_type}/{dest_type} | 
-*DbaasApi* | [**list_dbaas_integration_types**](docs/DbaasApi.md#list_dbaas_integration_types) | **GET** /dbaas-integration-types | 
+*DbaasApi* | [**list_dbaas_external_endpoint_types**](docs/DbaasApi.md#list_dbaas_external_endpoint_types) | **GET** /dbaas-external-endpoint-types |
+*DbaasApi* | [**list_dbaas_external_endpoints**](docs/DbaasApi.md#list_dbaas_external_endpoints) | **GET** /dbaas-external-endpoints |
+*DbaasApi* | [**list_dbaas_external_integrations**](docs/DbaasApi.md#list_dbaas_external_integrations) | **GET** /dbaas-external-integrations/{service_name} |
+*DbaasApi* | [**list_dbaas_integration_settings**](docs/DbaasApi.md#list_dbaas_integration_settings) | **GET** /dbaas-integration-settings/{integration_type}/{source_type}/{dest_type} |
+*DbaasApi* | [**list_dbaas_integration_types**](docs/DbaasApi.md#list_dbaas_integration_types) | **GET** /dbaas-integration-types |
 *DbaasApi* | [**list_dbaas_service_types**](docs/DbaasApi.md#list_dbaas_service_types) | **GET** /dbaas-service-type | DBaaS Service Types
 *DbaasApi* | [**list_dbaas_services**](docs/DbaasApi.md#list_dbaas_services) | **GET** /dbaas-service | List DBaaS services
 *DbaasApi* | [**reset_dbaas_grafana_user_password**](docs/DbaasApi.md#reset_dbaas_grafana_user_password) | **PUT** /dbaas-grafana/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Grafana user
@@ -170,13 +172,13 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**stop_dbaas_pg_migration**](docs/DbaasApi.md#stop_dbaas_pg_migration) | **POST** /dbaas-postgres/{name}/migration/stop | Stop a DBaaS PostgreSQL migration
 *DbaasApi* | [**stop_dbaas_redis_migration**](docs/DbaasApi.md#stop_dbaas_redis_migration) | **POST** /dbaas-redis/{name}/migration/stop | Stop a DBaaS Redis migration
 *DbaasApi* | [**stop_dbaas_valkey_migration**](docs/DbaasApi.md#stop_dbaas_valkey_migration) | **POST** /dbaas-valkey/{name}/migration/stop | Stop a DBaaS Valkey migration
-*DbaasApi* | [**update_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#update_dbaas_external_endpoint_datadog) | **PUT** /dbaas-external-endpoint-datadog/{endpoint_id} | 
-*DbaasApi* | [**update_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#update_dbaas_external_endpoint_elasticsearch) | **PUT** /dbaas-external-endpoint-elasticsearch/{endpoint_id} | 
-*DbaasApi* | [**update_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#update_dbaas_external_endpoint_opensearch) | **PUT** /dbaas-external-endpoint-opensearch/{endpoint_id} | 
-*DbaasApi* | [**update_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#update_dbaas_external_endpoint_prometheus) | **PUT** /dbaas-external-endpoint-prometheus/{endpoint_id} | 
-*DbaasApi* | [**update_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#update_dbaas_external_endpoint_rsyslog) | **PUT** /dbaas-external-endpoint-rsyslog/{endpoint_id} | 
-*DbaasApi* | [**update_dbaas_external_integration_settings_datadog**](docs/DbaasApi.md#update_dbaas_external_integration_settings_datadog) | **POST** /dbaas-external-integration-settings-datadog/{integration_id} | 
-*DbaasApi* | [**update_dbaas_integration**](docs/DbaasApi.md#update_dbaas_integration) | **PUT** /dbaas-integration/{id} | 
+*DbaasApi* | [**update_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#update_dbaas_external_endpoint_datadog) | **PUT** /dbaas-external-endpoint-datadog/{endpoint_id} |
+*DbaasApi* | [**update_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#update_dbaas_external_endpoint_elasticsearch) | **PUT** /dbaas-external-endpoint-elasticsearch/{endpoint_id} |
+*DbaasApi* | [**update_dbaas_external_endpoint_opensearch**](docs/DbaasApi.md#update_dbaas_external_endpoint_opensearch) | **PUT** /dbaas-external-endpoint-opensearch/{endpoint_id} |
+*DbaasApi* | [**update_dbaas_external_endpoint_prometheus**](docs/DbaasApi.md#update_dbaas_external_endpoint_prometheus) | **PUT** /dbaas-external-endpoint-prometheus/{endpoint_id} |
+*DbaasApi* | [**update_dbaas_external_endpoint_rsyslog**](docs/DbaasApi.md#update_dbaas_external_endpoint_rsyslog) | **PUT** /dbaas-external-endpoint-rsyslog/{endpoint_id} |
+*DbaasApi* | [**update_dbaas_external_integration_settings_datadog**](docs/DbaasApi.md#update_dbaas_external_integration_settings_datadog) | **POST** /dbaas-external-integration-settings-datadog/{integration_id} |
+*DbaasApi* | [**update_dbaas_integration**](docs/DbaasApi.md#update_dbaas_integration) | **PUT** /dbaas-integration/{id} |
 *DbaasApi* | [**update_dbaas_opensearch_acl_config**](docs/DbaasApi.md#update_dbaas_opensearch_acl_config) | **PUT** /dbaas-opensearch/{name}/acl-config | Create a DBaaS OpenSearch ACL configuration
 *DbaasApi* | [**update_dbaas_pg_connection_pool**](docs/DbaasApi.md#update_dbaas_pg_connection_pool) | **PUT** /dbaas-postgres/{service_name}/connection-pool/{connection_pool_name} | Update a DBaaS PostgreSQL connection pool
 *DbaasApi* | [**update_dbaas_postgres_allow_replication**](docs/DbaasApi.md#update_dbaas_postgres_allow_replication) | **PUT** /dbaas-postgres/{service_name}/user/{username}/allow-replication | Update access control for one service user
@@ -186,7 +188,7 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**update_dbaas_service_opensearch**](docs/DbaasApi.md#update_dbaas_service_opensearch) | **PUT** /dbaas-opensearch/{name} | Update a DBaaS OpenSearch service
 *DbaasApi* | [**update_dbaas_service_pg**](docs/DbaasApi.md#update_dbaas_service_pg) | **PUT** /dbaas-postgres/{name} | Update a DBaaS PostgreSQL service
 *DbaasApi* | [**update_dbaas_service_redis**](docs/DbaasApi.md#update_dbaas_service_redis) | **PUT** /dbaas-redis/{name} | Update a DBaaS Redis service
-*DbaasApi* | [**update_dbaas_service_valkey**](docs/DbaasApi.md#update_dbaas_service_valkey) | **PUT** /dbaas-valkey/{name} | 
+*DbaasApi* | [**update_dbaas_service_valkey**](docs/DbaasApi.md#update_dbaas_service_valkey) | **PUT** /dbaas-valkey/{name} |
 *DeployTargetApi* | [**get_deploy_target**](docs/DeployTargetApi.md#get_deploy_target) | **GET** /deploy-target/{id} | Retrieve Deploy Target details
 *DeployTargetApi* | [**list_deploy_targets**](docs/DeployTargetApi.md#list_deploy_targets) | **GET** /deploy-target | List Deploy Targets
 *DnsApi* | [**create_dns_domain**](docs/DnsApi.md#create_dns_domain) | **POST** /dns-domain | Create DNS domain
@@ -747,4 +749,3 @@ cargo doc --open
 ## Author
 
 api@exoscale.com
-
