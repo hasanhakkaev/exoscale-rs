@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | Option<**String**> | Security Group rule description | [optional]
-**start_port** | Option<**i64**> | Start port of the range | [optional]
+**start_port** | Option<**u64**> | Start port of the range | [optional]
 **protocol** | Option<**String**> | Network protocol | [optional]
 **icmp** | Option<[**models::SecurityGroupRuleIcmp**](security_group_rule_icmp.md)> |  | [optional]
-**end_port** | Option<**i64**> | End port of the range | [optional]
+**end_port** | Option<**u64**> | End port of the range | [optional]
 **security_group** | Option<[**models::SecurityGroupResource**](security-group-resource.md)> |  | [optional]
 **id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Security Group rule ID | [optional][readonly]
 **network** | Option<**String**> | CIDR-formatted network allowed | [optional]

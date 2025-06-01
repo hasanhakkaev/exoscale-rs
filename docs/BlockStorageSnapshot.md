@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Snapshot ID | [optional][readonly]
 **name** | Option<**String**> | Snapshot name | [optional]
-**size** | Option<**i64**> | Snapshot size | [optional]
-**volume_size** | Option<**i64**> | Original Volume size | [optional]
+**size** | Option<**u64**> | Snapshot size | [optional]
+**volume_size** | Option<**u64**> | Original Volume size | [optional]
 **created_at** | Option<**String**> | Snapshot creation date | [optional][readonly]
 **state** | Option<**String**> | Snapshot state | [optional][readonly]
 **labels** | Option<**std::collections::HashMap<String, String>**> |  | [optional]

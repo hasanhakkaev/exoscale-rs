@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | Option<**String**> | Snapshot name | [optional]
 **created_at** | Option<**String**> | Snapshot creation date | [optional][readonly]
 **state** | Option<**String**> | Snapshot state | [optional]
-**size** | Option<**i64**> | Snapshot size in GiB | [optional][readonly]
+**size** | Option<**u64**> | Snapshot size in GiB | [optional][readonly]
 **export** | Option<[**models::SnapshotExport**](snapshot_export.md)> |  | [optional]
 **instance** | Option<[**models::Instance**](instance.md)> |  | [optional]
 

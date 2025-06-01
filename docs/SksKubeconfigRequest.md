@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ttl** | Option<**i64**> | Validity in seconds of the Kubeconfig user certificate (default: 30 days) | [optional]
+**ttl** | Option<**u64**> | Validity in seconds of the Kubeconfig user certificate (default: 30 days) | [optional]
 **user** | Option<**String**> | User name in the generated Kubeconfig. The certificate present in the Kubeconfig will also have this name set for the CN field. | [optional]
 **groups** | Option<**Vec<String>**> | List of roles. The certificate present in the Kubeconfig will have these roles set in the Org field. | [optional]
 

@@ -7,14 +7,14 @@ Method | HTTP request | Description
 [**add_service_to_load_balancer**](NetworkLoadBalancerApi.md#add_service_to_load_balancer) | **POST** /load-balancer/{id}/service | Add a Load Balancer Service
 [**create_load_balancer**](NetworkLoadBalancerApi.md#create_load_balancer) | **POST** /load-balancer | Create a Load Balancer
 [**delete_load_balancer**](NetworkLoadBalancerApi.md#delete_load_balancer) | **DELETE** /load-balancer/{id} | Delete a Load Balancer
-[**delete_load_balancer_service**](NetworkLoadBalancerApi.md#delete_load_balancer_service) | **DELETE** /load-balancer/{id}/service/{service-id} | Delete a Load Balancer Service
+[**delete_load_balancer_service**](NetworkLoadBalancerApi.md#delete_load_balancer_service) | **DELETE** /load-balancer/{id}/service/{service_id} | Delete a Load Balancer Service
 [**get_load_balancer**](NetworkLoadBalancerApi.md#get_load_balancer) | **GET** /load-balancer/{id} | Retrieve Load Balancer details
-[**get_load_balancer_service**](NetworkLoadBalancerApi.md#get_load_balancer_service) | **GET** /load-balancer/{id}/service/{service-id} | Retrieve Load Balancer Service details
+[**get_load_balancer_service**](NetworkLoadBalancerApi.md#get_load_balancer_service) | **GET** /load-balancer/{id}/service/{service_id} | Retrieve Load Balancer Service details
 [**list_load_balancers**](NetworkLoadBalancerApi.md#list_load_balancers) | **GET** /load-balancer | List Load Balancers
 [**reset_load_balancer_field**](NetworkLoadBalancerApi.md#reset_load_balancer_field) | **DELETE** /load-balancer/{id}/{field} | Reset a Load Balancer field to its default value
-[**reset_load_balancer_service_field**](NetworkLoadBalancerApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service-id}/{field} | Reset a Load Balancer Service field to its default value
+[**reset_load_balancer_service_field**](NetworkLoadBalancerApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service_id}/{field} | Reset a Load Balancer Service field to its default value
 [**update_load_balancer**](NetworkLoadBalancerApi.md#update_load_balancer) | **PUT** /load-balancer/{id} | Update a Load Balancer
-[**update_load_balancer_service**](NetworkLoadBalancerApi.md#update_load_balancer_service) | **PUT** /load-balancer/{id}/service/{service-id} | Update a Load Balancer Service
+[**update_load_balancer_service**](NetworkLoadBalancerApi.md#update_load_balancer_service) | **PUT** /load-balancer/{id}/service/{service_id} | Update a Load Balancer Service
 
 
 

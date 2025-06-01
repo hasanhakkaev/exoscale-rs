@@ -1,0 +1,236 @@
+{{>partial_header}}
+use reqwest;
+use serde::{Deserialize, Serialize};
+use crate::{models, utils,apis::ResponseContent};
+use super::{Error, configuration};
+
+{{#operations}}
+{{#operation}}
+{{#vendorExtensions.x-group-parameters}}
+{{#allParams}}
+{{#-first}}
+/// struct for passing parameters to the method [`{{operationId}}`]
+#[derive(Clone, Debug)]
+pub struct {{{operationIdCamelCase}}}Params {
+{{/-first}}
+    {{#description}}
+    /// {{{.}}}
+    {{/description}}
+    pub {{{paramName}}}: {{!
+    ### Option Start
+    }}{{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{!
+    ### &str and Vec<&str>
+    }}{{^isUuid}}{{#isString}}{{#isArray}}Vec<{{/isArray}}String{{#isArray}}>{{/isArray}}{{/isString}}{{/isUuid}}{{!
+    ### UUIDs
+    }}{{#isUuid}}{{#isArray}}Vec<{{/isArray}}String{{#isArray}}>{{/isArray}}{{/isUuid}}{{!
+    ### Models and primative types
+    }}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{!
+    ### Option End
+    }}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{!
+    ### Comma for next arguement
+    }}{{^-last}},{{/-last}}
+{{#-last}}
+}
+{{/-last}}
+{{/allParams}}
+{{/vendorExtensions.x-group-parameters}}
+{{/operation}}
+{{/operations}}
+
+{{#supportMultipleResponses}}
+{{#operations}}
+{{#operation}}
+// struct for typed successes of method [`{{operationId}}`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum {{{operationIdCamelCase}}}Success {
+    {{#responses}}
+    {{#is2xx}}
+    Status{{code}}({{#isEnum}}{{{enumName}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}),
+    {{/is2xx}}
+    {{#is3xx}}
+    Status{{code}}({{#isEnum}}{{{enumName}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}),
+    {{/is3xx}}
+    {{/responses}}
+    UnknownValue(serde_json::Value),
+}
+impl utils::ApiError for {{{operationIdCamelCase}}}Error {}
+{{/operation}}
+{{/operations}}
+{{/supportMultipleResponses}}
+{{#operations}}
+{{#operation}}
+/// struct for typed errors of method [`{{operationId}}`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum {{{operationIdCamelCase}}}Error {
+    {{#responses}}
+    {{#is4xx}}
+    Status{{code}}({{#isEnum}}{{{enumName}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}),
+    {{/is4xx}}
+    {{#is5xx}}
+    Status{{code}}({{#isEnum}}{{{enumName}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}),
+    {{/is5xx}}
+    {{#isDefault}}
+    DefaultResponse({{#isEnum}}{{{enumName}}}{{/isEnum}}{{^isEnum}}{{{dataType}}}{{/isEnum}}),
+    {{/isDefault}}
+    {{/responses}}
+    UnknownValue(serde_json::Value),
+}
+
+
+{{/operation}}
+{{/operations}}
+{{#operations}}
+{{#operation}}
+{{#vendorExtensions.x-group-parameters}}
+pub {{#supportAsync}}async {{/supportAsync}}fn {{{operationId}}}(configuration: &configuration::Configuration{{#allParams}}{{#-first}}, {{!
+### Params
+}}params: {{{operationIdCamelCase}}}Params{{/-first}}{{/allParams}}{{!
+### Function return type
+}}) -> Result<{{!
+### Response File Support
+}}{{#isResponseFile}}{{#supportAsync}}reqwest::Response{{/supportAsync}}{{^supportAsync}}reqwest::blocking::Response{{/supportAsync}}{{/isResponseFile}}{{!
+### Regular Responses
+}}{{^isResponseFile}}{{!
+### Multi response support
+}}{{#supportMultipleResponses}}ResponseContent
+<{{{operationIdCamelCase}}}Success>{{/supportMultipleResponses}}{{!
+### Regular return type
+}}{{^supportMultipleResponses}}{{^returnType}}(){{/returnType}}{{{returnType}}}{{/supportMultipleResponses}}{{/isResponseFile}}{{!
+### Error Type
+}}, Error<{{{operationIdCamelCase}}}Error>> {
+{{/vendorExtensions.x-group-parameters}}
+{{^vendorExtensions.x-group-parameters}}
+pub {{#supportAsync}}async {{/supportAsync}}fn {{{operationId}}}(configuration: &configuration::Configuration, {{#allParams}}{{{paramName}}}: {{!
+### Option Start
+}}{{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{!
+### &str and Vec<&str>
+}}{{#isString}}{{#isArray}}Vec<{{/isArray}}{{^isUuid}}&str{{/isUuid}}{{#isArray}}>{{/isArray}}{{/isString}}{{!
+### UUIDs
+}}{{#isUuid}}{{#isArray}}Vec<{{/isArray}}String{{#isArray}}>{{/isArray}}{{/isUuid}}{{!
+### Models and primative types
+}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}models::{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{!
+### Option End
+}}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{!
+### Comma for next arguement
+}}{{^-last}}, {{/-last}}{{/allParams}}{{!
+### Function return type
+}}) -> Result<{{!
+### Response File Support
+}}{{#isResponseFile}}{{#supportAsync}}reqwest::Response{{/supportAsync}}{{^supportAsync}}reqwest::blocking::Response{{/supportAsync}}{{/isResponseFile}}{{!
+### Regular Responses
+}}{{^isResponseFile}}{{!
+### Multi response support
+}}{{#supportMultipleResponses}}ResponseContent<{{{operationIdCamelCase}}}Success>{{/supportMultipleResponses}}{{!
+### Regular return type
+}}{{^supportMultipleResponses}}{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}{{/supportMultipleResponses}}{{/isResponseFile}}{{!
+### Error Type
+}}, Error<{{{operationIdCamelCase}}}Error>> {
+    {{#allParams}}
+    let local_var_{{{paramName}}} = {{{paramName}}};
+    {{/allParams}}
+        {{/vendorExtensions.x-group-parameters}}
+
+    let mut path_params_map = std::collections::HashMap::new();
+    {{#pathParams}}
+        {{#vendorExtensions.x-group-parameters}}
+                path_params_map.insert("{{baseName}}".to_string(), crate::apis::urlencode(&params.{{{paramName}}}));
+        {{/vendorExtensions.x-group-parameters}}
+        {{^vendorExtensions.x-group-parameters}}
+                path_params_map.insert("{{baseName}}".to_string(), crate::apis::urlencode(&local_var_{{{paramName}}}));
+        {{/vendorExtensions.x-group-parameters}}
+    {{/pathParams}}
+
+    let mut query_params_vec: Vec<(&str, String)> = Vec::new();
+{{! --- START OF ULTRA-MINIMAL AND CLEAN QUERY PARAMETERS BLOCK --- }}
+    {{#queryParams}}
+        {{! This loop iterates for each query parameter like 'visibility', then 'family' }}
+        {{^vendorExtensions.x-group-parameters}}
+            {{! This path is for non-grouped parameters like local_var_visibility, local_var_family }}
+            {{^isDeepObject}}
+                {{^required}}
+                    {{! This path is for optional parameters like 'visibility' and 'family' }}
+                    {{^isArray}}
+                        {{! This path is for optional, non-array parameters }}
+                        if let Some(value) = &local_var_{{{paramName}}} {
+                            query_params_vec.push(("{{{baseName}}}", value.to_string()));
+                        }
+                    {{/isArray}}
+                    {{#isArray}}
+                        {{! This path is for optional, array parameters }}
+                        if let Some(value) = &local_var_{{{paramName}}} {
+                            for item_val in value.iter() {
+                                query_params_vec.push(("{{{baseName}}}", item_val.to_string()));
+                            }
+                        }
+                    {{/isArray}}
+                {{/required}}
+                {{#required}}
+                    {{! This path is for required parameters }}
+                    {{^isArray}}
+                        {{#isNullable}}
+                        if let Some(value) = &local_var_{{{paramName}}} {
+                            query_params_vec.push(("{{{baseName}}}", value.to_string()));
+                        } else {
+                            // Potentially handle required but nullable and None, e.g., error or skip
+                        }
+                        {{/isNullable}}
+                        {{^isNullable}}
+                        query_params_vec.push(("{{{baseName}}}", local_var_{{{paramName}}}.to_string()));
+                        {{/isNullable}}
+                    {{/isArray}}
+                    {{#isArray}}
+                        {{! This path is for required, array parameters }}
+                        if let Some(v_items) = &local_var_{{{paramName}}} {
+                            for item_val in v_items.iter() {
+                                query_params_vec.push(("{{{baseName}}}", item_val.to_string()));
+                            }
+                        } {{#isNullable}} else { /* Potentially handle */ } {{/isNullable}}
+                    {{/isArray}}
+                {{/required}}
+            {{/isDeepObject}}
+            {{#isDeepObject}}
+                {{! Placeholder: Deep object logic for non-grouped params would go here if needed }}
+            {{/isDeepObject}}
+        {{/vendorExtensions.x-group-parameters}}
+        {{#vendorExtensions.x-group-parameters}}
+            {{! Placeholder: Grouped parameter logic ('params.paramName') would go here if needed }}
+            {{! You would mirror the structure above but use 'params.{{{paramName}}}' }}
+        {{/vendorExtensions.x-group-parameters}}
+    {{/queryParams}}
+    {{! --- END OF ULTRA-MINIMAL AND CLEAN QUERY PARAMETERS BLOCK --- }}
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+    {{#vendorExtensions.x-group-parameters}}
+        {{#hasBodyParam}}
+            {{#bodyParams}}
+
+            let body_payload_option = Some(params.{{{paramName}}});
+            {{/bodyParams}}
+        {{/hasBodyParam}}
+        {{^hasBodyParam}}
+        let body_payload_option: Option<()> = None;
+        {{/hasBodyParam}}
+    {{/vendorExtensions.x-group-parameters}}
+    {{^vendorExtensions.x-group-parameters}}
+        {{#hasBodyParam}}
+            {{#bodyParams}}
+            let body_payload_option = Some(local_var_{{{paramName}}});
+            {{/bodyParams}}
+        {{/hasBodyParam}}
+        {{^hasBodyParam}}
+        let body_payload_option: Option<()> = None;
+        {{/hasBodyParam}}
+    {{/vendorExtensions.x-group-parameters}}
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::{{httpMethod}},
+    "{{{path}}}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ){{#supportAsync}}.await{{/supportAsync}}
+}
+{{/operation}}
+{{/operations}}

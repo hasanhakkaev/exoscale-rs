@@ -4,7 +4,7 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**reset_load_balancer_service_field**](ComputeApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service-id}/{field} | Reset a Load Balancer Service field to its default value
+[**reset_load_balancer_service_field**](ComputeApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service_id}/{field} | Reset a Load Balancer Service field to its default value
 
 
 

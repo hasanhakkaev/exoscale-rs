@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **component** | **String** | Service component name | 
 **host** | **String** | DNS name for connecting to the service component | 
 **kafka_authentication_method** | Option<[**models::EnumKafkaAuthMethod**](enum-kafka-auth-method.md)> |  | [optional]
-**port** | **i64** | Port number for connecting to the service component | 
+**port** | **u64** | Port number for connecting to the service component | 
 **route** | [**models::EnumComponentRoute**](enum-component-route.md) |  | 
 **usage** | [**models::EnumComponentUsage**](enum-component-usage.md) |  | 
 

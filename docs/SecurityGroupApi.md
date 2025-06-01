@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**add_rule_to_security_group**](SecurityGroupApi.md#add_rule_to_security_group) | **POST** /security-group/{id}/rules | Create a Security Group rule
 [**attach_instance_to_security_group**](SecurityGroupApi.md#attach_instance_to_security_group) | **PUT** /security-group/{id}:attach | Attach a Compute instance to a Security Group
 [**create_security_group**](SecurityGroupApi.md#create_security_group) | **POST** /security-group | Create a Security Group
-[**delete_rule_from_security_group**](SecurityGroupApi.md#delete_rule_from_security_group) | **DELETE** /security-group/{id}/rules/{rule-id} | Delete a Security Group rule
+[**delete_rule_from_security_group**](SecurityGroupApi.md#delete_rule_from_security_group) | **DELETE** /security-group/{id}/rules/{rule_id} | Delete a Security Group rule
 [**delete_security_group**](SecurityGroupApi.md#delete_security_group) | **DELETE** /security-group/{id} | Delete a Security Group
 [**detach_instance_from_security_group**](SecurityGroupApi.md#detach_instance_from_security_group) | **PUT** /security-group/{id}:detach | Detach a Compute instance from a Security Group
 [**get_security_group**](SecurityGroupApi.md#get_security_group) | **GET** /security-group/{id} | Retrieve Security Group details

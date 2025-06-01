@@ -1,0 +1,49 @@
+name: check_and_regenerate_v3
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * *" # everyday at 7 AM
+
+jobs:
+  check_changes_and_create_pr:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          make install-open-api-generator
+          make pull-oapi-spec
+          make generate
+          git diff --quiet || echo "changes_detected=true" >> $GITHUB_OUTPUT
+
+      - name: Fetch RSS Feed
+        uses: Promptly-Technologies-LLC/rss-fetch-action@v2
+        if: steps.check_changes.outputs.changes_detected
+        with:
+          feed_url: 'https://openapi-v2.exoscale.com/changes.rss'
+          file_path: './changes.json'
+
+      - name: Update readme with the change date from the RSS feed
+        if: steps.check_changes.outputs.changes_detected
+        run: |
+          echo "Generated with latest changes from $(date -d "$(jq -r '.channel.item[0].pubDate' ./changes.json)" +'%Y-%m-%d')" >> README.md
+
+      - name: Create PR
+        if: steps.check_changes.outputs.changes_detected
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "v3: regenerate from new API spec"
+          body: "New changes have appeared in the API spec and exoscale-rs v3 has been regenerated."
+          branch: generate-v3
+          delete-branch: true
+          base: master
+          author: hhakkaev

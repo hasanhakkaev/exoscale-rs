@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**max_index_count** | Option<**i64**> | Maximum number of indexes to keep before deleting the oldest one | [optional]
+**max_index_count** | Option<**u64**> | Maximum number of indexes to keep before deleting the oldest one | [optional]
 **keep_index_refresh_interval** | Option<**bool**> | Aiven automation resets index.refresh_interval to default value for every index to be sure that indices are always visible to search. If it doesn't fit your case, you can disable this by setting up this flag to true. | [optional]
 **ip_filter** | Option<**Vec<String>**> | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16' | [optional]
 **termination_protection** | Option<**bool**> | Service is protected against termination and powering off | [optional]

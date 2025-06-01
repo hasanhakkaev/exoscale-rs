@@ -5,15 +5,15 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_dns_domain**](DnsApi.md#create_dns_domain) | **POST** /dns-domain | Create DNS domain
-[**create_dns_domain_record**](DnsApi.md#create_dns_domain_record) | **POST** /dns-domain/{domain-id}/record | Create DNS domain record
+[**create_dns_domain_record**](DnsApi.md#create_dns_domain_record) | **POST** /dns-domain/{domain_id}/record | Create DNS domain record
 [**delete_dns_domain**](DnsApi.md#delete_dns_domain) | **DELETE** /dns-domain/{id} | Delete DNS Domain
-[**delete_dns_domain_record**](DnsApi.md#delete_dns_domain_record) | **DELETE** /dns-domain/{domain-id}/record/{record-id} | Delete DNS domain record
+[**delete_dns_domain_record**](DnsApi.md#delete_dns_domain_record) | **DELETE** /dns-domain/{domain_id}/record/{record_id} | Delete DNS domain record
 [**get_dns_domain**](DnsApi.md#get_dns_domain) | **GET** /dns-domain/{id} | Retrieve DNS domain details
-[**get_dns_domain_record**](DnsApi.md#get_dns_domain_record) | **GET** /dns-domain/{domain-id}/record/{record-id} | Retrieve DNS domain record details
+[**get_dns_domain_record**](DnsApi.md#get_dns_domain_record) | **GET** /dns-domain/{domain_id}/record/{record_id} | Retrieve DNS domain record details
 [**get_dns_domain_zone_file**](DnsApi.md#get_dns_domain_zone_file) | **GET** /dns-domain/{id}/zone | Retrieve DNS domain zone file
-[**list_dns_domain_records**](DnsApi.md#list_dns_domain_records) | **GET** /dns-domain/{domain-id}/record | List DNS domain records
+[**list_dns_domain_records**](DnsApi.md#list_dns_domain_records) | **GET** /dns-domain/{domain_id}/record | List DNS domain records
 [**list_dns_domains**](DnsApi.md#list_dns_domains) | **GET** /dns-domain | List DNS domains
-[**update_dns_domain_record**](DnsApi.md#update_dns_domain_record) | **PUT** /dns-domain/{domain-id}/record/{record-id} | Update DNS domain record
+[**update_dns_domain_record**](DnsApi.md#update_dns_domain_record) | **PUT** /dns-domain/{domain_id}/record/{record_id} | Update DNS domain record
 
 
 

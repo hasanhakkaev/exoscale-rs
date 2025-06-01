@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **family** | Option<**String**> | Template family | [optional][readonly]
 **name** | Option<**String**> | Template name | [optional]
 **default_user** | Option<**String**> | Template default user | [optional]
-**size** | Option<**i64**> | Template size | [optional]
+**size** | Option<**u64**> | Template size | [optional]
 **password_enabled** | Option<**bool**> | Enable password-based login | [optional]
 **build** | Option<**String**> | Template build | [optional][readonly]
 **checksum** | Option<**String**> | Template MD5 checksum | [optional]

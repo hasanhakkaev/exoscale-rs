@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **private_networks** | Option<[**Vec<models::PrivateNetwork>**](private-network.md)> | Nodepool Private Networks | [optional]
 **instance_prefix** | Option<**String**> | Prefix to apply to managed instances names (default: pool), lowercase only | [optional]
 **deploy_target** | Option<[**models::DeployTarget**](deploy-target.md)> |  | [optional]
-**disk_size** | Option<**i64**> | Nodepool instances disk size in GiB | [optional]
+**disk_size** | Option<**u64**> | Nodepool instances disk size in GiB | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

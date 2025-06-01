@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **admin_username** | Option<**String**> | Custom username for admin user. This must be set only when a new service is being created. | [optional]
 **version** | Option<[**models::DbaasPgTargetVersions**](dbaas-pg-target-versions.md)> |  | [optional]
 **plan** | **String** | Subscription plan | 
-**work_mem** | Option<**i64**> | Sets the maximum amount of memory to be used by a query operation (such as a sort or hash table) before writing to temporary disk files, in MB. Default is 1MB + 0.075% of total RAM (up to 32MB). | [optional]
-**shared_buffers_percentage** | Option<**i64**> | Percentage of total RAM that the database server uses for shared memory buffers. Valid range is 20-60 (float), which corresponds to 20% - 60%. This setting adjusts the shared_buffers configuration value. | [optional]
+**work_mem** | Option<**u64**> | Sets the maximum amount of memory to be used by a query operation (such as a sort or hash table) before writing to temporary disk files, in MB. Default is 1MB + 0.075% of total RAM (up to 32MB). | [optional]
+**shared_buffers_percentage** | Option<**u64**> | Percentage of total RAM that the database server uses for shared memory buffers. Valid range is 20-60 (float), which corresponds to 20% - 60%. This setting adjusts the shared_buffers configuration value. | [optional]
 **pg_settings** | Option<[**models::JsonSchemaPg**](json-schema-pg.md)> |  | [optional]
 **admin_password** | Option<**String**> | Custom password for admin user. Defaults to random string. This must be set only when a new service is being created. | [optional]
 **migration** | Option<[**models::UpdateDbaasServiceMysqlRequestMigration**](update_dbaas_service_mysql_request_migration.md)> |  | [optional]
