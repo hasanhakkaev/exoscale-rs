@@ -19,112 +19,112 @@ use std::time::Duration;
 
 
 const DEFAULT_SIGNATURE_EXPIRATION_SECS: u64 = 600; // 10 minutes
-const DEFAULT_USER_AGENT: &str = "exoscale-rs/2.1.0";
+const DEFAULT_USER_AGENT: &str = "exoscale-rs/3.0.0";
 const DEFAULT_CONTENT_TYPE: &str = "application/json";
 
 #[derive(Clone, Debug)]
 pub(crate) struct InnerConfig {
-    pub api_key: SecretString,
-    pub api_secret: SecretString,
-    pub expiration: Duration,
+pub api_key: SecretString,
+pub api_secret: SecretString,
+pub expiration: Duration,
 }
 
 
 impl Default for InnerConfig {
-    fn default() -> Self {
-        Self {
-            api_key: SecretString::new(Box::from(String::new())),
-            api_secret: SecretString::new(Box::from(String::new())),
-            expiration: Duration::from_secs(0),
-        }
-    }
+fn default() -> Self {
+Self {
+api_key: SecretString::new(Box::from(String::new())),
+api_secret: SecretString::new(Box::from(String::new())),
+expiration: Duration::from_secs(0),
+}
+}
 }
 
 
 #[derive(Debug, Clone)]
 pub struct Configuration {
-    pub base_path: String,
-    pub user_agent: String,
-    pub client: reqwest_middleware::ClientWithMiddleware,
-    pub api_key: SecretString,
-    pub api_secret: SecretString,
-    pub expiration: Duration,
-    pub zone: String,
-    pub content_type: String,
+pub base_path: String,
+pub user_agent: String,
+pub client: reqwest_middleware::ClientWithMiddleware,
+pub api_key: SecretString,
+pub api_secret: SecretString,
+pub expiration: Duration,
+pub zone: String,
+pub content_type: String,
 }
-
 
 
 impl Configuration {
-    pub fn new(
-        zone: &str,
-        api_key: String,
-        api_secret: String,
-    ) -> Result<Self, reqwest::Error> {
-        let base_reqwest_client = Client::builder().build()?;
+pub fn new(
+zone: &str,
+api_key: String,
+api_secret: String,
+) -> Result
+<Self, reqwest::Error> {
+let base_reqwest_client = Client::builder().build()?;
 
-        let signature_expiration = Duration::from_secs(DEFAULT_SIGNATURE_EXPIRATION_SECS);
+let signature_expiration = Duration::from_secs(DEFAULT_SIGNATURE_EXPIRATION_SECS);
 
-        let inner_config_for_middleware = Arc::new(InnerConfig {
-            api_key: SecretString::new(Box::from(api_key.clone())),
-            api_secret: SecretString::new(Box::from(api_secret.clone())),
-            expiration: signature_expiration,
-        });
+let inner_config_for_middleware = Arc::new(InnerConfig {
+api_key: SecretString::new(Box::from(api_key.clone())),
+api_secret: SecretString::new(Box::from(api_secret.clone())),
+expiration: signature_expiration,
+});
 
-        let client_with_middleware = ClientBuilder::new(base_reqwest_client)
-            .with(crate::middleware::ExoscaleAuthMiddleware::new(inner_config_for_middleware))
-            .build();
+let client_with_middleware = ClientBuilder::new(base_reqwest_client)
+.with(crate::middleware::ExoscaleAuthMiddleware::new(inner_config_for_middleware))
+.build();
 
-        Ok(Configuration {
-            base_path: format!("https://api-{}.exoscale.com/v2", zone),
-            user_agent: DEFAULT_USER_AGENT.to_string(),
-            client: client_with_middleware,
-            api_key: SecretString::new(Box::from(api_key)),
-            api_secret: SecretString::new(Box::from(api_secret)),
-            expiration: signature_expiration,
-            zone: zone.to_owned(),
-            content_type: DEFAULT_CONTENT_TYPE.to_string(),
-        })
-    }
+Ok(Configuration {
+base_path: format!("https://api-{}.exoscale.com/v2", zone),
+user_agent: DEFAULT_USER_AGENT.to_string(),
+client: client_with_middleware,
+api_key: SecretString::new(Box::from(api_key)),
+api_secret: SecretString::new(Box::from(api_secret)),
+expiration: signature_expiration,
+zone: zone.to_owned(),
+content_type: DEFAULT_CONTENT_TYPE.to_string(),
+})
+}
 }
 
 impl Default for Configuration {
-    fn default() -> Self {
-        // WARNING: This default `Configuration` instance is NON-FUNCTIONAL for Exoscale API calls.
-        // It initializes the client with EMPTY credentials and a PLACEHOLDER zone.
-        // Any attempt to make a signed API call will fail.
-        //
-        // `Configuration::new()` is the strongly recommended method for creating a functional client.
-        // This implementation exists primarily for structural compatibility if required by
-        // generated code patterns that might expect `Configuration: Default`.
-        eprintln!(
-            "WARNING: Default Configuration created. The Exoscale client is initialized with empty credentials \
-            and a placeholder zone ('unconfigured-zone'). It will NOT be able to make authenticated API calls. \
-            Please use Configuration::new(zone, api_key, api_secret)."
-        );
+fn default() -> Self {
+// WARNING: This default `Configuration` instance is NON-FUNCTIONAL for Exoscale API calls.
+// It initializes the client with EMPTY credentials and a PLACEHOLDER zone.
+// Any attempt to make a signed API call will fail.
+//
+// `Configuration::new()` is the strongly recommended method for creating a functional client.
+// This implementation exists primarily for structural compatibility if required by
+// generated code patterns that might expect `Configuration: Default`.
+eprintln!(
+"WARNING: Default Configuration created. The Exoscale client is initialized with empty credentials \
+and a placeholder zone ('unconfigured-zone'). It will NOT be able to make authenticated API calls. \
+Please use Configuration::new(zone, api_key, api_secret)."
+);
 
-        let default_placeholder_zone = "unconfigured-zone";
+let default_placeholder_zone = "unconfigured-zone";
 
-        let base_reqwest_client = Client::builder()
-            .build()
-            .expect("Failed to build base reqwest client in Default for Configuration. This should not happen.");
+let base_reqwest_client = Client::builder()
+.build()
+.expect("Failed to build base reqwest client in Default for Configuration. This should not happen.");
 
-        // Middleware will be initialized with default (empty/placeholder) InnerConfig values.
-        let inner_config_for_middleware = Arc::new(InnerConfig::default());
+// Middleware will be initialized with default (empty/placeholder) InnerConfig values.
+let inner_config_for_middleware = Arc::new(InnerConfig::default());
 
-        let client_with_middleware = ClientBuilder::new(base_reqwest_client)
-            .with(crate::middleware::ExoscaleAuthMiddleware::new(inner_config_for_middleware)) // 
-            .build();
+let client_with_middleware = ClientBuilder::new(base_reqwest_client)
+.with(crate::middleware::ExoscaleAuthMiddleware::new(inner_config_for_middleware)) // 
+.build();
 
-        Configuration {
-            base_path: format!("https://api-{}.exoscale.com/v2", default_placeholder_zone),
-            user_agent: DEFAULT_USER_AGENT.to_string(),
-            client: client_with_middleware, // Middleware is present, but with empty creds in its InnerConfig
-            api_key: SecretString::new(Box::from(String::new())),
-            api_secret: SecretString::new(Box::from(String::new())),
-            expiration: Duration::from_secs(DEFAULT_SIGNATURE_EXPIRATION_SECS), // Store a default value
-            zone: default_placeholder_zone.to_string(),
-            content_type: DEFAULT_CONTENT_TYPE.to_string(),
-        }
-    }
+Configuration {
+base_path: format!("https://api-{}.exoscale.com/v2", default_placeholder_zone),
+user_agent: DEFAULT_USER_AGENT.to_string(),
+client: client_with_middleware, // Middleware is present, but with empty creds in its InnerConfig
+api_key: SecretString::new(Box::from(String::new())),
+api_secret: SecretString::new(Box::from(String::new())),
+expiration: Duration::from_secs(DEFAULT_SIGNATURE_EXPIRATION_SECS), // Store a default value
+zone: default_placeholder_zone.to_string(),
+content_type: DEFAULT_CONTENT_TYPE.to_string(),
+}
+}
 }

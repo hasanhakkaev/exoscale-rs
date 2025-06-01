@@ -2,11 +2,11 @@ use crate::apis::configuration::InnerConfig;
 use base64::{engine::general_purpose::STANDARD as Base64Standard, Engine as _};
 use hmac::{Hmac, KeyInit, Mac};
 use http::HeaderValue;
+use libc;
 use reqwest::{Method, Url};
 use secrecy::ExposeSecret;
 use sha2::Sha256;
 use std::fmt::Write as FmtWrite;
-use std::os::unix::raw::pthread_t;
 // Alias to avoid conflict with std::io::Write
 use std::time::{SystemTime, UNIX_EPOCH};
 
