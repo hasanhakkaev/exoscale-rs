@@ -17,20 +17,20 @@ pub struct SksKubeconfigRequest {
     #[serde(rename = "ttl", skip_serializing_if = "Option::is_none")]
     pub ttl: Option<u64>,
     /// User name in the generated Kubeconfig. The certificate present in the Kubeconfig will also have this name set for the CN field.
-    #[serde(rename = "user", skip_serializing_if = "Option::is_none")]
-    pub user: Option<String>,
+    #[serde(rename = "user")]
+    pub user: String,
     /// List of roles. The certificate present in the Kubeconfig will have these roles set in the Org field.
-    #[serde(rename = "groups", skip_serializing_if = "Option::is_none")]
-    pub groups: Option<Vec<String>>,
+    #[serde(rename = "groups")]
+    pub groups: Vec<String>,
 }
 
 impl SksKubeconfigRequest {
     /// Kubeconfig request for a SKS cluster
-    pub fn new() -> SksKubeconfigRequest {
+    pub fn new(user: String, groups: Vec<String>) -> SksKubeconfigRequest {
         SksKubeconfigRequest {
             ttl: None,
-            user: None,
-            groups: None,
+            user,
+            groups,
         }
     }
 }

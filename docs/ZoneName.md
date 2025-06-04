@@ -11,6 +11,7 @@
 | DeFra1 | de-fra-1 |
 | BgSof1 | bg-sof-1 |
 | AtVie2 | at-vie-2 |
+| HrZag1 | hr-zag-1 |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

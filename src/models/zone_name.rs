@@ -28,6 +28,8 @@ pub enum ZoneName {
     BgSof1,
     #[serde(rename = "at-vie-2")]
     AtVie2,
+    #[serde(rename = "hr-zag-1")]
+    HrZag1,
 
 }
 
@@ -41,6 +43,7 @@ impl std::fmt::Display for ZoneName {
             Self::DeFra1 => write!(f, "de-fra-1"),
             Self::BgSof1 => write!(f, "bg-sof-1"),
             Self::AtVie2 => write!(f, "at-vie-2"),
+            Self::HrZag1 => write!(f, "hr-zag-1"),
         }
     }
 }

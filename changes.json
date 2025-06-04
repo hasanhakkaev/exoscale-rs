@@ -1,0 +1,150 @@
+{
+  "title": "Exoscale APIv2 changelog",
+  "link": "https://openapi-v2.exoscale.com/",
+  "description": "Exoscale APIv2 changelog · Powered by Bump.sh",
+  "language": "en",
+  "generator": "",
+  "published": "",
+  "entries": [
+    {
+      "id": "90534800-5f8f-4016-9893-7e2510c54314",
+      "title": "Exoscale APIv2: breaking changes on Jun 4, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-06-04T07:27:16.000Z",
+      "description": "API structure has changed on     Jun 4, 2025:           Modified: POST /sks-cluster-kubeconfig/{id}       Content type modified: application/json         [Breaking] Properties modified: user, groups           Properties are now required (breaking)"
+    },
+    {
+      "id": "2189411c-3ea4-4fcf-baae-77d5bd8ffaa3",
+      "title": "Exoscale APIv2: changes on May 23, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-05-23T14:44:16.000Z",
+      "description": "API structure has changed on     May 23, 2025:           Modified: POST /sks-cluster       Content type modified: application/json         Property added: networking"
+    },
+    {
+      "id": "9037a7e8-530c-43ea-b36b-0bd611bc700e",
+      "title": "Exoscale APIv2: changes on May 8, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-05-08T08:01:15.000Z",
+      "description": "API structure has changed on    May 8, 2025:        Modified: GET /instance-pool      Response modified: 200        Content type modified: application/json          Property modified: instance-pools            Property modified:..."
+    },
+    {
+      "id": "b32801d0-201c-433b-9537-1182d4aa86d8",
+      "title": "Exoscale APIv2: changes on Apr 30, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-30T12:09:47.000Z",
+      "description": "API structure has changed on     Apr 30, 2025:           Modified: PUT /sks-cluster/{id}       Content type modified: application/json         Property modified: feature-gates           Type went from `array[string]` to `array[string] | null`"
+    },
+    {
+      "id": "bae7ac45-d6ea-40a9-90d9-1a8afe40b126",
+      "title": "Exoscale APIv2: changes on Apr 28, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-28T08:15:29.000Z",
+      "description": "API structure has changed on     Apr 28, 2025:           Added: PUT /sks-cluster/{id}/rotate-csi-credentials"
+    },
+    {
+      "id": "cfa25363-41ca-450f-ab21-0f50dea99c4c",
+      "title": "Exoscale APIv2: changes on Apr 18, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-18T14:49:20.000Z",
+      "description": "API structure has changed on     Apr 18, 2025:           Added: GET /env-impact"
+    },
+    {
+      "id": "829cda36-68d0-46d0-a141-ff26c5fe9940",
+      "title": "Exoscale APIv2: breaking changes on Apr 17, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-17T13:00:50.000Z",
+      "description": "API structure has changed on    Apr 17, 2025:        Modified: GET /usage-report      Response modified: 200        Content type modified: application/json          [Breaking] Property modified: usage            Type went from `object` to..."
+    },
+    {
+      "id": "ee094973-75a0-495c-b5c3-50aaf1116321",
+      "title": "Exoscale APIv2: changes on Apr 16, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-16T08:35:18.000Z",
+      "description": "API structure has changed on     Apr 16, 2025:           Added: GET /usage-report"
+    },
+    {
+      "id": "5bf991de-8d2a-44a5-a80e-1e47b06df564",
+      "title": "Exoscale APIv2: changes on Apr 15, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-15T13:25:18.000Z",
+      "description": "API structure has changed on    Apr 15, 2025:        Modified: GET /sks-cluster      Response modified: 200        Content type modified: application/json          Property modified: sks-clusters            Properties added:..."
+    },
+    {
+      "id": "4c86e1c2-9b8a-4833-8d47-b0c38539bc94",
+      "title": "Exoscale APIv2: changes on Apr 14, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-14T10:47:46.000Z",
+      "description": "API structure has changed on     Apr 14, 2025:           Modified: POST /instance       Content type modified: application/json         Property added: secureboot-enabled"
+    },
+    {
+      "id": "3b3c8a13-f77f-4756-8099-2271578e36f2",
+      "title": "Exoscale APIv2: changes on Apr 8, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-08T15:50:11.000Z",
+      "description": "API structure has changed on     Apr 8, 2025:           Added: POST /instance/{id}:enable-tpm"
+    },
+    {
+      "id": "8e59dd7d-3ed5-4aa8-a4f0-afcb1fa62ae5",
+      "title": "Exoscale APIv2: changes on Apr 8, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-08T15:43:45.000Z",
+      "description": "API structure has changed on     Apr 8, 2025:           Modified: POST /instance       Content type modified: application/json         Property added: tpm-enabled"
+    },
+    {
+      "id": "03fce3f9-3fa4-46c8-bf01-45ec614f4079",
+      "title": "Exoscale APIv2: changes on Apr 7, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-04-07T11:38:04.000Z",
+      "description": "API structure has changed on    Apr 7, 2025:        Modified: GET /dbaas-grafana/{name}      Response modified: 200        Content type modified: application/json          Property added: prometheus-uri    Modified: GET..."
+    },
+    {
+      "id": "0e380ecd-4931-4534-87a4-3bc89a136fa3",
+      "title": "Exoscale APIv2: breaking changes on Mar 19, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-03-19T15:49:42.000Z",
+      "description": "API structure has changed on    Mar 19, 2025:        Modified: POST /sks-cluster      Content type modified: application/json        [Breaking] Property modified: feature-gates          Type went from `array[string] | null` to..."
+    },
+    {
+      "id": "3bf08fc6-cae4-46f0-8558-a204991d0579",
+      "title": "Exoscale APIv2: changes on Mar 12, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-03-12T10:05:56.000Z",
+      "description": "API structure has changed on     Mar 12, 2025:           Added: GET /dbaas-settings-valkey"
+    },
+    {
+      "id": "da5cb3ab-0869-4292-8648-89ac1cc21115",
+      "title": "Exoscale APIv2: changes on Mar 11, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-03-11T14:17:49.000Z",
+      "description": "API structure has changed on    Mar 11, 2025:        Modified: GET /dbaas-valkey/{service-name}/user/{username}/password/reveal      Response modified: 200        Content type modified: application/json          Type is now..."
+    },
+    {
+      "id": "da5bc8c2-615b-418c-9518-1d5129a4e224",
+      "title": "Exoscale APIv2: changes on Mar 4, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-03-04T14:23:10.000Z",
+      "description": "API structure has changed on    Mar 4, 2025:        Added: DELETE /dbaas-valkey/{name}    Added: DELETE /dbaas-valkey/{service-name}/user/{username}    Added: GET /dbaas-valkey/{name}    Added: GET..."
+    },
+    {
+      "id": "6bb92c10-ac9d-4d9a-aa4f-6aaba5e30fa9",
+      "title": "Exoscale APIv2: changes on Mar 3, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-03-03T09:46:04.000Z",
+      "description": "API structure has changed on     Mar 3, 2025:           Modified: PUT /sks-cluster/{id}       Content type modified: application/json         Property added: enable-operators-ca"
+    },
+    {
+      "id": "feecbd68-7bec-4798-9c1c-39fe1d8e6534",
+      "title": "Exoscale APIv2: changes on Feb 18, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-02-18T10:27:47.000Z",
+      "description": "API structure has changed on     Feb 18, 2025:           Added: POST /iam-organization-policy:reset"
+    },
+    {
+      "id": "29f1b218-2ade-415a-bd62-604dc4b9e9d4",
+      "title": "Exoscale APIv2: changes on Feb 13, 2025",
+      "link": "https://openapi-v2.exoscale.com/changes",
+      "published": "2025-02-13T13:12:08.000Z",
+      "description": "API structure has changed on    Feb 13, 2025:        Modified: POST /sks-cluster      Content type modified: application/json        Properties added: enable-kube-proxy, feature-gates    Modified: PUT /sks-cluster/{id}      Content type..."
+    }
+  ]
+}
