@@ -35,8 +35,7 @@ jobs:
       - name: Update readme with the change date from the RSS feed
         if: steps.check_changes.outputs.changes_detected
         run: |
-          cat changes.json
-          echo "Generated with latest changes from $(date -d "$(jq -r '.channel.item[0].pubDate' ./changes.json)" +'%Y-%m-%d')" >> README.md
+          echo "Generated with latest changes from $(date -d "$(jq -'.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> README.md
 
       - name: Create PR
         if: steps.check_changes.outputs.changes_detected
@@ -47,4 +46,4 @@ jobs:
           branch: generate-v3
           delete-branch: true
           base: main
-          author: hasanhakkaev@gmx.at
+          author: hasan.hakkaev@gmx.at
