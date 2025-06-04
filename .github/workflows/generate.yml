@@ -40,14 +40,17 @@ jobs:
         if: steps.check_changes.outputs.changes_detected
         run: |
           echo "Generated with latest changes from $(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> README.md
-          export DATE=$(date -d "$(jq -r '.entries[0].published' ./changes.json)")
-          rm -rf ./changes.json
+          echo "date=$(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> "$GITHUB_ENV"
       - name: Create PR
         if: steps.check_changes.outputs.changes_detected
         uses: peter-evans/create-pull-request@v6
         with:
-          title: "v3: regenerate from new API spec from $DATE"
+          title: "v3: regenerate from new API spec from $date"
           body: "New changes have appeared in the API spec and exoscale-rs v3 has been regenerated."
           branch: generate-v3
           delete-branch: true
           base: main
+          commit-message: |
+            [Automated commit] - API change date: $date - $GITHUB_RUN_ID
+          reviewers: $ITHUB_REPOSITORY_OWNER
+          assignees: $GITHUB_REPOSITORY_OWNER
