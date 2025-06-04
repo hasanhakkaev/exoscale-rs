@@ -35,15 +35,17 @@ jobs:
       - name: Update readme with the change date from the RSS feed
         if: steps.check_changes.outputs.changes_detected
         run: |
-          echo "Generated with latest changes from $(date -d "$(jq -'.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> README.md
-
+          echo "Generated with latest changes from $(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> README.md
+          export DATE=$(date -d "$(jq -r '.entries[0].published' ./changes.json) 
       - name: Create PR
         if: steps.check_changes.outputs.changes_detected
         uses: peter-evans/create-pull-request@v6
         with:
-          title: "v3: regenerate from new API spec"
+          title: "v3: regenerate from new API spec from $DATE"
           body: "New changes have appeared in the API spec and exoscale-rs v3 has been regenerated."
           branch: generate-v3
           delete-branch: true
           base: main
-          author: hasan.hakkaev@gmx.at
+permissions:
+  contents: write
+  pull-requests: write
