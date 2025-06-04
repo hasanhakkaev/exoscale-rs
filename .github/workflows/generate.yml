@@ -37,11 +37,14 @@ jobs:
           file_path: './changes.json'
 
       - name: Update readme with the change date from the RSS feed
+        id: get_rss
         if: steps.check_changes.outputs.changes_detected
         run: |
           echo "Generated with latest changes from $(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> README.md
-          echo "date=$(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> "$GITHUB_ENV"
+          echo "API_DATE=$(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
       - name: Create PR
+        env:
+          API_DATE: ${{ steps.get_rss.outputs.API_DATE }}
         if: steps.check_changes.outputs.changes_detected
         uses: peter-evans/create-pull-request@v6
         with:
@@ -51,6 +54,6 @@ jobs:
           delete-branch: true
           base: main
           commit-message: |
-            [Automated commit] - API change date: $date - $GITHUB_RUN_ID
-          reviewers: $ITHUB_REPOSITORY_OWNER
-          assignees: $GITHUB_REPOSITORY_OWNER
+            [Automated commit] - API change date: $API_DATE
+          reviewers: hasanhakkaev
+          assignees: hasanhakkaev
