@@ -42,6 +42,7 @@ jobs:
         run: |
           echo "Generated with latest changes from $(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> README.md
           echo "API_DATE=$(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
+          rm -rf ./changes.json
       - name: Create PR
         env:
           API_DATE: ${{ steps.get_rss.outputs.API_DATE }}
