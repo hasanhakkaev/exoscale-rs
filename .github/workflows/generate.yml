@@ -46,4 +46,4 @@ jobs:
           branch: generate-v3
           delete-branch: true
           base: master
-          author: hhakkaev
+          author: hasanhakkaev
