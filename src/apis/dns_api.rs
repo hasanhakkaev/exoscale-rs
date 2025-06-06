@@ -94,7 +94,7 @@ pub enum UpdateDnsDomainRecordError {
 }
 
 
-pub async fn create_dns_domain(configuration: &configuration::Configuration, create_dns_domain_request: models::CreateDnsDomainRequest) -> Result<models::DnsDomain, Error<CreateDnsDomainError>> {
+pub async fn create_dns_domain(configuration: &configuration::Configuration, create_dns_domain_request: models::CreateDnsDomainRequest) -> Result<models::Operation, Error<CreateDnsDomainError>> {
     let local_var_create_dns_domain_request = create_dns_domain_request;
 
     let path_params_map = std::collections::HashMap::new();

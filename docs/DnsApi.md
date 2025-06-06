@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## create_dns_domain
 
-> models::DnsDomain create_dns_domain(create_dns_domain_request)
+> models::Operation create_dns_domain(create_dns_domain_request)
 Create DNS domain
 
 
@@ -33,7 +33,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::DnsDomain**](dns-domain.md)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
