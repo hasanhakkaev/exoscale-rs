@@ -12267,7 +12267,7 @@ paths:
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/dns-domain"
+                "$ref": "#/components/schemas/operation"
       description: ''
       parameters: []
       summary: Create DNS domain
@@ -12908,6 +12908,7 @@ paths:
                       maximum: 254
                       exclusiveMinimum: false
                       exclusiveMaximum: false
+                      nullable: true
                     type:
                       type: integer
                       format: int64
@@ -12915,6 +12916,7 @@ paths:
                       maximum: 254
                       exclusiveMinimum: false
                       exclusiveMaximum: false
+                      nullable: true
                   description: 'ICMP details (default: -1 (ANY))'
                 start-port:
                   type: integer
