@@ -44,17 +44,32 @@ jobs:
           echo "API_DATE=$(date -d "$(jq -r '.entries[0].published' ./changes.json)" +'%Y-%m-%d')" >> "$GITHUB_OUTPUT"
           rm -rf ./changes.json
       - name: Create PR
+        id: create_pr # Add an ID to the step for logging
         env:
+          # Pass the date as an environment variable for use in the commit message
           API_DATE: ${{ steps.get_rss.outputs.API_DATE }}
         if: steps.check_changes.outputs.changes_detected
         uses: peter-evans/create-pull-request@v6
         with:
-          title: "v3: regenerate from new API spec from $date"
-          body: "New changes have appeared in the API spec and exoscale-rs v3 has been regenerated."
+          title: "v3: regenerate from new API spec from ${{ env.API_DATE }}"
+          body: |
+            New changes have appeared in the API spec and exoscale-rs v3 has been regenerated.
+            
+            This PR was automatically generated based on the API spec published on **${{ env.API_DATE }}**.
           branch: generate-v3
           delete-branch: true
           base: main
+          # Use a more descriptive and dynamic commit message
           commit-message: |
-            [Automated commit] - API change date: $API_DATE
+            feat(api): Regenerate client from spec published on ${{ env.API_DATE }}
+
+            Automated regeneration based on changes detected in the API spec.
+            Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           reviewers: hasanhakkaev
           assignees: hasanhakkaev
+
+      - name: Log PR Status
+        if: steps.check_changes.outputs.changes_detected
+        run: |
+          echo "PR Number: ${{ steps.create_pr.outputs.pull-request-number }}"
+          echo "PR URL: ${{ steps.create_pr.outputs.pull-request-url }}"
