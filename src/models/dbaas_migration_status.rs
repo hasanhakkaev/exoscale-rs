@@ -16,11 +16,6 @@ pub struct DbaasMigrationStatus {
     /// Error message in case that migration has failed
     #[serde(rename = "error", skip_serializing_if = "Option::is_none")]
     pub error: Option<String>,
-    /// Redis only: how many seconds since last I/O with redis master
-    #[serde(rename = "master-last-io-seconds-ago", skip_serializing_if = "Option::is_none")]
-    pub master_last_io_seconds_ago: Option<i64>,
-    #[serde(rename = "master-link-status", skip_serializing_if = "Option::is_none")]
-    pub master_link_status: Option<models::EnumMasterLinkStatus>,
     /// Migration method. Empty in case of multiple methods or error
     #[serde(rename = "method", skip_serializing_if = "Option::is_none")]
     pub method: Option<String>,
@@ -36,8 +31,6 @@ impl DbaasMigrationStatus {
     pub fn new() -> DbaasMigrationStatus {
         DbaasMigrationStatus {
             error: None,
-            master_last_io_seconds_ago: None,
-            master_link_status: None,
             method: None,
             status: None,
             details: None,

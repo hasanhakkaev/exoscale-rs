@@ -57,7 +57,7 @@ pub struct DbaasServiceValkey {
     pub notifications: Option<Vec<models::DbaasServiceNotification>>,
     /// Service component information objects
     #[serde(rename = "components", skip_serializing_if = "Option::is_none")]
-    pub components: Option<Vec<models::DbaasServiceRedisComponentsInner>>,
+    pub components: Option<Vec<models::DbaasServiceValkeyComponentsInner>>,
     #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
     pub maintenance: Option<Box<models::DbaasServiceMaintenance>>,
     /// TODO UNIT disk space for data storage
@@ -83,7 +83,7 @@ pub struct DbaasServiceValkey {
     pub plan: String,
     /// List of service users
     #[serde(rename = "users", skip_serializing_if = "Option::is_none")]
-    pub users: Option<Vec<models::DbaasServiceRedisUsersInner>>,
+    pub users: Option<Vec<models::DbaasServiceValkeyUsersInner>>,
 }
 
 impl DbaasServiceValkey {

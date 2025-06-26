@@ -44,7 +44,6 @@ docs/CreateDbaasServiceMysqlRequest.md
 docs/CreateDbaasServiceMysqlRequestIntegrationsInner.md
 docs/CreateDbaasServiceOpensearchRequest.md
 docs/CreateDbaasServicePgRequest.md
-docs/CreateDbaasServiceRedisRequest.md
 docs/CreateDbaasServiceValkeyRequest.md
 docs/CreateDbaasTaskMigrationCheckRequest.md
 docs/CreateDnsDomainRecordRequest.md
@@ -146,15 +145,13 @@ docs/DbaasServicePg.md
 docs/DbaasServicePgConnectionInfo.md
 docs/DbaasServicePgConnectionPoolsInner.md
 docs/DbaasServicePgUsersInner.md
-docs/DbaasServiceRedis.md
-docs/DbaasServiceRedisComponentsInner.md
-docs/DbaasServiceRedisConnectionInfo.md
-docs/DbaasServiceRedisUsersInner.md
-docs/DbaasServiceRedisUsersInnerAccessControl.md
 docs/DbaasServiceType.md
 docs/DbaasServiceUpdate.md
 docs/DbaasServiceValkey.md
+docs/DbaasServiceValkeyComponentsInner.md
 docs/DbaasServiceValkeyConnectionInfo.md
+docs/DbaasServiceValkeyUsersInner.md
+docs/DbaasServiceValkeyUsersInnerAccessControl.md
 docs/DbaasTask.md
 docs/DbaasTaskResultCodesInner.md
 docs/DbaasUserGrafanaSecrets.md
@@ -163,7 +160,6 @@ docs/DbaasUserKafkaSecrets.md
 docs/DbaasUserMysqlSecrets.md
 docs/DbaasUserOpensearchSecrets.md
 docs/DbaasUserPostgresSecrets.md
-docs/DbaasUserRedisSecrets.md
 docs/DbaasUserValkeySecrets.md
 docs/DeployTarget.md
 docs/DeployTargetApi.md
@@ -225,9 +221,6 @@ docs/GetDbaasSettingsPg200ResponseSettingsPg.md
 docs/GetDbaasSettingsPg200ResponseSettingsPgbouncer.md
 docs/GetDbaasSettingsPg200ResponseSettingsPglookout.md
 docs/GetDbaasSettingsPg200ResponseSettingsTimescaledb.md
-docs/GetDbaasSettingsRedis200Response.md
-docs/GetDbaasSettingsRedis200ResponseSettings.md
-docs/GetDbaasSettingsRedis200ResponseSettingsRedis.md
 docs/GetDbaasSettingsValkey200Response.md
 docs/GetDbaasSettingsValkey200ResponseSettings.md
 docs/GetDbaasSettingsValkey200ResponseSettingsValkey.md
@@ -270,7 +263,6 @@ docs/JsonSchemaOpensearch.md
 docs/JsonSchemaPg.md
 docs/JsonSchemaPgbouncer.md
 docs/JsonSchemaPglookout.md
-docs/JsonSchemaRedis.md
 docs/JsonSchemaSchemaRegistry.md
 docs/JsonSchemaTimescaledb.md
 docs/JsonSchemaValkey.md
@@ -396,7 +388,6 @@ docs/UpdateDbaasServiceOpensearchRequestIndexPatternsInner.md
 docs/UpdateDbaasServiceOpensearchRequestIndexTemplate.md
 docs/UpdateDbaasServiceOpensearchRequestOpensearchDashboards.md
 docs/UpdateDbaasServicePgRequest.md
-docs/UpdateDbaasServiceRedisRequest.md
 docs/UpdateDbaasServiceValkeyRequest.md
 docs/UpdateDnsDomainRecordRequest.md
 docs/UpdateElasticIpRequest.md
@@ -489,7 +480,6 @@ src/models/create_dbaas_service_mysql_request.rs
 src/models/create_dbaas_service_mysql_request_integrations_inner.rs
 src/models/create_dbaas_service_opensearch_request.rs
 src/models/create_dbaas_service_pg_request.rs
-src/models/create_dbaas_service_redis_request.rs
 src/models/create_dbaas_service_valkey_request.rs
 src/models/create_dbaas_task_migration_check_request.rs
 src/models/create_dns_domain_record_request.rs
@@ -590,15 +580,13 @@ src/models/dbaas_service_pg.rs
 src/models/dbaas_service_pg_connection_info.rs
 src/models/dbaas_service_pg_connection_pools_inner.rs
 src/models/dbaas_service_pg_users_inner.rs
-src/models/dbaas_service_redis.rs
-src/models/dbaas_service_redis_components_inner.rs
-src/models/dbaas_service_redis_connection_info.rs
-src/models/dbaas_service_redis_users_inner.rs
-src/models/dbaas_service_redis_users_inner_access_control.rs
 src/models/dbaas_service_type.rs
 src/models/dbaas_service_update.rs
 src/models/dbaas_service_valkey.rs
+src/models/dbaas_service_valkey_components_inner.rs
 src/models/dbaas_service_valkey_connection_info.rs
+src/models/dbaas_service_valkey_users_inner.rs
+src/models/dbaas_service_valkey_users_inner_access_control.rs
 src/models/dbaas_task.rs
 src/models/dbaas_task_result_codes_inner.rs
 src/models/dbaas_user_grafana_secrets.rs
@@ -607,7 +595,6 @@ src/models/dbaas_user_kafka_secrets.rs
 src/models/dbaas_user_mysql_secrets.rs
 src/models/dbaas_user_opensearch_secrets.rs
 src/models/dbaas_user_postgres_secrets.rs
-src/models/dbaas_user_redis_secrets.rs
 src/models/dbaas_user_valkey_secrets.rs
 src/models/deploy_target.rs
 src/models/detach_dbaas_service_from_endpoint_request.rs
@@ -665,9 +652,6 @@ src/models/get_dbaas_settings_pg_200_response_settings_pg.rs
 src/models/get_dbaas_settings_pg_200_response_settings_pgbouncer.rs
 src/models/get_dbaas_settings_pg_200_response_settings_pglookout.rs
 src/models/get_dbaas_settings_pg_200_response_settings_timescaledb.rs
-src/models/get_dbaas_settings_redis_200_response.rs
-src/models/get_dbaas_settings_redis_200_response_settings.rs
-src/models/get_dbaas_settings_redis_200_response_settings_redis.rs
 src/models/get_dbaas_settings_valkey_200_response.rs
 src/models/get_dbaas_settings_valkey_200_response_settings.rs
 src/models/get_dbaas_settings_valkey_200_response_settings_valkey.rs
@@ -706,7 +690,6 @@ src/models/json_schema_opensearch.rs
 src/models/json_schema_pg.rs
 src/models/json_schema_pgbouncer.rs
 src/models/json_schema_pglookout.rs
-src/models/json_schema_redis.rs
 src/models/json_schema_schema_registry.rs
 src/models/json_schema_timescaledb.rs
 src/models/json_schema_valkey.rs
@@ -821,7 +804,6 @@ src/models/update_dbaas_service_opensearch_request_index_patterns_inner.rs
 src/models/update_dbaas_service_opensearch_request_index_template.rs
 src/models/update_dbaas_service_opensearch_request_opensearch_dashboards.rs
 src/models/update_dbaas_service_pg_request.rs
-src/models/update_dbaas_service_redis_request.rs
 src/models/update_dbaas_service_valkey_request.rs
 src/models/update_dns_domain_record_request.rs
 src/models/update_elastic_ip_request.rs

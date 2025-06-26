@@ -21,13 +21,11 @@ Method | HTTP request | Description
 [**create_dbaas_pg_database**](DbaasApi.md#create_dbaas_pg_database) | **POST** /dbaas-postgres/{service_name}/database | Create a DBaaS Postgres database
 [**create_dbaas_pg_upgrade_check**](DbaasApi.md#create_dbaas_pg_upgrade_check) | **POST** /dbaas-postgres/{service}/upgrade-check | 
 [**create_dbaas_postgres_user**](DbaasApi.md#create_dbaas_postgres_user) | **POST** /dbaas-postgres/{service_name}/user | Create a DBaaS Postgres user
-[**create_dbaas_redis_user**](DbaasApi.md#create_dbaas_redis_user) | **POST** /dbaas-redis/{service_name}/user | Create a DBaaS Redis user
 [**create_dbaas_service_grafana**](DbaasApi.md#create_dbaas_service_grafana) | **POST** /dbaas-grafana/{name} | 
 [**create_dbaas_service_kafka**](DbaasApi.md#create_dbaas_service_kafka) | **POST** /dbaas-kafka/{name} | Create a DBaaS Kafka service
 [**create_dbaas_service_mysql**](DbaasApi.md#create_dbaas_service_mysql) | **POST** /dbaas-mysql/{name} | Create a DBaaS MySQL service
 [**create_dbaas_service_opensearch**](DbaasApi.md#create_dbaas_service_opensearch) | **POST** /dbaas-opensearch/{name} | Create a DBaaS OpenSearch service
 [**create_dbaas_service_pg**](DbaasApi.md#create_dbaas_service_pg) | **POST** /dbaas-postgres/{name} | Create a DBaaS PostgreSQL service
-[**create_dbaas_service_redis**](DbaasApi.md#create_dbaas_service_redis) | **POST** /dbaas-redis/{name} | Create a DBaaS Redis service
 [**create_dbaas_service_valkey**](DbaasApi.md#create_dbaas_service_valkey) | **POST** /dbaas-valkey/{name} | Create a DBaaS Valkey service
 [**create_dbaas_task_migration_check**](DbaasApi.md#create_dbaas_task_migration_check) | **POST** /dbaas-task-migration-check/{service} | 
 [**create_dbaas_valkey_user**](DbaasApi.md#create_dbaas_valkey_user) | **POST** /dbaas-valkey/{service_name}/user | Create a DBaaS Valkey user
@@ -46,14 +44,12 @@ Method | HTTP request | Description
 [**delete_dbaas_pg_connection_pool**](DbaasApi.md#delete_dbaas_pg_connection_pool) | **DELETE** /dbaas-postgres/{service_name}/connection-pool/{connection_pool_name} | Delete a DBaaS PostgreSQL connection pool
 [**delete_dbaas_pg_database**](DbaasApi.md#delete_dbaas_pg_database) | **DELETE** /dbaas-postgres/{service_name}/database/{database_name} | Delete a DBaaS Postgres database
 [**delete_dbaas_postgres_user**](DbaasApi.md#delete_dbaas_postgres_user) | **DELETE** /dbaas-postgres/{service_name}/user/{username} | Delete a DBaaS Postgres user
-[**delete_dbaas_redis_user**](DbaasApi.md#delete_dbaas_redis_user) | **DELETE** /dbaas-redis/{service_name}/user/{username} | Delete a DBaaS Redis user
 [**delete_dbaas_service**](DbaasApi.md#delete_dbaas_service) | **DELETE** /dbaas-service/{name} | Delete a DBaaS service
 [**delete_dbaas_service_grafana**](DbaasApi.md#delete_dbaas_service_grafana) | **DELETE** /dbaas-grafana/{name} | Delete a Grafana service
 [**delete_dbaas_service_kafka**](DbaasApi.md#delete_dbaas_service_kafka) | **DELETE** /dbaas-kafka/{name} | Delete a Kafka service
 [**delete_dbaas_service_mysql**](DbaasApi.md#delete_dbaas_service_mysql) | **DELETE** /dbaas-mysql/{name} | Delete a MySQL service
 [**delete_dbaas_service_opensearch**](DbaasApi.md#delete_dbaas_service_opensearch) | **DELETE** /dbaas-opensearch/{name} | Delete a OpenSearch service
 [**delete_dbaas_service_pg**](DbaasApi.md#delete_dbaas_service_pg) | **DELETE** /dbaas-postgres/{name} | Delete a Postgres service
-[**delete_dbaas_service_redis**](DbaasApi.md#delete_dbaas_service_redis) | **DELETE** /dbaas-redis/{name} | Delete a Redis service
 [**delete_dbaas_service_valkey**](DbaasApi.md#delete_dbaas_service_valkey) | **DELETE** /dbaas-valkey/{name} | Delete a Valkey service
 [**delete_dbaas_valkey_user**](DbaasApi.md#delete_dbaas_valkey_user) | **DELETE** /dbaas-valkey/{service_name}/user/{username} | Delete a DBaaS Valkey user
 [**detach_dbaas_service_from_endpoint**](DbaasApi.md#detach_dbaas_service_from_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/detach | 
@@ -77,7 +73,6 @@ Method | HTTP request | Description
 [**get_dbaas_service_mysql**](DbaasApi.md#get_dbaas_service_mysql) | **GET** /dbaas-mysql/{name} | Get a DBaaS MySQL service
 [**get_dbaas_service_opensearch**](DbaasApi.md#get_dbaas_service_opensearch) | **GET** /dbaas-opensearch/{name} | Get a DBaaS OpenSearch service
 [**get_dbaas_service_pg**](DbaasApi.md#get_dbaas_service_pg) | **GET** /dbaas-postgres/{name} | Get a DBaaS PostgreSQL service
-[**get_dbaas_service_redis**](DbaasApi.md#get_dbaas_service_redis) | **GET** /dbaas-redis/{name} | Get a DBaaS Redis service
 [**get_dbaas_service_type**](DbaasApi.md#get_dbaas_service_type) | **GET** /dbaas-service-type/{service_type_name} | Get a DBaaS service type
 [**get_dbaas_service_valkey**](DbaasApi.md#get_dbaas_service_valkey) | **GET** /dbaas-valkey/{name} | 
 [**get_dbaas_settings_grafana**](DbaasApi.md#get_dbaas_settings_grafana) | **GET** /dbaas-settings-grafana | Get DBaaS Grafana settings
@@ -85,7 +80,6 @@ Method | HTTP request | Description
 [**get_dbaas_settings_mysql**](DbaasApi.md#get_dbaas_settings_mysql) | **GET** /dbaas-settings-mysql | Get DBaaS MySQL settings
 [**get_dbaas_settings_opensearch**](DbaasApi.md#get_dbaas_settings_opensearch) | **GET** /dbaas-settings-opensearch | Get DBaaS OpenSearch settings
 [**get_dbaas_settings_pg**](DbaasApi.md#get_dbaas_settings_pg) | **GET** /dbaas-settings-pg | Get DBaaS PostgreSQL settings
-[**get_dbaas_settings_redis**](DbaasApi.md#get_dbaas_settings_redis) | **GET** /dbaas-settings-redis | Get DBaaS Redis settings
 [**get_dbaas_settings_valkey**](DbaasApi.md#get_dbaas_settings_valkey) | **GET** /dbaas-settings-valkey | Get DBaaS Valkey settings
 [**get_dbaas_task**](DbaasApi.md#get_dbaas_task) | **GET** /dbaas-task/{service}/{id} | Get a DBaaS task
 [**list_dbaas_external_endpoint_types**](DbaasApi.md#list_dbaas_external_endpoint_types) | **GET** /dbaas-external-endpoint-types | 
@@ -100,7 +94,6 @@ Method | HTTP request | Description
 [**reset_dbaas_mysql_user_password**](DbaasApi.md#reset_dbaas_mysql_user_password) | **PUT** /dbaas-mysql/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS mysql user
 [**reset_dbaas_opensearch_user_password**](DbaasApi.md#reset_dbaas_opensearch_user_password) | **PUT** /dbaas-opensearch/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS OpenSearch user
 [**reset_dbaas_postgres_user_password**](DbaasApi.md#reset_dbaas_postgres_user_password) | **PUT** /dbaas-postgres/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Postgres user
-[**reset_dbaas_redis_user_password**](DbaasApi.md#reset_dbaas_redis_user_password) | **PUT** /dbaas-redis/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Redis user
 [**reset_dbaas_valkey_user_password**](DbaasApi.md#reset_dbaas_valkey_user_password) | **PUT** /dbaas-valkey/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Valkey user
 [**reveal_dbaas_grafana_user_password**](DbaasApi.md#reveal_dbaas_grafana_user_password) | **GET** /dbaas-grafana/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Grafana user
 [**reveal_dbaas_kafka_connect_password**](DbaasApi.md#reveal_dbaas_kafka_connect_password) | **GET** /dbaas-kafka/{service_name}/connect/password/reveal | Reveal the secrets for DBaaS Kafka Connect
@@ -108,19 +101,15 @@ Method | HTTP request | Description
 [**reveal_dbaas_mysql_user_password**](DbaasApi.md#reveal_dbaas_mysql_user_password) | **GET** /dbaas-mysql/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS MySQL user
 [**reveal_dbaas_opensearch_user_password**](DbaasApi.md#reveal_dbaas_opensearch_user_password) | **GET** /dbaas-opensearch/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS OpenSearch user
 [**reveal_dbaas_postgres_user_password**](DbaasApi.md#reveal_dbaas_postgres_user_password) | **GET** /dbaas-postgres/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Postgres user
-[**reveal_dbaas_redis_user_password**](DbaasApi.md#reveal_dbaas_redis_user_password) | **GET** /dbaas-redis/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Redis user
 [**reveal_dbaas_valkey_user_password**](DbaasApi.md#reveal_dbaas_valkey_user_password) | **GET** /dbaas-valkey/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Valkey user
 [**start_dbaas_grafana_maintenance**](DbaasApi.md#start_dbaas_grafana_maintenance) | **PUT** /dbaas-grafana/{name}/maintenance/start | Initiate Grafana maintenance update
 [**start_dbaas_kafka_maintenance**](DbaasApi.md#start_dbaas_kafka_maintenance) | **PUT** /dbaas-kafka/{name}/maintenance/start | Initiate Kafka maintenance update
 [**start_dbaas_mysql_maintenance**](DbaasApi.md#start_dbaas_mysql_maintenance) | **PUT** /dbaas-mysql/{name}/maintenance/start | Initiate MySQL maintenance update
 [**start_dbaas_opensearch_maintenance**](DbaasApi.md#start_dbaas_opensearch_maintenance) | **PUT** /dbaas-opensearch/{name}/maintenance/start | Initiate OpenSearch maintenance update
 [**start_dbaas_pg_maintenance**](DbaasApi.md#start_dbaas_pg_maintenance) | **PUT** /dbaas-postgres/{name}/maintenance/start | Initiate PostgreSQL maintenance update
-[**start_dbaas_redis_maintenance**](DbaasApi.md#start_dbaas_redis_maintenance) | **PUT** /dbaas-redis/{name}/maintenance/start | Initiate Redis maintenance update
-[**start_dbaas_redis_to_valkey_upgrade**](DbaasApi.md#start_dbaas_redis_to_valkey_upgrade) | **PUT** /dbaas-redis/{name}/upgrade-type | Initiate Redis upgrade to Valkey
 [**start_dbaas_valkey_maintenance**](DbaasApi.md#start_dbaas_valkey_maintenance) | **PUT** /dbaas-valkey/{name}/maintenance/start | Initiate Valkey maintenance update
 [**stop_dbaas_mysql_migration**](DbaasApi.md#stop_dbaas_mysql_migration) | **POST** /dbaas-mysql/{name}/migration/stop | Stop a DBaaS MySQL migration
 [**stop_dbaas_pg_migration**](DbaasApi.md#stop_dbaas_pg_migration) | **POST** /dbaas-postgres/{name}/migration/stop | Stop a DBaaS PostgreSQL migration
-[**stop_dbaas_redis_migration**](DbaasApi.md#stop_dbaas_redis_migration) | **POST** /dbaas-redis/{name}/migration/stop | Stop a DBaaS Redis migration
 [**stop_dbaas_valkey_migration**](DbaasApi.md#stop_dbaas_valkey_migration) | **POST** /dbaas-valkey/{name}/migration/stop | Stop a DBaaS Valkey migration
 [**update_dbaas_external_endpoint_datadog**](DbaasApi.md#update_dbaas_external_endpoint_datadog) | **PUT** /dbaas-external-endpoint-datadog/{endpoint_id} | 
 [**update_dbaas_external_endpoint_elasticsearch**](DbaasApi.md#update_dbaas_external_endpoint_elasticsearch) | **PUT** /dbaas-external-endpoint-elasticsearch/{endpoint_id} | 
@@ -137,7 +126,6 @@ Method | HTTP request | Description
 [**update_dbaas_service_mysql**](DbaasApi.md#update_dbaas_service_mysql) | **PUT** /dbaas-mysql/{name} | Update a DBaaS MySQL service
 [**update_dbaas_service_opensearch**](DbaasApi.md#update_dbaas_service_opensearch) | **PUT** /dbaas-opensearch/{name} | Update a DBaaS OpenSearch service
 [**update_dbaas_service_pg**](DbaasApi.md#update_dbaas_service_pg) | **PUT** /dbaas-postgres/{name} | Update a DBaaS PostgreSQL service
-[**update_dbaas_service_redis**](DbaasApi.md#update_dbaas_service_redis) | **PUT** /dbaas-redis/{name} | Update a DBaaS Redis service
 [**update_dbaas_service_valkey**](DbaasApi.md#update_dbaas_service_valkey) | **PUT** /dbaas-valkey/{name} | 
 
 
@@ -652,35 +640,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## create_dbaas_redis_user
-
-> models::Operation create_dbaas_redis_user(service_name, create_dbaas_kafka_user_request)
-Create a DBaaS Redis user
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**service_name** | **String** |  | [required] |
-**create_dbaas_kafka_user_request** | [**CreateDbaasKafkaUserRequest**](CreateDbaasKafkaUserRequest.md) |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## create_dbaas_service_grafana
 
 > models::Operation create_dbaas_service_grafana(name, create_dbaas_service_grafana_request)
@@ -817,37 +776,6 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
 **create_dbaas_service_pg_request** | [**CreateDbaasServicePgRequest**](CreateDbaasServicePgRequest.md) |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## create_dbaas_service_redis
-
-> models::Operation create_dbaas_service_redis(name, create_dbaas_service_redis_request)
-Create a DBaaS Redis service
-
-Create a DBaaS Redis service
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-**create_dbaas_service_redis_request** | [**CreateDbaasServiceRedisRequest**](CreateDbaasServiceRedisRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1399,35 +1327,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## delete_dbaas_redis_user
-
-> models::Operation delete_dbaas_redis_user(service_name, username)
-Delete a DBaaS Redis user
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**service_name** | **String** |  | [required] |
-**username** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## delete_dbaas_service
 
 > models::Operation delete_dbaas_service(name)
@@ -1574,34 +1473,6 @@ No authorization required
 
 > models::Operation delete_dbaas_service_pg(name)
 Delete a Postgres service
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## delete_dbaas_service_redis
-
-> models::Operation delete_dbaas_service_redis(name)
-Delete a Redis service
 
 ### Parameters
 
@@ -2303,36 +2174,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## get_dbaas_service_redis
-
-> models::DbaasServiceRedis get_dbaas_service_redis(name)
-Get a DBaaS Redis service
-
-Get a DBaaS Redis service
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-
-### Return type
-
-[**models::DbaasServiceRedis**](dbaas-service-redis.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## get_dbaas_service_type
 
 > models::DbaasServiceType get_dbaas_service_type(service_type_name)
@@ -2515,33 +2356,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::GetDbaasSettingsPg200Response**](get_dbaas_settings_pg_200_response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## get_dbaas_settings_redis
-
-> models::GetDbaasSettingsRedis200Response get_dbaas_settings_redis()
-Get DBaaS Redis settings
-
-Returns the default settings for Redis.
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**models::GetDbaasSettingsRedis200Response**](get_dbaas_settings_redis_200_response.md)
 
 ### Authorization
 
@@ -2970,38 +2784,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## reset_dbaas_redis_user_password
-
-> models::Operation reset_dbaas_redis_user_password(service_name, username, reset_dbaas_valkey_user_password_request)
-Reset the credentials of a DBaaS Redis user
-
-If no password is provided one will be generated automatically.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**service_name** | **String** |  | [required] |
-**username** | **String** |  | [required] |
-**reset_dbaas_valkey_user_password_request** | [**ResetDbaasValkeyUserPasswordRequest**](ResetDbaasValkeyUserPasswordRequest.md) |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## reset_dbaas_valkey_user_password
 
 > models::Operation reset_dbaas_valkey_user_password(service_name, username, reset_dbaas_valkey_user_password_request)
@@ -3207,35 +2989,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## reveal_dbaas_redis_user_password
-
-> models::DbaasUserRedisSecrets reveal_dbaas_redis_user_password(service_name, username)
-Reveal the secrets of a DBaaS Redis user
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**service_name** | **String** |  | [required] |
-**username** | **String** |  | [required] |
-
-### Return type
-
-[**models::DbaasUserRedisSecrets**](dbaas-user-redis-secrets.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## reveal_dbaas_valkey_user_password
 
 > models::DbaasUserValkeySecrets reveal_dbaas_valkey_user_password(service_name, username)
@@ -3405,62 +3158,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## start_dbaas_redis_maintenance
-
-> models::Operation start_dbaas_redis_maintenance(name)
-Initiate Redis maintenance update
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## start_dbaas_redis_to_valkey_upgrade
-
-> models::Operation start_dbaas_redis_to_valkey_upgrade(name)
-Initiate Redis upgrade to Valkey
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## start_dbaas_valkey_maintenance
 
 > models::Operation start_dbaas_valkey_maintenance(name)
@@ -3521,34 +3218,6 @@ No authorization required
 
 > models::Operation stop_dbaas_pg_migration(name)
 Stop a DBaaS PostgreSQL migration
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## stop_dbaas_redis_migration
-
-> models::Operation stop_dbaas_redis_migration(name)
-Stop a DBaaS Redis migration
 
 ### Parameters
 
@@ -4045,37 +3714,6 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
 **update_dbaas_service_pg_request** | [**UpdateDbaasServicePgRequest**](UpdateDbaasServicePgRequest.md) |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## update_dbaas_service_redis
-
-> models::Operation update_dbaas_service_redis(name, update_dbaas_service_redis_request)
-Update a DBaaS Redis service
-
-Update a DBaaS Redis service
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [required] |
-**update_dbaas_service_redis_request** | [**UpdateDbaasServiceRedisRequest**](UpdateDbaasServiceRedisRequest.md) |  | [required] |
 
 ### Return type
 

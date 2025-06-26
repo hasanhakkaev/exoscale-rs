@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasMigrationStatusDetailsInner {
-    /// Migrated db name (PG) or number (Redis)
+    /// Migrated db name (PG) or number (Valkey)
     #[serde(rename = "dbname", skip_serializing_if = "Option::is_none")]
     pub dbname: Option<String>,
     /// Error message in case that migration has failed

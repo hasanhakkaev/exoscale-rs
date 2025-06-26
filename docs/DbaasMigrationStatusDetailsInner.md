@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dbname** | Option<**String**> | Migrated db name (PG) or number (Redis) | [optional]
+**dbname** | Option<**String**> | Migrated db name (PG) or number (Valkey) | [optional]
 **error** | Option<**String**> | Error message in case that migration has failed | [optional]
 **method** | Option<**String**> | Migration method | [optional]
 **status** | Option<[**models::EnumMigrationStatus**](enum-migration-status.md)> |  | [optional]

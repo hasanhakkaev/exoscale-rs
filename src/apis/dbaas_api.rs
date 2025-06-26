@@ -150,14 +150,6 @@ pub enum CreateDbaasPostgresUserError {
 }
 
 
-/// struct for typed errors of method [`create_dbaas_redis_user`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateDbaasRedisUserError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`create_dbaas_service_grafana`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -194,14 +186,6 @@ pub enum CreateDbaasServiceOpensearchError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateDbaasServicePgError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`create_dbaas_service_redis`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum CreateDbaasServiceRedisError {
     UnknownValue(serde_json::Value),
 }
 
@@ -350,14 +334,6 @@ pub enum DeleteDbaasPostgresUserError {
 }
 
 
-/// struct for typed errors of method [`delete_dbaas_redis_user`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum DeleteDbaasRedisUserError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`delete_dbaas_service`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -402,14 +378,6 @@ pub enum DeleteDbaasServiceOpensearchError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeleteDbaasServicePgError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`delete_dbaas_service_redis`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum DeleteDbaasServiceRedisError {
     UnknownValue(serde_json::Value),
 }
 
@@ -598,14 +566,6 @@ pub enum GetDbaasServicePgError {
 }
 
 
-/// struct for typed errors of method [`get_dbaas_service_redis`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetDbaasServiceRedisError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`get_dbaas_service_type`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -658,14 +618,6 @@ pub enum GetDbaasSettingsOpensearchError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDbaasSettingsPgError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`get_dbaas_settings_redis`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum GetDbaasSettingsRedisError {
     UnknownValue(serde_json::Value),
 }
 
@@ -782,14 +734,6 @@ pub enum ResetDbaasPostgresUserPasswordError {
 }
 
 
-/// struct for typed errors of method [`reset_dbaas_redis_user_password`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ResetDbaasRedisUserPasswordError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`reset_dbaas_valkey_user_password`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -846,14 +790,6 @@ pub enum RevealDbaasPostgresUserPasswordError {
 }
 
 
-/// struct for typed errors of method [`reveal_dbaas_redis_user_password`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum RevealDbaasRedisUserPasswordError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`reveal_dbaas_valkey_user_password`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -902,22 +838,6 @@ pub enum StartDbaasPgMaintenanceError {
 }
 
 
-/// struct for typed errors of method [`start_dbaas_redis_maintenance`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum StartDbaasRedisMaintenanceError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`start_dbaas_redis_to_valkey_upgrade`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum StartDbaasRedisToValkeyUpgradeError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`start_dbaas_valkey_maintenance`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -938,14 +858,6 @@ pub enum StopDbaasMysqlMigrationError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum StopDbaasPgMigrationError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`stop_dbaas_redis_migration`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum StopDbaasRedisMigrationError {
     UnknownValue(serde_json::Value),
 }
 
@@ -1074,14 +986,6 @@ pub enum UpdateDbaasServiceOpensearchError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UpdateDbaasServicePgError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`update_dbaas_service_redis`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum UpdateDbaasServiceRedisError {
     UnknownValue(serde_json::Value),
 }
 
@@ -1432,26 +1336,6 @@ pub async fn create_dbaas_postgres_user(configuration: &configuration::Configura
     body_payload_option,
     ).await
 }
-pub async fn create_dbaas_redis_user(configuration: &configuration::Configuration, service_name: &str, create_dbaas_kafka_user_request: models::CreateDbaasKafkaUserRequest) -> Result<models::Operation, Error<CreateDbaasRedisUserError>> {
-    let local_var_service_name = service_name;
-    let local_var_create_dbaas_kafka_user_request = create_dbaas_kafka_user_request;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_create_dbaas_kafka_user_request);
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::POST,
-    "/dbaas-redis/{service_name}/user",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn create_dbaas_service_grafana(configuration: &configuration::Configuration, name: &str, create_dbaas_service_grafana_request: models::CreateDbaasServiceGrafanaRequest) -> Result<models::Operation, Error<CreateDbaasServiceGrafanaError>> {
     let local_var_name = name;
     let local_var_create_dbaas_service_grafana_request = create_dbaas_service_grafana_request;
@@ -1547,26 +1431,6 @@ pub async fn create_dbaas_service_pg(configuration: &configuration::Configuratio
     configuration,
     reqwest::Method::POST,
     "/dbaas-postgres/{name}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn create_dbaas_service_redis(configuration: &configuration::Configuration, name: &str, create_dbaas_service_redis_request: models::CreateDbaasServiceRedisRequest) -> Result<models::Operation, Error<CreateDbaasServiceRedisError>> {
-    let local_var_name = name;
-    let local_var_create_dbaas_service_redis_request = create_dbaas_service_redis_request;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_create_dbaas_service_redis_request);
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::POST,
-    "/dbaas-redis/{name}",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -1935,27 +1799,6 @@ pub async fn delete_dbaas_postgres_user(configuration: &configuration::Configura
     body_payload_option,
     ).await
 }
-pub async fn delete_dbaas_redis_user(configuration: &configuration::Configuration, service_name: &str, username: &str) -> Result<models::Operation, Error<DeleteDbaasRedisUserError>> {
-    let local_var_service_name = service_name;
-    let local_var_username = username;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::DELETE,
-    "/dbaas-redis/{service_name}/user/{username}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn delete_dbaas_service(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<DeleteDbaasServiceError>> {
     let local_var_name = name;
 
@@ -2065,25 +1908,6 @@ pub async fn delete_dbaas_service_pg(configuration: &configuration::Configuratio
     configuration,
     reqwest::Method::DELETE,
     "/dbaas-postgres/{name}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn delete_dbaas_service_redis(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<DeleteDbaasServiceRedisError>> {
-    let local_var_name = name;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::DELETE,
-    "/dbaas-redis/{name}",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -2529,25 +2353,6 @@ pub async fn get_dbaas_service_pg(configuration: &configuration::Configuration, 
     body_payload_option,
     ).await
 }
-pub async fn get_dbaas_service_redis(configuration: &configuration::Configuration, name: &str) -> Result<models::DbaasServiceRedis, Error<GetDbaasServiceRedisError>> {
-    let local_var_name = name;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::GET,
-    "/dbaas-redis/{name}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn get_dbaas_service_type(configuration: &configuration::Configuration, service_type_name: &str) -> Result<models::DbaasServiceType, Error<GetDbaasServiceTypeError>> {
     let local_var_service_type_name = service_type_name;
 
@@ -2666,23 +2471,6 @@ pub async fn get_dbaas_settings_pg(configuration: &configuration::Configuration,
     configuration,
     reqwest::Method::GET,
     "/dbaas-settings-pg",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn get_dbaas_settings_redis(configuration: &configuration::Configuration, ) -> Result<models::GetDbaasSettingsRedis200Response, Error<GetDbaasSettingsRedisError>> {
-
-    let path_params_map = std::collections::HashMap::new();
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::GET,
-    "/dbaas-settings-redis",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -2963,28 +2751,6 @@ pub async fn reset_dbaas_postgres_user_password(configuration: &configuration::C
     body_payload_option,
     ).await
 }
-pub async fn reset_dbaas_redis_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str, reset_dbaas_valkey_user_password_request: models::ResetDbaasValkeyUserPasswordRequest) -> Result<models::Operation, Error<ResetDbaasRedisUserPasswordError>> {
-    let local_var_service_name = service_name;
-    let local_var_username = username;
-    let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_reset_dbaas_valkey_user_password_request);
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::PUT,
-    "/dbaas-redis/{service_name}/user/{username}/password/reset",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn reset_dbaas_valkey_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str, reset_dbaas_valkey_user_password_request: models::ResetDbaasValkeyUserPasswordRequest) -> Result<models::Operation, Error<ResetDbaasValkeyUserPasswordError>> {
     let local_var_service_name = service_name;
     let local_var_username = username;
@@ -3131,27 +2897,6 @@ pub async fn reveal_dbaas_postgres_user_password(configuration: &configuration::
     body_payload_option,
     ).await
 }
-pub async fn reveal_dbaas_redis_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str) -> Result<models::DbaasUserRedisSecrets, Error<RevealDbaasRedisUserPasswordError>> {
-    let local_var_service_name = service_name;
-    let local_var_username = username;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
-                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::GET,
-    "/dbaas-redis/{service_name}/user/{username}/password/reveal",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn reveal_dbaas_valkey_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str) -> Result<models::DbaasUserValkeySecrets, Error<RevealDbaasValkeyUserPasswordError>> {
     let local_var_service_name = service_name;
     let local_var_username = username;
@@ -3268,44 +3013,6 @@ pub async fn start_dbaas_pg_maintenance(configuration: &configuration::Configura
     body_payload_option,
     ).await
 }
-pub async fn start_dbaas_redis_maintenance(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<StartDbaasRedisMaintenanceError>> {
-    let local_var_name = name;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::PUT,
-    "/dbaas-redis/{name}/maintenance/start",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn start_dbaas_redis_to_valkey_upgrade(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<StartDbaasRedisToValkeyUpgradeError>> {
-    let local_var_name = name;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::PUT,
-    "/dbaas-redis/{name}/upgrade-type",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn start_dbaas_valkey_maintenance(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<StartDbaasValkeyMaintenanceError>> {
     let local_var_name = name;
 
@@ -3358,25 +3065,6 @@ pub async fn stop_dbaas_pg_migration(configuration: &configuration::Configuratio
     configuration,
     reqwest::Method::POST,
     "/dbaas-postgres/{name}/migration/stop",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn stop_dbaas_redis_migration(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<StopDbaasRedisMigrationError>> {
-    let local_var_name = name;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::POST,
-    "/dbaas-redis/{name}/migration/stop",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -3700,26 +3388,6 @@ pub async fn update_dbaas_service_pg(configuration: &configuration::Configuratio
     configuration,
     reqwest::Method::PUT,
     "/dbaas-postgres/{name}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn update_dbaas_service_redis(configuration: &configuration::Configuration, name: &str, update_dbaas_service_redis_request: models::UpdateDbaasServiceRedisRequest) -> Result<models::Operation, Error<UpdateDbaasServiceRedisError>> {
-    let local_var_name = name;
-    let local_var_update_dbaas_service_redis_request = update_dbaas_service_redis_request;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_update_dbaas_service_redis_request);
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::PUT,
-    "/dbaas-redis/{name}",
     path_params_map,
     query_params_option,
     body_payload_option,
