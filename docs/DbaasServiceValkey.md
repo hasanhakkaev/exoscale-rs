@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **backups** | Option<[**Vec<models::DbaasServiceBackup>**](dbaas-service-backup.md)> | List of backups for the service | [optional]
 **termination_protection** | Option<**bool**> | Service is protected against termination and powering off | [optional]
 **notifications** | Option<[**Vec<models::DbaasServiceNotification>**](dbaas-service-notification.md)> | Service notifications | [optional]
-**components** | Option<[**Vec<models::DbaasServiceRedisComponentsInner>**](dbaas_service_redis_components_inner.md)> | Service component information objects | [optional]
+**components** | Option<[**Vec<models::DbaasServiceValkeyComponentsInner>**](dbaas_service_valkey_components_inner.md)> | Service component information objects | [optional]
 **maintenance** | Option<[**models::DbaasServiceMaintenance**](dbaas-service-maintenance.md)> |  | [optional]
 **disk_size** | Option<**u64**> | TODO UNIT disk space for data storage | [optional]
 **node_memory** | Option<**u64**> | TODO UNIT of memory for each node | [optional]
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **version** | Option<**String**> | Valkey version | [optional]
 **created_at** | Option<**String**> | Service creation timestamp (ISO 8601) | [optional]
 **plan** | **String** | Subscription plan | 
-**users** | Option<[**Vec<models::DbaasServiceRedisUsersInner>**](dbaas_service_redis_users_inner.md)> | List of service users | [optional]
+**users** | Option<[**Vec<models::DbaasServiceValkeyUsersInner>**](dbaas_service_valkey_users_inner.md)> | List of service users | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
