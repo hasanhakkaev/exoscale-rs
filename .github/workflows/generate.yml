@@ -49,7 +49,7 @@ jobs:
           # Pass the date as an environment variable for use in the commit message
           API_DATE: ${{ steps.get_rss.outputs.API_DATE }}
         if: steps.check_changes.outputs.changes_detected
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           title: "v3: regenerate from new API spec from ${{ env.API_DATE }}"
           body: |
