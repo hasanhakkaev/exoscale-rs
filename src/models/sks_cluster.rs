@@ -118,6 +118,8 @@ pub enum State {
     Updating,
     #[serde(rename = "error")]
     Error,
+    #[serde(rename = "resuming")]
+    Resuming,
 }
 
 impl Default for State {
