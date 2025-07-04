@@ -727,4 +727,4 @@ cargo doc --open
 
 api@exoscale.com
 
-Generated with latest changes from 2025-06-24
+Generated with latest changes from 2025-07-03
