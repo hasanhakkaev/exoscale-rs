@@ -666,6 +666,8 @@ pub mod shard_indexing_back_pressure_settings;
 pub use self::shard_indexing_back_pressure_settings::ShardIndexingBackPressureSettings;
 pub mod sks_cluster;
 pub use self::sks_cluster::SksCluster;
+pub mod sks_cluster_deprecated_resource;
+pub use self::sks_cluster_deprecated_resource::SksClusterDeprecatedResource;
 pub mod sks_kubeconfig_request;
 pub use self::sks_kubeconfig_request::SksKubeconfigRequest;
 pub mod sks_nodepool;

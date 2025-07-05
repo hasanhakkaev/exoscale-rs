@@ -398,7 +398,7 @@ pub async fn get_sks_nodepool(configuration: &configuration::Configuration, id: 
     body_payload_option,
     ).await
 }
-pub async fn list_sks_cluster_deprecated_resources(configuration: &configuration::Configuration, id: String) -> Result<Vec<std::collections::HashMap<String, String>>, Error<ListSksClusterDeprecatedResourcesError>> {
+pub async fn list_sks_cluster_deprecated_resources(configuration: &configuration::Configuration, id: String) -> Result<Vec<models::SksClusterDeprecatedResource>, Error<ListSksClusterDeprecatedResourcesError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();

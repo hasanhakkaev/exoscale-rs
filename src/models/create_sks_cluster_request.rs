@@ -31,6 +31,9 @@ pub struct CreateSksClusterRequest {
     /// Cluster name
     #[serde(rename = "name")]
     pub name: String,
+    /// Creates an ad-hoc security group based on the choice of the selected CNI
+    #[serde(rename = "create-default-security-group", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub create_default_security_group: Option<Option<bool>>,
     /// Indicates whether to deploy the Kubernetes network proxy. When unspecified, defaults to `true` unless Cilium CNI is selected
     #[serde(rename = "enable-kube-proxy", skip_serializing_if = "Option::is_none")]
     pub enable_kube_proxy: Option<bool>,
@@ -58,6 +61,7 @@ impl CreateSksClusterRequest {
             networking: None,
             oidc: None,
             name,
+            create_default_security_group: None,
             enable_kube_proxy: None,
             level,
             feature_gates: None,

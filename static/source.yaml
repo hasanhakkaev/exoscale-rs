@@ -1429,8 +1429,17 @@ components:
       description: Load Balancer
     sks-cluster-deprecated-resource:
       type: object
-      additionalProperties:
-        type: string
+      properties:
+        group:
+          type: string
+        version:
+          type: string
+        resource:
+          type: string
+        subresource:
+          type: string
+        removed-release:
+          type: string
     elastic-ip:
       type: object
       properties:
@@ -5224,6 +5233,7 @@ components:
           - suspending
           - updating
           - error
+          - resuming
           readOnly: true
           description: Cluster state
         enable-kube-proxy:
@@ -13674,7 +13684,7 @@ paths:
                   type: integer
                   format: int64
                   minimum: 0
-                  exclusiveMinimum: false
+                  exclusiveMinimum: true
                   description: Volume size in GiB
               required:
               - size
@@ -14447,6 +14457,11 @@ paths:
                   maxLength: 255
                   minLength: 1
                   description: Cluster name
+                create-default-security-group:
+                  type: boolean
+                  nullable: true
+                  description: Creates an ad-hoc security group based on the choice
+                    of the selected CNI
                 enable-kube-proxy:
                   type: boolean
                   description: Indicates whether to deploy the Kubernetes network
@@ -15382,6 +15397,7 @@ paths:
                   description: Assign public IP to the Instance
                 labels:
                   "$ref": "#/components/schemas/labels"
+                  nullable: true
                   description: Resource labels
       operationId: update-instance
     get:
