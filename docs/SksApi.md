@@ -339,7 +339,7 @@ No authorization required
 
 ## list_sks_cluster_deprecated_resources
 
-> Vec<std::collections::HashMap<String, String>> list_sks_cluster_deprecated_resources(id)
+> Vec<models::SksClusterDeprecatedResource> list_sks_cluster_deprecated_resources(id)
 Resources that are scheduled to be removed in future kubernetes releases
 
 This operation returns the deprecated resources for a given cluster
@@ -353,7 +353,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<std::collections::HashMap<String, String>>**](std::collections::HashMap.md)
+[**Vec<models::SksClusterDeprecatedResource>**](sks-cluster-deprecated-resource.md)
 
 ### Authorization
 

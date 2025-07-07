@@ -356,6 +356,7 @@ docs/SecurityGroupRuleIcmp.md
 docs/ShardIndexingBackPressureSettings.md
 docs/SksApi.md
 docs/SksCluster.md
+docs/SksClusterDeprecatedResource.md
 docs/SksKubeconfigRequest.md
 docs/SksNodepool.md
 docs/SksNodepoolTaint.md
@@ -776,6 +777,7 @@ src/models/security_group_rule.rs
 src/models/security_group_rule_icmp.rs
 src/models/shard_indexing_back_pressure_settings.rs
 src/models/sks_cluster.rs
+src/models/sks_cluster_deprecated_resource.rs
 src/models/sks_kubeconfig_request.rs
 src/models/sks_nodepool.rs
 src/models/sks_nodepool_taint.rs
