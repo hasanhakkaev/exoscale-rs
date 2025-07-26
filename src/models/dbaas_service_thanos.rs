@@ -12,13 +12,7 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct DbaasServiceOpensearch {
-    /// DbaaS service description
-    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
-    pub description: Option<String>,
-    /// Maximum number of indexes to keep before deleting the oldest one
-    #[serde(rename = "max-index-count", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub max_index_count: Option<Option<u64>>,
+pub struct DbaasServiceThanos {
     /// Service last update timestamp (ISO 8601)
     #[serde(rename = "updated-at", skip_serializing_if = "Option::is_none")]
     pub updated_at: Option<String>,
@@ -26,7 +20,7 @@ pub struct DbaasServiceOpensearch {
     #[serde(rename = "node-count", skip_serializing_if = "Option::is_none")]
     pub node_count: Option<u64>,
     #[serde(rename = "connection-info", skip_serializing_if = "Option::is_none")]
-    pub connection_info: Option<Box<models::DbaasServiceOpensearchConnectionInfo>>,
+    pub connection_info: Option<Box<models::DbaasServiceThanosConnectionInfo>>,
     /// Number of CPUs for each node
     #[serde(rename = "node-cpu-count", skip_serializing_if = "Option::is_none")]
     pub node_cpu_count: Option<u64>,
@@ -43,16 +37,10 @@ pub struct DbaasServiceOpensearch {
     pub node_states: Option<Vec<models::DbaasNodeState>>,
     #[serde(rename = "name")]
     pub name: String,
-    /// Aiven automation resets index.refresh_interval to default value for every index to be sure that indices are always visible to search. If it doesn't fit your case, you can disable this by setting up this flag to true.
-    #[serde(rename = "keep-index-refresh-interval", skip_serializing_if = "Option::is_none")]
-    pub keep_index_refresh_interval: Option<bool>,
     #[serde(rename = "type")]
     pub r#type: String,
     #[serde(rename = "state", skip_serializing_if = "Option::is_none")]
     pub state: Option<models::EnumServiceState>,
-    /// Allowed CIDR address blocks for incoming connections
-    #[serde(rename = "ip-filter", skip_serializing_if = "Option::is_none")]
-    pub ip_filter: Option<Vec<String>>,
     /// List of backups for the service
     #[serde(rename = "backups", skip_serializing_if = "Option::is_none")]
     pub backups: Option<Vec<models::DbaasServiceBackup>>,
@@ -64,14 +52,9 @@ pub struct DbaasServiceOpensearch {
     pub notifications: Option<Vec<models::DbaasServiceNotification>>,
     /// Service component information objects
     #[serde(rename = "components", skip_serializing_if = "Option::is_none")]
-    pub components: Option<Vec<models::DbaasServiceMysqlComponentsInner>>,
-    /// Allows you to create glob style patterns and set a max number of indexes matching this pattern you want to keep. Creating indexes exceeding this value will cause the oldest one to get deleted. You could for example create a pattern looking like 'logs.?' and then create index logs.1, logs.2 etc, it will delete logs.1 once you create logs.6. Do note 'logs.?' does not apply to logs.10. Note: Setting max_index_count to 0 will do nothing and the pattern gets ignored.
-    #[serde(rename = "index-patterns", skip_serializing_if = "Option::is_none")]
-    pub index_patterns: Option<Vec<models::UpdateDbaasServiceOpensearchRequestIndexPatternsInner>>,
+    pub components: Option<Vec<models::DbaasServiceThanosComponentsInner>>,
     #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
     pub maintenance: Option<Box<models::DbaasServiceMaintenance>>,
-    #[serde(rename = "index-template", skip_serializing_if = "Option::is_none")]
-    pub index_template: Option<Box<models::DbaasServiceOpensearchIndexTemplate>>,
     /// TODO UNIT disk space for data storage
     #[serde(rename = "disk-size", skip_serializing_if = "Option::is_none")]
     pub disk_size: Option<u64>,
@@ -81,32 +64,22 @@ pub struct DbaasServiceOpensearch {
     /// URI for connecting to the service (may be absent)
     #[serde(rename = "uri", skip_serializing_if = "Option::is_none")]
     pub uri: Option<String>,
-    #[serde(rename = "opensearch-settings", skip_serializing_if = "Option::is_none")]
-    pub opensearch_settings: Option<Box<models::JsonSchemaOpensearch>>,
     /// service_uri parameterized into key-value pairs
     #[serde(rename = "uri-params", skip_serializing_if = "Option::is_none")]
     pub uri_params: Option<serde_json::Value>,
-    /// OpenSearch version
-    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
-    pub version: Option<String>,
+    #[serde(rename = "thanos-settings", skip_serializing_if = "Option::is_none")]
+    pub thanos_settings: Option<Box<models::JsonSchemaThanos>>,
     /// Service creation timestamp (ISO 8601)
     #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
     /// Subscription plan
     #[serde(rename = "plan")]
     pub plan: String,
-    #[serde(rename = "opensearch-dashboards", skip_serializing_if = "Option::is_none")]
-    pub opensearch_dashboards: Option<Box<models::UpdateDbaasServiceOpensearchRequestOpensearchDashboards>>,
-    /// List of service users
-    #[serde(rename = "users", skip_serializing_if = "Option::is_none")]
-    pub users: Option<Vec<models::DbaasServiceGrafanaUsersInner>>,
 }
 
-impl DbaasServiceOpensearch {
-    pub fn new(prometheus_uri: models::DbaasServiceMysqlPrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceOpensearch {
-        DbaasServiceOpensearch {
-            description: None,
-            max_index_count: None,
+impl DbaasServiceThanos {
+    pub fn new(prometheus_uri: models::DbaasServiceMysqlPrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceThanos {
+        DbaasServiceThanos {
             updated_at: None,
             node_count: None,
             connection_info: None,
@@ -116,27 +89,20 @@ impl DbaasServiceOpensearch {
             zone: None,
             node_states: None,
             name,
-            keep_index_refresh_interval: None,
             r#type,
             state: None,
-            ip_filter: None,
             backups: None,
             termination_protection: None,
             notifications: None,
             components: None,
-            index_patterns: None,
             maintenance: None,
-            index_template: None,
             disk_size: None,
             node_memory: None,
             uri: None,
-            opensearch_settings: None,
             uri_params: None,
-            version: None,
+            thanos_settings: None,
             created_at: None,
             plan,
-            opensearch_dashboards: None,
-            users: None,
         }
     }
 }

@@ -12,22 +12,22 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct UpdateDbaasServiceOpensearchRequestIndexTemplate {
+pub struct DbaasServiceOpensearchIndexTemplate {
     /// The maximum number of nested JSON objects that a single document can contain across all nested types. This limit helps to prevent out of memory errors when a document contains too many nested objects. Default is 10000.
-    #[serde(rename = "mapping-nested-objects-limit", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub mapping_nested_objects_limit: Option<Option<u64>>,
+    #[serde(rename = "mapping-nested-objects-limit", skip_serializing_if = "Option::is_none")]
+    pub mapping_nested_objects_limit: Option<u64>,
     /// The number of replicas each primary shard has.
-    #[serde(rename = "number-of-replicas", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub number_of_replicas: Option<Option<u64>>,
+    #[serde(rename = "number-of-replicas", skip_serializing_if = "Option::is_none")]
+    pub number_of_replicas: Option<u64>,
     /// The number of primary shards that an index should have.
     #[serde(rename = "number-of-shards", skip_serializing_if = "Option::is_none")]
     pub number_of_shards: Option<u64>,
 }
 
-impl UpdateDbaasServiceOpensearchRequestIndexTemplate {
+impl DbaasServiceOpensearchIndexTemplate {
     /// Template settings for all new indexes
-    pub fn new() -> UpdateDbaasServiceOpensearchRequestIndexTemplate {
-        UpdateDbaasServiceOpensearchRequestIndexTemplate {
+    pub fn new() -> DbaasServiceOpensearchIndexTemplate {
+        DbaasServiceOpensearchIndexTemplate {
             mapping_nested_objects_limit: None,
             number_of_replicas: None,
             number_of_shards: None,

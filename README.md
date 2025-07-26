@@ -467,14 +467,17 @@ Class | Method | HTTP request | Description
  - [DbaasServiceNotification](docs/DbaasServiceNotification.md)
  - [DbaasServiceOpensearch](docs/DbaasServiceOpensearch.md)
  - [DbaasServiceOpensearchConnectionInfo](docs/DbaasServiceOpensearchConnectionInfo.md)
+ - [DbaasServiceOpensearchIndexTemplate](docs/DbaasServiceOpensearchIndexTemplate.md)
  - [DbaasServicePg](docs/DbaasServicePg.md)
  - [DbaasServicePgConnectionInfo](docs/DbaasServicePgConnectionInfo.md)
  - [DbaasServicePgConnectionPoolsInner](docs/DbaasServicePgConnectionPoolsInner.md)
  - [DbaasServicePgUsersInner](docs/DbaasServicePgUsersInner.md)
+ - [DbaasServiceThanos](docs/DbaasServiceThanos.md)
+ - [DbaasServiceThanosComponentsInner](docs/DbaasServiceThanosComponentsInner.md)
+ - [DbaasServiceThanosConnectionInfo](docs/DbaasServiceThanosConnectionInfo.md)
  - [DbaasServiceType](docs/DbaasServiceType.md)
  - [DbaasServiceUpdate](docs/DbaasServiceUpdate.md)
  - [DbaasServiceValkey](docs/DbaasServiceValkey.md)
- - [DbaasServiceValkeyComponentsInner](docs/DbaasServiceValkeyComponentsInner.md)
  - [DbaasServiceValkeyConnectionInfo](docs/DbaasServiceValkeyConnectionInfo.md)
  - [DbaasServiceValkeyUsersInner](docs/DbaasServiceValkeyUsersInner.md)
  - [DbaasServiceValkeyUsersInnerAccessControl](docs/DbaasServiceValkeyUsersInnerAccessControl.md)
@@ -582,6 +585,7 @@ Class | Method | HTTP request | Description
  - [JsonSchemaPgbouncer](docs/JsonSchemaPgbouncer.md)
  - [JsonSchemaPglookout](docs/JsonSchemaPglookout.md)
  - [JsonSchemaSchemaRegistry](docs/JsonSchemaSchemaRegistry.md)
+ - [JsonSchemaThanos](docs/JsonSchemaThanos.md)
  - [JsonSchemaTimescaledb](docs/JsonSchemaTimescaledb.md)
  - [JsonSchemaValkey](docs/JsonSchemaValkey.md)
  - [KubeletImageGc](docs/KubeletImageGc.md)
@@ -678,6 +682,9 @@ Class | Method | HTTP request | Description
  - [SshKey](docs/SshKey.md)
  - [StartInstanceRequest](docs/StartInstanceRequest.md)
  - [Template](docs/Template.md)
+ - [ThanosCompactorUserConfiguration](docs/ThanosCompactorUserConfiguration.md)
+ - [ThanosQueryFrontendUserConfiguration](docs/ThanosQueryFrontendUserConfiguration.md)
+ - [ThanosQueryUserConfiguration](docs/ThanosQueryUserConfiguration.md)
  - [UpdateBlockStorageSnapshotRequest](docs/UpdateBlockStorageSnapshotRequest.md)
  - [UpdateBlockStorageVolumeRequest](docs/UpdateBlockStorageVolumeRequest.md)
  - [UpdateDbaasIntegrationRequest](docs/UpdateDbaasIntegrationRequest.md)
@@ -728,4 +735,4 @@ cargo doc --open
 
 api@exoscale.com
 
-Generated with latest changes from 2025-07-04
+Generated with latest changes from 2025-07-22

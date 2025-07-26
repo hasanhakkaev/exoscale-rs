@@ -14,11 +14,11 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceMysqlRequestBackupSchedule {
     /// The hour of day (in UTC) when backup for the service is started. New backup is only started if previous backup has already completed.
-    #[serde(rename = "backup-hour", skip_serializing_if = "Option::is_none")]
-    pub backup_hour: Option<u64>,
+    #[serde(rename = "backup-hour", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub backup_hour: Option<Option<u64>>,
     /// The minute of an hour when backup for the service is started. New backup is only started if previous backup has already completed.
-    #[serde(rename = "backup-minute", skip_serializing_if = "Option::is_none")]
-    pub backup_minute: Option<u64>,
+    #[serde(rename = "backup-minute", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub backup_minute: Option<Option<u64>>,
 }
 
 impl UpdateDbaasServiceMysqlRequestBackupSchedule {
