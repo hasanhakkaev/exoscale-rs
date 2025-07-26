@@ -14,8 +14,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceOpensearchRequestIndexPatternsInner {
     /// Maximum number of indexes to keep
-    #[serde(rename = "max-index-count", skip_serializing_if = "Option::is_none")]
-    pub max_index_count: Option<u64>,
+    #[serde(rename = "max-index-count", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub max_index_count: Option<Option<u64>>,
     /// Deletion sorting algorithm
     #[serde(rename = "sorting-algorithm", skip_serializing_if = "Option::is_none")]
     pub sorting_algorithm: Option<SortingAlgorithm>,

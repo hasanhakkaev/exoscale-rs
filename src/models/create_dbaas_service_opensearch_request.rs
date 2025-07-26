@@ -14,8 +14,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateDbaasServiceOpensearchRequest {
     /// Maximum number of indexes to keep before deleting the oldest one
-    #[serde(rename = "max-index-count", skip_serializing_if = "Option::is_none")]
-    pub max_index_count: Option<u64>,
+    #[serde(rename = "max-index-count", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub max_index_count: Option<Option<u64>>,
     /// Aiven automation resets index.refresh_interval to default value for every index to be sure that indices are always visible to search. If it doesn't fit your case, you can disable this by setting up this flag to true.
     #[serde(rename = "keep-index-refresh-interval", skip_serializing_if = "Option::is_none")]
     pub keep_index_refresh_interval: Option<bool>,

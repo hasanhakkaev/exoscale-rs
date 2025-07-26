@@ -324,7 +324,7 @@ No authorization required
 > models::BlockStorageVolume resize_block_storage_volume(id, resize_block_storage_volume_request)
 Resize a block storage volume
 
-This operation resizes a Block storage volume. Note: the volume can only grow, cannot be shrunk.
+This operation resizes a Block storage volume. Note: the volume can only grow, cannot be shrunk. Only detached volumes or volumes attached to stopped instances can be resized.
 
 ### Parameters
 
