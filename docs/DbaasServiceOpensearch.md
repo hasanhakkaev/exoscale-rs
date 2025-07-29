@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **components** | Option<[**Vec<models::DbaasServiceMysqlComponentsInner>**](dbaas_service_mysql_components_inner.md)> | Service component information objects | [optional]
 **index_patterns** | Option<[**Vec<models::UpdateDbaasServiceOpensearchRequestIndexPatternsInner>**](update_dbaas_service_opensearch_request_index_patterns_inner.md)> | Allows you to create glob style patterns and set a max number of indexes matching this pattern you want to keep. Creating indexes exceeding this value will cause the oldest one to get deleted. You could for example create a pattern looking like 'logs.?' and then create index logs.1, logs.2 etc, it will delete logs.1 once you create logs.6. Do note 'logs.?' does not apply to logs.10. Note: Setting max_index_count to 0 will do nothing and the pattern gets ignored. | [optional]
 **maintenance** | Option<[**models::DbaasServiceMaintenance**](dbaas-service-maintenance.md)> |  | [optional]
-**index_template** | Option<[**models::UpdateDbaasServiceOpensearchRequestIndexTemplate**](update_dbaas_service_opensearch_request_index_template.md)> |  | [optional]
+**index_template** | Option<[**models::DbaasServiceOpensearchIndexTemplate**](dbaas_service_opensearch_index_template.md)> |  | [optional]
 **disk_size** | Option<**u64**> | TODO UNIT disk space for data storage | [optional]
 **node_memory** | Option<**u64**> | TODO UNIT of memory for each node | [optional]
 **uri** | Option<**String**> | URI for connecting to the service (may be absent) | [optional]
