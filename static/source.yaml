@@ -10288,7 +10288,6 @@ paths:
                   - TXT
                   - ALIAS
                   - URL
-                  - SPF
                   description: DNS domain record type
                 content:
                   type: string
