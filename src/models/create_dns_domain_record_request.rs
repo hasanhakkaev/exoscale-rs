@@ -71,8 +71,6 @@ pub enum Type {
     Alias,
     #[serde(rename = "URL")]
     Url,
-    #[serde(rename = "SPF")]
-    Spf,
 }
 
 impl Default for Type {
