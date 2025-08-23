@@ -15,36 +15,36 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum EnumDatadogSite {
     #[serde(rename = "us3.datadoghq.com")]
-    Us3PeriodDatadoghqPeriodCom,
+    Us3DatadoghqCom,
     #[serde(rename = "ddog-gov.com")]
-    DdogGovPeriodCom,
+    DdogGovCom,
     #[serde(rename = "datadoghq.eu")]
-    DatadoghqPeriodEu,
+    DatadoghqEu,
     #[serde(rename = "us5.datadoghq.com")]
-    Us5PeriodDatadoghqPeriodCom,
+    Us5DatadoghqCom,
     #[serde(rename = "ap1.datadoghq.com")]
-    Ap1PeriodDatadoghqPeriodCom,
+    Ap1DatadoghqCom,
     #[serde(rename = "datadoghq.com")]
-    DatadoghqPeriodCom,
+    DatadoghqCom,
 
 }
 
 impl std::fmt::Display for EnumDatadogSite {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Us3PeriodDatadoghqPeriodCom => write!(f, "us3.datadoghq.com"),
-            Self::DdogGovPeriodCom => write!(f, "ddog-gov.com"),
-            Self::DatadoghqPeriodEu => write!(f, "datadoghq.eu"),
-            Self::Us5PeriodDatadoghqPeriodCom => write!(f, "us5.datadoghq.com"),
-            Self::Ap1PeriodDatadoghqPeriodCom => write!(f, "ap1.datadoghq.com"),
-            Self::DatadoghqPeriodCom => write!(f, "datadoghq.com"),
+            Self::Us3DatadoghqCom => write!(f, "us3.datadoghq.com"),
+            Self::DdogGovCom => write!(f, "ddog-gov.com"),
+            Self::DatadoghqEu => write!(f, "datadoghq.eu"),
+            Self::Us5DatadoghqCom => write!(f, "us5.datadoghq.com"),
+            Self::Ap1DatadoghqCom => write!(f, "ap1.datadoghq.com"),
+            Self::DatadoghqCom => write!(f, "datadoghq.com"),
         }
     }
 }
 
 impl Default for EnumDatadogSite {
     fn default() -> EnumDatadogSite {
-        Self::Us3PeriodDatadoghqPeriodCom
+        Self::Us3DatadoghqCom
     }
 }
 

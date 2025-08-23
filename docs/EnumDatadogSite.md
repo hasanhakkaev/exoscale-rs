@@ -4,12 +4,12 @@
 
 | Name | Value |
 |---- | -----|
-| Us3PeriodDatadoghqPeriodCom | us3.datadoghq.com |
-| DdogGovPeriodCom | ddog-gov.com |
-| DatadoghqPeriodEu | datadoghq.eu |
-| Us5PeriodDatadoghqPeriodCom | us5.datadoghq.com |
-| Ap1PeriodDatadoghqPeriodCom | ap1.datadoghq.com |
-| DatadoghqPeriodCom | datadoghq.com |
+| Us3DatadoghqCom | us3.datadoghq.com |
+| DdogGovCom | ddog-gov.com |
+| DatadoghqEu | datadoghq.eu |
+| Us5DatadoghqCom | us5.datadoghq.com |
+| Ap1DatadoghqCom | ap1.datadoghq.com |
+| DatadoghqCom | datadoghq.com |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

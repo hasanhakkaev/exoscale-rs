@@ -15,14 +15,14 @@ use serde::{Deserialize, Serialize};
 pub struct ThanosQueryFrontendUserConfiguration {
     /// Whether to align the query range boundaries with the step. If enabled, the query range boundaries will be aligned to the step, providing more accurate results for queries with high-resolution data.
     #[serde(rename = "query-range.align-range-with-step", skip_serializing_if = "Option::is_none")]
-    pub query_range_period_align_range_with_step: Option<bool>,
+    pub query_range_align_range_with_step: Option<bool>,
 }
 
 impl ThanosQueryFrontendUserConfiguration {
     /// Configuration options for Thanos Query Frontend.
     pub fn new() -> ThanosQueryFrontendUserConfiguration {
         ThanosQueryFrontendUserConfiguration {
-            query_range_period_align_range_with_step: None,
+            query_range_align_range_with_step: None,
         }
     }
 }
