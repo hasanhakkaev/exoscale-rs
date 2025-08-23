@@ -15,14 +15,14 @@ use serde::{Deserialize, Serialize};
 pub struct ThanosCompactorUserConfiguration {
     /// Retention time for data in days for each resolution (5m, 1h, raw)
     #[serde(rename = "retention.days", skip_serializing_if = "Option::is_none")]
-    pub retention_period_days: Option<u32>,
+    pub retention_days: Option<u32>,
 }
 
 impl ThanosCompactorUserConfiguration {
     /// Configuration options for Thanos Compactor.
     pub fn new() -> ThanosCompactorUserConfiguration {
         ThanosCompactorUserConfiguration {
-            retention_period_days: None,
+            retention_days: None,
         }
     }
 }

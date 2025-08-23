@@ -24,13 +24,13 @@ pub struct JsonSchemaPg {
     pub track_io_timing: Option<TrackIoTiming>,
     /// Enables or disables query plan monitoring
     #[serde(rename = "pg_stat_monitor.pgsm_enable_query_plan", skip_serializing_if = "Option::is_none")]
-    pub pg_stat_monitor_period_pgsm_enable_query_plan: Option<bool>,
+    pub pg_stat_monitor_pgsm_enable_query_plan: Option<bool>,
     /// PostgreSQL maximum number of files that can be open per process
     #[serde(rename = "max_files_per_process", skip_serializing_if = "Option::is_none")]
     pub max_files_per_process: Option<u16>,
     /// Sets the maximum number of buckets 
     #[serde(rename = "pg_stat_monitor.pgsm_max_buckets", skip_serializing_if = "Option::is_none")]
-    pub pg_stat_monitor_period_pgsm_max_buckets: Option<u8>,
+    pub pg_stat_monitor_pgsm_max_buckets: Option<u8>,
     #[serde(rename = "wal", skip_serializing_if = "Option::is_none")]
     pub wal: Option<Box<models::WriteAheadLogWalSettings>>,
     /// Specifies the default TOAST compression method for values of compressible columns (the default is lz4).
@@ -55,7 +55,7 @@ pub struct JsonSchemaPg {
     pub max_parallel_workers_per_gather: Option<u8>,
     /// Sets the time interval to run pg_partman's scheduled tasks
     #[serde(rename = "pg_partman_bgw.interval", skip_serializing_if = "Option::is_none")]
-    pub pg_partman_bgw_period_interval: Option<u32>,
+    pub pg_partman_bgw_interval: Option<u32>,
     /// Choose from one of the available log-formats. These can support popular log analyzers like pgbadger, pganalyze etc.
     #[serde(rename = "log_line_prefix", skip_serializing_if = "Option::is_none")]
     pub log_line_prefix: Option<LogLinePrefix>,
@@ -79,7 +79,7 @@ pub struct JsonSchemaPg {
     pub max_parallel_workers: Option<u8>,
     /// Controls which role to use for pg_partman's scheduled background tasks.
     #[serde(rename = "pg_partman_bgw.role", skip_serializing_if = "Option::is_none")]
-    pub pg_partman_bgw_period_role: Option<String>,
+    pub pg_partman_bgw_role: Option<String>,
     /// PostgreSQL maximum logical replication workers (taken from the pool of max_parallel_workers)
     #[serde(rename = "max_logical_replication_workers", skip_serializing_if = "Option::is_none")]
     pub max_logical_replication_workers: Option<u8>,
@@ -91,7 +91,7 @@ pub struct JsonSchemaPg {
     pub max_worker_processes: Option<u8>,
     /// Controls which statements are counted. Specify top to track top-level statements (those issued directly by clients), all to also track nested statements (such as statements invoked within functions), or none to disable statement statistics collection. The default value is top.
     #[serde(rename = "pg_stat_statements.track", skip_serializing_if = "Option::is_none")]
-    pub pg_stat_statements_period_track: Option<PgStatStatementsPeriodTrack>,
+    pub pg_stat_statements_track: Option<PgStatStatementsTrack>,
     /// PostgreSQL temporary file limit in KiB, -1 for unlimited
     #[serde(rename = "temp_file_limit", skip_serializing_if = "Option::is_none")]
     pub temp_file_limit: Option<i32>,
@@ -120,9 +120,9 @@ impl JsonSchemaPg {
             track_activity_query_size: None,
             timezone: None,
             track_io_timing: None,
-            pg_stat_monitor_period_pgsm_enable_query_plan: None,
+            pg_stat_monitor_pgsm_enable_query_plan: None,
             max_files_per_process: None,
-            pg_stat_monitor_period_pgsm_max_buckets: None,
+            pg_stat_monitor_pgsm_max_buckets: None,
             wal: None,
             default_toast_compression: None,
             deadlock_timeout: None,
@@ -131,7 +131,7 @@ impl JsonSchemaPg {
             max_replication_slots: None,
             autovacuum: None,
             max_parallel_workers_per_gather: None,
-            pg_partman_bgw_period_interval: None,
+            pg_partman_bgw_interval: None,
             log_line_prefix: None,
             log_temp_files: None,
             max_locks_per_transaction: None,
@@ -139,11 +139,11 @@ impl JsonSchemaPg {
             track_functions: None,
             max_stack_depth: None,
             max_parallel_workers: None,
-            pg_partman_bgw_period_role: None,
+            pg_partman_bgw_role: None,
             max_logical_replication_workers: None,
             max_prepared_transactions: None,
             max_worker_processes: None,
-            pg_stat_statements_period_track: None,
+            pg_stat_statements_track: None,
             temp_file_limit: None,
             log_error_verbosity: None,
             log_min_duration_statement: None,
@@ -224,7 +224,7 @@ impl Default for TrackFunctions {
     }
 }
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum PgStatStatementsPeriodTrack {
+pub enum PgStatStatementsTrack {
     #[serde(rename = "all")]
     All,
     #[serde(rename = "top")]
@@ -233,8 +233,8 @@ pub enum PgStatStatementsPeriodTrack {
     None,
 }
 
-impl Default for PgStatStatementsPeriodTrack {
-    fn default() -> PgStatStatementsPeriodTrack {
+impl Default for PgStatStatementsTrack {
+    fn default() -> PgStatStatementsTrack {
         Self::All
     }
 }

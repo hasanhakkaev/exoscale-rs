@@ -15,34 +15,34 @@ use serde::{Deserialize, Serialize};
 pub struct ThanosQueryUserConfiguration {
     /// Set the default evaluation interval for subqueries.
     #[serde(rename = "query.default-evaluation-interval", skip_serializing_if = "Option::is_none")]
-    pub query_period_default_evaluation_interval: Option<String>,
+    pub query_default_evaluation_interval: Option<String>,
     /// The maximum lookback duration for retrieving metrics during expression evaluations in PromQL. PromQL always evaluates the query for a certain timestamp, and it looks back for the given amount of time to get the latest sample. If it exceeds the maximum lookback delta, it assumes the series is stale and returns none (a gap). The lookback delta should be set to at least 2 times the slowest scrape interval. If unset, it will use the promql default of 5m.
     #[serde(rename = "query.lookback-delta", skip_serializing_if = "Option::is_none")]
-    pub query_period_lookback_delta: Option<String>,
+    pub query_lookback_delta: Option<String>,
     /// The default metadata time range duration for retrieving labels through Labels and Series API when the range parameters are not specified. The zero value means the range covers the time since the beginning.
     #[serde(rename = "query.metadata.default-time-range", skip_serializing_if = "Option::is_none")]
-    pub query_period_metadata_period_default_time_range: Option<String>,
+    pub query_metadata_default_time_range: Option<String>,
     /// Maximum time to process a query by the query node.
     #[serde(rename = "query.timeout", skip_serializing_if = "Option::is_none")]
-    pub query_period_timeout: Option<String>,
+    pub query_timeout: Option<String>,
     /// The maximum samples allowed for a single Series request. The Series call fails if this limit is exceeded. Set to 0 for no limit. NOTE: For efficiency, the limit is internally implemented as 'chunks limit' considering each chunk contains a maximum of 120 samples. The default value is 100 * store.limits.request-series.
     #[serde(rename = "store.limits.request-samples", skip_serializing_if = "Option::is_none")]
-    pub store_period_limits_period_request_samples: Option<u32>,
+    pub store_limits_request_samples: Option<u32>,
     /// The maximum series allowed for a single Series request. The Series call fails if this limit is exceeded. Set to 0 for no limit. The default value is 1000 * cpu_count.
     #[serde(rename = "store.limits.request-series", skip_serializing_if = "Option::is_none")]
-    pub store_period_limits_period_request_series: Option<u32>,
+    pub store_limits_request_series: Option<u32>,
 }
 
 impl ThanosQueryUserConfiguration {
     /// Configuration options for Thanos Query.
     pub fn new() -> ThanosQueryUserConfiguration {
         ThanosQueryUserConfiguration {
-            query_period_default_evaluation_interval: None,
-            query_period_lookback_delta: None,
-            query_period_metadata_period_default_time_range: None,
-            query_period_timeout: None,
-            store_period_limits_period_request_samples: None,
-            store_period_limits_period_request_series: None,
+            query_default_evaluation_interval: None,
+            query_lookback_delta: None,
+            query_metadata_default_time_range: None,
+            query_timeout: None,
+            store_limits_request_samples: None,
+            store_limits_request_series: None,
         }
     }
 }
