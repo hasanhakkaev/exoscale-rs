@@ -46,6 +46,8 @@ pub struct CreateSksClusterRequest {
     /// Cluster addons
     #[serde(rename = "addons", skip_serializing_if = "Option::is_none")]
     pub addons: Option<std::collections::HashSet<Addons>>,
+    #[serde(rename = "audit", skip_serializing_if = "Option::is_none")]
+    pub audit: Option<Box<models::SksAuditCreate>>,
     /// Control plane Kubernetes version
     #[serde(rename = "version")]
     pub version: String,
@@ -66,6 +68,7 @@ impl CreateSksClusterRequest {
             level,
             feature_gates: None,
             addons: None,
+            audit: None,
             version,
         }
     }

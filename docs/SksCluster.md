@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **feature_gates** | Option<**Vec<String>**> | A list of Kubernetes-only Alpha features to enable for API server component | [optional]
 **addons** | Option<**Vec<String>**> | Cluster addons | [optional]
 **id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Cluster ID | [optional][readonly]
+**audit** | Option<[**models::SksAudit**](sks-audit.md)> |  | [optional]
 **version** | Option<**String**> | Control plane Kubernetes version | [optional]
 **created_at** | Option<**String**> | Cluster creation date | [optional][readonly]
 **endpoint** | Option<**String**> | Cluster endpoint | [optional][readonly]

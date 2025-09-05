@@ -669,6 +669,9 @@ Class | Method | HTTP request | Description
  - [SecurityGroupRule](docs/SecurityGroupRule.md)
  - [SecurityGroupRuleIcmp](docs/SecurityGroupRuleIcmp.md)
  - [ShardIndexingBackPressureSettings](docs/ShardIndexingBackPressureSettings.md)
+ - [SksAudit](docs/SksAudit.md)
+ - [SksAuditCreate](docs/SksAuditCreate.md)
+ - [SksAuditUpdate](docs/SksAuditUpdate.md)
  - [SksCluster](docs/SksCluster.md)
  - [SksClusterDeprecatedResource](docs/SksClusterDeprecatedResource.md)
  - [SksKubeconfigRequest](docs/SksKubeconfigRequest.md)
@@ -735,4 +738,4 @@ cargo doc --open
 
 api@exoscale.com
 
-Generated with latest changes from 2025-07-22
+Generated with latest changes from 2025-09-04
