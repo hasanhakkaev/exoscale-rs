@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **level** | **String** | Cluster service level | 
 **feature_gates** | Option<**Vec<String>**> | A list of Kubernetes-only Alpha features to enable for API server component | [optional]
 **addons** | Option<**Vec<String>**> | Cluster addons | [optional]
+**audit** | Option<[**models::SksAuditCreate**](sks-audit-create.md)> |  | [optional]
 **version** | **String** | Control plane Kubernetes version | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

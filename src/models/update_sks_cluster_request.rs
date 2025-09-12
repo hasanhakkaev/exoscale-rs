@@ -13,41 +13,44 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateSksClusterRequest {
-    /// Cluster name
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
     /// Cluster description
     #[serde(rename = "description", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub description: Option<Option<String>>,
     #[serde(rename = "labels", skip_serializing_if = "Option::is_none")]
     pub labels: Option<std::collections::HashMap<String, String>>,
-    #[serde(rename = "oidc", skip_serializing_if = "Option::is_none")]
-    pub oidc: Option<Box<models::SksOidc>>,
     /// Enable auto upgrade of the control plane to the latest patch version available
     #[serde(rename = "auto-upgrade", skip_serializing_if = "Option::is_none")]
     pub auto_upgrade: Option<bool>,
-    /// Cluster addons
-    #[serde(rename = "addons", skip_serializing_if = "Option::is_none")]
-    pub addons: Option<std::collections::HashSet<Addons>>,
-    /// A list of Kubernetes-only Alpha features to enable for API server component
-    #[serde(rename = "feature-gates", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub feature_gates: Option<Option<Vec<String>>>,
+    #[serde(rename = "oidc", skip_serializing_if = "Option::is_none")]
+    pub oidc: Option<Box<models::SksOidc>>,
+    /// Cluster name
+    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
     /// Add or remove the operators certificate authority (CA) from the list of trusted CAs of the api server. The default value is true
     #[serde(rename = "enable-operators-ca", skip_serializing_if = "Option::is_none")]
     pub enable_operators_ca: Option<bool>,
+    /// A list of Kubernetes-only Alpha features to enable for API server component
+    #[serde(rename = "feature-gates", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub feature_gates: Option<Option<Vec<String>>>,
+    /// Cluster addons
+    #[serde(rename = "addons", skip_serializing_if = "Option::is_none")]
+    pub addons: Option<std::collections::HashSet<Addons>>,
+    #[serde(rename = "audit", skip_serializing_if = "Option::is_none")]
+    pub audit: Option<Box<models::SksAuditUpdate>>,
 }
 
 impl UpdateSksClusterRequest {
     pub fn new() -> UpdateSksClusterRequest {
         UpdateSksClusterRequest {
-            name: None,
             description: None,
             labels: None,
-            oidc: None,
             auto_upgrade: None,
-            addons: None,
-            feature_gates: None,
+            oidc: None,
+            name: None,
             enable_operators_ca: None,
+            feature_gates: None,
+            addons: None,
+            audit: None,
         }
     }
 }

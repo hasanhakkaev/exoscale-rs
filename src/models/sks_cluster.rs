@@ -51,6 +51,8 @@ pub struct SksCluster {
     /// Cluster ID
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<uuid::Uuid>,
+    #[serde(rename = "audit", skip_serializing_if = "Option::is_none")]
+    pub audit: Option<Box<models::SksAudit>>,
     /// Control plane Kubernetes version
     #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
@@ -79,6 +81,7 @@ impl SksCluster {
             feature_gates: None,
             addons: None,
             id: None,
+            audit: None,
             version: None,
             created_at: None,
             endpoint: None,

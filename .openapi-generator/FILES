@@ -359,6 +359,9 @@ docs/SecurityGroupRule.md
 docs/SecurityGroupRuleIcmp.md
 docs/ShardIndexingBackPressureSettings.md
 docs/SksApi.md
+docs/SksAudit.md
+docs/SksAuditCreate.md
+docs/SksAuditUpdate.md
 docs/SksCluster.md
 docs/SksClusterDeprecatedResource.md
 docs/SksKubeconfigRequest.md
@@ -787,6 +790,9 @@ src/models/security_group_resource.rs
 src/models/security_group_rule.rs
 src/models/security_group_rule_icmp.rs
 src/models/shard_indexing_back_pressure_settings.rs
+src/models/sks_audit.rs
+src/models/sks_audit_create.rs
+src/models/sks_audit_update.rs
 src/models/sks_cluster.rs
 src/models/sks_cluster_deprecated_resource.rs
 src/models/sks_kubeconfig_request.rs
