@@ -121,6 +121,8 @@ pub enum State {
     Updating,
     #[serde(rename = "error")]
     Error,
+    #[serde(rename = "rotating-karpenter-credentials")]
+    RotatingKarpenterCredentials,
     #[serde(rename = "resuming")]
     Resuming,
 }
@@ -151,6 +153,8 @@ pub enum Addons {
     ExoscaleContainerStorageInterface,
     #[serde(rename = "metrics-server")]
     MetricsServer,
+    #[serde(rename = "karpenter")]
+    Karpenter,
 }
 
 impl Default for Addons {

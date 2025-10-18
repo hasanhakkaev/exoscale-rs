@@ -107,6 +107,8 @@ pub enum Addons {
     ExoscaleContainerStorageInterface,
     #[serde(rename = "metrics-server")]
     MetricsServer,
+    #[serde(rename = "karpenter")]
+    Karpenter,
 }
 
 impl Default for Addons {

@@ -215,6 +215,20 @@ components:
           type: string
       title: Schema Registry configuration
       type: object
+    operation-reason:
+      type: string
+      enum:
+      - incorrect
+      - unknown
+      - unavailable
+      - forbidden
+      - busy
+      - fault
+      - partial
+      - not-found
+      - interrupted
+      - unsupported
+      - conflict
     dbaas-endpoint-opensearch:
       type: object
       properties:
@@ -2750,6 +2764,7 @@ components:
       - '14'
       - '17'
       - '15'
+      - '18'
       - '13'
       - '16'
     instance-type:
@@ -3160,6 +3175,60 @@ components:
       - plan
       - type
       - prometheus-uri
+    aideployment:
+      type: object
+      properties:
+        updated-at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Update time
+        deployment-url:
+          type: string
+          description: Deployment URL (nullable)
+        model-id:
+          type: string
+          format: uuid
+          description: Associated model ID
+        service-level:
+          type: string
+          minLength: 1
+          description: Service level
+        name:
+          type: string
+          minLength: 1
+          description: Deployment name
+        endpoint-url:
+          type: string
+          description: Endpoint URL (nullable)
+        instance-type:
+          type: string
+          minLength: 1
+          description: Instance type
+        organization-id:
+          type: string
+          format: uuid
+          description: Organization ID
+        status:
+          type: string
+          description: Deployment status
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: Deployment ID
+        created-at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Creation time
+        deployment-size:
+          type: integer
+          format: int64
+          minimum: 0
+          exclusiveMinimum: true
+          description: Deployment size (>=1)
+      description: AI deployment
     dbaas-service-kafka:
       type: object
       properties:
@@ -3748,6 +3817,12 @@ components:
           format: uuid
           description: IAM API Key Role ID
       description: IAM API Key
+    operation-state:
+      type: string
+      enum:
+      - failure
+      - pending
+      - success
     public-ip-assignment:
       type: string
       enum:
@@ -4639,6 +4714,17 @@ components:
       - client-id
       - issuer-url
       description: SKS Cluster OpenID config map
+    operation-resource:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Resource ID
+        type:
+          type: string
+          description: Resource type
+      description: Operation resource
     dbaas-task:
       type: object
       properties:
@@ -4839,7 +4925,7 @@ components:
             properties:
               dbname:
                 type: string
-                description: Migrated db name (PG) or number (Valkey)
+                description: Migrated db name
               error:
                 type: string
                 description: Error message in case that migration has failed
@@ -5503,6 +5589,7 @@ components:
           - suspending
           - updating
           - error
+          - rotating-karpenter-credentials
           - resuming
           readOnly: true
           description: Cluster state
@@ -5536,6 +5623,7 @@ components:
             - exoscale-cloud-controller
             - exoscale-container-storage-interface
             - metrics-server
+            - karpenter
           uniqueItems: true
           description: Cluster addons
         id:
@@ -7473,6 +7561,42 @@ components:
           readOnly: true
           description: DNS domain record system status
       description: DNS domain record
+    aimodel:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+          description: Model ID
+        organization-id:
+          type: string
+          format: uuid
+          description: Organization ID
+        name:
+          type: string
+          minLength: 1
+          description: Model name
+        status:
+          type: string
+          description: Model status
+        model-size:
+          type: integer
+          format: int64
+          minimum: 0
+          exclusiveMinimum: false
+          description: Model size (nullable)
+        created-at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Creation time
+        updated-at:
+          type: string
+          format: date-time
+          readOnly: true
+          description: Update time
+      description: AI model
     organization:
       type: object
       properties:
@@ -9943,6 +10067,38 @@ paths:
       summary: Reveal the password used during instance creation or the latest password
         reset.
       operationId: reveal-instance-password
+  "/sks-template/{kube-version}/{variant}":
+    get:
+      tags: []
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  active-template:
+                    type: string
+                    format: uuid
+      description: Get the active template for a given kube version and variant (standard
+        | nvidia)
+      parameters:
+      - in: path
+        required: true
+        name: kube-version
+        schema:
+          type: string
+      - in: path
+        required: true
+        name: variant
+        schema:
+          type: string
+          enum:
+          - standard
+          - nvidia
+      summary: ''
+      operationId: get-active-nodepool-template
   "/instance/{id}:resize-disk":
     put:
       tags:
@@ -10191,6 +10347,7 @@ paths:
                   description: 'Prefix to apply to Instances names (default: pool)'
                 user-data:
                   type: string
+                  maxLength: 32768
                   minLength: 1
                   description: Instances Cloud-init user-data
                 deploy-target:
@@ -14797,6 +14954,7 @@ paths:
                     - exoscale-cloud-controller
                     - exoscale-container-storage-interface
                     - metrics-server
+                    - karpenter
                   uniqueItems: true
                   description: Cluster addons
                 audit:
@@ -15120,6 +15278,7 @@ paths:
                     - exoscale-cloud-controller
                     - exoscale-container-storage-interface
                     - metrics-server
+                    - karpenter
                   uniqueItems: true
                   description: Cluster addons
                 audit:
@@ -15911,35 +16070,6 @@ paths:
             schema:
               "$ref": "#/components/schemas/iam-policy"
       operationId: update-iam-role-policy
-  "/sks-cluster/{id}/{field}":
-    delete:
-      tags:
-      - sks
-      responses:
-        '200':
-          description: '200'
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/operation"
-      description: ''
-      parameters:
-      - in: path
-        required: true
-        name: id
-        schema:
-          type: string
-          format: uuid
-      - in: path
-        required: true
-        name: field
-        schema:
-          type: string
-          enum:
-          - description
-          - labels
-      summary: Reset an SKS cluster field to its default value
-      operationId: reset-sks-cluster-field
   "/dbaas-migration-status/{name}":
     get:
       tags:
@@ -17338,45 +17468,6 @@ paths:
                         for OpenSearch. (default: 128)'
                   description: OpenSearch Dashboards settings
       operationId: update-dbaas-service-opensearch
-  "/sks-cluster/{id}/nodepool/{sks-nodepool-id}/{field}":
-    delete:
-      tags:
-      - sks
-      responses:
-        '200':
-          description: '200'
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/operation"
-      description: ''
-      parameters:
-      - in: path
-        required: true
-        name: id
-        schema:
-          type: string
-          format: uuid
-      - in: path
-        required: true
-        name: sks-nodepool-id
-        schema:
-          type: string
-          format: uuid
-      - in: path
-        required: true
-        name: field
-        schema:
-          type: string
-          enum:
-          - anti-affinity-groups
-          - description
-          - labels
-          - security-groups
-          - private-networks
-          - deploy-target
-      summary: Reset an SKS Nodepool field to its default value
-      operationId: reset-sks-nodepool-field
   "/dbaas-external-endpoint/{source-service-name}/detach":
     put:
       tags:
@@ -17929,6 +18020,27 @@ paths:
               required:
               - username
       operationId: create-dbaas-valkey-user
+  "/sks-cluster/{id}/rotate-karpenter-credentials":
+    put:
+      tags:
+      - sks
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: Rotate Exoscale Karpenter credentials
+      operationId: rotate-sks-karpenter-credentials
   "/dbaas-integration":
     post:
       tags:

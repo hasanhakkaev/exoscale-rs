@@ -17,10 +17,9 @@ Method | HTTP request | Description
 [**list_sks_cluster_deprecated_resources**](SksApi.md#list_sks_cluster_deprecated_resources) | **GET** /sks-cluster-deprecated-resources/{id} | Resources that are scheduled to be removed in future kubernetes releases
 [**list_sks_cluster_versions**](SksApi.md#list_sks_cluster_versions) | **GET** /sks-cluster-version | List available versions for SKS clusters
 [**list_sks_clusters**](SksApi.md#list_sks_clusters) | **GET** /sks-cluster | List SKS clusters
-[**reset_sks_cluster_field**](SksApi.md#reset_sks_cluster_field) | **DELETE** /sks-cluster/{id}/{field} | Reset an SKS cluster field to its default value
-[**reset_sks_nodepool_field**](SksApi.md#reset_sks_nodepool_field) | **DELETE** /sks-cluster/{id}/nodepool/{sks_nodepool_id}/{field} | Reset an SKS Nodepool field to its default value
 [**rotate_sks_ccm_credentials**](SksApi.md#rotate_sks_ccm_credentials) | **PUT** /sks-cluster/{id}/rotate-ccm-credentials | Rotate Exoscale CCM credentials
 [**rotate_sks_csi_credentials**](SksApi.md#rotate_sks_csi_credentials) | **PUT** /sks-cluster/{id}/rotate-csi-credentials | Rotate Exoscale CSI credentials
+[**rotate_sks_karpenter_credentials**](SksApi.md#rotate_sks_karpenter_credentials) | **PUT** /sks-cluster/{id}/rotate-karpenter-credentials | Rotate Exoscale Karpenter credentials
 [**rotate_sks_operators_ca**](SksApi.md#rotate_sks_operators_ca) | **PUT** /sks-cluster/{id}/rotate-operators-ca | Rotate operators certificate authority
 [**scale_sks_nodepool**](SksApi.md#scale_sks_nodepool) | **PUT** /sks-cluster/{id}/nodepool/{sks_nodepool_id}:scale | Scale a SKS Nodepool
 [**update_sks_cluster**](SksApi.md#update_sks_cluster) | **PUT** /sks-cluster/{id} | Update an SKS cluster
@@ -424,69 +423,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## reset_sks_cluster_field
-
-> models::Operation reset_sks_cluster_field(id, field)
-Reset an SKS cluster field to its default value
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **uuid::Uuid** |  | [required] |
-**field** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## reset_sks_nodepool_field
-
-> models::Operation reset_sks_nodepool_field(id, sks_nodepool_id, field)
-Reset an SKS Nodepool field to its default value
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**id** | **uuid::Uuid** |  | [required] |
-**sks_nodepool_id** | **uuid::Uuid** |  | [required] |
-**field** | **String** |  | [required] |
-
-### Return type
-
-[**models::Operation**](operation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## rotate_sks_ccm_credentials
 
 > models::Operation rotate_sks_ccm_credentials(id)
@@ -521,6 +457,36 @@ No authorization required
 
 > models::Operation rotate_sks_csi_credentials(id)
 Rotate Exoscale CSI credentials
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## rotate_sks_karpenter_credentials
+
+> models::Operation rotate_sks_karpenter_credentials(id)
+Rotate Exoscale Karpenter credentials
 
 
 

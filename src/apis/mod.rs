@@ -122,6 +122,7 @@ pub mod block_storage_api;
 pub mod ccm_api;
 pub mod compute_api;
 pub mod dbaas_api;
+pub mod default_api;
 pub mod deploy_target_api;
 pub mod dns_api;
 pub mod elastic_ip_api;

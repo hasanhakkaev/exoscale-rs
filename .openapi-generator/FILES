@@ -8,6 +8,8 @@ docs/AddExternalSourceToSecurityGroupRequest.md
 docs/AddRuleToSecurityGroupRequest.md
 docs/AddRuleToSecurityGroupRequestIcmp.md
 docs/AddServiceToLoadBalancerRequest.md
+docs/Aideployment.md
+docs/Aimodel.md
 docs/AntiAffinityGroup.md
 docs/AntiAffinityGroupApi.md
 docs/AttachBlockStorageVolumeToInstanceRequest.md
@@ -164,6 +166,7 @@ docs/DbaasUserMysqlSecrets.md
 docs/DbaasUserOpensearchSecrets.md
 docs/DbaasUserPostgresSecrets.md
 docs/DbaasUserValkeySecrets.md
+docs/DefaultApi.md
 docs/DeployTarget.md
 docs/DeployTargetApi.md
 docs/DetachDbaasServiceFromEndpointRequest.md
@@ -197,6 +200,7 @@ docs/EvictInstancePoolMembersRequest.md
 docs/EvictSksNodepoolMembersRequest.md
 docs/GenerateSksClusterKubeconfig200Response.md
 docs/GenericOAuthIntegration.md
+docs/GetActiveNodepoolTemplate200Response.md
 docs/GetConsoleProxyUrl200Response.md
 docs/GetDbaasCaCertificate200Response.md
 docs/GetDbaasExternalIntegrationSettingsDatadog200Response.md
@@ -320,7 +324,10 @@ docs/OpensearchSecurityPluginSettings.md
 docs/OperatingFactor.md
 docs/Operation.md
 docs/OperationApi.md
+docs/OperationReason.md
 docs/OperationReference.md
+docs/OperationResource.md
+docs/OperationState.md
 docs/Organization.md
 docs/OrganizationApi.md
 docs/PrimaryParameter.md
@@ -428,6 +435,7 @@ src/apis/ccm_api.rs
 src/apis/compute_api.rs
 src/apis/configuration.rs
 src/apis/dbaas_api.rs
+src/apis/default_api.rs
 src/apis/deploy_target_api.rs
 src/apis/dns_api.rs
 src/apis/elastic_ip_api.rs
@@ -459,6 +467,8 @@ src/models/add_external_source_to_security_group_request.rs
 src/models/add_rule_to_security_group_request.rs
 src/models/add_rule_to_security_group_request_icmp.rs
 src/models/add_service_to_load_balancer_request.rs
+src/models/aideployment.rs
+src/models/aimodel.rs
 src/models/anti_affinity_group.rs
 src/models/attach_block_storage_volume_to_instance_request.rs
 src/models/attach_dbaas_service_to_endpoint_request.rs
@@ -639,6 +649,7 @@ src/models/evict_instance_pool_members_request.rs
 src/models/evict_sks_nodepool_members_request.rs
 src/models/generate_sks_cluster_kubeconfig_200_response.rs
 src/models/generic_o_auth_integration.rs
+src/models/get_active_nodepool_template_200_response.rs
 src/models/get_console_proxy_url_200_response.rs
 src/models/get_dbaas_ca_certificate_200_response.rs
 src/models/get_dbaas_external_integration_settings_datadog_200_response.rs
@@ -757,7 +768,10 @@ src/models/opensearch_ism_history_settings.rs
 src/models/opensearch_security_plugin_settings.rs
 src/models/operating_factor.rs
 src/models/operation.rs
+src/models/operation_reason.rs
 src/models/operation_reference.rs
+src/models/operation_resource.rs
+src/models/operation_state.rs
 src/models/organization.rs
 src/models/primary_parameter.rs
 src/models/primary_parameter_node.rs

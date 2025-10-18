@@ -13,38 +13,29 @@ use serde::{Deserialize, Serialize};
 
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum DbaasPgTargetVersions {
-    #[serde(rename = "14")]
-    Variant14,
-    #[serde(rename = "17")]
-    Variant17,
-    #[serde(rename = "15")]
-    Variant15,
-    #[serde(rename = "18")]
-    Variant18,
-    #[serde(rename = "13")]
-    Variant13,
-    #[serde(rename = "16")]
-    Variant16,
+pub enum OperationState {
+    #[serde(rename = "failure")]
+    Failure,
+    #[serde(rename = "pending")]
+    Pending,
+    #[serde(rename = "success")]
+    Success,
 
 }
 
-impl std::fmt::Display for DbaasPgTargetVersions {
+impl std::fmt::Display for OperationState {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::Variant14 => write!(f, "14"),
-            Self::Variant17 => write!(f, "17"),
-            Self::Variant15 => write!(f, "15"),
-            Self::Variant18 => write!(f, "18"),
-            Self::Variant13 => write!(f, "13"),
-            Self::Variant16 => write!(f, "16"),
+            Self::Failure => write!(f, "failure"),
+            Self::Pending => write!(f, "pending"),
+            Self::Success => write!(f, "success"),
         }
     }
 }
 
-impl Default for DbaasPgTargetVersions {
-    fn default() -> DbaasPgTargetVersions {
-        Self::Variant14
+impl Default for OperationState {
+    fn default() -> OperationState {
+        Self::Failure
     }
 }
 

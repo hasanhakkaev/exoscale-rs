@@ -118,22 +118,6 @@ pub enum ListSksClustersError {
 }
 
 
-/// struct for typed errors of method [`reset_sks_cluster_field`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ResetSksClusterFieldError {
-    UnknownValue(serde_json::Value),
-}
-
-
-/// struct for typed errors of method [`reset_sks_nodepool_field`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ResetSksNodepoolFieldError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`rotate_sks_ccm_credentials`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -146,6 +130,14 @@ pub enum RotateSksCcmCredentialsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RotateSksCsiCredentialsError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`rotate_sks_karpenter_credentials`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum RotateSksKarpenterCredentialsError {
     UnknownValue(serde_json::Value),
 }
 
@@ -455,50 +447,6 @@ pub async fn list_sks_clusters(configuration: &configuration::Configuration, ) -
     body_payload_option,
     ).await
 }
-pub async fn reset_sks_cluster_field(configuration: &configuration::Configuration, id: String, field: &str) -> Result<models::Operation, Error<ResetSksClusterFieldError>> {
-    let local_var_id = id;
-    let local_var_field = field;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::DELETE,
-    "/sks-cluster/{id}/{field}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn reset_sks_nodepool_field(configuration: &configuration::Configuration, id: String, sks_nodepool_id: String, field: &str) -> Result<models::Operation, Error<ResetSksNodepoolFieldError>> {
-    let local_var_id = id;
-    let local_var_sks_nodepool_id = sks_nodepool_id;
-    let local_var_field = field;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
-                path_params_map.insert("sks_nodepool_id".to_string(), crate::apis::urlencode(local_var_sks_nodepool_id));
-                path_params_map.insert("field".to_string(), crate::apis::urlencode(local_var_field));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-        let body_payload_option: Option<()> = None;
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::DELETE,
-    "/sks-cluster/{id}/nodepool/{sks_nodepool_id}/{field}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
 pub async fn rotate_sks_ccm_credentials(configuration: &configuration::Configuration, id: String) -> Result<models::Operation, Error<RotateSksCcmCredentialsError>> {
     let local_var_id = id;
 
@@ -532,6 +480,25 @@ pub async fn rotate_sks_csi_credentials(configuration: &configuration::Configura
     configuration,
     reqwest::Method::PUT,
     "/sks-cluster/{id}/rotate-csi-credentials",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn rotate_sks_karpenter_credentials(configuration: &configuration::Configuration, id: String) -> Result<models::Operation, Error<RotateSksKarpenterCredentialsError>> {
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/sks-cluster/{id}/rotate-karpenter-credentials",
     path_params_map,
     query_params_option,
     body_payload_option,
