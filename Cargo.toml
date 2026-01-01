@@ -25,5 +25,5 @@ async-trait = "0.1.89"
 url = "^2.5"
 libc = "0.2.177"
 uuid = { version = "^1.18", features = ["serde", "v4"] }
-reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart", "rustls-tls"] }
+reqwest = { version = "^0.13", default-features = false, features = ["json", "multipart", "rustls-tls"] }
 reqwest-middleware = { version = "^0.4", features = ["json", "multipart", "rustls-tls"] }
