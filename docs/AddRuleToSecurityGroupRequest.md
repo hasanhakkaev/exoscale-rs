@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**flow_direction** | **String** | Network flow direction to match | 
+**flow_direction** | **FlowDirection** | Network flow direction to match (enum: ingress, egress) | 
 **description** | Option<**String**> | Security Group rule description | [optional]
 **network** | Option<**String**> | CIDR-formatted network allowed | [optional]
-**security_group** | Option<[**models::SecurityGroupResource**](security-group-resource.md)> |  | [optional]
-**protocol** | **String** | Network protocol | 
-**icmp** | Option<[**models::AddRuleToSecurityGroupRequestIcmp**](add_rule_to_security_group_request_icmp.md)> |  | [optional]
+**security_group** | Option<[**models::SecurityGroupResource**](SecurityGroupResource.md)> |  | [optional]
+**protocol** | **Protocol** | Network protocol (enum: tcp, esp, icmp, udp, gre, ah, ipip, icmpv6) | 
+**icmp** | Option<[**models::AddRuleToSecurityGroupRequestIcmp**](AddRuleToSecurityGroupRequestIcmp.md)> |  | [optional]
 **start_port** | Option<**u64**> | Start port of the range | [optional]
 **end_port** | Option<**u64**> | End port of the range | [optional]
 

@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**application_consistent_snapshot_enabled** | Option<**bool**> | Template with support for Application Consistent Snapshots | [optional]
 **maintainer** | Option<**String**> | Template maintainer | [optional]
 **description** | Option<**String**> | Template description | [optional]
 **ssh_key_enabled** | **bool** | Enable SSH key-based login | 
@@ -13,7 +14,7 @@ Name | Type | Description | Notes
 **password_enabled** | **bool** | Enable password-based login | 
 **build** | Option<**String**> | Template build | [optional]
 **checksum** | **String** | Template MD5 checksum | 
-**boot_mode** | Option<**String**> | Boot mode (default: legacy) | [optional]
+**boot_mode** | Option<**BootMode**> | Boot mode (default: legacy) (enum: legacy, uefi) | [optional]
 **url** | **String** | Template source URL | 
 **version** | Option<**String**> | Template version | [optional]
 

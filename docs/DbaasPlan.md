@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **node_count** | Option<**u64**> | DBaaS plan node count | [optional][readonly]
-**backup_config** | Option<[**models::DbaasBackupConfig**](dbaas-backup-config.md)> |  | [optional]
+**backup_config** | Option<[**models::DbaasBackupConfig**](DbaasBackupConfig.md)> |  | [optional]
 **node_cpu_count** | Option<**u64**> | DBaaS plan CPU count per node | [optional][readonly]
 **family** | Option<**String**> | Instance family subset which the service can use | [optional]
 **disk_space** | Option<**i64**> | DBaaS plan disk space | [optional][readonly]

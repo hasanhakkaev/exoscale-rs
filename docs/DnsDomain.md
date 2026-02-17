@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | DNS domain ID | [optional][readonly]
+**id** | Option<**uuid::Uuid**> | DNS domain ID | [optional][readonly]
 **created_at** | Option<**String**> | DNS domain creation date | [optional][readonly]
 **unicode_name** | Option<**String**> | DNS domain unicode name | [optional]
 

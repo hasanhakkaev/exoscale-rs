@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **tls_skip_verify** | Option<**bool**> | Skip TLS verification | [optional]
 **tls_sni** | Option<**String**> | An optional domain or subdomain to check TLS against | [optional]
 **strikes_fail** | Option<**u64**> | Number of attempts before considering the target unhealthy (default: 3) | [optional]
-**mode** | **String** | Health check mode | 
+**mode** | **Mode** | Health check mode (enum: tcp, http, https) | 
 **port** | **u64** | Health check port | 
 **uri** | Option<**String**> | An endpoint to use for the health check, for example '/status' | [optional]
 **interval** | Option<**u64**> | Interval between the checks in seconds (default: 10) | [optional]

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Reference ID | [optional]
+**id** | Option<**uuid::Uuid**> | Reference ID | [optional]
 **link** | Option<**String**> | Link to the referenced resource | [optional][readonly]
 **command** | Option<**String**> | Command name | [optional]
 

@@ -29,6 +29,10 @@ jobs:
           make generate
           git diff --quiet || echo "changes_detected=true" >> $GITHUB_OUTPUT
 
+      - name: Run tests
+        if: steps.check_changes.outputs.changes_detected
+        run: cargo test --verbose
+
       - name: Fetch RSS Feed
         uses: Promptly-Technologies-LLC/rss-fetch-action@v2
         if: steps.check_changes.outputs.changes_detected

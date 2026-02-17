@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **password** | Option<**String**> |  | [optional]
 **port** | **u16** |  | 
 **skip_verify** | Option<**bool**> |  | [optional]
-**starttls_policy** | Option<**String**> |  | [optional]
+**starttls_policy** | Option<**StarttlsPolicy**> |  (enum: OpportunisticStartTLS, MandatoryStartTLS, NoStartTLS) | [optional]
 **username** | Option<**String**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

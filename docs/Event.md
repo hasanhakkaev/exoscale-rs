@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iam_user** | Option<[**models::User**](user.md)> |  | [optional]
+**iam_user** | Option<[**models::User**](User.md)> |  | [optional]
 **request_id** | Option<**String**> | Operation unique identifier | [optional]
-**iam_role** | Option<[**models::IamRole**](iam-role.md)> |  | [optional]
+**iam_role** | Option<[**models::IamRole**](IamRole.md)> |  | [optional]
 **zone** | Option<**String**> | Operation targeted zone | [optional]
-**get_params** | Option<[**serde_json::Value**](.md)> | Query string parameters (free form map) | [optional]
-**body_params** | Option<[**serde_json::Value**](.md)> | Body parameters (free form map) | [optional]
+**get_params** | Option<**serde_json::Value**> | Query string parameters (free form map) | [optional]
+**body_params** | Option<**serde_json::Value**> | Body parameters (free form map) | [optional]
 **status** | Option<**u64**> | Operation HTTP status | [optional]
 **source_ip** | Option<**String**> | Client IP address | [optional]
-**iam_api_key** | Option<[**models::IamApiKey**](iam-api-key.md)> |  | [optional]
+**iam_api_key** | Option<[**models::IamApiKey**](IamApiKey.md)> |  | [optional]
 **uri** | Option<**String**> | Operation request URI | [optional]
 **elapsed_ms** | Option<**u64**> | Operation processing time | [optional]
 **timestamp** | Option<**String**> | Time at which the event happened, millisecond resolution | [optional]
-**path_params** | Option<[**serde_json::Value**](.md)> | URI path parameters (free form map) | [optional]
+**path_params** | Option<**serde_json::Value**> | URI path parameters (free form map) | [optional]
 **handler** | Option<**String**> | Operation handler name | [optional]
 **message** | Option<**String**> | Operation message | [optional]
 

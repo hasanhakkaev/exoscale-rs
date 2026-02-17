@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Organization ID | [optional][readonly]
+**id** | Option<**uuid::Uuid**> | Organization ID | [optional][readonly]
 **name** | Option<**String**> | Organization name | [optional][readonly]
 **address** | Option<**String**> | Organization address | [optional][readonly]
 **postcode** | Option<**String**> | Organization postcode | [optional][readonly]

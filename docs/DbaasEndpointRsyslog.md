@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **server** | **String** | Rsyslog server IP address or hostname | 
 **port** | **u64** | Rsyslog server port | 
 **tls** | **bool** | Require TLS | 
-**format** | [**models::EnumRsyslogFormat**](enum-rsyslog-format.md) |  | 
+**format** | [**models::EnumRsyslogFormat**](EnumRsyslogFormat.md) |  | 
 **logline** | Option<**String**> | Custom syslog message format | [optional]
 **sd** | Option<**String**> | Structured data block for log message | [optional]
 **max_message_size** | Option<**u64**> | Rsyslog max message size | [optional]

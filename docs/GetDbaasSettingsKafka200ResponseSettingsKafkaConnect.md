@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**properties** | Option<[**serde_json::Value**](.md)> |  | [optional]
+**properties** | Option<**serde_json::Value**> |  | [optional]
 **additional_properties** | Option<**bool**> |  | [optional]
 **r#type** | Option<**String**> |  | [optional]
 **title** | Option<**String**> |  | [optional]

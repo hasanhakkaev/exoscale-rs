@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**r#type** | Option<[**models::EnumExternalEndpointTypes**](enum-external-endpoint-types.md)> |  | [optional]
+**r#type** | Option<[**models::EnumExternalEndpointTypes**](EnumExternalEndpointTypes.md)> |  | [optional]
 **service_types** | Option<**Vec<String>**> |  | [optional]
 **title** | Option<**String**> |  | [optional]
 

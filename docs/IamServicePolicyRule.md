@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | Option<**String**> |  | [optional]
+**action** | Option<**Action**> |  (enum: allow, deny) | [optional]
 **expression** | Option<**String**> |  | [optional]
 **resources** | Option<**Vec<String>**> |  | [optional]
 

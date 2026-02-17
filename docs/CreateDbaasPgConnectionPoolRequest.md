@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | 
 **database_name** | **String** |  | 
-**mode** | Option<[**models::EnumPgPoolMode**](enum-pg-pool-mode.md)> |  | [optional]
+**mode** | Option<[**models::EnumPgPoolMode**](EnumPgPoolMode.md)> |  | [optional]
 **size** | Option<**u64**> |  | [optional]
 **username** | Option<**String**> |  | [optional]
 

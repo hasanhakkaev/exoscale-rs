@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | Option<[**uuid::Uuid**](uuid::Uuid.md)> | Snapshot ID | [optional][readonly]
+**id** | Option<**uuid::Uuid**> | Snapshot ID | [optional][readonly]
 **name** | Option<**String**> | Snapshot name | [optional]
 **size** | Option<**u64**> | Snapshot size | [optional]
 **volume_size** | Option<**u64**> | Original Volume size | [optional]
 **created_at** | Option<**String**> | Snapshot creation date | [optional][readonly]
-**state** | Option<**String**> | Snapshot state | [optional][readonly]
+**state** | Option<**State**> | Snapshot state (enum: partially-destroyed, destroying, creating, created, promoting, error, destroyed, allocated) | [optional][readonly]
 **labels** | Option<**std::collections::HashMap<String, String>**> |  | [optional]
-**block_storage_volume** | Option<[**models::BlockStorageVolumeTarget**](block-storage-volume-target.md)> |  | [optional]
+**block_storage_volume** | Option<[**models::BlockStorageVolumeRef**](BlockStorageVolumeRef.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

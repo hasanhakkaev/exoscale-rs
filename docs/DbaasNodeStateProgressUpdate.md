@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **current** | Option<**u64**> | Current progress for this phase. May be missing or null. | [optional]
 **max** | Option<**u64**> | Maximum progress value for this phase. May be missing or null. May change. | [optional]
 **min** | Option<**u64**> | Minimum progress value for this phase. May be missing or null. | [optional]
-**phase** | **String** | Key identifying this phase | 
+**phase** | **Phase** | Key identifying this phase (enum: stream, basebackup, prepare, finalize) | 
 **unit** | Option<**String**> | Unit for current/min/max values. New units may be added.                         If null should be treated as generic unit | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

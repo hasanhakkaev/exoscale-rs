@@ -4,7 +4,7 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_env_impact**](OrganizationApi.md#get_env_impact) | **GET** /env-impact | [BETA] Retrieve organization environmental impact reports
+[**get_env_impact**](OrganizationApi.md#get_env_impact) | **GET** /env-impact/{period} | [BETA] Retrieve organization environmental impact reports
 [**get_organization**](OrganizationApi.md#get_organization) | **GET** /organization | Retrieve an organization
 [**get_usage_report**](OrganizationApi.md#get_usage_report) | **GET** /usage-report | Retrieve organization usage reports
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## get_env_impact
 
-> models::GetEnvImpact200Response get_env_impact(period)
+> models::EnvImpactReport get_env_impact(period)
 [BETA] Retrieve organization environmental impact reports
 
 [BETA] Returns environmental impact reports for an organization
@@ -22,11 +22,11 @@ Method | HTTP request | Description
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**period** | Option<**String**> |  |  |
+**period** | **String** |  | [required] |
 
 ### Return type
 
-[**models::GetEnvImpact200Response**](get_env_impact_200_response.md)
+[**models::EnvImpactReport**](env-impact-report.md)
 
 ### Authorization
 

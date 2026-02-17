@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | DNS domain record name | 
-**r#type** | **String** | DNS domain record type | 
+**r#type** | **Type** | DNS domain record type (enum: NS, CAA, NAPTR, POOL, A, HINFO, CNAME, SSHFP, SRV, AAAA, MX, TXT, ALIAS, URL) | 
 **content** | **String** | DNS domain record content | 
 **ttl** | Option<**u64**> | DNS domain record TTL | [optional]
 **priority** | Option<**u64**> | DNS domain record priority | [optional]

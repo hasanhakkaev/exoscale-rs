@@ -1,6 +1,6 @@
 use crate::apis::configuration::InnerConfig;
 use base64::{engine::general_purpose::STANDARD as Base64Standard, Engine as _};
-use hmac::{Hmac, KeyInit, Mac};
+use hmac::{Hmac, Mac};
 use http::HeaderValue;
 use libc;
 use reqwest::{Method, Url};

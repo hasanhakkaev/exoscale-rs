@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **connection_uri** | **String** | Connection URI for the DB pool | 
 **database** | **String** |  | 
-**mode** | [**models::EnumPgPoolMode**](enum-pg-pool-mode.md) |  | 
+**mode** | [**models::EnumPgPoolMode**](EnumPgPoolMode.md) |  | 
 **name** | **String** |  | 
 **size** | **u64** |  | 
 **username** | **String** |  | 

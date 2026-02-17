@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kafka** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsKafka**](get_dbaas_settings_kafka_200_response_settings_kafka.md)> |  | [optional]
-**kafka_connect** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsKafkaConnect**](get_dbaas_settings_kafka_200_response_settings_kafka_connect.md)> |  | [optional]
-**kafka_rest** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsKafkaRest**](get_dbaas_settings_kafka_200_response_settings_kafka_rest.md)> |  | [optional]
-**schema_registry** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsSchemaRegistry**](get_dbaas_settings_kafka_200_response_settings_schema_registry.md)> |  | [optional]
+**kafka** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsKafka**](GetDbaasSettingsKafka200ResponseSettingsKafka.md)> |  | [optional]
+**kafka_connect** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsKafkaConnect**](GetDbaasSettingsKafka200ResponseSettingsKafkaConnect.md)> |  | [optional]
+**kafka_rest** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsKafkaRest**](GetDbaasSettingsKafka200ResponseSettingsKafkaRest.md)> |  | [optional]
+**schema_registry** | Option<[**models::GetDbaasSettingsKafka200ResponseSettingsSchemaRegistry**](GetDbaasSettingsKafka200ResponseSettingsSchemaRegistry.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

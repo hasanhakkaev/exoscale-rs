@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **min_pool_size** | Option<**u16**> |  | [optional][default to 0]
-**ignore_startup_parameters** | Option<**Vec<String>**> |  | [optional]
+**ignore_startup_parameters** | Option<**Vec<IgnoreStartupParameters>**> |  (enum: extra_float_digits, search_path) | [optional]
 **server_lifetime** | Option<**u32**> |  | [optional][default to 3600]
-**autodb_pool_mode** | Option<**String**> |  | [optional][default to Transaction]
+**autodb_pool_mode** | Option<**AutodbPoolMode**> |  (enum: transaction, session, statement) | [optional][default to Transaction]
 **server_idle_timeout** | Option<**u32**> |  | [optional][default to 600]
 **autodb_max_db_connections** | Option<**u32**> |  | [optional]
 **max_prepared_statements** | Option<**u16**> |  | [optional][default to 100]

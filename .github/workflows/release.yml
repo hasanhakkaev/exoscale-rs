@@ -27,6 +27,12 @@ jobs:
         with:
           toolchain: stable
 
+      - name: Sync version metadata
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          echo "Syncing version metadata to $VERSION..."
+          make bump-version VERSION=$VERSION
+
       - name: Login to crates.io
         uses: actions-rs/cargo@v1
         with:

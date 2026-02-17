@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **dbname** | Option<**String**> | Migrated db name | [optional]
 **error** | Option<**String**> | Error message in case that migration has failed | [optional]
 **method** | Option<**String**> | Migration method | [optional]
-**status** | Option<[**models::EnumMigrationStatus**](enum-migration-status.md)> |  | [optional]
+**status** | Option<[**models::EnumMigrationStatus**](EnumMigrationStatus.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mode** | Option<**String**> | Healthcheck mode | [optional]
+**mode** | Option<**Mode**> | Healthcheck mode (enum: tcp, http, https) | [optional]
 **interval** | Option<**u64**> | Healthcheck interval (default: 10). Must be greater than or equal to Timeout | [optional]
 **uri** | Option<**String**> | An endpoint to use for the HTTP healthcheck, e.g. '/status' | [optional]
 **port** | Option<**u64**> | Healthcheck port | [optional]

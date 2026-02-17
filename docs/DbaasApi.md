@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**create_dbaas_service_mysql**](DbaasApi.md#create_dbaas_service_mysql) | **POST** /dbaas-mysql/{name} | Create a DBaaS MySQL service
 [**create_dbaas_service_opensearch**](DbaasApi.md#create_dbaas_service_opensearch) | **POST** /dbaas-opensearch/{name} | Create a DBaaS OpenSearch service
 [**create_dbaas_service_pg**](DbaasApi.md#create_dbaas_service_pg) | **POST** /dbaas-postgres/{name} | Create a DBaaS PostgreSQL service
+[**create_dbaas_service_thanos**](DbaasApi.md#create_dbaas_service_thanos) | **POST** /dbaas-thanos/{name} | Create a DBaaS Thanos service
 [**create_dbaas_service_valkey**](DbaasApi.md#create_dbaas_service_valkey) | **POST** /dbaas-valkey/{name} | Create a DBaaS Valkey service
 [**create_dbaas_task_migration_check**](DbaasApi.md#create_dbaas_task_migration_check) | **POST** /dbaas-task-migration-check/{service} | 
 [**create_dbaas_valkey_user**](DbaasApi.md#create_dbaas_valkey_user) | **POST** /dbaas-valkey/{service_name}/user | Create a DBaaS Valkey user
@@ -50,6 +51,7 @@ Method | HTTP request | Description
 [**delete_dbaas_service_mysql**](DbaasApi.md#delete_dbaas_service_mysql) | **DELETE** /dbaas-mysql/{name} | Delete a MySQL service
 [**delete_dbaas_service_opensearch**](DbaasApi.md#delete_dbaas_service_opensearch) | **DELETE** /dbaas-opensearch/{name} | Delete a OpenSearch service
 [**delete_dbaas_service_pg**](DbaasApi.md#delete_dbaas_service_pg) | **DELETE** /dbaas-postgres/{name} | Delete a Postgres service
+[**delete_dbaas_service_thanos**](DbaasApi.md#delete_dbaas_service_thanos) | **DELETE** /dbaas-thanos/{name} | Delete a Thanos service
 [**delete_dbaas_service_valkey**](DbaasApi.md#delete_dbaas_service_valkey) | **DELETE** /dbaas-valkey/{name} | Delete a Valkey service
 [**delete_dbaas_valkey_user**](DbaasApi.md#delete_dbaas_valkey_user) | **DELETE** /dbaas-valkey/{service_name}/user/{username} | Delete a DBaaS Valkey user
 [**detach_dbaas_service_from_endpoint**](DbaasApi.md#detach_dbaas_service_from_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/detach | 
@@ -73,6 +75,7 @@ Method | HTTP request | Description
 [**get_dbaas_service_mysql**](DbaasApi.md#get_dbaas_service_mysql) | **GET** /dbaas-mysql/{name} | Get a DBaaS MySQL service
 [**get_dbaas_service_opensearch**](DbaasApi.md#get_dbaas_service_opensearch) | **GET** /dbaas-opensearch/{name} | Get a DBaaS OpenSearch service
 [**get_dbaas_service_pg**](DbaasApi.md#get_dbaas_service_pg) | **GET** /dbaas-postgres/{name} | Get a DBaaS PostgreSQL service
+[**get_dbaas_service_thanos**](DbaasApi.md#get_dbaas_service_thanos) | **GET** /dbaas-thanos/{name} | 
 [**get_dbaas_service_type**](DbaasApi.md#get_dbaas_service_type) | **GET** /dbaas-service-type/{service_type_name} | Get a DBaaS service type
 [**get_dbaas_service_valkey**](DbaasApi.md#get_dbaas_service_valkey) | **GET** /dbaas-valkey/{name} | 
 [**get_dbaas_settings_grafana**](DbaasApi.md#get_dbaas_settings_grafana) | **GET** /dbaas-settings-grafana | Get DBaaS Grafana settings
@@ -80,6 +83,7 @@ Method | HTTP request | Description
 [**get_dbaas_settings_mysql**](DbaasApi.md#get_dbaas_settings_mysql) | **GET** /dbaas-settings-mysql | Get DBaaS MySQL settings
 [**get_dbaas_settings_opensearch**](DbaasApi.md#get_dbaas_settings_opensearch) | **GET** /dbaas-settings-opensearch | Get DBaaS OpenSearch settings
 [**get_dbaas_settings_pg**](DbaasApi.md#get_dbaas_settings_pg) | **GET** /dbaas-settings-pg | Get DBaaS PostgreSQL settings
+[**get_dbaas_settings_thanos**](DbaasApi.md#get_dbaas_settings_thanos) | **GET** /dbaas-settings-thanos | Get DBaaS Thanos settings
 [**get_dbaas_settings_valkey**](DbaasApi.md#get_dbaas_settings_valkey) | **GET** /dbaas-settings-valkey | Get DBaaS Valkey settings
 [**get_dbaas_task**](DbaasApi.md#get_dbaas_task) | **GET** /dbaas-task/{service}/{id} | Get a DBaaS task
 [**list_dbaas_external_endpoint_types**](DbaasApi.md#list_dbaas_external_endpoint_types) | **GET** /dbaas-external-endpoint-types | 
@@ -101,12 +105,14 @@ Method | HTTP request | Description
 [**reveal_dbaas_mysql_user_password**](DbaasApi.md#reveal_dbaas_mysql_user_password) | **GET** /dbaas-mysql/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS MySQL user
 [**reveal_dbaas_opensearch_user_password**](DbaasApi.md#reveal_dbaas_opensearch_user_password) | **GET** /dbaas-opensearch/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS OpenSearch user
 [**reveal_dbaas_postgres_user_password**](DbaasApi.md#reveal_dbaas_postgres_user_password) | **GET** /dbaas-postgres/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Postgres user
+[**reveal_dbaas_thanos_user_password**](DbaasApi.md#reveal_dbaas_thanos_user_password) | **GET** /dbaas-thanos/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Thanos user
 [**reveal_dbaas_valkey_user_password**](DbaasApi.md#reveal_dbaas_valkey_user_password) | **GET** /dbaas-valkey/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Valkey user
 [**start_dbaas_grafana_maintenance**](DbaasApi.md#start_dbaas_grafana_maintenance) | **PUT** /dbaas-grafana/{name}/maintenance/start | Initiate Grafana maintenance update
 [**start_dbaas_kafka_maintenance**](DbaasApi.md#start_dbaas_kafka_maintenance) | **PUT** /dbaas-kafka/{name}/maintenance/start | Initiate Kafka maintenance update
 [**start_dbaas_mysql_maintenance**](DbaasApi.md#start_dbaas_mysql_maintenance) | **PUT** /dbaas-mysql/{name}/maintenance/start | Initiate MySQL maintenance update
 [**start_dbaas_opensearch_maintenance**](DbaasApi.md#start_dbaas_opensearch_maintenance) | **PUT** /dbaas-opensearch/{name}/maintenance/start | Initiate OpenSearch maintenance update
 [**start_dbaas_pg_maintenance**](DbaasApi.md#start_dbaas_pg_maintenance) | **PUT** /dbaas-postgres/{name}/maintenance/start | Initiate PostgreSQL maintenance update
+[**start_dbaas_thanos_maintenance**](DbaasApi.md#start_dbaas_thanos_maintenance) | **PUT** /dbaas-thanos/{name}/maintenance/start | Initiate Thanos maintenance update
 [**start_dbaas_valkey_maintenance**](DbaasApi.md#start_dbaas_valkey_maintenance) | **PUT** /dbaas-valkey/{name}/maintenance/start | Initiate Valkey maintenance update
 [**stop_dbaas_mysql_migration**](DbaasApi.md#stop_dbaas_mysql_migration) | **POST** /dbaas-mysql/{name}/migration/stop | Stop a DBaaS MySQL migration
 [**stop_dbaas_pg_migration**](DbaasApi.md#stop_dbaas_pg_migration) | **POST** /dbaas-postgres/{name}/migration/stop | Stop a DBaaS PostgreSQL migration
@@ -126,6 +132,7 @@ Method | HTTP request | Description
 [**update_dbaas_service_mysql**](DbaasApi.md#update_dbaas_service_mysql) | **PUT** /dbaas-mysql/{name} | Update a DBaaS MySQL service
 [**update_dbaas_service_opensearch**](DbaasApi.md#update_dbaas_service_opensearch) | **PUT** /dbaas-opensearch/{name} | Update a DBaaS OpenSearch service
 [**update_dbaas_service_pg**](DbaasApi.md#update_dbaas_service_pg) | **PUT** /dbaas-postgres/{name} | Update a DBaaS PostgreSQL service
+[**update_dbaas_service_thanos**](DbaasApi.md#update_dbaas_service_thanos) | **PUT** /dbaas-thanos/{name} | 
 [**update_dbaas_service_valkey**](DbaasApi.md#update_dbaas_service_valkey) | **PUT** /dbaas-valkey/{name} | 
 
 
@@ -776,6 +783,37 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
 **create_dbaas_service_pg_request** | [**CreateDbaasServicePgRequest**](CreateDbaasServicePgRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## create_dbaas_service_thanos
+
+> models::Operation create_dbaas_service_thanos(name, create_dbaas_service_thanos_request)
+Create a DBaaS Thanos service
+
+Create a DBaaS Thanos service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+**create_dbaas_service_thanos_request** | [**CreateDbaasServiceThanosRequest**](CreateDbaasServiceThanosRequest.md) |  | [required] |
 
 ### Return type
 
@@ -1497,6 +1535,34 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## delete_dbaas_service_thanos
+
+> models::Operation delete_dbaas_service_thanos(name)
+Delete a Thanos service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## delete_dbaas_service_valkey
 
 > models::Operation delete_dbaas_service_valkey(name)
@@ -2174,6 +2240,36 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## get_dbaas_service_thanos
+
+> models::DbaasServiceThanos get_dbaas_service_thanos(name)
+
+
+Get a DBaaS Thanos service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasServiceThanos**](dbaas-service-thanos.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## get_dbaas_service_type
 
 > models::DbaasServiceType get_dbaas_service_type(service_type_name)
@@ -2356,6 +2452,33 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::GetDbaasSettingsPg200Response**](get_dbaas_settings_pg_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_dbaas_settings_thanos
+
+> models::GetDbaasSettingsThanos200Response get_dbaas_settings_thanos()
+Get DBaaS Thanos settings
+
+Get DBaaS Thanos settings
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::GetDbaasSettingsThanos200Response**](get_dbaas_settings_thanos_200_response.md)
 
 ### Authorization
 
@@ -2989,6 +3112,35 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## reveal_dbaas_thanos_user_password
+
+> models::DbaasUserThanosSecrets reveal_dbaas_thanos_user_password(service_name, username)
+Reveal the secrets of a DBaaS Thanos user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+**username** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasUserThanosSecrets**](dbaas-user-thanos-secrets.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## reveal_dbaas_valkey_user_password
 
 > models::DbaasUserValkeySecrets reveal_dbaas_valkey_user_password(service_name, username)
@@ -3134,6 +3286,34 @@ No authorization required
 
 > models::Operation start_dbaas_pg_maintenance(name)
 Initiate PostgreSQL maintenance update
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## start_dbaas_thanos_maintenance
+
+> models::Operation start_dbaas_thanos_maintenance(name)
+Initiate Thanos maintenance update
 
 ### Parameters
 
@@ -3714,6 +3894,37 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
 **update_dbaas_service_pg_request** | [**UpdateDbaasServicePgRequest**](UpdateDbaasServicePgRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## update_dbaas_service_thanos
+
+> models::Operation update_dbaas_service_thanos(name, update_dbaas_service_thanos_request)
+
+
+Update a DBaaS Thanos service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+**update_dbaas_service_thanos_request** | [**UpdateDbaasServiceThanosRequest**](UpdateDbaasServiceThanosRequest.md) |  | [required] |
 
 ### Return type
 

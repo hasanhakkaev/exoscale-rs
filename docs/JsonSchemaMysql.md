@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **net_write_timeout** | Option<**u16**> | The number of seconds to wait for a block to be written to a connection before aborting the write. | [optional]
-**internal_tmp_mem_storage_engine** | Option<**String**> | The storage engine for in-memory internal temporary tables. | [optional]
+**internal_tmp_mem_storage_engine** | Option<**InternalTmpMemStorageEngine**> | The storage engine for in-memory internal temporary tables. (enum: TempTable, MEMORY) | [optional]
 **sql_mode** | Option<**String**> | Global SQL mode. Set to empty to use MySQL server defaults. When creating a new service and not setting this field Aiven default SQL mode (strict, SQL standard compliant) will be assigned. | [optional]
 **information_schema_stats_expiry** | Option<**u32**> | The time, in seconds, before cached statistics expire | [optional]
 **sort_buffer_size** | Option<**u32**> | Sort buffer size in bytes for ORDER BY optimization. Default is 262144 (256K) | [optional]
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **tmp_table_size** | Option<**u32**> | Limits the size of internal in-memory tables. Also set max_heap_table_size. Default is 16777216 (16M) | [optional]
 **slow_query_log** | Option<**bool**> | Slow query log enables capturing of slow queries. Setting slow_query_log to false also truncates the mysql.slow_log table. Default is off | [optional]
 **connect_timeout** | Option<**u16**> | The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake | [optional]
-**log_output** | Option<**String**> | The slow log output destination when slow_query_log is ON. To enable MySQL AI Insights, choose INSIGHTS. To use MySQL AI Insights and the mysql.slow_log table at the same time, choose INSIGHTS,TABLE. To only use the mysql.slow_log table, choose TABLE. To silence slow logs, choose NONE. | [optional]
+**log_output** | Option<**LogOutput**> | The slow log output destination when slow_query_log is ON. To enable MySQL AI Insights, choose INSIGHTS. To use MySQL AI Insights and the mysql.slow_log table at the same time, choose INSIGHTS,TABLE. To only use the mysql.slow_log table, choose TABLE. To silence slow logs, choose NONE. (enum: INSIGHTS, INSIGHTS,TABLE, NONE, TABLE) | [optional]
 **net_read_timeout** | Option<**u16**> | The number of seconds to wait for more data from a connection before aborting the read. | [optional]
 **innodb_lock_wait_timeout** | Option<**u16**> | The length of time in seconds an InnoDB transaction waits for a row lock before giving up. Default is 120. | [optional]
 **wait_timeout** | Option<**u32**> | The number of seconds the server waits for activity on a noninteractive connection before closing it. | [optional]

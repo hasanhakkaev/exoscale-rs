@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dbaas_endpoints** | Option<[**Vec<models::DbaasExternalEndpoint>**](dbaas-external-endpoint.md)> |  | [optional]
+**dbaas_endpoints** | Option<[**Vec<models::DbaasExternalEndpoint>**](DbaasExternalEndpoint.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

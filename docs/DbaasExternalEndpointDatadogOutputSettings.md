@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**site** | Option<[**models::EnumDatadogSite**](enum-datadog-site.md)> |  | [optional]
-**datadog_tags** | Option<[**Vec<models::DbaasDatadogTag>**](dbaas-datadog-tag.md)> | Custom tags provided by user | [optional]
+**site** | Option<[**models::EnumDatadogSite**](EnumDatadogSite.md)> |  | [optional]
+**datadog_tags** | Option<[**Vec<models::DbaasDatadogTag>**](DbaasDatadogTag.md)> | Custom tags provided by user | [optional]
 **disable_consumer_stats** | Option<**bool**> | Disable kafka consumer group metrics. Applies only when attached to kafka services. | [optional]
 **kafka_consumer_check_instances** | Option<**u64**> | Number of separate instances to fetch kafka consumer statistics with. Applies only when attached to kafka services. | [optional]
 **kafka_consumer_stats_timeout** | Option<**u64**> | Number of seconds that datadog will wait to get consumer statistics from brokers. Applies only when attached to kafka services. | [optional]

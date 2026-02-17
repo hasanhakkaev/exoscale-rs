@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**format** | Option<[**models::EnumRsyslogFormat**](enum-rsyslog-format.md)> |  | [optional]
+**format** | Option<[**models::EnumRsyslogFormat**](EnumRsyslogFormat.md)> |  | [optional]
 **key** | Option<**String**> | PEM encoded client key | [optional]
 **logline** | Option<**String**> | Custom syslog message format | [optional]
 **server** | Option<**String**> | Rsyslog server IP address or hostname | [optional]
