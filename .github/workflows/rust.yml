@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Rust Cache
-        uses: Swatinem/rust-cache@v2.8.1
+        uses: Swatinem/rust-cache@v2.8.2
 
       - name: Checkout repo
         uses: actions/checkout@v5
