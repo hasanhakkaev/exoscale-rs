@@ -1,11 +1,10 @@
-# CreateModelRequest
+# OrganizationUsage
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Model name | 
-**huggingface_token** | Option<**String**> | Huggingface Token | [optional]
+**gpu** | **u64** | Total GPU count | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

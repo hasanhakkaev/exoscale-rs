@@ -19,8 +19,8 @@ pub struct CreateDeploymentRequest {
     #[serde(rename = "inference-engine-version", skip_serializing_if = "Option::is_none")]
     pub inference_engine_version: Option<models::InferenceEngineVersion>,
     /// Deployment name
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "name")]
+    pub name: String,
     /// GPU type family (e.g., gpua5000, gpu3080ti)
     #[serde(rename = "gpu-type")]
     pub gpu_type: String,
@@ -30,21 +30,21 @@ pub struct CreateDeploymentRequest {
     /// Optional extra inference engine server CLI args
     #[serde(rename = "inference-engine-parameters", skip_serializing_if = "Option::is_none")]
     pub inference_engine_parameters: Option<Vec<String>>,
-    #[serde(rename = "model", skip_serializing_if = "Option::is_none")]
-    pub model: Option<Box<models::ModelRef>>,
+    #[serde(rename = "model")]
+    pub model: Box<models::ModelRef>,
 }
 
 impl CreateDeploymentRequest {
     /// Deployment an AI model onto a set of GPUs
-    pub fn new(gpu_count: u64, gpu_type: String, replicas: u64) -> CreateDeploymentRequest {
+    pub fn new(gpu_count: u64, name: String, gpu_type: String, replicas: u64, model: models::ModelRef) -> CreateDeploymentRequest {
         CreateDeploymentRequest {
             gpu_count,
             inference_engine_version: None,
-            name: None,
+            name,
             gpu_type,
             replicas,
             inference_engine_parameters: None,
-            model: None,
+            model: Box::new(model),
         }
     }
 }

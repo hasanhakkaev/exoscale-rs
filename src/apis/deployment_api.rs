@@ -60,6 +60,14 @@ pub enum GetInferenceEngineHelpError {
 }
 
 
+/// struct for typed errors of method [`list_ai_instance_types`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ListAiInstanceTypesError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`list_deployments`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -191,6 +199,23 @@ pub async fn get_inference_engine_help(configuration: &configuration::Configurat
     configuration,
     reqwest::Method::GET,
     "/ai/help/inference-engine-parameters",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn list_ai_instance_types(configuration: &configuration::Configuration, ) -> Result<models::ListAiInstanceTypesResponse, Error<ListAiInstanceTypesError>> {
+
+    let path_params_map = std::collections::HashMap::new();
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/ai/instance-type",
     path_params_map,
     query_params_option,
     body_payload_option,

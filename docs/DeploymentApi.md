@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_deployment**](DeploymentApi.md#get_deployment) | **GET** /ai/deployment/{id} | [BETA] Get Deployment
 [**get_deployment_logs**](DeploymentApi.md#get_deployment_logs) | **GET** /ai/deployment/{id}/logs | [BETA] Get Deployment Logs
 [**get_inference_engine_help**](DeploymentApi.md#get_inference_engine_help) | **GET** /ai/help/inference-engine-parameters | [BETA] Get inference-engine Help
+[**list_ai_instance_types**](DeploymentApi.md#list_ai_instance_types) | **GET** /ai/instance-type | List Instance Types
 [**list_deployments**](DeploymentApi.md#list_deployments) | **GET** /ai/deployment | [BETA] List Deployments
 [**reveal_deployment_api_key**](DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | [BETA] Reveal Deployment API Key
 [**scale_deployment**](DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | [BETA] Scale Deployment
@@ -155,6 +156,33 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::GetInferenceEngineHelpResponse**](get-inference-engine-help-response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## list_ai_instance_types
+
+> models::ListAiInstanceTypesResponse list_ai_instance_types()
+List Instance Types
+
+List available instance types with authorization status based on GPU availability
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::ListAiInstanceTypesResponse**](list-ai-instance-types-response.md)
 
 ### Authorization
 

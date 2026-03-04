@@ -14,8 +14,8 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateModelRequest {
     /// Model name
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "name")]
+    pub name: String,
     /// Huggingface Token
     #[serde(rename = "huggingface-token", skip_serializing_if = "Option::is_none")]
     pub huggingface_token: Option<String>,
@@ -23,9 +23,9 @@ pub struct CreateModelRequest {
 
 impl CreateModelRequest {
     /// AI model
-    pub fn new() -> CreateModelRequest {
+    pub fn new(name: String) -> CreateModelRequest {
         CreateModelRequest {
-            name: None,
+            name,
             huggingface_token: None,
         }
     }

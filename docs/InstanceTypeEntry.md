@@ -1,11 +1,11 @@
-# CreateModelRequest
+# InstanceTypeEntry
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Model name | 
-**huggingface_token** | Option<**String**> | Huggingface Token | [optional]
+**family** | Option<**String**> | GPU family name | [optional]
+**authorized** | Option<**bool**> | Whether this instance type is authorized based on server availability | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
