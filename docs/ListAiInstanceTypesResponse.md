@@ -1,11 +1,10 @@
-# CreateModelRequest
+# ListAiInstanceTypesResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | Model name | 
-**huggingface_token** | Option<**String**> | Huggingface Token | [optional]
+**instance_types** | Option<[**Vec<models::InstanceTypeEntry>**](InstanceTypeEntry.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

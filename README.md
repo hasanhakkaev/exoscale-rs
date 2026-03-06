@@ -203,6 +203,7 @@ Class | Method | HTTP request | Description
 *DeploymentApi* | [**get_deployment**](docs/DeploymentApi.md#get_deployment) | **GET** /ai/deployment/{id} | [BETA] Get Deployment
 *DeploymentApi* | [**get_deployment_logs**](docs/DeploymentApi.md#get_deployment_logs) | **GET** /ai/deployment/{id}/logs | [BETA] Get Deployment Logs
 *DeploymentApi* | [**get_inference_engine_help**](docs/DeploymentApi.md#get_inference_engine_help) | **GET** /ai/help/inference-engine-parameters | [BETA] Get inference-engine Help
+*DeploymentApi* | [**list_ai_instance_types**](docs/DeploymentApi.md#list_ai_instance_types) | **GET** /ai/instance-type | List Instance Types
 *DeploymentApi* | [**list_deployments**](docs/DeploymentApi.md#list_deployments) | **GET** /ai/deployment | [BETA] List Deployments
 *DeploymentApi* | [**reveal_deployment_api_key**](docs/DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | [BETA] Reveal Deployment API Key
 *DeploymentApi* | [**scale_deployment**](docs/DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | [BETA] Scale Deployment
@@ -549,6 +550,7 @@ Class | Method | HTTP request | Description
  - [GenerateSksClusterKubeconfig200Response](docs/GenerateSksClusterKubeconfig200Response.md)
  - [GenericOAuthIntegration](docs/GenericOAuthIntegration.md)
  - [GetActiveNodepoolTemplate200Response](docs/GetActiveNodepoolTemplate200Response.md)
+ - [GetConfederatioUsageResponse](docs/GetConfederatioUsageResponse.md)
  - [GetConsoleProxyUrl200Response](docs/GetConsoleProxyUrl200Response.md)
  - [GetDbaasCaCertificate200Response](docs/GetDbaasCaCertificate200Response.md)
  - [GetDbaasExternalIntegrationSettingsDatadog200Response](docs/GetDbaasExternalIntegrationSettingsDatadog200Response.md)
@@ -612,6 +614,7 @@ Class | Method | HTTP request | Description
  - [InstanceRef](docs/InstanceRef.md)
  - [InstanceState](docs/InstanceState.md)
  - [InstanceType](docs/InstanceType.md)
+ - [InstanceTypeEntry](docs/InstanceTypeEntry.md)
  - [InstanceTypeRef](docs/InstanceTypeRef.md)
  - [InternalAuthenticationBackendLimiting](docs/InternalAuthenticationBackendLimiting.md)
  - [IpAddressRateLimitingSettings](docs/IpAddressRateLimitingSettings.md)
@@ -629,6 +632,7 @@ Class | Method | HTTP request | Description
  - [JsonSchemaTimescaledb](docs/JsonSchemaTimescaledb.md)
  - [JsonSchemaValkey](docs/JsonSchemaValkey.md)
  - [KubeletImageGc](docs/KubeletImageGc.md)
+ - [ListAiInstanceTypesResponse](docs/ListAiInstanceTypesResponse.md)
  - [ListAntiAffinityGroups200Response](docs/ListAntiAffinityGroups200Response.md)
  - [ListApiKeys200Response](docs/ListApiKeys200Response.md)
  - [ListBlockStorageSnapshots200Response](docs/ListBlockStorageSnapshots200Response.md)
@@ -683,6 +687,7 @@ Class | Method | HTTP request | Description
  - [Operation](docs/Operation.md)
  - [OperationReference](docs/OperationReference.md)
  - [Organization](docs/Organization.md)
+ - [OrganizationUsage](docs/OrganizationUsage.md)
  - [PrimaryParameter](docs/PrimaryParameter.md)
  - [PrimaryParameterNode](docs/PrimaryParameterNode.md)
  - [PrimaryParameterShard](docs/PrimaryParameterShard.md)
@@ -793,3 +798,4 @@ cargo doc --open
 
 support@exoscale.com
 
+Generated with latest changes from 2026-02-25

@@ -215,6 +215,7 @@ docs/EvictSksNodepoolMembersRequest.md
 docs/GenerateSksClusterKubeconfig200Response.md
 docs/GenericOAuthIntegration.md
 docs/GetActiveNodepoolTemplate200Response.md
+docs/GetConfederatioUsageResponse.md
 docs/GetConsoleProxyUrl200Response.md
 docs/GetDbaasCaCertificate200Response.md
 docs/GetDbaasExternalIntegrationSettingsDatadog200Response.md
@@ -281,6 +282,7 @@ docs/InstanceRef.md
 docs/InstanceState.md
 docs/InstanceType.md
 docs/InstanceTypeApi.md
+docs/InstanceTypeEntry.md
 docs/InstanceTypeRef.md
 docs/InternalAuthenticationBackendLimiting.md
 docs/IpAddressRateLimitingSettings.md
@@ -298,6 +300,7 @@ docs/JsonSchemaThanos.md
 docs/JsonSchemaTimescaledb.md
 docs/JsonSchemaValkey.md
 docs/KubeletImageGc.md
+docs/ListAiInstanceTypesResponse.md
 docs/ListAntiAffinityGroups200Response.md
 docs/ListApiKeys200Response.md
 docs/ListBlockStorageSnapshots200Response.md
@@ -359,6 +362,7 @@ docs/OperationReference.md
 docs/Organization.md
 docs/OrganizationApi.md
 docs/OrganizationPolicyApi.md
+docs/OrganizationUsage.md
 docs/PrimaryParameter.md
 docs/PrimaryParameterNode.md
 docs/PrimaryParameterShard.md
@@ -710,6 +714,7 @@ src/models/evict_sks_nodepool_members_request.rs
 src/models/generate_sks_cluster_kubeconfig_200_response.rs
 src/models/generic_o_auth_integration.rs
 src/models/get_active_nodepool_template_200_response.rs
+src/models/get_confederatio_usage_response.rs
 src/models/get_console_proxy_url_200_response.rs
 src/models/get_dbaas_ca_certificate_200_response.rs
 src/models/get_dbaas_external_integration_settings_datadog_200_response.rs
@@ -773,6 +778,7 @@ src/models/instance_pool_ref.rs
 src/models/instance_ref.rs
 src/models/instance_state.rs
 src/models/instance_type.rs
+src/models/instance_type_entry.rs
 src/models/instance_type_ref.rs
 src/models/internal_authentication_backend_limiting.rs
 src/models/ip_address_rate_limiting_settings.rs
@@ -790,6 +796,7 @@ src/models/json_schema_thanos.rs
 src/models/json_schema_timescaledb.rs
 src/models/json_schema_valkey.rs
 src/models/kubelet_image_gc.rs
+src/models/list_ai_instance_types_response.rs
 src/models/list_anti_affinity_groups_200_response.rs
 src/models/list_api_keys_200_response.rs
 src/models/list_block_storage_snapshots_200_response.rs
@@ -845,6 +852,7 @@ src/models/operating_factor.rs
 src/models/operation.rs
 src/models/operation_reference.rs
 src/models/organization.rs
+src/models/organization_usage.rs
 src/models/primary_parameter.rs
 src/models/primary_parameter_node.rs
 src/models/primary_parameter_shard.rs
