@@ -726,6 +726,14 @@ pub enum ListDbaasServicesError {
 }
 
 
+/// struct for typed errors of method [`list_dbaas_valkey_users`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ListDbaasValkeyUsersError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`reset_dbaas_grafana_user_password`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -1050,6 +1058,14 @@ pub enum UpdateDbaasServiceThanosError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UpdateDbaasServiceValkeyError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`update_dbaas_valkey_user_access_control`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UpdateDbaasValkeyUserAccessControlError {
     UnknownValue(serde_json::Value),
 }
 
@@ -1552,16 +1568,16 @@ pub async fn create_dbaas_task_migration_check(configuration: &configuration::Co
     body_payload_option,
     ).await
 }
-pub async fn create_dbaas_valkey_user(configuration: &configuration::Configuration, service_name: &str, create_dbaas_kafka_user_request: models::CreateDbaasKafkaUserRequest) -> Result<models::Operation, Error<CreateDbaasValkeyUserError>> {
+pub async fn create_dbaas_valkey_user(configuration: &configuration::Configuration, service_name: &str, create_dbaas_valkey_user_request: models::CreateDbaasValkeyUserRequest) -> Result<models::Operation, Error<CreateDbaasValkeyUserError>> {
     let local_var_service_name = service_name;
-    let local_var_create_dbaas_kafka_user_request = create_dbaas_kafka_user_request;
+    let local_var_create_dbaas_valkey_user_request = create_dbaas_valkey_user_request;
 
     let mut path_params_map = std::collections::HashMap::new();
                 path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_create_dbaas_kafka_user_request);
+            let body_payload_option = Some(local_var_create_dbaas_valkey_user_request);
 
     utils::execute_request(
     configuration,
@@ -2772,6 +2788,25 @@ pub async fn list_dbaas_services(configuration: &configuration::Configuration, )
     body_payload_option,
     ).await
 }
+pub async fn list_dbaas_valkey_users(configuration: &configuration::Configuration, service_name: &str) -> Result<models::DbaasValkeyUsers, Error<ListDbaasValkeyUsersError>> {
+    let local_var_service_name = service_name;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/dbaas-valkey/{service_name}/user",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn reset_dbaas_grafana_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str, reset_dbaas_valkey_user_password_request: models::ResetDbaasValkeyUserPasswordRequest) -> Result<models::Operation, Error<ResetDbaasGrafanaUserPasswordError>> {
     let local_var_service_name = service_name;
     let local_var_username = username;
@@ -3599,6 +3634,28 @@ pub async fn update_dbaas_service_valkey(configuration: &configuration::Configur
     configuration,
     reqwest::Method::PUT,
     "/dbaas-valkey/{name}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn update_dbaas_valkey_user_access_control(configuration: &configuration::Configuration, service_name: &str, username: &str, update_dbaas_valkey_user_access_control_request: models::UpdateDbaasValkeyUserAccessControlRequest) -> Result<models::Operation, Error<UpdateDbaasValkeyUserAccessControlError>> {
+    let local_var_service_name = service_name;
+    let local_var_username = username;
+    let local_var_update_dbaas_valkey_user_access_control_request = update_dbaas_valkey_user_access_control_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_update_dbaas_valkey_user_access_control_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/dbaas-valkey/{service_name}/user/{username}",
     path_params_map,
     query_params_option,
     body_payload_option,

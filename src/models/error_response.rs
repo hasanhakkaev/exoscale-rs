@@ -13,16 +13,30 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ErrorResponse {
-    /// Error description
-    #[serde(rename = "error", skip_serializing_if = "Option::is_none")]
-    pub error: Option<String>,
+    #[serde(rename = "type")]
+    pub r#type: String,
+    #[serde(rename = "title")]
+    pub title: String,
+    #[serde(rename = "status")]
+    pub status: u16,
+    #[serde(rename = "detail")]
+    pub detail: String,
+    #[serde(rename = "instance", skip_serializing_if = "Option::is_none")]
+    pub instance: Option<String>,
+    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
+    pub errors: Option<Vec<models::ErrorResponseErrorsInner>>,
 }
 
 impl ErrorResponse {
-    /// Error
-    pub fn new() -> ErrorResponse {
+    /// RFC 9457 Problem Details error response
+    pub fn new(r#type: String, title: String, status: u16, detail: String) -> ErrorResponse {
         ErrorResponse {
-            error: None,
+            r#type,
+            title,
+            status,
+            detail,
+            instance: None,
+            errors: None,
         }
     }
 }

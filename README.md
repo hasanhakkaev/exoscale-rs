@@ -66,6 +66,10 @@ Class | Method | HTTP request | Description
 *ClusterApi* | [**upgrade_sks_cluster**](docs/ClusterApi.md#upgrade_sks_cluster) | **PUT** /sks-cluster/{id}/upgrade | Upgrade an SKS cluster
 *ClusterApi* | [**upgrade_sks_cluster_service_level**](docs/ClusterApi.md#upgrade_sks_cluster_service_level) | **PUT** /sks-cluster/{id}/upgrade-service-level | Upgrade a SKS cluster to pro
 *ComputeApi* | [**reset_load_balancer_service_field**](docs/ComputeApi.md#reset_load_balancer_service_field) | **DELETE** /load-balancer/{id}/service/{service_id}/{field} | Reset a Load Balancer Service field to its default value
+*CryptoApi* | [**decrypt**](docs/CryptoApi.md#decrypt) | **POST** /kms-key/{id}/decrypt | [BETA] Decrypt
+*CryptoApi* | [**encrypt**](docs/CryptoApi.md#encrypt) | **POST** /kms-key/{id}/encrypt | [BETA] Encrypt
+*CryptoApi* | [**generate_data_key**](docs/CryptoApi.md#generate_data_key) | **POST** /kms-key/{id}/generate-data-key | [BETA] Generate Data Key
+*CryptoApi* | [**re_encrypt**](docs/CryptoApi.md#re_encrypt) | **POST** /kms-key/{id}/re-encrypt | [BETA] Re-encrypt
 *DbaasApi* | [**attach_dbaas_service_to_endpoint**](docs/DbaasApi.md#attach_dbaas_service_to_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/attach | 
 *DbaasApi* | [**create_dbaas_external_endpoint_datadog**](docs/DbaasApi.md#create_dbaas_external_endpoint_datadog) | **POST** /dbaas-external-endpoint-datadog/{name} | 
 *DbaasApi* | [**create_dbaas_external_endpoint_elasticsearch**](docs/DbaasApi.md#create_dbaas_external_endpoint_elasticsearch) | **POST** /dbaas-external-endpoint-elasticsearch/{name} | 
@@ -155,6 +159,7 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**list_dbaas_integration_types**](docs/DbaasApi.md#list_dbaas_integration_types) | **GET** /dbaas-integration-types | 
 *DbaasApi* | [**list_dbaas_service_types**](docs/DbaasApi.md#list_dbaas_service_types) | **GET** /dbaas-service-type | DBaaS Service Types
 *DbaasApi* | [**list_dbaas_services**](docs/DbaasApi.md#list_dbaas_services) | **GET** /dbaas-service | List DBaaS services
+*DbaasApi* | [**list_dbaas_valkey_users**](docs/DbaasApi.md#list_dbaas_valkey_users) | **GET** /dbaas-valkey/{service_name}/user | List DBaaS Valkey users with ACL configuration
 *DbaasApi* | [**reset_dbaas_grafana_user_password**](docs/DbaasApi.md#reset_dbaas_grafana_user_password) | **PUT** /dbaas-grafana/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Grafana user
 *DbaasApi* | [**reset_dbaas_kafka_user_password**](docs/DbaasApi.md#reset_dbaas_kafka_user_password) | **PUT** /dbaas-kafka/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Kafka user
 *DbaasApi* | [**reset_dbaas_mysql_user_password**](docs/DbaasApi.md#reset_dbaas_mysql_user_password) | **PUT** /dbaas-mysql/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS mysql user
@@ -196,6 +201,7 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**update_dbaas_service_pg**](docs/DbaasApi.md#update_dbaas_service_pg) | **PUT** /dbaas-postgres/{name} | Update a DBaaS PostgreSQL service
 *DbaasApi* | [**update_dbaas_service_thanos**](docs/DbaasApi.md#update_dbaas_service_thanos) | **PUT** /dbaas-thanos/{name} | 
 *DbaasApi* | [**update_dbaas_service_valkey**](docs/DbaasApi.md#update_dbaas_service_valkey) | **PUT** /dbaas-valkey/{name} | 
+*DbaasApi* | [**update_dbaas_valkey_user_access_control**](docs/DbaasApi.md#update_dbaas_valkey_user_access_control) | **PUT** /dbaas-valkey/{service_name}/user/{username} | Update access control for one DBaaS Valkey service user
 *DeployTargetApi* | [**get_deploy_target**](docs/DeployTargetApi.md#get_deploy_target) | **GET** /deploy-target/{id} | Retrieve Deploy Target details
 *DeployTargetApi* | [**list_deploy_targets**](docs/DeployTargetApi.md#list_deploy_targets) | **GET** /deploy-target | List Deploy Targets
 *DeploymentApi* | [**create_deployment**](docs/DeploymentApi.md#create_deployment) | **POST** /ai/deployment | [BETA] Create Deployment
@@ -252,6 +258,18 @@ Class | Method | HTTP request | Description
 *InstancePoolApi* | [**update_instance_pool**](docs/InstancePoolApi.md#update_instance_pool) | **PUT** /instance-pool/{id} | Update an Instance Pool
 *InstanceTypeApi* | [**get_instance_type**](docs/InstanceTypeApi.md#get_instance_type) | **GET** /instance-type/{id} | Retrieve Instance Type details
 *InstanceTypeApi* | [**list_instance_types**](docs/InstanceTypeApi.md#list_instance_types) | **GET** /instance-type | List Compute instance Types
+*KmsKeyApi* | [**cancel_kms_key_deletion**](docs/KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | [Beta] Cancel KMS Key Deletion
+*KmsKeyApi* | [**create_kms_key**](docs/KmsKeyApi.md#create_kms_key) | **POST** /kms-key | [BETA] Create KMS Key
+*KmsKeyApi* | [**disable_kms_key**](docs/KmsKeyApi.md#disable_kms_key) | **POST** /kms-key/{id}/disable | [BETA] Disable KMS Key
+*KmsKeyApi* | [**disable_kms_key_rotation**](docs/KmsKeyApi.md#disable_kms_key_rotation) | **POST** /kms-key/{id}/disable-key-rotation | [BETA] Disable Key Rotation
+*KmsKeyApi* | [**enable_kms_key**](docs/KmsKeyApi.md#enable_kms_key) | **POST** /kms-key/{id}/enable | [BETA] Enable KMS Key
+*KmsKeyApi* | [**enable_kms_key_rotation**](docs/KmsKeyApi.md#enable_kms_key_rotation) | **POST** /kms-key/{id}/enable-key-rotation | [BETA] Enable Key Rotation
+*KmsKeyApi* | [**get_kms_key**](docs/KmsKeyApi.md#get_kms_key) | **GET** /kms-key/{id} | [BETA] Get KMS Key
+*KmsKeyApi* | [**list_kms_key_rotations**](docs/KmsKeyApi.md#list_kms_key_rotations) | **GET** /kms-key/{id}/list-key-rotations | [BETA] List KMS Key Rotations
+*KmsKeyApi* | [**list_kms_keys**](docs/KmsKeyApi.md#list_kms_keys) | **GET** /kms-key | [BETA] List KMS Keys
+*KmsKeyApi* | [**replicate_kms_key**](docs/KmsKeyApi.md#replicate_kms_key) | **POST** /kms-key/{id}/replicate | [BETA] Replicate KMS Key
+*KmsKeyApi* | [**rotate_kms_key**](docs/KmsKeyApi.md#rotate_kms_key) | **POST** /kms-key/{id}/rotate | [BETA] Rotate Key
+*KmsKeyApi* | [**schedule_kms_key_deletion**](docs/KmsKeyApi.md#schedule_kms_key_deletion) | **POST** /kms-key/{id}/schedule-deletion | [BETA] Schedule KMS Key Deletion
 *ModelApi* | [**create_model**](docs/ModelApi.md#create_model) | **POST** /ai/model | [BETA] Create Model
 *ModelApi* | [**delete_model**](docs/ModelApi.md#delete_model) | **DELETE** /ai/model/{id} | [BETA] Delete Model
 *ModelApi* | [**get_model**](docs/ModelApi.md#get_model) | **GET** /ai/model/{id} | [BETA] Get Model
@@ -391,6 +409,7 @@ Class | Method | HTTP request | Description
  - [CreateDbaasServiceThanosRequest](docs/CreateDbaasServiceThanosRequest.md)
  - [CreateDbaasServiceValkeyRequest](docs/CreateDbaasServiceValkeyRequest.md)
  - [CreateDbaasTaskMigrationCheckRequest](docs/CreateDbaasTaskMigrationCheckRequest.md)
+ - [CreateDbaasValkeyUserRequest](docs/CreateDbaasValkeyUserRequest.md)
  - [CreateDeploymentRequest](docs/CreateDeploymentRequest.md)
  - [CreateDnsDomainRecordRequest](docs/CreateDnsDomainRecordRequest.md)
  - [CreateDnsDomainRequest](docs/CreateDnsDomainRequest.md)
@@ -398,6 +417,8 @@ Class | Method | HTTP request | Description
  - [CreateIamRoleRequest](docs/CreateIamRoleRequest.md)
  - [CreateInstancePoolRequest](docs/CreateInstancePoolRequest.md)
  - [CreateInstanceRequest](docs/CreateInstanceRequest.md)
+ - [CreateKmsKeyRequest](docs/CreateKmsKeyRequest.md)
+ - [CreateKmsKeyResponse](docs/CreateKmsKeyResponse.md)
  - [CreateLoadBalancerRequest](docs/CreateLoadBalancerRequest.md)
  - [CreateModelRequest](docs/CreateModelRequest.md)
  - [CreatePrivateNetworkRequest](docs/CreatePrivateNetworkRequest.md)
@@ -500,7 +521,6 @@ Class | Method | HTTP request | Description
  - [DbaasServiceValkey](docs/DbaasServiceValkey.md)
  - [DbaasServiceValkeyConnectionInfo](docs/DbaasServiceValkeyConnectionInfo.md)
  - [DbaasServiceValkeyUsersInner](docs/DbaasServiceValkeyUsersInner.md)
- - [DbaasServiceValkeyUsersInnerAccessControl](docs/DbaasServiceValkeyUsersInnerAccessControl.md)
  - [DbaasTask](docs/DbaasTask.md)
  - [DbaasTaskResultCodesInner](docs/DbaasTaskResultCodesInner.md)
  - [DbaasUserGrafanaSecrets](docs/DbaasUserGrafanaSecrets.md)
@@ -511,16 +531,27 @@ Class | Method | HTTP request | Description
  - [DbaasUserPostgresSecrets](docs/DbaasUserPostgresSecrets.md)
  - [DbaasUserThanosSecrets](docs/DbaasUserThanosSecrets.md)
  - [DbaasUserValkeySecrets](docs/DbaasUserValkeySecrets.md)
+ - [DbaasValkeyUser](docs/DbaasValkeyUser.md)
+ - [DbaasValkeyUserAccessControl](docs/DbaasValkeyUserAccessControl.md)
+ - [DbaasValkeyUsers](docs/DbaasValkeyUsers.md)
+ - [DecryptRequest](docs/DecryptRequest.md)
+ - [DecryptResponse](docs/DecryptResponse.md)
  - [DeleteModelConflictResponse](docs/DeleteModelConflictResponse.md)
  - [DeployTarget](docs/DeployTarget.md)
  - [DeployTargetRef](docs/DeployTargetRef.md)
  - [DetachDbaasServiceFromEndpointRequest](docs/DetachDbaasServiceFromEndpointRequest.md)
  - [DetachInstanceFromPrivateNetworkRequest](docs/DetachInstanceFromPrivateNetworkRequest.md)
+ - [DisableKmsKeyRotationRequest](docs/DisableKmsKeyRotationRequest.md)
+ - [DisableKmsKeyRotationResponse](docs/DisableKmsKeyRotationResponse.md)
  - [DnsDomain](docs/DnsDomain.md)
  - [DnsDomainRecord](docs/DnsDomainRecord.md)
  - [ElasticIp](docs/ElasticIp.md)
  - [ElasticIpHealthcheck](docs/ElasticIpHealthcheck.md)
  - [ElasticIpRef](docs/ElasticIpRef.md)
+ - [EnableKmsKeyRotationRequest](docs/EnableKmsKeyRotationRequest.md)
+ - [EnableKmsKeyRotationResponse](docs/EnableKmsKeyRotationResponse.md)
+ - [EncryptRequest](docs/EncryptRequest.md)
+ - [EncryptResponse](docs/EncryptResponse.md)
  - [EnumComponentRoute](docs/EnumComponentRoute.md)
  - [EnumComponentUsage](docs/EnumComponentUsage.md)
  - [EnumDatadogSite](docs/EnumDatadogSite.md)
@@ -544,9 +575,12 @@ Class | Method | HTTP request | Description
  - [EnvMetadataEntry](docs/EnvMetadataEntry.md)
  - [EnvProduct](docs/EnvProduct.md)
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [ErrorResponseErrorsInner](docs/ErrorResponseErrorsInner.md)
  - [Event](docs/Event.md)
  - [EvictInstancePoolMembersRequest](docs/EvictInstancePoolMembersRequest.md)
  - [EvictSksNodepoolMembersRequest](docs/EvictSksNodepoolMembersRequest.md)
+ - [GenerateDataKeyRequest](docs/GenerateDataKeyRequest.md)
+ - [GenerateDataKeyResponse](docs/GenerateDataKeyResponse.md)
  - [GenerateSksClusterKubeconfig200Response](docs/GenerateSksClusterKubeconfig200Response.md)
  - [GenericOAuthIntegration](docs/GenericOAuthIntegration.md)
  - [GetActiveNodepoolTemplate200Response](docs/GetActiveNodepoolTemplate200Response.md)
@@ -589,6 +623,7 @@ Class | Method | HTTP request | Description
  - [GetDeploymentResponse](docs/GetDeploymentResponse.md)
  - [GetDnsDomainZoneFile200Response](docs/GetDnsDomainZoneFile200Response.md)
  - [GetInferenceEngineHelpResponse](docs/GetInferenceEngineHelpResponse.md)
+ - [GetKmsKeyResponse](docs/GetKmsKeyResponse.md)
  - [GetModelResponse](docs/GetModelResponse.md)
  - [GetOrganizationUsageResponse](docs/GetOrganizationUsageResponse.md)
  - [GetSksClusterAuthorityCert200Response](docs/GetSksClusterAuthorityCert200Response.md)
@@ -631,6 +666,8 @@ Class | Method | HTTP request | Description
  - [JsonSchemaThanos](docs/JsonSchemaThanos.md)
  - [JsonSchemaTimescaledb](docs/JsonSchemaTimescaledb.md)
  - [JsonSchemaValkey](docs/JsonSchemaValkey.md)
+ - [KeyMaterial](docs/KeyMaterial.md)
+ - [KeyRotationConfig](docs/KeyRotationConfig.md)
  - [KubeletImageGc](docs/KubeletImageGc.md)
  - [ListAiInstanceTypesResponse](docs/ListAiInstanceTypesResponse.md)
  - [ListAntiAffinityGroups200Response](docs/ListAntiAffinityGroups200Response.md)
@@ -658,6 +695,10 @@ Class | Method | HTTP request | Description
  - [ListInstances200Response](docs/ListInstances200Response.md)
  - [ListInstances200ResponseInstancesInner](docs/ListInstances200ResponseInstancesInner.md)
  - [ListInstances200ResponseInstancesInnerPrivateNetworksInner](docs/ListInstances200ResponseInstancesInnerPrivateNetworksInner.md)
+ - [ListKmsKeyRotationsResponse](docs/ListKmsKeyRotationsResponse.md)
+ - [ListKmsKeyRotationsResponseEntry](docs/ListKmsKeyRotationsResponseEntry.md)
+ - [ListKmsKeysResponse](docs/ListKmsKeysResponse.md)
+ - [ListKmsKeysResponseEntry](docs/ListKmsKeysResponseEntry.md)
  - [ListLoadBalancers200Response](docs/ListLoadBalancers200Response.md)
  - [ListModelsResponse](docs/ListModelsResponse.md)
  - [ListModelsResponseEntry](docs/ListModelsResponseEntry.md)
@@ -686,6 +727,7 @@ Class | Method | HTTP request | Description
  - [OperatingFactor](docs/OperatingFactor.md)
  - [Operation](docs/Operation.md)
  - [OperationReference](docs/OperationReference.md)
+ - [OperationResourceRef](docs/OperationResourceRef.md)
  - [Organization](docs/Organization.md)
  - [OrganizationUsage](docs/OrganizationUsage.md)
  - [PrimaryParameter](docs/PrimaryParameter.md)
@@ -698,9 +740,16 @@ Class | Method | HTTP request | Description
  - [PromoteSnapshotToTemplateRequest](docs/PromoteSnapshotToTemplateRequest.md)
  - [PublicIpAssignment](docs/PublicIpAssignment.md)
  - [Quota](docs/Quota.md)
+ - [ReEncryptRequest](docs/ReEncryptRequest.md)
+ - [ReEncryptRequestDestination](docs/ReEncryptRequestDestination.md)
+ - [ReEncryptRequestSource](docs/ReEncryptRequestSource.md)
+ - [ReEncryptResponse](docs/ReEncryptResponse.md)
  - [RegisterSshKeyRequest](docs/RegisterSshKeyRequest.md)
  - [RegisterTemplateRequest](docs/RegisterTemplateRequest.md)
  - [RemoveExternalSourceFromSecurityGroupRequest](docs/RemoveExternalSourceFromSecurityGroupRequest.md)
+ - [ReplicaFailure](docs/ReplicaFailure.md)
+ - [ReplicaState](docs/ReplicaState.md)
+ - [ReplicateKmsKeyRequest](docs/ReplicateKmsKeyRequest.md)
  - [ResetDbaasMysqlUserPasswordRequest](docs/ResetDbaasMysqlUserPasswordRequest.md)
  - [ResetDbaasValkeyUserPasswordRequest](docs/ResetDbaasValkeyUserPasswordRequest.md)
  - [ResetInstanceRequest](docs/ResetInstanceRequest.md)
@@ -710,10 +759,13 @@ Class | Method | HTTP request | Description
  - [RevealDeploymentApiKeyResponse](docs/RevealDeploymentApiKeyResponse.md)
  - [ReverseDnsRecord](docs/ReverseDnsRecord.md)
  - [RevertInstanceToSnapshotRequest](docs/RevertInstanceToSnapshotRequest.md)
+ - [RevisionStamp](docs/RevisionStamp.md)
+ - [RotateKmsKeyResponse](docs/RotateKmsKeyResponse.md)
  - [ScaleDeploymentRequest](docs/ScaleDeploymentRequest.md)
  - [ScaleInstancePoolRequest](docs/ScaleInstancePoolRequest.md)
  - [ScaleInstanceRequest](docs/ScaleInstanceRequest.md)
  - [ScaleSksNodepoolRequest](docs/ScaleSksNodepoolRequest.md)
+ - [ScheduleKmsKeyDeletionRequest](docs/ScheduleKmsKeyDeletionRequest.md)
  - [SearchBackpressureSettings](docs/SearchBackpressureSettings.md)
  - [SearchShardSettings](docs/SearchShardSettings.md)
  - [SearchTaskSettings](docs/SearchTaskSettings.md)
@@ -741,6 +793,7 @@ Class | Method | HTTP request | Description
  - [SshKey](docs/SshKey.md)
  - [SshKeyRef](docs/SshKeyRef.md)
  - [StartInstanceRequest](docs/StartInstanceRequest.md)
+ - [SuccessResponse](docs/SuccessResponse.md)
  - [Template](docs/Template.md)
  - [TemplateRef](docs/TemplateRef.md)
  - [ThanosCompactorUserConfig](docs/ThanosCompactorUserConfig.md)
@@ -765,6 +818,7 @@ Class | Method | HTTP request | Description
  - [UpdateDbaasServicePgRequest](docs/UpdateDbaasServicePgRequest.md)
  - [UpdateDbaasServiceThanosRequest](docs/UpdateDbaasServiceThanosRequest.md)
  - [UpdateDbaasServiceValkeyRequest](docs/UpdateDbaasServiceValkeyRequest.md)
+ - [UpdateDbaasValkeyUserAccessControlRequest](docs/UpdateDbaasValkeyUserAccessControlRequest.md)
  - [UpdateDeploymentRequest](docs/UpdateDeploymentRequest.md)
  - [UpdateDnsDomainRecordRequest](docs/UpdateDnsDomainRecordRequest.md)
  - [UpdateElasticIpRequest](docs/UpdateElasticIpRequest.md)
@@ -798,4 +852,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-02-25
+Generated with latest changes from 2026-03-10

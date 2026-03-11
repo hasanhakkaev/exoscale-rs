@@ -18,6 +18,10 @@ pub enum InferenceEngineVersion {
     Variant0120,
     #[serde(rename = "0.15.1")]
     Variant0151,
+    #[serde(rename = "0.16.0")]
+    Variant0160,
+    #[serde(rename = "0.17.0")]
+    Variant0170,
 
 }
 
@@ -26,6 +30,8 @@ impl std::fmt::Display for InferenceEngineVersion {
         match self {
             Self::Variant0120 => write!(f, "0.12.0"),
             Self::Variant0151 => write!(f, "0.15.1"),
+            Self::Variant0160 => write!(f, "0.16.0"),
+            Self::Variant0170 => write!(f, "0.17.0"),
         }
     }
 }
