@@ -84,6 +84,8 @@ pub mod create_dbaas_service_valkey_request;
 pub use self::create_dbaas_service_valkey_request::CreateDbaasServiceValkeyRequest;
 pub mod create_dbaas_task_migration_check_request;
 pub use self::create_dbaas_task_migration_check_request::CreateDbaasTaskMigrationCheckRequest;
+pub mod create_dbaas_valkey_user_request;
+pub use self::create_dbaas_valkey_user_request::CreateDbaasValkeyUserRequest;
 pub mod create_deployment_request;
 pub use self::create_deployment_request::CreateDeploymentRequest;
 pub mod create_dns_domain_record_request;
@@ -98,6 +100,10 @@ pub mod create_instance_pool_request;
 pub use self::create_instance_pool_request::CreateInstancePoolRequest;
 pub mod create_instance_request;
 pub use self::create_instance_request::CreateInstanceRequest;
+pub mod create_kms_key_request;
+pub use self::create_kms_key_request::CreateKmsKeyRequest;
+pub mod create_kms_key_response;
+pub use self::create_kms_key_response::CreateKmsKeyResponse;
 pub mod create_load_balancer_request;
 pub use self::create_load_balancer_request::CreateLoadBalancerRequest;
 pub mod create_model_request;
@@ -302,8 +308,6 @@ pub mod dbaas_service_valkey_connection_info;
 pub use self::dbaas_service_valkey_connection_info::DbaasServiceValkeyConnectionInfo;
 pub mod dbaas_service_valkey_users_inner;
 pub use self::dbaas_service_valkey_users_inner::DbaasServiceValkeyUsersInner;
-pub mod dbaas_service_valkey_users_inner_access_control;
-pub use self::dbaas_service_valkey_users_inner_access_control::DbaasServiceValkeyUsersInnerAccessControl;
 pub mod dbaas_task;
 pub use self::dbaas_task::DbaasTask;
 pub mod dbaas_task_result_codes_inner;
@@ -324,6 +328,16 @@ pub mod dbaas_user_thanos_secrets;
 pub use self::dbaas_user_thanos_secrets::DbaasUserThanosSecrets;
 pub mod dbaas_user_valkey_secrets;
 pub use self::dbaas_user_valkey_secrets::DbaasUserValkeySecrets;
+pub mod dbaas_valkey_user;
+pub use self::dbaas_valkey_user::DbaasValkeyUser;
+pub mod dbaas_valkey_user_access_control;
+pub use self::dbaas_valkey_user_access_control::DbaasValkeyUserAccessControl;
+pub mod dbaas_valkey_users;
+pub use self::dbaas_valkey_users::DbaasValkeyUsers;
+pub mod decrypt_request;
+pub use self::decrypt_request::DecryptRequest;
+pub mod decrypt_response;
+pub use self::decrypt_response::DecryptResponse;
 pub mod delete_model_conflict_response;
 pub use self::delete_model_conflict_response::DeleteModelConflictResponse;
 pub mod deploy_target;
@@ -334,6 +348,10 @@ pub mod detach_dbaas_service_from_endpoint_request;
 pub use self::detach_dbaas_service_from_endpoint_request::DetachDbaasServiceFromEndpointRequest;
 pub mod detach_instance_from_private_network_request;
 pub use self::detach_instance_from_private_network_request::DetachInstanceFromPrivateNetworkRequest;
+pub mod disable_kms_key_rotation_request;
+pub use self::disable_kms_key_rotation_request::DisableKmsKeyRotationRequest;
+pub mod disable_kms_key_rotation_response;
+pub use self::disable_kms_key_rotation_response::DisableKmsKeyRotationResponse;
 pub mod dns_domain;
 pub use self::dns_domain::DnsDomain;
 pub mod dns_domain_record;
@@ -344,6 +362,14 @@ pub mod elastic_ip_healthcheck;
 pub use self::elastic_ip_healthcheck::ElasticIpHealthcheck;
 pub mod elastic_ip_ref;
 pub use self::elastic_ip_ref::ElasticIpRef;
+pub mod enable_kms_key_rotation_request;
+pub use self::enable_kms_key_rotation_request::EnableKmsKeyRotationRequest;
+pub mod enable_kms_key_rotation_response;
+pub use self::enable_kms_key_rotation_response::EnableKmsKeyRotationResponse;
+pub mod encrypt_request;
+pub use self::encrypt_request::EncryptRequest;
+pub mod encrypt_response;
+pub use self::encrypt_response::EncryptResponse;
 pub mod enum_component_route;
 pub use self::enum_component_route::EnumComponentRoute;
 pub mod enum_component_usage;
@@ -390,12 +416,18 @@ pub mod env_product;
 pub use self::env_product::EnvProduct;
 pub mod error_response;
 pub use self::error_response::ErrorResponse;
+pub mod error_response_errors_inner;
+pub use self::error_response_errors_inner::ErrorResponseErrorsInner;
 pub mod event;
 pub use self::event::Event;
 pub mod evict_instance_pool_members_request;
 pub use self::evict_instance_pool_members_request::EvictInstancePoolMembersRequest;
 pub mod evict_sks_nodepool_members_request;
 pub use self::evict_sks_nodepool_members_request::EvictSksNodepoolMembersRequest;
+pub mod generate_data_key_request;
+pub use self::generate_data_key_request::GenerateDataKeyRequest;
+pub mod generate_data_key_response;
+pub use self::generate_data_key_response::GenerateDataKeyResponse;
 pub mod generate_sks_cluster_kubeconfig_200_response;
 pub use self::generate_sks_cluster_kubeconfig_200_response::GenerateSksClusterKubeconfig200Response;
 pub mod generic_o_auth_integration;
@@ -480,6 +512,8 @@ pub mod get_dns_domain_zone_file_200_response;
 pub use self::get_dns_domain_zone_file_200_response::GetDnsDomainZoneFile200Response;
 pub mod get_inference_engine_help_response;
 pub use self::get_inference_engine_help_response::GetInferenceEngineHelpResponse;
+pub mod get_kms_key_response;
+pub use self::get_kms_key_response::GetKmsKeyResponse;
 pub mod get_model_response;
 pub use self::get_model_response::GetModelResponse;
 pub mod get_organization_usage_response;
@@ -564,6 +598,10 @@ pub mod json_schema_timescaledb;
 pub use self::json_schema_timescaledb::JsonSchemaTimescaledb;
 pub mod json_schema_valkey;
 pub use self::json_schema_valkey::JsonSchemaValkey;
+pub mod key_material;
+pub use self::key_material::KeyMaterial;
+pub mod key_rotation_config;
+pub use self::key_rotation_config::KeyRotationConfig;
 pub mod kubelet_image_gc;
 pub use self::kubelet_image_gc::KubeletImageGc;
 pub mod list_ai_instance_types_response;
@@ -618,6 +656,14 @@ pub mod list_instances_200_response_instances_inner;
 pub use self::list_instances_200_response_instances_inner::ListInstances200ResponseInstancesInner;
 pub mod list_instances_200_response_instances_inner_private_networks_inner;
 pub use self::list_instances_200_response_instances_inner_private_networks_inner::ListInstances200ResponseInstancesInnerPrivateNetworksInner;
+pub mod list_kms_key_rotations_response;
+pub use self::list_kms_key_rotations_response::ListKmsKeyRotationsResponse;
+pub mod list_kms_key_rotations_response_entry;
+pub use self::list_kms_key_rotations_response_entry::ListKmsKeyRotationsResponseEntry;
+pub mod list_kms_keys_response;
+pub use self::list_kms_keys_response::ListKmsKeysResponse;
+pub mod list_kms_keys_response_entry;
+pub use self::list_kms_keys_response_entry::ListKmsKeysResponseEntry;
 pub mod list_load_balancers_200_response;
 pub use self::list_load_balancers_200_response::ListLoadBalancers200Response;
 pub mod list_models_response;
@@ -674,6 +720,8 @@ pub mod operation;
 pub use self::operation::Operation;
 pub mod operation_reference;
 pub use self::operation_reference::OperationReference;
+pub mod operation_resource_ref;
+pub use self::operation_resource_ref::OperationResourceRef;
 pub mod organization;
 pub use self::organization::Organization;
 pub mod organization_usage;
@@ -698,12 +746,26 @@ pub mod public_ip_assignment;
 pub use self::public_ip_assignment::PublicIpAssignment;
 pub mod quota;
 pub use self::quota::Quota;
+pub mod re_encrypt_request;
+pub use self::re_encrypt_request::ReEncryptRequest;
+pub mod re_encrypt_request_destination;
+pub use self::re_encrypt_request_destination::ReEncryptRequestDestination;
+pub mod re_encrypt_request_source;
+pub use self::re_encrypt_request_source::ReEncryptRequestSource;
+pub mod re_encrypt_response;
+pub use self::re_encrypt_response::ReEncryptResponse;
 pub mod register_ssh_key_request;
 pub use self::register_ssh_key_request::RegisterSshKeyRequest;
 pub mod register_template_request;
 pub use self::register_template_request::RegisterTemplateRequest;
 pub mod remove_external_source_from_security_group_request;
 pub use self::remove_external_source_from_security_group_request::RemoveExternalSourceFromSecurityGroupRequest;
+pub mod replica_failure;
+pub use self::replica_failure::ReplicaFailure;
+pub mod replica_state;
+pub use self::replica_state::ReplicaState;
+pub mod replicate_kms_key_request;
+pub use self::replicate_kms_key_request::ReplicateKmsKeyRequest;
 pub mod reset_dbaas_mysql_user_password_request;
 pub use self::reset_dbaas_mysql_user_password_request::ResetDbaasMysqlUserPasswordRequest;
 pub mod reset_dbaas_valkey_user_password_request;
@@ -722,6 +784,10 @@ pub mod reverse_dns_record;
 pub use self::reverse_dns_record::ReverseDnsRecord;
 pub mod revert_instance_to_snapshot_request;
 pub use self::revert_instance_to_snapshot_request::RevertInstanceToSnapshotRequest;
+pub mod revision_stamp;
+pub use self::revision_stamp::RevisionStamp;
+pub mod rotate_kms_key_response;
+pub use self::rotate_kms_key_response::RotateKmsKeyResponse;
 pub mod scale_deployment_request;
 pub use self::scale_deployment_request::ScaleDeploymentRequest;
 pub mod scale_instance_pool_request;
@@ -730,6 +796,8 @@ pub mod scale_instance_request;
 pub use self::scale_instance_request::ScaleInstanceRequest;
 pub mod scale_sks_nodepool_request;
 pub use self::scale_sks_nodepool_request::ScaleSksNodepoolRequest;
+pub mod schedule_kms_key_deletion_request;
+pub use self::schedule_kms_key_deletion_request::ScheduleKmsKeyDeletionRequest;
 pub mod search_backpressure_settings;
 pub use self::search_backpressure_settings::SearchBackpressureSettings;
 pub mod search_shard_settings;
@@ -784,6 +852,8 @@ pub mod ssh_key_ref;
 pub use self::ssh_key_ref::SshKeyRef;
 pub mod start_instance_request;
 pub use self::start_instance_request::StartInstanceRequest;
+pub mod success_response;
+pub use self::success_response::SuccessResponse;
 pub mod template;
 pub use self::template::Template;
 pub mod template_ref;
@@ -832,6 +902,8 @@ pub mod update_dbaas_service_thanos_request;
 pub use self::update_dbaas_service_thanos_request::UpdateDbaasServiceThanosRequest;
 pub mod update_dbaas_service_valkey_request;
 pub use self::update_dbaas_service_valkey_request::UpdateDbaasServiceValkeyRequest;
+pub mod update_dbaas_valkey_user_access_control_request;
+pub use self::update_dbaas_valkey_user_access_control_request::UpdateDbaasValkeyUserAccessControlRequest;
 pub mod update_deployment_request;
 pub use self::update_deployment_request::UpdateDeploymentRequest;
 pub mod update_dns_domain_record_request;
@@ -874,3 +946,40 @@ pub mod zone;
 pub use self::zone::Zone;
 pub mod zone_name;
 pub use self::zone_name::ZoneName;
+use serde::{Deserialize, Deserializer, Serializer};
+use serde_with::{de::DeserializeAsWrap, ser::SerializeAsWrap, DeserializeAs, SerializeAs};
+use std::marker::PhantomData;
+
+pub(crate) struct DoubleOption<T>(PhantomData<T>);
+
+impl<T, TAs> SerializeAs<Option<Option<T>>> for DoubleOption<TAs>
+where
+    TAs: SerializeAs<T>,
+{
+    fn serialize_as<S>(values: &Option<Option<T>>, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        match values {
+            None => serializer.serialize_unit(),
+            Some(None) => serializer.serialize_none(),
+            Some(Some(v)) => serializer.serialize_some(&SerializeAsWrap::<T, TAs>::new(v)),
+        }
+    }
+}
+
+impl<'de, T, TAs> DeserializeAs<'de, Option<Option<T>>> for DoubleOption<TAs>
+where
+    TAs: DeserializeAs<'de, T>,
+    T: std::fmt::Debug,
+{
+    fn deserialize_as<D>(deserializer: D) -> Result<Option<Option<T>>, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        Ok(Some(
+            DeserializeAsWrap::<Option<T>, Option<TAs>>::deserialize(deserializer)?
+                .into_inner(),
+        ))
+    }
+}

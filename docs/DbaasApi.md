@@ -93,6 +93,7 @@ Method | HTTP request | Description
 [**list_dbaas_integration_types**](DbaasApi.md#list_dbaas_integration_types) | **GET** /dbaas-integration-types | 
 [**list_dbaas_service_types**](DbaasApi.md#list_dbaas_service_types) | **GET** /dbaas-service-type | DBaaS Service Types
 [**list_dbaas_services**](DbaasApi.md#list_dbaas_services) | **GET** /dbaas-service | List DBaaS services
+[**list_dbaas_valkey_users**](DbaasApi.md#list_dbaas_valkey_users) | **GET** /dbaas-valkey/{service_name}/user | List DBaaS Valkey users with ACL configuration
 [**reset_dbaas_grafana_user_password**](DbaasApi.md#reset_dbaas_grafana_user_password) | **PUT** /dbaas-grafana/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Grafana user
 [**reset_dbaas_kafka_user_password**](DbaasApi.md#reset_dbaas_kafka_user_password) | **PUT** /dbaas-kafka/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Kafka user
 [**reset_dbaas_mysql_user_password**](DbaasApi.md#reset_dbaas_mysql_user_password) | **PUT** /dbaas-mysql/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS mysql user
@@ -134,6 +135,7 @@ Method | HTTP request | Description
 [**update_dbaas_service_pg**](DbaasApi.md#update_dbaas_service_pg) | **PUT** /dbaas-postgres/{name} | Update a DBaaS PostgreSQL service
 [**update_dbaas_service_thanos**](DbaasApi.md#update_dbaas_service_thanos) | **PUT** /dbaas-thanos/{name} | 
 [**update_dbaas_service_valkey**](DbaasApi.md#update_dbaas_service_valkey) | **PUT** /dbaas-valkey/{name} | 
+[**update_dbaas_valkey_user_access_control**](DbaasApi.md#update_dbaas_valkey_user_access_control) | **PUT** /dbaas-valkey/{service_name}/user/{username} | Update access control for one DBaaS Valkey service user
 
 
 
@@ -895,7 +897,7 @@ No authorization required
 
 ## create_dbaas_valkey_user
 
-> models::Operation create_dbaas_valkey_user(service_name, create_dbaas_kafka_user_request)
+> models::Operation create_dbaas_valkey_user(service_name, create_dbaas_valkey_user_request)
 Create a DBaaS Valkey user
 
 ### Parameters
@@ -904,7 +906,7 @@ Create a DBaaS Valkey user
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **service_name** | **String** |  | [required] |
-**create_dbaas_kafka_user_request** | [**CreateDbaasKafkaUserRequest**](CreateDbaasKafkaUserRequest.md) |  | [required] |
+**create_dbaas_valkey_user_request** | [**CreateDbaasValkeyUserRequest**](CreateDbaasValkeyUserRequest.md) |  | [required] |
 
 ### Return type
 
@@ -2747,6 +2749,34 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## list_dbaas_valkey_users
+
+> models::DbaasValkeyUsers list_dbaas_valkey_users(service_name)
+List DBaaS Valkey users with ACL configuration
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasValkeyUsers**](dbaas-valkey-users.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## reset_dbaas_grafana_user_password
 
 > models::Operation reset_dbaas_grafana_user_password(service_name, username, reset_dbaas_valkey_user_password_request)
@@ -3956,6 +3986,36 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **name** | **String** |  | [required] |
 **update_dbaas_service_valkey_request** | [**UpdateDbaasServiceValkeyRequest**](UpdateDbaasServiceValkeyRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## update_dbaas_valkey_user_access_control
+
+> models::Operation update_dbaas_valkey_user_access_control(service_name, username, update_dbaas_valkey_user_access_control_request)
+Update access control for one DBaaS Valkey service user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+**username** | **String** |  | [required] |
+**update_dbaas_valkey_user_access_control_request** | [**UpdateDbaasValkeyUserAccessControlRequest**](UpdateDbaasValkeyUserAccessControlRequest.md) |  | [required] |
 
 ### Return type
 

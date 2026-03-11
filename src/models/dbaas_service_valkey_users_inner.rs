@@ -20,7 +20,7 @@ pub struct DbaasServiceValkeyUsersInner {
     #[serde(rename = "password", skip_serializing_if = "Option::is_none")]
     pub password: Option<String>,
     #[serde(rename = "access-control", skip_serializing_if = "Option::is_none")]
-    pub access_control: Option<Box<models::DbaasServiceValkeyUsersInnerAccessControl>>,
+    pub access_control: Option<Vec<serde_json::Value>>,
 }
 
 impl DbaasServiceValkeyUsersInner {
