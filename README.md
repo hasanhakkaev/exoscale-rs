@@ -521,6 +521,7 @@ Class | Method | HTTP request | Description
  - [DbaasServiceValkey](docs/DbaasServiceValkey.md)
  - [DbaasServiceValkeyConnectionInfo](docs/DbaasServiceValkeyConnectionInfo.md)
  - [DbaasServiceValkeyUsersInner](docs/DbaasServiceValkeyUsersInner.md)
+ - [DbaasServiceValkeyUsersInnerAccessControl](docs/DbaasServiceValkeyUsersInnerAccessControl.md)
  - [DbaasTask](docs/DbaasTask.md)
  - [DbaasTaskResultCodesInner](docs/DbaasTaskResultCodesInner.md)
  - [DbaasUserGrafanaSecrets](docs/DbaasUserGrafanaSecrets.md)
@@ -852,4 +853,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-03-10
+Generated with latest changes from 2026-03-11

@@ -164,6 +164,7 @@ docs/DbaasServiceUpdate.md
 docs/DbaasServiceValkey.md
 docs/DbaasServiceValkeyConnectionInfo.md
 docs/DbaasServiceValkeyUsersInner.md
+docs/DbaasServiceValkeyUsersInnerAccessControl.md
 docs/DbaasTask.md
 docs/DbaasTaskResultCodesInner.md
 docs/DbaasUserGrafanaSecrets.md
@@ -707,6 +708,7 @@ src/models/dbaas_service_update.rs
 src/models/dbaas_service_valkey.rs
 src/models/dbaas_service_valkey_connection_info.rs
 src/models/dbaas_service_valkey_users_inner.rs
+src/models/dbaas_service_valkey_users_inner_access_control.rs
 src/models/dbaas_task.rs
 src/models/dbaas_task_result_codes_inner.rs
 src/models/dbaas_user_grafana_secrets.rs

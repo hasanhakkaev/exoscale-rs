@@ -43,9 +43,6 @@ pub struct DbaasServiceValkey {
     pub state: Option<models::EnumServiceState>,
     #[serde(rename = "valkey-settings", skip_serializing_if = "Option::is_none")]
     pub valkey_settings: Option<Box<models::JsonSchemaValkey>>,
-    /// Allowed CIDR address blocks for incoming connections
-    #[serde(rename = "ip-filter", skip_serializing_if = "Option::is_none")]
-    pub ip_filter: Option<Vec<String>>,
     /// List of backups for the service
     #[serde(rename = "backups", skip_serializing_if = "Option::is_none")]
     pub backups: Option<Vec<models::DbaasServiceBackup>>,
@@ -72,9 +69,6 @@ pub struct DbaasServiceValkey {
     /// service_uri parameterized into key-value pairs
     #[serde(rename = "uri-params", skip_serializing_if = "Option::is_none")]
     pub uri_params: Option<serde_json::Value>,
-    /// Valkey version
-    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
-    pub version: Option<String>,
     /// Service creation timestamp (ISO 8601)
     #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -101,7 +95,6 @@ impl DbaasServiceValkey {
             r#type,
             state: None,
             valkey_settings: None,
-            ip_filter: None,
             backups: None,
             termination_protection: None,
             notifications: None,
@@ -111,7 +104,6 @@ impl DbaasServiceValkey {
             node_memory: None,
             uri: None,
             uri_params: None,
-            version: None,
             created_at: None,
             plan,
             users: None,
