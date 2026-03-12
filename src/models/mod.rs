@@ -308,6 +308,8 @@ pub mod dbaas_service_valkey_connection_info;
 pub use self::dbaas_service_valkey_connection_info::DbaasServiceValkeyConnectionInfo;
 pub mod dbaas_service_valkey_users_inner;
 pub use self::dbaas_service_valkey_users_inner::DbaasServiceValkeyUsersInner;
+pub mod dbaas_service_valkey_users_inner_access_control;
+pub use self::dbaas_service_valkey_users_inner_access_control::DbaasServiceValkeyUsersInnerAccessControl;
 pub mod dbaas_task;
 pub use self::dbaas_task::DbaasTask;
 pub mod dbaas_task_result_codes_inner;
