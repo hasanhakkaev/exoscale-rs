@@ -306,10 +306,11 @@ pub async fn get_instance(configuration: &configuration::Configuration, id: Stri
     body_payload_option,
     ).await
 }
-pub async fn list_instances(configuration: &configuration::Configuration, manager_id: Option<String>, manager_type: Option<&str>, ip_address: Option<&str>) -> Result<models::ListInstances200Response, Error<ListInstancesError>> {
+pub async fn list_instances(configuration: &configuration::Configuration, manager_id: Option<String>, manager_type: Option<&str>, ip_address: Option<&str>, labels: Option<&str>) -> Result<models::ListInstances200Response, Error<ListInstancesError>> {
     let local_var_manager_id = manager_id;
     let local_var_manager_type = manager_type;
     let local_var_ip_address = ip_address;
+    let local_var_labels = labels;
 
     let path_params_map = std::collections::HashMap::new();
 
@@ -322,6 +323,9 @@ pub async fn list_instances(configuration: &configuration::Configuration, manage
                         }
                         if let Some(value) = &local_var_ip_address {
                             query_params_vec.push(("ip-address", value.to_string()));
+                        }
+                        if let Some(value) = &local_var_labels {
+                            query_params_vec.push(("labels", value.to_string()));
                         }
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
         let body_payload_option: Option<()> = None;

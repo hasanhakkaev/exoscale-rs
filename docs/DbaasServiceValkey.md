@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **r#type** | **String** |  | 
 **state** | Option<[**models::EnumServiceState**](EnumServiceState.md)> |  | [optional]
 **valkey_settings** | Option<[**models::JsonSchemaValkey**](JsonSchemaValkey.md)> |  | [optional]
+**ip_filter** | Option<**Vec<String>**> | Allowed CIDR address blocks for incoming connections | [optional]
 **backups** | Option<[**Vec<models::DbaasServiceBackup>**](DbaasServiceBackup.md)> | List of backups for the service | [optional]
 **termination_protection** | Option<**bool**> | Service is protected against termination and powering off | [optional]
 **notifications** | Option<[**Vec<models::DbaasServiceNotification>**](DbaasServiceNotification.md)> | Service notifications | [optional]
@@ -25,6 +26,7 @@ Name | Type | Description | Notes
 **node_memory** | Option<**u64**> | TODO UNIT of memory for each node | [optional]
 **uri** | Option<**String**> | URI for connecting to the service (may be absent) | [optional]
 **uri_params** | Option<**serde_json::Value**> | service_uri parameterized into key-value pairs | [optional]
+**version** | Option<**String**> | Valkey version | [optional]
 **created_at** | Option<**String**> | Service creation timestamp (ISO 8601) | [optional]
 **plan** | **String** | Subscription plan | 
 **users** | Option<[**Vec<models::DbaasServiceValkeyUsersInner>**](DbaasServiceValkeyUsersInner.md)> | List of service users | [optional]

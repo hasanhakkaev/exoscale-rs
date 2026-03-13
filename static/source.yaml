@@ -1895,18 +1895,27 @@ components:
           type: array
           items:
             type: string
+          description: 'Use +@<category> to allow and -@<category> to disallow. Separate
+            entries with a single space. Example: +@all -@dangerous.'
         channels:
           type: array
           items:
             type: string
+          description: 'Patterns use standard glob syntax and must be separated by
+            a single space. Example: ~* &events.'
         commands:
           type: array
           items:
             type: string
+          description: 'Use +<command> to allow and -<command> to disallow. You can
+            also use @<category>. Separate entries with a single space. Example: +@all
+            -flushall.'
         keys:
           type: array
           items:
             type: string
+          description: 'Patterns use standard glob syntax and must be separated by
+            a single space. Example: cache:* session:*.'
     dbaas-service-logs:
       type: object
       properties:
@@ -8743,6 +8752,11 @@ components:
         valkey-settings:
           "$ref": "#/components/schemas/json-schema-valkey"
           description: Valkey-specific settings
+        ip-filter:
+          type: array
+          items:
+            type: string
+          description: Allowed CIDR address blocks for incoming connections
         backups:
           type: array
           items:
@@ -8815,6 +8829,9 @@ components:
         uri-params:
           type: object
           description: service_uri parameterized into key-value pairs
+        version:
+          type: string
+          description: Valkey version
         created-at:
           type: string
           format: date-time
@@ -18315,8 +18332,8 @@ paths:
       tags:
       - kms-key
       responses:
-        '201':
-          description: '201'
+        '200':
+          description: '200'
           content:
             application/json:
               schema:
@@ -19061,6 +19078,12 @@ paths:
       tags:
       - kms-key
       responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/success-response"
         '400':
           description: '400'
           content:
@@ -21059,6 +21082,11 @@ paths:
         name: ip-address
         schema:
           type: string
+      - in: query
+        required: false
+        name: labels
+        schema:
+          type: string
       summary: List Compute instances
       operationId: list-instances
   "/iam-role":
@@ -21309,6 +21337,12 @@ paths:
       tags:
       - kms-key
       responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/success-response"
         '400':
           description: '400'
           content:

@@ -13,12 +13,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DbaasValkeyUserAccessControl {
+    /// Use +@<category> to allow and -@<category> to disallow. Separate entries with a single space. Example: +@all -@dangerous.
     #[serde(rename = "categories", skip_serializing_if = "Option::is_none")]
     pub categories: Option<Vec<String>>,
+    /// Patterns use standard glob syntax and must be separated by a single space. Example: ~* &events.
     #[serde(rename = "channels", skip_serializing_if = "Option::is_none")]
     pub channels: Option<Vec<String>>,
+    /// Use +<command> to allow and -<command> to disallow. You can also use @<category>. Separate entries with a single space. Example: +@all -flushall.
     #[serde(rename = "commands", skip_serializing_if = "Option::is_none")]
     pub commands: Option<Vec<String>>,
+    /// Patterns use standard glob syntax and must be separated by a single space. Example: cache:* session:*.
     #[serde(rename = "keys", skip_serializing_if = "Option::is_none")]
     pub keys: Option<Vec<String>>,
 }
