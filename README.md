@@ -853,4 +853,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-03-11
+Generated with latest changes from 2026-03-12

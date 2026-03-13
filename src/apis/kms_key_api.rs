@@ -124,7 +124,7 @@ pub enum ScheduleKmsKeyDeletionError {
 }
 
 
-pub async fn cancel_kms_key_deletion(configuration: &configuration::Configuration, id: String) -> Result<(), Error<CancelKmsKeyDeletionError>> {
+pub async fn cancel_kms_key_deletion(configuration: &configuration::Configuration, id: String) -> Result<models::SuccessResponse, Error<CancelKmsKeyDeletionError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
@@ -333,7 +333,7 @@ pub async fn rotate_kms_key(configuration: &configuration::Configuration, id: St
     body_payload_option,
     ).await
 }
-pub async fn schedule_kms_key_deletion(configuration: &configuration::Configuration, id: String, schedule_kms_key_deletion_request: models::ScheduleKmsKeyDeletionRequest) -> Result<(), Error<ScheduleKmsKeyDeletionError>> {
+pub async fn schedule_kms_key_deletion(configuration: &configuration::Configuration, id: String, schedule_kms_key_deletion_request: models::ScheduleKmsKeyDeletionRequest) -> Result<models::SuccessResponse, Error<ScheduleKmsKeyDeletionError>> {
     let local_var_id = id;
     let local_var_schedule_kms_key_deletion_request = schedule_kms_key_deletion_request;
 

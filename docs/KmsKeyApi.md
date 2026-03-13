@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ## cancel_kms_key_deletion
 
-> cancel_kms_key_deletion(id)
+> models::SuccessResponse cancel_kms_key_deletion(id)
 [Beta] Cancel KMS Key Deletion
 
 Cancel the scheduled deletion of a KMS Key.
@@ -35,7 +35,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**models::SuccessResponse**](success-response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ No authorization required
 
 ## schedule_kms_key_deletion
 
-> schedule_kms_key_deletion(id, schedule_kms_key_deletion_request)
+> models::SuccessResponse schedule_kms_key_deletion(id, schedule_kms_key_deletion_request)
 [BETA] Schedule KMS Key Deletion
 
 Schedule a KMS key for deletion after a delay.
@@ -366,7 +366,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**models::SuccessResponse**](success-response.md)
 
 ### Authorization
 

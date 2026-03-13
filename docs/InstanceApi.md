@@ -239,7 +239,7 @@ No authorization required
 
 ## list_instances
 
-> models::ListInstances200Response list_instances(manager_id, manager_type, ip_address)
+> models::ListInstances200Response list_instances(manager_id, manager_type, ip_address, labels)
 List Compute instances
 
 
@@ -252,6 +252,7 @@ Name | Type | Description  | Required | Notes
 **manager_id** | Option<**uuid::Uuid**> |  |  |
 **manager_type** | Option<**String**> |  |  |
 **ip_address** | Option<**String**> |  |  |
+**labels** | Option<**String**> |  |  |
 
 ### Return type
 
