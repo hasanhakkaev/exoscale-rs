@@ -37,6 +37,8 @@ pub struct UpdateSksNodepoolRequest {
     /// Nodepool Private Networks
     #[serde(rename = "private-networks", skip_serializing_if = "Option::is_none")]
     pub private_networks: Option<Vec<models::PrivateNetworkRef>>,
+    #[serde(rename = "kubelet-image-gc", skip_serializing_if = "Option::is_none")]
+    pub kubelet_image_gc: Option<Box<models::KubeletImageGc>>,
     /// Prefix to apply to managed instances names (default: pool), lowercase only
     #[serde(rename = "instance-prefix", skip_serializing_if = "Option::is_none")]
     pub instance_prefix: Option<String>,
@@ -59,6 +61,7 @@ impl UpdateSksNodepoolRequest {
             name: None,
             instance_type: None,
             private_networks: None,
+            kubelet_image_gc: None,
             instance_prefix: None,
             deploy_target: None,
             disk_size: None,

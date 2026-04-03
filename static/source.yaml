@@ -11464,6 +11464,54 @@ paths:
           type: string
       summary: Delete a MySQL service
       operationId: delete-dbaas-service-mysql
+  "/iam-role/{target-role-id}/assume":
+    post:
+      tags:
+      - role
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  name:
+                    type: string
+                  org-id:
+                    type: string
+                  role-id:
+                    type: string
+                  secret:
+                    type: string
+      description: "[BETA] Request generation of key/secret that allow caller to assume
+        target role"
+      parameters:
+      - in: path
+        required: true
+        name: target-role-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Request generation of key/secret that allow caller to assume
+        target role"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ttl:
+                  type: integer
+                  format: int64
+                  minimum: 0
+                  exclusiveMinimum: true
+                  description: TTL in seconds for the generated access key (cannot
+                    exceed the max TTL defined in the targeted assume role)
+      operationId: assume-iam-role
   "/private-network/{id}:attach":
     put:
       tags:
@@ -12921,6 +12969,9 @@ paths:
                   uniqueItems: true
                   maxItems: 16
                   description: Nodepool Private Networks
+                kubelet-image-gc:
+                  "$ref": "#/components/schemas/kubelet-image-gc"
+                  description: Kubelet image GC options
                 instance-prefix:
                   type: string
                   maxLength: 30
@@ -15250,9 +15301,9 @@ paths:
                   type: integer
                   format: int64
                   minimum: 0
-                  exclusiveMinimum: true
+                  exclusiveMinimum: false
                   description: Maximum TTL requester is allowed to ask for when assuming
-                    a role
+                    a role. A value of 0 resets the property to its default.
       operationId: update-iam-role
     get:
       tags:
@@ -15820,7 +15871,7 @@ paths:
           application/json:
             schema:
               "$ref": "#/components/schemas/iam-policy"
-      operationId: update-iam-assume-role-policy
+      operationId: update-iam-role-assume-policy
   "/dbaas-grafana/{service-name}/user/{username}/password/reveal":
     get:
       tags:
