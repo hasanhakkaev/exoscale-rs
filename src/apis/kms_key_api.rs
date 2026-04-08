@@ -180,16 +180,15 @@ pub async fn disable_kms_key(configuration: &configuration::Configuration, id: S
     body_payload_option,
     ).await
 }
-pub async fn disable_kms_key_rotation(configuration: &configuration::Configuration, id: String, disable_kms_key_rotation_request: models::DisableKmsKeyRotationRequest) -> Result<models::DisableKmsKeyRotationResponse, Error<DisableKmsKeyRotationError>> {
+pub async fn disable_kms_key_rotation(configuration: &configuration::Configuration, id: String) -> Result<models::DisableKmsKeyRotationResponse, Error<DisableKmsKeyRotationError>> {
     let local_var_id = id;
-    let local_var_disable_kms_key_rotation_request = disable_kms_key_rotation_request;
 
     let mut path_params_map = std::collections::HashMap::new();
                 path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_disable_kms_key_rotation_request);
+        let body_payload_option: Option<()> = None;
 
     utils::execute_request(
     configuration,
@@ -294,7 +293,7 @@ pub async fn list_kms_keys(configuration: &configuration::Configuration, ) -> Re
     body_payload_option,
     ).await
 }
-pub async fn replicate_kms_key(configuration: &configuration::Configuration, id: String, replicate_kms_key_request: models::ReplicateKmsKeyRequest) -> Result<models::Operation, Error<ReplicateKmsKeyError>> {
+pub async fn replicate_kms_key(configuration: &configuration::Configuration, id: String, replicate_kms_key_request: models::ReplicateKmsKeyRequest) -> Result<models::SuccessResponse, Error<ReplicateKmsKeyError>> {
     let local_var_id = id;
     let local_var_replicate_kms_key_request = replicate_kms_key_request;
 

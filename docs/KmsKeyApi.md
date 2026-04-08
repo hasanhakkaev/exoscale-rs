@@ -4,7 +4,7 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_kms_key_deletion**](KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | [Beta] Cancel KMS Key Deletion
+[**cancel_kms_key_deletion**](KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | [BETA] Cancel KMS Key Deletion
 [**create_kms_key**](KmsKeyApi.md#create_kms_key) | **POST** /kms-key | [BETA] Create KMS Key
 [**disable_kms_key**](KmsKeyApi.md#disable_kms_key) | **POST** /kms-key/{id}/disable | [BETA] Disable KMS Key
 [**disable_kms_key_rotation**](KmsKeyApi.md#disable_kms_key_rotation) | **POST** /kms-key/{id}/disable-key-rotation | [BETA] Disable Key Rotation
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 ## cancel_kms_key_deletion
 
 > models::SuccessResponse cancel_kms_key_deletion(id)
-[Beta] Cancel KMS Key Deletion
+[BETA] Cancel KMS Key Deletion
 
 Cancel the scheduled deletion of a KMS Key.
 
@@ -111,7 +111,7 @@ No authorization required
 
 ## disable_kms_key_rotation
 
-> models::DisableKmsKeyRotationResponse disable_kms_key_rotation(id, disable_kms_key_rotation_request)
+> models::DisableKmsKeyRotationResponse disable_kms_key_rotation(id)
 [BETA] Disable Key Rotation
 
 Disable the periodic rotation of a KMS Key.
@@ -122,7 +122,6 @@ Disable the periodic rotation of a KMS Key.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** |  | [required] |
-**disable_kms_key_rotation_request** | [**DisableKmsKeyRotationRequest**](DisableKmsKeyRotationRequest.md) |  | [required] |
 
 ### Return type
 
@@ -134,7 +133,7 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -290,7 +289,7 @@ No authorization required
 
 ## replicate_kms_key
 
-> models::Operation replicate_kms_key(id, replicate_kms_key_request)
+> models::SuccessResponse replicate_kms_key(id, replicate_kms_key_request)
 [BETA] Replicate KMS Key
 
 Replicate a KMS key to a target zone.
@@ -305,7 +304,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::Operation**](operation.md)
+[**models::SuccessResponse**](success-response.md)
 
 ### Authorization
 

@@ -9,10 +9,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **multi_zone** | **bool** |  | 
 **source** | **Source** |  (enum: exoscale-kms) | 
-**policy** | **String** |  | 
 **usage** | **String** |  | 
 **status** | **Status** |  (enum: enabled, disabled, pending-deletion) | 
-**status_since** | **String** |  | 
 **id** | **uuid::Uuid** |  | 
 **origin_zone** | **String** |  | 
 **created_at** | **String** |  | 

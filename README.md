@@ -258,7 +258,7 @@ Class | Method | HTTP request | Description
 *InstancePoolApi* | [**update_instance_pool**](docs/InstancePoolApi.md#update_instance_pool) | **PUT** /instance-pool/{id} | Update an Instance Pool
 *InstanceTypeApi* | [**get_instance_type**](docs/InstanceTypeApi.md#get_instance_type) | **GET** /instance-type/{id} | Retrieve Instance Type details
 *InstanceTypeApi* | [**list_instance_types**](docs/InstanceTypeApi.md#list_instance_types) | **GET** /instance-type | List Compute instance Types
-*KmsKeyApi* | [**cancel_kms_key_deletion**](docs/KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | [Beta] Cancel KMS Key Deletion
+*KmsKeyApi* | [**cancel_kms_key_deletion**](docs/KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | [BETA] Cancel KMS Key Deletion
 *KmsKeyApi* | [**create_kms_key**](docs/KmsKeyApi.md#create_kms_key) | **POST** /kms-key | [BETA] Create KMS Key
 *KmsKeyApi* | [**disable_kms_key**](docs/KmsKeyApi.md#disable_kms_key) | **POST** /kms-key/{id}/disable | [BETA] Disable KMS Key
 *KmsKeyApi* | [**disable_kms_key_rotation**](docs/KmsKeyApi.md#disable_kms_key_rotation) | **POST** /kms-key/{id}/disable-key-rotation | [BETA] Disable Key Rotation
@@ -545,7 +545,6 @@ Class | Method | HTTP request | Description
  - [DeployTargetRef](docs/DeployTargetRef.md)
  - [DetachDbaasServiceFromEndpointRequest](docs/DetachDbaasServiceFromEndpointRequest.md)
  - [DetachInstanceFromPrivateNetworkRequest](docs/DetachInstanceFromPrivateNetworkRequest.md)
- - [DisableKmsKeyRotationRequest](docs/DisableKmsKeyRotationRequest.md)
  - [DisableKmsKeyRotationResponse](docs/DisableKmsKeyRotationResponse.md)
  - [DnsDomain](docs/DnsDomain.md)
  - [DnsDomainRecord](docs/DnsDomainRecord.md)
@@ -856,4 +855,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-03-30
+Generated with latest changes from 2026-04-07

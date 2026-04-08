@@ -23,14 +23,10 @@ pub struct CreateKmsKeyResponse {
     pub multi_zone: bool,
     #[serde(rename = "source")]
     pub source: Source,
-    #[serde(rename = "policy")]
-    pub policy: String,
     #[serde(rename = "usage")]
     pub usage: String,
     #[serde(rename = "status")]
     pub status: Status,
-    #[serde(rename = "status-since")]
-    pub status_since: String,
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
     #[serde(rename = "origin-zone")]
@@ -40,17 +36,15 @@ pub struct CreateKmsKeyResponse {
 }
 
 impl CreateKmsKeyResponse {
-    pub fn new(description: String, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, policy: String, usage: String, status: Status, status_since: String, id: uuid::Uuid, origin_zone: String, created_at: String) -> CreateKmsKeyResponse {
+    pub fn new(description: String, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, usage: String, status: Status, id: uuid::Uuid, origin_zone: String, created_at: String) -> CreateKmsKeyResponse {
         CreateKmsKeyResponse {
             description,
             revision: Box::new(revision),
             name,
             multi_zone,
             source,
-            policy,
             usage,
             status,
-            status_since,
             id,
             origin_zone,
             created_at,

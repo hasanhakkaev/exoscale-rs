@@ -28,6 +28,8 @@ impl SuccessResponse {
 pub enum Status {
     #[serde(rename = "success")]
     Success,
+    #[serde(rename = "target-registered")]
+    TargetRegistered,
 }
 
 impl Default for Status {
