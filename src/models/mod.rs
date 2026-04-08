@@ -354,8 +354,6 @@ pub mod detach_dbaas_service_from_endpoint_request;
 pub use self::detach_dbaas_service_from_endpoint_request::DetachDbaasServiceFromEndpointRequest;
 pub mod detach_instance_from_private_network_request;
 pub use self::detach_instance_from_private_network_request::DetachInstanceFromPrivateNetworkRequest;
-pub mod disable_kms_key_rotation_request;
-pub use self::disable_kms_key_rotation_request::DisableKmsKeyRotationRequest;
 pub mod disable_kms_key_rotation_response;
 pub use self::disable_kms_key_rotation_response::DisableKmsKeyRotationResponse;
 pub mod dns_domain;

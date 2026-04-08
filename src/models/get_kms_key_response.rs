@@ -25,8 +25,6 @@ pub struct GetKmsKeyResponse {
     pub multi_zone: bool,
     #[serde(rename = "source")]
     pub source: Source,
-    #[serde(rename = "policy")]
-    pub policy: String,
     #[serde(rename = "usage")]
     pub usage: String,
     #[serde(rename = "replicas-status", skip_serializing_if = "Option::is_none")]
@@ -48,7 +46,7 @@ pub struct GetKmsKeyResponse {
 }
 
 impl GetKmsKeyResponse {
-    pub fn new(description: String, rotation: models::KeyRotationConfig, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, policy: String, usage: String, status: Status, status_since: String, id: uuid::Uuid, replicas: Vec<String>, material: models::KeyMaterial, origin_zone: String, created_at: String) -> GetKmsKeyResponse {
+    pub fn new(description: String, rotation: models::KeyRotationConfig, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, usage: String, status: Status, status_since: String, id: uuid::Uuid, replicas: Vec<String>, material: models::KeyMaterial, origin_zone: String, created_at: String) -> GetKmsKeyResponse {
         GetKmsKeyResponse {
             description,
             rotation: Box::new(rotation),
@@ -56,7 +54,6 @@ impl GetKmsKeyResponse {
             name,
             multi_zone,
             source,
-            policy,
             usage,
             replicas_status: None,
             status,

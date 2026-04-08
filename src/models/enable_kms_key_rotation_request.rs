@@ -13,16 +13,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct EnableKmsKeyRotationRequest {
-    #[serde(rename = "id")]
-    pub id: uuid::Uuid,
     #[serde(rename = "rotation-period", skip_serializing_if = "Option::is_none")]
     pub rotation_period: Option<u16>,
 }
 
 impl EnableKmsKeyRotationRequest {
-    pub fn new(id: uuid::Uuid) -> EnableKmsKeyRotationRequest {
+    pub fn new() -> EnableKmsKeyRotationRequest {
         EnableKmsKeyRotationRequest {
-            id,
             rotation_period: None,
         }
     }

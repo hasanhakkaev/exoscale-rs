@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **multi_zone** | **bool** |  | 
 **source** | **Source** |  (enum: exoscale-kms) | 
-**policy** | **String** |  | 
 **usage** | **String** |  | 
 **replicas_status** | Option<[**Vec<models::ReplicaState>**](ReplicaState.md)> |  | [optional]
 **status** | **Status** |  (enum: enabled, disabled, pending-deletion) | 

@@ -189,7 +189,6 @@ docs/DeployTargetRef.md
 docs/DeploymentApi.md
 docs/DetachDbaasServiceFromEndpointRequest.md
 docs/DetachInstanceFromPrivateNetworkRequest.md
-docs/DisableKmsKeyRotationRequest.md
 docs/DisableKmsKeyRotationResponse.md
 docs/DnsDomain.md
 docs/DnsDomainRecord.md
@@ -733,7 +732,6 @@ src/models/deploy_target.rs
 src/models/deploy_target_ref.rs
 src/models/detach_dbaas_service_from_endpoint_request.rs
 src/models/detach_instance_from_private_network_request.rs
-src/models/disable_kms_key_rotation_request.rs
 src/models/disable_kms_key_rotation_response.rs
 src/models/dns_domain.rs
 src/models/dns_domain_record.rs
