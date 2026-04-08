@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **name** | Option<**String**> | Nodepool name, lowercase only | [optional]
 **instance_type** | Option<[**models::InstanceTypeRef**](InstanceTypeRef.md)> |  | [optional]
 **private_networks** | Option<[**HashSet<models::PrivateNetworkRef>**](PrivateNetworkRef.md)> | Nodepool Private Networks | [optional]
+**kubelet_image_gc** | Option<[**models::KubeletImageGc**](KubeletImageGc.md)> |  | [optional]
 **instance_prefix** | Option<**String**> | Prefix to apply to managed instances names (default: pool), lowercase only | [optional]
 **deploy_target** | Option<[**models::DeployTargetRef**](DeployTargetRef.md)> |  | [optional]
 **disk_size** | Option<**u64**> | Nodepool instances disk size in GiB | [optional]

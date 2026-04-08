@@ -12,6 +12,8 @@ docs/AntiAffinityGroup.md
 docs/AntiAffinityGroupApi.md
 docs/AntiAffinityGroupRef.md
 docs/ApiKeyApi.md
+docs/AssumeIamRole200Response.md
+docs/AssumeIamRoleRequest.md
 docs/AttachBlockStorageVolumeToInstanceRequest.md
 docs/AttachDbaasServiceToEndpointRequest.md
 docs/AttachInstanceToPrivateNetworkRequest.md
@@ -562,6 +564,8 @@ src/models/add_rule_to_security_group_request_icmp.rs
 src/models/add_service_to_load_balancer_request.rs
 src/models/anti_affinity_group.rs
 src/models/anti_affinity_group_ref.rs
+src/models/assume_iam_role_200_response.rs
+src/models/assume_iam_role_request.rs
 src/models/attach_block_storage_volume_to_instance_request.rs
 src/models/attach_dbaas_service_to_endpoint_request.rs
 src/models/attach_instance_to_private_network_request.rs

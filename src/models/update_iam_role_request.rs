@@ -21,7 +21,7 @@ pub struct UpdateIamRoleRequest {
     pub permissions: Option<std::collections::HashSet<Permissions>>,
     #[serde(rename = "labels", skip_serializing_if = "Option::is_none")]
     pub labels: Option<std::collections::HashMap<String, String>>,
-    /// Maximum TTL requester is allowed to ask for when assuming a role
+    /// Maximum TTL requester is allowed to ask for when assuming a role. A value of 0 resets the property to its default.
     #[serde(rename = "max-session-ttl", skip_serializing_if = "Option::is_none")]
     pub max_session_ttl: Option<u64>,
 }
