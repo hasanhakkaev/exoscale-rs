@@ -4,17 +4,17 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_model**](ModelApi.md#create_model) | **POST** /ai/model | [BETA] Create Model
-[**delete_model**](ModelApi.md#delete_model) | **DELETE** /ai/model/{id} | [BETA] Delete Model
-[**get_model**](ModelApi.md#get_model) | **GET** /ai/model/{id} | [BETA] Get Model
-[**list_models**](ModelApi.md#list_models) | **GET** /ai/model | [BETA] List Models
+[**create_model**](ModelApi.md#create_model) | **POST** /ai/model | Create Model
+[**delete_model**](ModelApi.md#delete_model) | **DELETE** /ai/model/{id} | Delete Model
+[**get_model**](ModelApi.md#get_model) | **GET** /ai/model/{id} | Get Model
+[**list_models**](ModelApi.md#list_models) | **GET** /ai/model | List Models
 
 
 
 ## create_model
 
 > models::Operation create_model(create_model_request)
-[BETA] Create Model
+Create Model
 
 Model files will be downloaded from Huggingface.  Name must be the exact name of the model on huggingface (ex: openai/gpt-oss-120b or ggml-org/gpt-oss-120b-GGUF).  If the model is under a license then you must provide a Huggingface access token for an account that signed the license agreement
 
@@ -44,7 +44,7 @@ No authorization required
 ## delete_model
 
 > models::Operation delete_model(id)
-[BETA] Delete Model
+Delete Model
 
 Delete Model
 
@@ -74,7 +74,7 @@ No authorization required
 ## get_model
 
 > models::GetModelResponse get_model(id)
-[BETA] Get Model
+Get Model
 
 Get Model details
 
@@ -103,14 +103,17 @@ No authorization required
 
 ## list_models
 
-> models::ListModelsResponse list_models()
-[BETA] List Models
+> models::ListModelsResponse list_models(visibility)
+List Models
 
 List Models
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**visibility** | Option<**String**> |  |  |
 
 ### Return type
 

@@ -19,6 +19,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum CreateDeploymentError {
     Status412(models::ErrorResponse),
+    Status403(models::ForbiddenOperationResponse),
     Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -28,6 +29,8 @@ pub enum CreateDeploymentError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeleteDeploymentError {
+    Status403(models::ForbiddenOperationResponse),
+    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -72,6 +75,7 @@ pub enum ListAiInstanceTypesError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ListDeploymentsError {
+    Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -80,6 +84,7 @@ pub enum ListDeploymentsError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RevealDeploymentApiKeyError {
+    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -88,6 +93,9 @@ pub enum RevealDeploymentApiKeyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ScaleDeploymentError {
+    Status412(models::ErrorResponse),
+    Status403(models::ForbiddenOperationResponse),
+    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -96,6 +104,9 @@ pub enum ScaleDeploymentError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UpdateDeploymentError {
+    Status403(models::ForbiddenOperationResponse),
+    Status404(models::ErrorResponse),
+    Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -221,11 +232,15 @@ pub async fn list_ai_instance_types(configuration: &configuration::Configuration
     body_payload_option,
     ).await
 }
-pub async fn list_deployments(configuration: &configuration::Configuration, ) -> Result<models::ListDeploymentsResponse, Error<ListDeploymentsError>> {
+pub async fn list_deployments(configuration: &configuration::Configuration, visibility: Option<&str>) -> Result<models::ListDeploymentsResponse, Error<ListDeploymentsError>> {
+    let local_var_visibility = visibility;
 
     let path_params_map = std::collections::HashMap::new();
 
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let mut query_params_vec: Vec<(&str, String)> = Vec::new();
+                        if let Some(value) = &local_var_visibility {
+                            query_params_vec.push(("visibility", value.to_string()));
+                        }
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
         let body_payload_option: Option<()> = None;
 

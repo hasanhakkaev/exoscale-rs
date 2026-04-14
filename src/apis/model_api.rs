@@ -18,6 +18,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateModelError {
+    Status403(models::ForbiddenOperationResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -27,6 +28,8 @@ pub enum CreateModelError {
 #[serde(untagged)]
 pub enum DeleteModelError {
     Status412(models::DeleteModelConflictResponse),
+    Status403(models::ForbiddenOperationResponse),
+    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -104,11 +107,15 @@ pub async fn get_model(configuration: &configuration::Configuration, id: String)
     body_payload_option,
     ).await
 }
-pub async fn list_models(configuration: &configuration::Configuration, ) -> Result<models::ListModelsResponse, Error<ListModelsError>> {
+pub async fn list_models(configuration: &configuration::Configuration, visibility: Option<&str>) -> Result<models::ListModelsResponse, Error<ListModelsError>> {
+    let local_var_visibility = visibility;
 
     let path_params_map = std::collections::HashMap::new();
 
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let mut query_params_vec: Vec<(&str, String)> = Vec::new();
+                        if let Some(value) = &local_var_visibility {
+                            query_params_vec.push(("visibility", value.to_string()));
+                        }
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
         let body_payload_option: Option<()> = None;
 
