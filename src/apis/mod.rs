@@ -117,6 +117,7 @@ impl From<&str> for ContentType {
     }
 }
 
+pub mod ai_api_key_api;
 pub mod anti_affinity_group_api;
 pub mod api_key_api;
 pub mod block_storage_api;

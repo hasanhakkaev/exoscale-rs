@@ -8,6 +8,9 @@ docs/AddExternalSourceToSecurityGroupRequest.md
 docs/AddRuleToSecurityGroupRequest.md
 docs/AddRuleToSecurityGroupRequestIcmp.md
 docs/AddServiceToLoadBalancerRequest.md
+docs/AiApiKey.md
+docs/AiApiKeyApi.md
+docs/AiApiKeyWithValue.md
 docs/AntiAffinityGroup.md
 docs/AntiAffinityGroupApi.md
 docs/AntiAffinityGroupRef.md
@@ -31,6 +34,7 @@ docs/ClusterApi.md
 docs/ComputeApi.md
 docs/ConfigureLogCleanerForTopicCompaction.md
 docs/CopyTemplateRequest.md
+docs/CreateAiApiKeyRequest.md
 docs/CreateAntiAffinityGroupRequest.md
 docs/CreateApiKeyRequest.md
 docs/CreateBlockStorageSnapshotRequest.md
@@ -182,6 +186,7 @@ docs/DbaasValkeyUserAccessControl.md
 docs/DbaasValkeyUsers.md
 docs/DecryptRequest.md
 docs/DecryptResponse.md
+docs/DeleteAiApiKey200Response.md
 docs/DeleteModelConflictResponse.md
 docs/DeployTarget.md
 docs/DeployTargetApi.md
@@ -229,6 +234,7 @@ docs/Event.md
 docs/EventApi.md
 docs/EvictInstancePoolMembersRequest.md
 docs/EvictSksNodepoolMembersRequest.md
+docs/ForbiddenOperationResponse.md
 docs/GenerateDataKeyRequest.md
 docs/GenerateDataKeyResponse.md
 docs/GenerateSksClusterKubeconfig200Response.md
@@ -323,6 +329,7 @@ docs/KeyMaterial.md
 docs/KeyRotationConfig.md
 docs/KmsKeyApi.md
 docs/KubeletImageGc.md
+docs/ListAiApiKeysResponse.md
 docs/ListAiInstanceTypesResponse.md
 docs/ListAntiAffinityGroups200Response.md
 docs/ListApiKeys200Response.md
@@ -407,6 +414,7 @@ docs/ReEncryptRequest.md
 docs/ReEncryptRequestDestination.md
 docs/ReEncryptRequestSource.md
 docs/ReEncryptResponse.md
+docs/RecomputeBundleResponse.md
 docs/RecordApi.md
 docs/RegisterSshKeyRequest.md
 docs/RegisterTemplateRequest.md
@@ -470,6 +478,7 @@ docs/TemplateRef.md
 docs/ThanosCompactorUserConfig.md
 docs/ThanosQueryFrontendUserConfig.md
 docs/ThanosQueryUserConfig.md
+docs/UpdateAiApiKeyRequest.md
 docs/UpdateBlockStorageSnapshotRequest.md
 docs/UpdateBlockStorageVolumeRequest.md
 docs/UpdateDbaasIntegrationRequest.md
@@ -514,6 +523,7 @@ docs/Zone.md
 docs/ZoneApi.md
 docs/ZoneName.md
 git_push.sh
+src/apis/ai_api_key_api.rs
 src/apis/anti_affinity_group_api.rs
 src/apis/api_key_api.rs
 src/apis/block_storage_api.rs
@@ -561,6 +571,8 @@ src/models/add_external_source_to_security_group_request.rs
 src/models/add_rule_to_security_group_request.rs
 src/models/add_rule_to_security_group_request_icmp.rs
 src/models/add_service_to_load_balancer_request.rs
+src/models/ai_api_key.rs
+src/models/ai_api_key_with_value.rs
 src/models/anti_affinity_group.rs
 src/models/anti_affinity_group_ref.rs
 src/models/assume_iam_role_200_response.rs
@@ -578,6 +590,7 @@ src/models/block_storage_volume.rs
 src/models/block_storage_volume_ref.rs
 src/models/configure_log_cleaner_for_topic_compaction.rs
 src/models/copy_template_request.rs
+src/models/create_ai_api_key_request.rs
 src/models/create_anti_affinity_group_request.rs
 src/models/create_api_key_request.rs
 src/models/create_block_storage_snapshot_request.rs
@@ -727,6 +740,7 @@ src/models/dbaas_valkey_user_access_control.rs
 src/models/dbaas_valkey_users.rs
 src/models/decrypt_request.rs
 src/models/decrypt_response.rs
+src/models/delete_ai_api_key_200_response.rs
 src/models/delete_model_conflict_response.rs
 src/models/deploy_target.rs
 src/models/deploy_target_ref.rs
@@ -769,6 +783,7 @@ src/models/error_response_errors_inner.rs
 src/models/event.rs
 src/models/evict_instance_pool_members_request.rs
 src/models/evict_sks_nodepool_members_request.rs
+src/models/forbidden_operation_response.rs
 src/models/generate_data_key_request.rs
 src/models/generate_data_key_response.rs
 src/models/generate_sks_cluster_kubeconfig_200_response.rs
@@ -859,6 +874,7 @@ src/models/json_schema_valkey.rs
 src/models/key_material.rs
 src/models/key_rotation_config.rs
 src/models/kubelet_image_gc.rs
+src/models/list_ai_api_keys_response.rs
 src/models/list_ai_instance_types_response.rs
 src/models/list_anti_affinity_groups_200_response.rs
 src/models/list_api_keys_200_response.rs
@@ -935,6 +951,7 @@ src/models/re_encrypt_request.rs
 src/models/re_encrypt_request_destination.rs
 src/models/re_encrypt_request_source.rs
 src/models/re_encrypt_response.rs
+src/models/recompute_bundle_response.rs
 src/models/register_ssh_key_request.rs
 src/models/register_template_request.rs
 src/models/remove_external_source_from_security_group_request.rs
@@ -990,6 +1007,7 @@ src/models/template_ref.rs
 src/models/thanos_compactor_user_config.rs
 src/models/thanos_query_frontend_user_config.rs
 src/models/thanos_query_user_config.rs
+src/models/update_ai_api_key_request.rs
 src/models/update_block_storage_snapshot_request.rs
 src/models/update_block_storage_volume_request.rs
 src/models/update_dbaas_integration_request.rs

@@ -4,15 +4,15 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_deployment**](DeploymentApi.md#create_deployment) | **POST** /ai/deployment | [BETA] Create Deployment
-[**delete_deployment**](DeploymentApi.md#delete_deployment) | **DELETE** /ai/deployment/{id} | [BETA] Delete Deployment
-[**get_deployment**](DeploymentApi.md#get_deployment) | **GET** /ai/deployment/{id} | [BETA] Get Deployment
-[**get_deployment_logs**](DeploymentApi.md#get_deployment_logs) | **GET** /ai/deployment/{id}/logs | [BETA] Get Deployment Logs
-[**get_inference_engine_help**](DeploymentApi.md#get_inference_engine_help) | **GET** /ai/help/inference-engine-parameters | [BETA] Get inference-engine Help
+[**create_deployment**](DeploymentApi.md#create_deployment) | **POST** /ai/deployment | Create Deployment
+[**delete_deployment**](DeploymentApi.md#delete_deployment) | **DELETE** /ai/deployment/{id} | Delete Deployment
+[**get_deployment**](DeploymentApi.md#get_deployment) | **GET** /ai/deployment/{id} | Get Deployment
+[**get_deployment_logs**](DeploymentApi.md#get_deployment_logs) | **GET** /ai/deployment/{id}/logs | Get Deployment Logs
+[**get_inference_engine_help**](DeploymentApi.md#get_inference_engine_help) | **GET** /ai/help/inference-engine-parameters | Get inference-engine Help
 [**list_ai_instance_types**](DeploymentApi.md#list_ai_instance_types) | **GET** /ai/instance-type | List Instance Types
-[**list_deployments**](DeploymentApi.md#list_deployments) | **GET** /ai/deployment | [BETA] List Deployments
-[**reveal_deployment_api_key**](DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | [BETA] Reveal Deployment API Key
-[**scale_deployment**](DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | [BETA] Scale Deployment
+[**list_deployments**](DeploymentApi.md#list_deployments) | **GET** /ai/deployment | List Deployments
+[**reveal_deployment_api_key**](DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | Reveal Deployment API Key
+[**scale_deployment**](DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | Scale Deployment
 [**update_deployment**](DeploymentApi.md#update_deployment) | **PATCH** /ai/deployment/{id} | 
 
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## create_deployment
 
 > models::Operation create_deployment(create_deployment_request)
-[BETA] Create Deployment
+Create Deployment
 
 Deploy a model on an inference server
 
@@ -50,7 +50,7 @@ No authorization required
 ## delete_deployment
 
 > models::Operation delete_deployment(id)
-[BETA] Delete Deployment
+Delete Deployment
 
 Delete Deployment
 
@@ -80,7 +80,7 @@ No authorization required
 ## get_deployment
 
 > models::GetDeploymentResponse get_deployment(id)
-[BETA] Get Deployment
+Get Deployment
 
 Get Deployment details
 
@@ -110,7 +110,7 @@ No authorization required
 ## get_deployment_logs
 
 > models::GetDeploymentLogsResponse get_deployment_logs(id, stream, tail)
-[BETA] Get Deployment Logs
+Get Deployment Logs
 
 Return logs for the vLLM deployment (deploy/<release-name>--deployment-vllm). Optional ?stream=true to request streaming (may not be supported).
 
@@ -142,7 +142,7 @@ No authorization required
 ## get_inference_engine_help
 
 > models::GetInferenceEngineHelpResponse get_inference_engine_help(version)
-[BETA] Get inference-engine Help
+Get inference-engine Help
 
 Get list of allowed inference engine parameters with their descriptions and allowed values
 
@@ -198,14 +198,17 @@ No authorization required
 
 ## list_deployments
 
-> models::ListDeploymentsResponse list_deployments()
-[BETA] List Deployments
+> models::ListDeploymentsResponse list_deployments(visibility)
+List Deployments
 
 List Deployments
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**visibility** | Option<**String**> |  |  |
 
 ### Return type
 
@@ -226,7 +229,7 @@ No authorization required
 ## reveal_deployment_api_key
 
 > models::RevealDeploymentApiKeyResponse reveal_deployment_api_key(id)
-[BETA] Reveal Deployment API Key
+Reveal Deployment API Key
 
 Get Deployment API Key
 
@@ -256,7 +259,7 @@ No authorization required
 ## scale_deployment
 
 > models::Operation scale_deployment(id, scale_deployment_request)
-[BETA] Scale Deployment
+Scale Deployment
 
 Scale Deployment
 

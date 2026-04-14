@@ -27,6 +27,12 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AiApiKeyApi* | [**create_ai_api_key**](docs/AiApiKeyApi.md#create_ai_api_key) | **POST** /ai/ai-api-key | Create AI API Key
+*AiApiKeyApi* | [**delete_ai_api_key**](docs/AiApiKeyApi.md#delete_ai_api_key) | **DELETE** /ai/ai-api-key/{id} | Delete AI API Key
+*AiApiKeyApi* | [**get_ai_api_key**](docs/AiApiKeyApi.md#get_ai_api_key) | **GET** /ai/ai-api-key/{id} | Get AI API Key
+*AiApiKeyApi* | [**list_ai_api_keys**](docs/AiApiKeyApi.md#list_ai_api_keys) | **GET** /ai/ai-api-key | List AI API Keys
+*AiApiKeyApi* | [**rotate_ai_api_key**](docs/AiApiKeyApi.md#rotate_ai_api_key) | **POST** /ai/ai-api-key/{id}/rotate | Rotate AI API Key
+*AiApiKeyApi* | [**update_ai_api_key**](docs/AiApiKeyApi.md#update_ai_api_key) | **PATCH** /ai/ai-api-key/{id} | Update AI API Key
 *AntiAffinityGroupApi* | [**create_anti_affinity_group**](docs/AntiAffinityGroupApi.md#create_anti_affinity_group) | **POST** /anti-affinity-group | Create an Anti-affinity Group
 *AntiAffinityGroupApi* | [**delete_anti_affinity_group**](docs/AntiAffinityGroupApi.md#delete_anti_affinity_group) | **DELETE** /anti-affinity-group/{id} | Delete an Anti-affinity Group
 *AntiAffinityGroupApi* | [**get_anti_affinity_group**](docs/AntiAffinityGroupApi.md#get_anti_affinity_group) | **GET** /anti-affinity-group/{id} | Retrieve Anti-affinity Group details
@@ -204,15 +210,15 @@ Class | Method | HTTP request | Description
 *DbaasApi* | [**update_dbaas_valkey_user_access_control**](docs/DbaasApi.md#update_dbaas_valkey_user_access_control) | **PUT** /dbaas-valkey/{service_name}/user/{username} | Update access control for one DBaaS Valkey service user
 *DeployTargetApi* | [**get_deploy_target**](docs/DeployTargetApi.md#get_deploy_target) | **GET** /deploy-target/{id} | Retrieve Deploy Target details
 *DeployTargetApi* | [**list_deploy_targets**](docs/DeployTargetApi.md#list_deploy_targets) | **GET** /deploy-target | List Deploy Targets
-*DeploymentApi* | [**create_deployment**](docs/DeploymentApi.md#create_deployment) | **POST** /ai/deployment | [BETA] Create Deployment
-*DeploymentApi* | [**delete_deployment**](docs/DeploymentApi.md#delete_deployment) | **DELETE** /ai/deployment/{id} | [BETA] Delete Deployment
-*DeploymentApi* | [**get_deployment**](docs/DeploymentApi.md#get_deployment) | **GET** /ai/deployment/{id} | [BETA] Get Deployment
-*DeploymentApi* | [**get_deployment_logs**](docs/DeploymentApi.md#get_deployment_logs) | **GET** /ai/deployment/{id}/logs | [BETA] Get Deployment Logs
-*DeploymentApi* | [**get_inference_engine_help**](docs/DeploymentApi.md#get_inference_engine_help) | **GET** /ai/help/inference-engine-parameters | [BETA] Get inference-engine Help
+*DeploymentApi* | [**create_deployment**](docs/DeploymentApi.md#create_deployment) | **POST** /ai/deployment | Create Deployment
+*DeploymentApi* | [**delete_deployment**](docs/DeploymentApi.md#delete_deployment) | **DELETE** /ai/deployment/{id} | Delete Deployment
+*DeploymentApi* | [**get_deployment**](docs/DeploymentApi.md#get_deployment) | **GET** /ai/deployment/{id} | Get Deployment
+*DeploymentApi* | [**get_deployment_logs**](docs/DeploymentApi.md#get_deployment_logs) | **GET** /ai/deployment/{id}/logs | Get Deployment Logs
+*DeploymentApi* | [**get_inference_engine_help**](docs/DeploymentApi.md#get_inference_engine_help) | **GET** /ai/help/inference-engine-parameters | Get inference-engine Help
 *DeploymentApi* | [**list_ai_instance_types**](docs/DeploymentApi.md#list_ai_instance_types) | **GET** /ai/instance-type | List Instance Types
-*DeploymentApi* | [**list_deployments**](docs/DeploymentApi.md#list_deployments) | **GET** /ai/deployment | [BETA] List Deployments
-*DeploymentApi* | [**reveal_deployment_api_key**](docs/DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | [BETA] Reveal Deployment API Key
-*DeploymentApi* | [**scale_deployment**](docs/DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | [BETA] Scale Deployment
+*DeploymentApi* | [**list_deployments**](docs/DeploymentApi.md#list_deployments) | **GET** /ai/deployment | List Deployments
+*DeploymentApi* | [**reveal_deployment_api_key**](docs/DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | Reveal Deployment API Key
+*DeploymentApi* | [**scale_deployment**](docs/DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | Scale Deployment
 *DeploymentApi* | [**update_deployment**](docs/DeploymentApi.md#update_deployment) | **PATCH** /ai/deployment/{id} | 
 *DomainApi* | [**create_dns_domain**](docs/DomainApi.md#create_dns_domain) | **POST** /dns-domain | Create DNS domain
 *DomainApi* | [**delete_dns_domain**](docs/DomainApi.md#delete_dns_domain) | **DELETE** /dns-domain/{id} | Delete DNS Domain
@@ -270,10 +276,10 @@ Class | Method | HTTP request | Description
 *KmsKeyApi* | [**replicate_kms_key**](docs/KmsKeyApi.md#replicate_kms_key) | **POST** /kms-key/{id}/replicate | [BETA] Replicate KMS Key
 *KmsKeyApi* | [**rotate_kms_key**](docs/KmsKeyApi.md#rotate_kms_key) | **POST** /kms-key/{id}/rotate | [BETA] Rotate Key
 *KmsKeyApi* | [**schedule_kms_key_deletion**](docs/KmsKeyApi.md#schedule_kms_key_deletion) | **POST** /kms-key/{id}/schedule-deletion | [BETA] Schedule KMS Key Deletion
-*ModelApi* | [**create_model**](docs/ModelApi.md#create_model) | **POST** /ai/model | [BETA] Create Model
-*ModelApi* | [**delete_model**](docs/ModelApi.md#delete_model) | **DELETE** /ai/model/{id} | [BETA] Delete Model
-*ModelApi* | [**get_model**](docs/ModelApi.md#get_model) | **GET** /ai/model/{id} | [BETA] Get Model
-*ModelApi* | [**list_models**](docs/ModelApi.md#list_models) | **GET** /ai/model | [BETA] List Models
+*ModelApi* | [**create_model**](docs/ModelApi.md#create_model) | **POST** /ai/model | Create Model
+*ModelApi* | [**delete_model**](docs/ModelApi.md#delete_model) | **DELETE** /ai/model/{id} | Delete Model
+*ModelApi* | [**get_model**](docs/ModelApi.md#get_model) | **GET** /ai/model/{id} | Get Model
+*ModelApi* | [**list_models**](docs/ModelApi.md#list_models) | **GET** /ai/model | List Models
 *NetworkLoadBalancerApi* | [**add_service_to_load_balancer**](docs/NetworkLoadBalancerApi.md#add_service_to_load_balancer) | **POST** /load-balancer/{id}/service | Add a Load Balancer Service
 *NetworkLoadBalancerApi* | [**create_load_balancer**](docs/NetworkLoadBalancerApi.md#create_load_balancer) | **POST** /load-balancer | Create a Load Balancer
 *NetworkLoadBalancerApi* | [**delete_load_balancer**](docs/NetworkLoadBalancerApi.md#delete_load_balancer) | **DELETE** /load-balancer/{id} | Delete a Load Balancer
@@ -374,6 +380,8 @@ Class | Method | HTTP request | Description
  - [AddRuleToSecurityGroupRequest](docs/AddRuleToSecurityGroupRequest.md)
  - [AddRuleToSecurityGroupRequestIcmp](docs/AddRuleToSecurityGroupRequestIcmp.md)
  - [AddServiceToLoadBalancerRequest](docs/AddServiceToLoadBalancerRequest.md)
+ - [AiApiKey](docs/AiApiKey.md)
+ - [AiApiKeyWithValue](docs/AiApiKeyWithValue.md)
  - [AntiAffinityGroup](docs/AntiAffinityGroup.md)
  - [AntiAffinityGroupRef](docs/AntiAffinityGroupRef.md)
  - [AssumeIamRole200Response](docs/AssumeIamRole200Response.md)
@@ -391,6 +399,7 @@ Class | Method | HTTP request | Description
  - [BlockStorageVolumeRef](docs/BlockStorageVolumeRef.md)
  - [ConfigureLogCleanerForTopicCompaction](docs/ConfigureLogCleanerForTopicCompaction.md)
  - [CopyTemplateRequest](docs/CopyTemplateRequest.md)
+ - [CreateAiApiKeyRequest](docs/CreateAiApiKeyRequest.md)
  - [CreateAntiAffinityGroupRequest](docs/CreateAntiAffinityGroupRequest.md)
  - [CreateApiKeyRequest](docs/CreateApiKeyRequest.md)
  - [CreateBlockStorageSnapshotRequest](docs/CreateBlockStorageSnapshotRequest.md)
@@ -540,6 +549,7 @@ Class | Method | HTTP request | Description
  - [DbaasValkeyUsers](docs/DbaasValkeyUsers.md)
  - [DecryptRequest](docs/DecryptRequest.md)
  - [DecryptResponse](docs/DecryptResponse.md)
+ - [DeleteAiApiKey200Response](docs/DeleteAiApiKey200Response.md)
  - [DeleteModelConflictResponse](docs/DeleteModelConflictResponse.md)
  - [DeployTarget](docs/DeployTarget.md)
  - [DeployTargetRef](docs/DeployTargetRef.md)
@@ -582,6 +592,7 @@ Class | Method | HTTP request | Description
  - [Event](docs/Event.md)
  - [EvictInstancePoolMembersRequest](docs/EvictInstancePoolMembersRequest.md)
  - [EvictSksNodepoolMembersRequest](docs/EvictSksNodepoolMembersRequest.md)
+ - [ForbiddenOperationResponse](docs/ForbiddenOperationResponse.md)
  - [GenerateDataKeyRequest](docs/GenerateDataKeyRequest.md)
  - [GenerateDataKeyResponse](docs/GenerateDataKeyResponse.md)
  - [GenerateSksClusterKubeconfig200Response](docs/GenerateSksClusterKubeconfig200Response.md)
@@ -672,6 +683,7 @@ Class | Method | HTTP request | Description
  - [KeyMaterial](docs/KeyMaterial.md)
  - [KeyRotationConfig](docs/KeyRotationConfig.md)
  - [KubeletImageGc](docs/KubeletImageGc.md)
+ - [ListAiApiKeysResponse](docs/ListAiApiKeysResponse.md)
  - [ListAiInstanceTypesResponse](docs/ListAiInstanceTypesResponse.md)
  - [ListAntiAffinityGroups200Response](docs/ListAntiAffinityGroups200Response.md)
  - [ListApiKeys200Response](docs/ListApiKeys200Response.md)
@@ -747,6 +759,7 @@ Class | Method | HTTP request | Description
  - [ReEncryptRequestDestination](docs/ReEncryptRequestDestination.md)
  - [ReEncryptRequestSource](docs/ReEncryptRequestSource.md)
  - [ReEncryptResponse](docs/ReEncryptResponse.md)
+ - [RecomputeBundleResponse](docs/RecomputeBundleResponse.md)
  - [RegisterSshKeyRequest](docs/RegisterSshKeyRequest.md)
  - [RegisterTemplateRequest](docs/RegisterTemplateRequest.md)
  - [RemoveExternalSourceFromSecurityGroupRequest](docs/RemoveExternalSourceFromSecurityGroupRequest.md)
@@ -802,6 +815,7 @@ Class | Method | HTTP request | Description
  - [ThanosCompactorUserConfig](docs/ThanosCompactorUserConfig.md)
  - [ThanosQueryFrontendUserConfig](docs/ThanosQueryFrontendUserConfig.md)
  - [ThanosQueryUserConfig](docs/ThanosQueryUserConfig.md)
+ - [UpdateAiApiKeyRequest](docs/UpdateAiApiKeyRequest.md)
  - [UpdateBlockStorageSnapshotRequest](docs/UpdateBlockStorageSnapshotRequest.md)
  - [UpdateBlockStorageVolumeRequest](docs/UpdateBlockStorageVolumeRequest.md)
  - [UpdateDbaasIntegrationRequest](docs/UpdateDbaasIntegrationRequest.md)
@@ -855,4 +869,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-04-07
+Generated with latest changes from 2026-04-13
