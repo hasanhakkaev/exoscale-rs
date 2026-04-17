@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **auto_upgrade** | Option<**bool**> | Enable auto upgrade of the control plane to the latest patch version available | [optional]
 **name** | Option<**String**> | Cluster name | [optional]
 **enable_operators_ca** | Option<**bool**> | Indicates whether to add operators certificate authority (CA) as part of trusted CAs for the API server. | [optional]
+**default_security_group_id** | Option<**uuid::Uuid**> | Cluster default Security Group ID | [optional][readonly]
 **state** | Option<**State**> | Cluster state (enum: rotating-csi-credentials, rotating-ccm-credentials, creating, upgrading, deleting, running, suspending, updating, error, rotating-karpenter-credentials, resuming) | [optional][readonly]
 **enable_kube_proxy** | Option<**bool**> | Indicates whether to deploy the Kubernetes network proxy. | [optional]
 **nodepools** | Option<[**HashSet<models::SksNodepool>**](SksNodepool.md)> | Cluster Nodepools | [optional][readonly]
