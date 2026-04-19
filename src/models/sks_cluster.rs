@@ -30,6 +30,9 @@ pub struct SksCluster {
     /// Indicates whether to add operators certificate authority (CA) as part of trusted CAs for the API server.
     #[serde(rename = "enable-operators-ca", skip_serializing_if = "Option::is_none")]
     pub enable_operators_ca: Option<bool>,
+    /// Cluster default Security Group ID
+    #[serde(rename = "default-security-group-id", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub default_security_group_id: Option<Option<uuid::Uuid>>,
     /// Cluster state
     #[serde(rename = "state", skip_serializing_if = "Option::is_none")]
     pub state: Option<State>,
@@ -74,6 +77,7 @@ impl SksCluster {
             auto_upgrade: None,
             name: None,
             enable_operators_ca: None,
+            default_security_group_id: None,
             state: None,
             enable_kube_proxy: None,
             nodepools: None,
