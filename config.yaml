@@ -1,7 +1,7 @@
 bestFitInt: true
 enablePostProcessFile: true
 packageName: exoscale-rs
-packageVersion: 3.2.0
+packageVersion: v3.3.0
 preferUnsignedInt: true
 supportAsync: true
 supportMiddleware: true

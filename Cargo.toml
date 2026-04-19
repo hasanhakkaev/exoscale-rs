@@ -1,6 +1,6 @@
 [package]
 name = "exoscale-rs"
-version = "3.3.0"
+version = "v3.3.0"
 authors = ["support@exoscale.com"]
 description = "Infrastructure automation API, allowing programmatic access to all Exoscale products and services."
 license = "MIT"
