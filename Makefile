@@ -1,3 +1,4 @@
+export OPENAPI_GENERATOR_VERSION := 7.21.0
 
 # Dependencies
 .PHONY: install-open-api-generator
@@ -6,6 +7,7 @@ install-open-api-generator:
 	curl https://raw.githubusercontent.com/OpenAPITools/openapi-generator/master/bin/utils/openapi-generator-cli.sh > ~/bin/openapitools/openapi-generator-cli
 	chmod u+x ~/bin/openapitools/openapi-generator-cli
 	export PATH=$PATH:~/bin/openapitools/
+	~/bin/openapitools/openapi-generator-cli version
 
 .PHONY: pull-oapi-spec
 pull-oapi-spec:
