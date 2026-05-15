@@ -14,15 +14,15 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetOrganizationUsageResponse {
     /// Total GPU count
-    #[serde(rename = "gpu", skip_serializing_if = "Option::is_none")]
-    pub gpu: Option<u64>,
+    #[serde(rename = "gpu")]
+    pub gpu: u64,
 }
 
 impl GetOrganizationUsageResponse {
     /// GPU usage for an organization
-    pub fn new() -> GetOrganizationUsageResponse {
+    pub fn new(gpu: u64) -> GetOrganizationUsageResponse {
         GetOrganizationUsageResponse {
-            gpu: None,
+            gpu,
         }
     }
 }

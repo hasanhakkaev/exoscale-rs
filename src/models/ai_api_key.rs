@@ -14,35 +14,35 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AiApiKey {
     /// Last update timestamp
-    #[serde(rename = "updated-at", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
+    #[serde(rename = "updated-at")]
+    pub updated_at: String,
     /// Human-readable name for the AI API key
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "name")]
+    pub name: String,
     /// Key scope: 'public' for all deployments, or a specific deployment UUID
-    #[serde(rename = "scope", skip_serializing_if = "Option::is_none")]
-    pub scope: Option<String>,
+    #[serde(rename = "scope")]
+    pub scope: String,
     /// AI API key ID
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<uuid::Uuid>,
+    #[serde(rename = "id")]
+    pub id: uuid::Uuid,
     /// Organization UUID that owns this key
-    #[serde(rename = "org-uuid", skip_serializing_if = "Option::is_none")]
-    pub org_uuid: Option<uuid::Uuid>,
+    #[serde(rename = "org-uuid")]
+    pub org_uuid: uuid::Uuid,
     /// Creation timestamp
-    #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    #[serde(rename = "created-at")]
+    pub created_at: String,
 }
 
 impl AiApiKey {
-    /// AI API key metadata (without value)
-    pub fn new() -> AiApiKey {
+    /// AI API key metadata
+    pub fn new(updated_at: String, name: String, scope: String, id: uuid::Uuid, org_uuid: uuid::Uuid, created_at: String) -> AiApiKey {
         AiApiKey {
-            updated_at: None,
-            name: None,
-            scope: None,
-            id: None,
-            org_uuid: None,
-            created_at: None,
+            updated_at,
+            name,
+            scope,
+            id,
+            org_uuid,
+            created_at,
         }
     }
 }

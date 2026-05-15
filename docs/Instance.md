@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **id** | Option<**uuid::Uuid**> | Instance ID | [optional][readonly]
 **snapshots** | Option<[**Vec<models::SnapshotRef>**](SnapshotRef.md)> | Instance Snapshots | [optional]
 **disk_size** | Option<**u64**> | Instance disk size in GiB | [optional]
+**disk_encrypted** | Option<**bool**> | Indicates if the root volume of the instance is encrypted | [optional][readonly]
 **ssh_keys** | Option<[**Vec<models::SshKey>**](SshKey.md)> | Instance SSH Keys | [optional]
 **created_at** | Option<**String**> | Instance creation date | [optional][readonly]
 **public_ip** | Option<**String**> | Instance public IPv4 address | [optional][readonly]

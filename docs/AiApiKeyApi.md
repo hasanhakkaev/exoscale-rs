@@ -4,18 +4,20 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ai_api_key**](AiApiKeyApi.md#create_ai_api_key) | **POST** /ai/ai-api-key | Create AI API Key
-[**delete_ai_api_key**](AiApiKeyApi.md#delete_ai_api_key) | **DELETE** /ai/ai-api-key/{id} | Delete AI API Key
-[**get_ai_api_key**](AiApiKeyApi.md#get_ai_api_key) | **GET** /ai/ai-api-key/{id} | Get AI API Key
-[**list_ai_api_keys**](AiApiKeyApi.md#list_ai_api_keys) | **GET** /ai/ai-api-key | List AI API Keys
-[**rotate_ai_api_key**](AiApiKeyApi.md#rotate_ai_api_key) | **POST** /ai/ai-api-key/{id}/rotate | Rotate AI API Key
-[**update_ai_api_key**](AiApiKeyApi.md#update_ai_api_key) | **PATCH** /ai/ai-api-key/{id} | Update AI API Key
+[**create_ai_api_key**](AiApiKeyApi.md#create_ai_api_key) | **POST** /ai/api-key | Create AI API Key
+[**delete_ai_api_key**](AiApiKeyApi.md#delete_ai_api_key) | **DELETE** /ai/api-key/{id} | Delete AI API Key
+[**get_ai_api_key**](AiApiKeyApi.md#get_ai_api_key) | **GET** /ai/api-key/{id} | Get AI API Key
+[**get_user_org_consumption_quota**](AiApiKeyApi.md#get_user_org_consumption_quota) | **GET** /ai/quota | Get Organization Consumption Quota
+[**list_ai_api_keys**](AiApiKeyApi.md#list_ai_api_keys) | **GET** /ai/api-key | List AI API Keys
+[**reveal_ai_api_key**](AiApiKeyApi.md#reveal_ai_api_key) | **GET** /ai/api-key/{id}/reveal | Reveal AI API Key
+[**rotate_ai_api_key**](AiApiKeyApi.md#rotate_ai_api_key) | **POST** /ai/api-key/{id}/rotate | Rotate AI API Key
+[**update_ai_api_key**](AiApiKeyApi.md#update_ai_api_key) | **PATCH** /ai/api-key/{id} | Update AI API Key
 
 
 
 ## create_ai_api_key
 
-> models::AiApiKeyWithValue create_ai_api_key(create_ai_api_key_request)
+> models::CreateAiApiKeyResponse create_ai_api_key(create_ai_api_key_request)
 Create AI API Key
 
 Create a new AI API key
@@ -29,7 +31,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::AiApiKeyWithValue**](ai-api-key-with-value.md)
+[**models::CreateAiApiKeyResponse**](create-ai-api-key-response.md)
 
 ### Authorization
 
@@ -45,7 +47,7 @@ No authorization required
 
 ## delete_ai_api_key
 
-> models::DeleteAiApiKey200Response delete_ai_api_key(id)
+> delete_ai_api_key(id)
 Delete AI API Key
 
 Delete AI API key
@@ -59,7 +61,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::DeleteAiApiKey200Response**](delete_ai_api_key_200_response.md)
+ (empty response body)
 
 ### Authorization
 
@@ -75,7 +77,7 @@ No authorization required
 
 ## get_ai_api_key
 
-> models::AiApiKey get_ai_api_key(id)
+> models::GetAiApiKeyResponse get_ai_api_key(id)
 Get AI API Key
 
 Get AI API key metadata
@@ -89,7 +91,34 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::AiApiKey**](ai-api-key.md)
+[**models::GetAiApiKeyResponse**](get-ai-api-key-response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_user_org_consumption_quota
+
+> models::OrgConsumptionQuotaResponse get_user_org_consumption_quota()
+Get Organization Consumption Quota
+
+Get per-org token consumption quota (tokens/min). Null means unlimited.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::OrgConsumptionQuotaResponse**](org-consumption-quota-response.md)
 
 ### Authorization
 
@@ -130,9 +159,39 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## reveal_ai_api_key
+
+> models::RevealAiApiKeyResponse reveal_ai_api_key(id)
+Reveal AI API Key
+
+Reveal AI API key plaintext value
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**models::RevealAiApiKeyResponse**](reveal-ai-api-key-response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## rotate_ai_api_key
 
-> models::AiApiKeyWithValue rotate_ai_api_key(id)
+> models::RotateAiApiKeyResponse rotate_ai_api_key(id)
 Rotate AI API Key
 
 Rotate AI API key value
@@ -146,7 +205,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::AiApiKeyWithValue**](ai-api-key-with-value.md)
+[**models::RotateAiApiKeyResponse**](rotate-ai-api-key-response.md)
 
 ### Authorization
 
@@ -162,7 +221,7 @@ No authorization required
 
 ## update_ai_api_key
 
-> models::AiApiKey update_ai_api_key(id, update_ai_api_key_request)
+> models::UpdateAiApiKeyResponse update_ai_api_key(id, update_ai_api_key_request)
 Update AI API Key
 
 Update AI API key name and/or scope
@@ -177,7 +236,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::AiApiKey**](ai-api-key.md)
+[**models::UpdateAiApiKeyResponse**](update-ai-api-key-response.md)
 
 ### Authorization
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **blocksize** | Option<**u64**> | Volume block size | [optional][readonly]
 **block_storage_snapshots** | Option<[**Vec<models::BlockStorageSnapshotRef>**](BlockStorageSnapshotRef.md)> | Volume snapshots, if any | [optional]
 **id** | Option<**uuid::Uuid**> | Volume ID | [optional][readonly]
+**encrypted** | Option<**bool**> | Indicates if the block-storage volume is encrypted | [optional][readonly]
 **created_at** | Option<**String**> | Volume creation date | [optional][readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

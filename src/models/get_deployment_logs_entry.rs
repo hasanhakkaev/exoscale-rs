@@ -14,23 +14,23 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDeploymentLogsEntry {
     /// Timestamp of the log entry
-    #[serde(rename = "time", skip_serializing_if = "Option::is_none")]
-    pub time: Option<String>,
+    #[serde(rename = "time")]
+    pub time: String,
     /// Node identifier
-    #[serde(rename = "node", skip_serializing_if = "Option::is_none")]
-    pub node: Option<String>,
+    #[serde(rename = "node")]
+    pub node: String,
     /// Log message content
-    #[serde(rename = "message", skip_serializing_if = "Option::is_none")]
-    pub message: Option<String>,
+    #[serde(rename = "message")]
+    pub message: String,
 }
 
 impl GetDeploymentLogsEntry {
     /// A single log entry
-    pub fn new() -> GetDeploymentLogsEntry {
+    pub fn new(time: String, node: String, message: String) -> GetDeploymentLogsEntry {
         GetDeploymentLogsEntry {
-            time: None,
-            node: None,
-            message: None,
+            time,
+            node,
+            message,
         }
     }
 }

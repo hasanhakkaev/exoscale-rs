@@ -45,11 +45,29 @@ pub enum GetAiApiKeyError {
 }
 
 
+/// struct for typed errors of method [`get_user_org_consumption_quota`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetUserOrgConsumptionQuotaError {
+    Status404(models::ErrorResponse),
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`list_ai_api_keys`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ListAiApiKeysError {
     Status403(models::ForbiddenOperationResponse),
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`reveal_ai_api_key`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum RevealAiApiKeyError {
+    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -75,7 +93,7 @@ pub enum UpdateAiApiKeyError {
 }
 
 
-pub async fn create_ai_api_key(configuration: &configuration::Configuration, create_ai_api_key_request: models::CreateAiApiKeyRequest) -> Result<models::AiApiKeyWithValue, Error<CreateAiApiKeyError>> {
+pub async fn create_ai_api_key(configuration: &configuration::Configuration, create_ai_api_key_request: models::CreateAiApiKeyRequest) -> Result<models::CreateAiApiKeyResponse, Error<CreateAiApiKeyError>> {
     let local_var_create_ai_api_key_request = create_ai_api_key_request;
 
     let path_params_map = std::collections::HashMap::new();
@@ -87,13 +105,13 @@ pub async fn create_ai_api_key(configuration: &configuration::Configuration, cre
     utils::execute_request(
     configuration,
     reqwest::Method::POST,
-    "/ai/ai-api-key",
+    "/ai/api-key",
     path_params_map,
     query_params_option,
     body_payload_option,
     ).await
 }
-pub async fn delete_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::DeleteAiApiKey200Response, Error<DeleteAiApiKeyError>> {
+pub async fn delete_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<(), Error<DeleteAiApiKeyError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
@@ -106,13 +124,13 @@ pub async fn delete_ai_api_key(configuration: &configuration::Configuration, id:
     utils::execute_request(
     configuration,
     reqwest::Method::DELETE,
-    "/ai/ai-api-key/{id}",
+    "/ai/api-key/{id}",
     path_params_map,
     query_params_option,
     body_payload_option,
     ).await
 }
-pub async fn get_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::AiApiKey, Error<GetAiApiKeyError>> {
+pub async fn get_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::GetAiApiKeyResponse, Error<GetAiApiKeyError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
@@ -125,7 +143,24 @@ pub async fn get_ai_api_key(configuration: &configuration::Configuration, id: St
     utils::execute_request(
     configuration,
     reqwest::Method::GET,
-    "/ai/ai-api-key/{id}",
+    "/ai/api-key/{id}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn get_user_org_consumption_quota(configuration: &configuration::Configuration, ) -> Result<models::OrgConsumptionQuotaResponse, Error<GetUserOrgConsumptionQuotaError>> {
+
+    let path_params_map = std::collections::HashMap::new();
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/ai/quota",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -142,13 +177,32 @@ pub async fn list_ai_api_keys(configuration: &configuration::Configuration, ) ->
     utils::execute_request(
     configuration,
     reqwest::Method::GET,
-    "/ai/ai-api-key",
+    "/ai/api-key",
     path_params_map,
     query_params_option,
     body_payload_option,
     ).await
 }
-pub async fn rotate_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::AiApiKeyWithValue, Error<RotateAiApiKeyError>> {
+pub async fn reveal_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::RevealAiApiKeyResponse, Error<RevealAiApiKeyError>> {
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/ai/api-key/{id}/reveal",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn rotate_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::RotateAiApiKeyResponse, Error<RotateAiApiKeyError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
@@ -161,13 +215,13 @@ pub async fn rotate_ai_api_key(configuration: &configuration::Configuration, id:
     utils::execute_request(
     configuration,
     reqwest::Method::POST,
-    "/ai/ai-api-key/{id}/rotate",
+    "/ai/api-key/{id}/rotate",
     path_params_map,
     query_params_option,
     body_payload_option,
     ).await
 }
-pub async fn update_ai_api_key(configuration: &configuration::Configuration, id: String, update_ai_api_key_request: models::UpdateAiApiKeyRequest) -> Result<models::AiApiKey, Error<UpdateAiApiKeyError>> {
+pub async fn update_ai_api_key(configuration: &configuration::Configuration, id: String, update_ai_api_key_request: models::UpdateAiApiKeyRequest) -> Result<models::UpdateAiApiKeyResponse, Error<UpdateAiApiKeyError>> {
     let local_var_id = id;
     let local_var_update_ai_api_key_request = update_ai_api_key_request;
 
@@ -181,7 +235,7 @@ pub async fn update_ai_api_key(configuration: &configuration::Configuration, id:
     utils::execute_request(
     configuration,
     reqwest::Method::PATCH,
-    "/ai/ai-api-key/{id}",
+    "/ai/api-key/{id}",
     path_params_map,
     query_params_option,
     body_payload_option,

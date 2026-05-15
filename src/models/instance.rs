@@ -71,6 +71,9 @@ pub struct Instance {
     /// Instance disk size in GiB
     #[serde(rename = "disk-size", skip_serializing_if = "Option::is_none")]
     pub disk_size: Option<u64>,
+    /// Indicates if the root volume of the instance is encrypted
+    #[serde(rename = "disk-encrypted", skip_serializing_if = "Option::is_none")]
+    pub disk_encrypted: Option<bool>,
     /// Instance SSH Keys
     #[serde(rename = "ssh-keys", skip_serializing_if = "Option::is_none")]
     pub ssh_keys: Option<Vec<models::SshKey>>,
@@ -108,6 +111,7 @@ impl Instance {
             id: None,
             snapshots: None,
             disk_size: None,
+            disk_encrypted: None,
             ssh_keys: None,
             created_at: None,
             public_ip: None,

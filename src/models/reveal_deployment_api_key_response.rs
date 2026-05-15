@@ -13,15 +13,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RevealDeploymentApiKeyResponse {
-    #[serde(rename = "api-key", skip_serializing_if = "Option::is_none")]
-    pub api_key: Option<String>,
+    /// Inference endpoint authentication key
+    #[serde(rename = "api-key")]
+    pub api_key: String,
 }
 
 impl RevealDeploymentApiKeyResponse {
     /// AI deployment inference endpoint authentication key
-    pub fn new() -> RevealDeploymentApiKeyResponse {
+    pub fn new(api_key: String) -> RevealDeploymentApiKeyResponse {
         RevealDeploymentApiKeyResponse {
-            api_key: None,
+            api_key,
         }
     }
 }

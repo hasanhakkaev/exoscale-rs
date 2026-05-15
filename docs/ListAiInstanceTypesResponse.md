@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**instance_types** | Option<[**Vec<models::InstanceTypeEntry>**](InstanceTypeEntry.md)> |  | [optional]
+**instance_types** | [**Vec<models::InstanceTypeEntry>**](InstanceTypeEntry.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

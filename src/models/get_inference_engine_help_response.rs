@@ -13,15 +13,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetInferenceEngineHelpResponse {
-    #[serde(rename = "parameters", skip_serializing_if = "Option::is_none")]
-    pub parameters: Option<Vec<models::InferenceEngineParameterEntry>>,
+    #[serde(rename = "parameters")]
+    pub parameters: Vec<models::InferenceEngineParameterEntry>,
 }
 
 impl GetInferenceEngineHelpResponse {
     /// List of allowed inference-engine parameters
-    pub fn new() -> GetInferenceEngineHelpResponse {
+    pub fn new(parameters: Vec<models::InferenceEngineParameterEntry>) -> GetInferenceEngineHelpResponse {
         GetInferenceEngineHelpResponse {
-            parameters: None,
+            parameters,
         }
     }
 }
