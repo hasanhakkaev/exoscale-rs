@@ -47,6 +47,6 @@ endif
 	@echo "Bumping version to $(VERSION)..."
 	sed -i.bak 's/^version = ".*"/version = "$(VERSION)"/' Cargo.toml && rm -f Cargo.toml.bak
 	sed -i.bak 's/^packageVersion: .*/packageVersion: $(VERSION)/' config.yaml && rm -f config.yaml.bak
-	sed -i.bak 's|exoscale-rs/[0-9]*\.[0-9]*\.[0-9]*|exoscale-rs/$(VERSION)|' src/apis/configuration.rs && rm -f src/apis/configuration.rs.bak
-	sed -i.bak 's|exoscale-rs/[0-9]*\.[0-9]*\.[0-9]*|exoscale-rs/$(VERSION)|' static/templates/reqwest/configuration.mustache && rm -f static/templates/reqwest/configuration.mustache.bak
+	sed -i.bak 's|exoscale-rs/v[0-9]*\.[0-9]*\.[0-9]*|exoscale-rs/v$(VERSION)|' src/apis/configuration.rs && rm -f src/apis/configuration.rs.bak
+	sed -i.bak 's|exoscale-rs/v[0-9]*\.[0-9]*\.[0-9]*|exoscale-rs/v$(VERSION)|' static/templates/reqwest/configuration.mustache && rm -f static/templates/reqwest/configuration.mustache.bak
 	@echo "Version bumped to $(VERSION) in Cargo.toml, config.yaml, configuration.rs, configuration.mustache"

@@ -23,9 +23,7 @@ jobs:
           release-type: rust
 
       - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Sync version metadata
         run: |
@@ -33,13 +31,7 @@ jobs:
           echo "Syncing version metadata to $VERSION..."
           make bump-version VERSION=$VERSION
 
-      - name: Login to crates.io
-        uses: actions-rs/cargo@v1
-        with:
-          command: login
-          args: ${{ secrets.CRATES_IO_API_KEY }}
-
       - name: Publish to crates.io
-        uses: actions-rs/cargo@v1
-        with:
-          command: publish
+        run: cargo publish
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_IO_API_KEY }}
