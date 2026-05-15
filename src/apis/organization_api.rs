@@ -22,6 +22,15 @@ pub enum GetEnvImpactError {
 }
 
 
+/// struct for typed errors of method [`get_live_balance`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetLiveBalanceError {
+    Status429(models::RateLimited),
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`get_organization`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -52,6 +61,23 @@ pub async fn get_env_impact(configuration: &configuration::Configuration, period
     configuration,
     reqwest::Method::GET,
     "/env-impact/{period}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn get_live_balance(configuration: &configuration::Configuration, ) -> Result<models::LiveBalance, Error<GetLiveBalanceError>> {
+
+    let path_params_map = std::collections::HashMap::new();
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/live-balance",
     path_params_map,
     query_params_option,
     body_payload_option,

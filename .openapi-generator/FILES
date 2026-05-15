@@ -10,11 +10,12 @@ docs/AddRuleToSecurityGroupRequestIcmp.md
 docs/AddServiceToLoadBalancerRequest.md
 docs/AiApiKey.md
 docs/AiApiKeyApi.md
-docs/AiApiKeyWithValue.md
+docs/AiApiKeyValue.md
 docs/AntiAffinityGroup.md
 docs/AntiAffinityGroupApi.md
 docs/AntiAffinityGroupRef.md
 docs/ApiKeyApi.md
+docs/ApiKeyUsageEntry.md
 docs/AssumeIamRole200Response.md
 docs/AssumeIamRoleRequest.md
 docs/AttachBlockStorageVolumeToInstanceRequest.md
@@ -35,6 +36,7 @@ docs/ComputeApi.md
 docs/ConfigureLogCleanerForTopicCompaction.md
 docs/CopyTemplateRequest.md
 docs/CreateAiApiKeyRequest.md
+docs/CreateAiApiKeyResponse.md
 docs/CreateAntiAffinityGroupRequest.md
 docs/CreateApiKeyRequest.md
 docs/CreateBlockStorageSnapshotRequest.md
@@ -186,7 +188,6 @@ docs/DbaasValkeyUserAccessControl.md
 docs/DbaasValkeyUsers.md
 docs/DecryptRequest.md
 docs/DecryptResponse.md
-docs/DeleteAiApiKey200Response.md
 docs/DeleteModelConflictResponse.md
 docs/DeployTarget.md
 docs/DeployTargetApi.md
@@ -240,6 +241,7 @@ docs/GenerateDataKeyResponse.md
 docs/GenerateSksClusterKubeconfig200Response.md
 docs/GenericOAuthIntegration.md
 docs/GetActiveNodepoolTemplate200Response.md
+docs/GetAiApiKeyResponse.md
 docs/GetConfederatioUsageResponse.md
 docs/GetConsoleProxyUrl200Response.md
 docs/GetDbaasCaCertificate200Response.md
@@ -298,6 +300,8 @@ docs/IamServicePolicy.md
 docs/IamServicePolicyRule.md
 docs/InferenceEngineParameterEntry.md
 docs/InferenceEngineVersion.md
+docs/IngestMeteringRequest.md
+docs/IngestMeteringResponse.md
 docs/Instance.md
 docs/InstanceApi.md
 docs/InstancePassword.md
@@ -330,6 +334,7 @@ docs/KeyRotationConfig.md
 docs/KmsKeyApi.md
 docs/KubeletImageGc.md
 docs/ListAiApiKeysResponse.md
+docs/ListAiApiKeysResponseEntry.md
 docs/ListAiInstanceTypesResponse.md
 docs/ListAntiAffinityGroups200Response.md
 docs/ListApiKeys200Response.md
@@ -374,6 +379,7 @@ docs/ListSshKeys200Response.md
 docs/ListTemplates200Response.md
 docs/ListUsers200Response.md
 docs/ListZones200Response.md
+docs/LiveBalance.md
 docs/LoadBalancer.md
 docs/LoadBalancerServerStatus.md
 docs/LoadBalancerService.md
@@ -381,6 +387,7 @@ docs/LoadBalancerServiceHealthcheck.md
 docs/Manager.md
 docs/ModelApi.md
 docs/ModelRef.md
+docs/ModelUsageCounters.md
 docs/NetworkLoadBalancerApi.md
 docs/Networking.md
 docs/NodeDuressSettings.md
@@ -394,6 +401,7 @@ docs/Operation.md
 docs/OperationApi.md
 docs/OperationReference.md
 docs/OperationResourceRef.md
+docs/OrgConsumptionQuotaResponse.md
 docs/Organization.md
 docs/OrganizationApi.md
 docs/OrganizationPolicyApi.md
@@ -410,6 +418,7 @@ docs/PromoteSnapshotToTemplateRequest.md
 docs/PublicIpAssignment.md
 docs/Quota.md
 docs/QuotasApi.md
+docs/RateLimited.md
 docs/ReEncryptRequest.md
 docs/ReEncryptRequestDestination.md
 docs/ReEncryptRequestSource.md
@@ -428,12 +437,14 @@ docs/ResetInstanceRequest.md
 docs/ResizeBlockStorageVolumeRequest.md
 docs/ResizeInstanceDiskRequest.md
 docs/Resource.md
+docs/RevealAiApiKeyResponse.md
 docs/RevealDeploymentApiKeyResponse.md
 docs/ReverseDnsApi.md
 docs/ReverseDnsRecord.md
 docs/RevertInstanceToSnapshotRequest.md
 docs/RevisionStamp.md
 docs/RoleApi.md
+docs/RotateAiApiKeyResponse.md
 docs/RotateKmsKeyResponse.md
 docs/ScaleDeploymentRequest.md
 docs/ScaleInstancePoolRequest.md
@@ -449,6 +460,7 @@ docs/SecurityGroupRef.md
 docs/SecurityGroupResource.md
 docs/SecurityGroupRule.md
 docs/SecurityGroupRuleIcmp.md
+docs/SetOrgConsumptionQuotaRequest.md
 docs/ShardIndexingBackPressureSettings.md
 docs/SksAudit.md
 docs/SksAuditCreate.md
@@ -479,6 +491,7 @@ docs/ThanosCompactorUserConfig.md
 docs/ThanosQueryFrontendUserConfig.md
 docs/ThanosQueryUserConfig.md
 docs/UpdateAiApiKeyRequest.md
+docs/UpdateAiApiKeyResponse.md
 docs/UpdateBlockStorageSnapshotRequest.md
 docs/UpdateBlockStorageVolumeRequest.md
 docs/UpdateDbaasIntegrationRequest.md
@@ -572,9 +585,10 @@ src/models/add_rule_to_security_group_request.rs
 src/models/add_rule_to_security_group_request_icmp.rs
 src/models/add_service_to_load_balancer_request.rs
 src/models/ai_api_key.rs
-src/models/ai_api_key_with_value.rs
+src/models/ai_api_key_value.rs
 src/models/anti_affinity_group.rs
 src/models/anti_affinity_group_ref.rs
+src/models/api_key_usage_entry.rs
 src/models/assume_iam_role_200_response.rs
 src/models/assume_iam_role_request.rs
 src/models/attach_block_storage_volume_to_instance_request.rs
@@ -591,6 +605,7 @@ src/models/block_storage_volume_ref.rs
 src/models/configure_log_cleaner_for_topic_compaction.rs
 src/models/copy_template_request.rs
 src/models/create_ai_api_key_request.rs
+src/models/create_ai_api_key_response.rs
 src/models/create_anti_affinity_group_request.rs
 src/models/create_api_key_request.rs
 src/models/create_block_storage_snapshot_request.rs
@@ -740,7 +755,6 @@ src/models/dbaas_valkey_user_access_control.rs
 src/models/dbaas_valkey_users.rs
 src/models/decrypt_request.rs
 src/models/decrypt_response.rs
-src/models/delete_ai_api_key_200_response.rs
 src/models/delete_model_conflict_response.rs
 src/models/deploy_target.rs
 src/models/deploy_target_ref.rs
@@ -789,6 +803,7 @@ src/models/generate_data_key_response.rs
 src/models/generate_sks_cluster_kubeconfig_200_response.rs
 src/models/generic_o_auth_integration.rs
 src/models/get_active_nodepool_template_200_response.rs
+src/models/get_ai_api_key_response.rs
 src/models/get_confederatio_usage_response.rs
 src/models/get_console_proxy_url_200_response.rs
 src/models/get_dbaas_ca_certificate_200_response.rs
@@ -847,6 +862,8 @@ src/models/iam_service_policy.rs
 src/models/iam_service_policy_rule.rs
 src/models/inference_engine_parameter_entry.rs
 src/models/inference_engine_version.rs
+src/models/ingest_metering_request.rs
+src/models/ingest_metering_response.rs
 src/models/instance.rs
 src/models/instance_password.rs
 src/models/instance_pool.rs
@@ -875,6 +892,7 @@ src/models/key_material.rs
 src/models/key_rotation_config.rs
 src/models/kubelet_image_gc.rs
 src/models/list_ai_api_keys_response.rs
+src/models/list_ai_api_keys_response_entry.rs
 src/models/list_ai_instance_types_response.rs
 src/models/list_anti_affinity_groups_200_response.rs
 src/models/list_api_keys_200_response.rs
@@ -919,6 +937,7 @@ src/models/list_ssh_keys_200_response.rs
 src/models/list_templates_200_response.rs
 src/models/list_users_200_response.rs
 src/models/list_zones_200_response.rs
+src/models/live_balance.rs
 src/models/load_balancer.rs
 src/models/load_balancer_server_status.rs
 src/models/load_balancer_service.rs
@@ -926,6 +945,7 @@ src/models/load_balancer_service_healthcheck.rs
 src/models/manager.rs
 src/models/mod.rs
 src/models/model_ref.rs
+src/models/model_usage_counters.rs
 src/models/networking.rs
 src/models/node_duress_settings.rs
 src/models/opensearch_email_sender_settings.rs
@@ -935,6 +955,7 @@ src/models/operating_factor.rs
 src/models/operation.rs
 src/models/operation_reference.rs
 src/models/operation_resource_ref.rs
+src/models/org_consumption_quota_response.rs
 src/models/organization.rs
 src/models/organization_usage.rs
 src/models/primary_parameter.rs
@@ -947,6 +968,7 @@ src/models/private_network_ref.rs
 src/models/promote_snapshot_to_template_request.rs
 src/models/public_ip_assignment.rs
 src/models/quota.rs
+src/models/rate_limited.rs
 src/models/re_encrypt_request.rs
 src/models/re_encrypt_request_destination.rs
 src/models/re_encrypt_request_source.rs
@@ -964,10 +986,12 @@ src/models/reset_instance_request.rs
 src/models/resize_block_storage_volume_request.rs
 src/models/resize_instance_disk_request.rs
 src/models/resource.rs
+src/models/reveal_ai_api_key_response.rs
 src/models/reveal_deployment_api_key_response.rs
 src/models/reverse_dns_record.rs
 src/models/revert_instance_to_snapshot_request.rs
 src/models/revision_stamp.rs
+src/models/rotate_ai_api_key_response.rs
 src/models/rotate_kms_key_response.rs
 src/models/scale_deployment_request.rs
 src/models/scale_instance_pool_request.rs
@@ -982,6 +1006,7 @@ src/models/security_group_ref.rs
 src/models/security_group_resource.rs
 src/models/security_group_rule.rs
 src/models/security_group_rule_icmp.rs
+src/models/set_org_consumption_quota_request.rs
 src/models/shard_indexing_back_pressure_settings.rs
 src/models/sks_audit.rs
 src/models/sks_audit_create.rs
@@ -1008,6 +1033,7 @@ src/models/thanos_compactor_user_config.rs
 src/models/thanos_query_frontend_user_config.rs
 src/models/thanos_query_user_config.rs
 src/models/update_ai_api_key_request.rs
+src/models/update_ai_api_key_response.rs
 src/models/update_block_storage_snapshot_request.rs
 src/models/update_block_storage_volume_request.rs
 src/models/update_dbaas_integration_request.rs

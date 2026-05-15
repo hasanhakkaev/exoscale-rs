@@ -14,14 +14,14 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct AssumeIamRoleRequest {
     /// TTL in seconds for the generated access key (cannot exceed the max TTL defined in the targeted assume role)
-    #[serde(rename = "ttl", skip_serializing_if = "Option::is_none")]
-    pub ttl: Option<u64>,
+    #[serde(rename = "ttl")]
+    pub ttl: u64,
 }
 
 impl AssumeIamRoleRequest {
-    pub fn new() -> AssumeIamRoleRequest {
+    pub fn new(ttl: u64) -> AssumeIamRoleRequest {
         AssumeIamRoleRequest {
-            ttl: None,
+            ttl,
         }
     }
 }

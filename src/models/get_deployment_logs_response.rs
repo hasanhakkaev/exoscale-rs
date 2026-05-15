@@ -14,15 +14,15 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetDeploymentLogsResponse {
     /// List of log entries
-    #[serde(rename = "logs", skip_serializing_if = "Option::is_none")]
-    pub logs: Option<Vec<models::GetDeploymentLogsEntry>>,
+    #[serde(rename = "logs")]
+    pub logs: Vec<models::GetDeploymentLogsEntry>,
 }
 
 impl GetDeploymentLogsResponse {
     /// Deployment logs
-    pub fn new() -> GetDeploymentLogsResponse {
+    pub fn new(logs: Vec<models::GetDeploymentLogsEntry>) -> GetDeploymentLogsResponse {
         GetDeploymentLogsResponse {
-            logs: None,
+            logs,
         }
     }
 }

@@ -14,19 +14,19 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct InstanceTypeEntry {
     /// GPU family name
-    #[serde(rename = "family", skip_serializing_if = "Option::is_none")]
-    pub family: Option<String>,
+    #[serde(rename = "family")]
+    pub family: String,
     /// Whether this instance type is authorized based on server availability
-    #[serde(rename = "authorized", skip_serializing_if = "Option::is_none")]
-    pub authorized: Option<bool>,
+    #[serde(rename = "authorized")]
+    pub authorized: bool,
 }
 
 impl InstanceTypeEntry {
     /// Instance type with authorization status
-    pub fn new() -> InstanceTypeEntry {
+    pub fn new(family: String, authorized: bool) -> InstanceTypeEntry {
         InstanceTypeEntry {
-            family: None,
-            authorized: None,
+            family,
+            authorized,
         }
     }
 }

@@ -13,15 +13,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListAiInstanceTypesResponse {
-    #[serde(rename = "instance-types", skip_serializing_if = "Option::is_none")]
-    pub instance_types: Option<Vec<models::InstanceTypeEntry>>,
+    #[serde(rename = "instance-types")]
+    pub instance_types: Vec<models::InstanceTypeEntry>,
 }
 
 impl ListAiInstanceTypesResponse {
     /// List of available instance types with authorization status
-    pub fn new() -> ListAiInstanceTypesResponse {
+    pub fn new(instance_types: Vec<models::InstanceTypeEntry>) -> ListAiInstanceTypesResponse {
         ListAiInstanceTypesResponse {
-            instance_types: None,
+            instance_types,
         }
     }
 }

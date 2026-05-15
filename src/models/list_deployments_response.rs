@@ -13,15 +13,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListDeploymentsResponse {
-    #[serde(rename = "deployments", skip_serializing_if = "Option::is_none")]
-    pub deployments: Option<Vec<models::ListDeploymentsResponseEntry>>,
+    #[serde(rename = "deployments")]
+    pub deployments: Vec<models::ListDeploymentsResponseEntry>,
 }
 
 impl ListDeploymentsResponse {
-    /// AI model list
-    pub fn new() -> ListDeploymentsResponse {
+    /// AI deployment list
+    pub fn new(deployments: Vec<models::ListDeploymentsResponseEntry>) -> ListDeploymentsResponse {
         ListDeploymentsResponse {
-            deployments: None,
+            deployments,
         }
     }
 }

@@ -31,7 +31,7 @@ pub struct Organization {
     /// Organization country
     #[serde(rename = "country", skip_serializing_if = "Option::is_none")]
     pub country: Option<String>,
-    /// Organization balance
+    /// Organization balance. DEPRECATED: use the dedicated `live-balance` endpoint
     #[serde(rename = "balance", skip_serializing_if = "Option::is_none")]
     pub balance: Option<f64>,
     /// Organization currency

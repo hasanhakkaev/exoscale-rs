@@ -14,54 +14,54 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListDeploymentsResponseEntry {
     /// Number of GPUs
-    #[serde(rename = "gpu-count", skip_serializing_if = "Option::is_none")]
-    pub gpu_count: Option<u64>,
+    #[serde(rename = "gpu-count")]
+    pub gpu_count: u64,
     /// Update time
-    #[serde(rename = "updated-at", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
-    /// Deployment URL (nullable)
-    #[serde(rename = "deployment-url", skip_serializing_if = "Option::is_none")]
-    pub deployment_url: Option<String>,
+    #[serde(rename = "updated-at")]
+    pub updated_at: String,
+    /// Deployment inference endpoint URL
+    #[serde(rename = "deployment-url")]
+    pub deployment_url: String,
     /// Service level
-    #[serde(rename = "service-level", skip_serializing_if = "Option::is_none")]
-    pub service_level: Option<String>,
+    #[serde(rename = "service-level")]
+    pub service_level: String,
     /// Deployment name
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "name")]
+    pub name: String,
     /// Deployment state
-    #[serde(rename = "state", skip_serializing_if = "Option::is_none")]
-    pub state: Option<State>,
+    #[serde(rename = "state")]
+    pub state: State,
     /// GPU type family
-    #[serde(rename = "gpu-type", skip_serializing_if = "Option::is_none")]
-    pub gpu_type: Option<String>,
+    #[serde(rename = "gpu-type")]
+    pub gpu_type: String,
     /// Deployment ID
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<uuid::Uuid>,
+    #[serde(rename = "id")]
+    pub id: uuid::Uuid,
     /// Number of replicas (>=0)
-    #[serde(rename = "replicas", skip_serializing_if = "Option::is_none")]
-    pub replicas: Option<u64>,
+    #[serde(rename = "replicas")]
+    pub replicas: u64,
     /// Creation time
-    #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
-    #[serde(rename = "model", skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "created-at")]
+    pub created_at: String,
+    #[serde(rename = "model", deserialize_with = "Option::deserialize")]
     pub model: Option<Box<models::ModelRef>>,
 }
 
 impl ListDeploymentsResponseEntry {
     /// AI deployment
-    pub fn new() -> ListDeploymentsResponseEntry {
+    pub fn new(gpu_count: u64, updated_at: String, deployment_url: String, service_level: String, name: String, state: State, gpu_type: String, id: uuid::Uuid, replicas: u64, created_at: String, model: Option<models::ModelRef>) -> ListDeploymentsResponseEntry {
         ListDeploymentsResponseEntry {
-            gpu_count: None,
-            updated_at: None,
-            deployment_url: None,
-            service_level: None,
-            name: None,
-            state: None,
-            gpu_type: None,
-            id: None,
-            replicas: None,
-            created_at: None,
-            model: None,
+            gpu_count,
+            updated_at,
+            deployment_url,
+            service_level,
+            name,
+            state,
+            gpu_type,
+            id,
+            replicas,
+            created_at,
+            model: if let Some(x) = model {Some(Box::new(x))} else {None},
         }
     }
 }
@@ -71,6 +71,8 @@ pub enum State {
     Ready,
     #[serde(rename = "creating")]
     Creating,
+    #[serde(rename = "preparing")]
+    Preparing,
     #[serde(rename = "error")]
     Error,
     #[serde(rename = "deploying")]

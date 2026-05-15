@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**family** | Option<**String**> | GPU family name | [optional]
-**authorized** | Option<**bool**> | Whether this instance type is authorized based on server availability | [optional]
+**family** | **String** | GPU family name | 
+**authorized** | **bool** | Whether this instance type is authorized based on server availability | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**updated_at** | Option<**String**> | Last update timestamp | [optional][readonly]
-**name** | Option<**String**> | Human-readable name for the AI API key | [optional]
-**scope** | Option<**String**> | Key scope: 'public' for all deployments, or a specific deployment UUID | [optional]
-**id** | Option<**uuid::Uuid**> | AI API key ID | [optional][readonly]
-**org_uuid** | Option<**uuid::Uuid**> | Organization UUID that owns this key | [optional][readonly]
-**created_at** | Option<**String**> | Creation timestamp | [optional][readonly]
+**updated_at** | **String** | Last update timestamp | [readonly]
+**name** | **String** | Human-readable name for the AI API key | 
+**scope** | **String** | Key scope: 'public' for all deployments, or a specific deployment UUID | 
+**id** | **uuid::Uuid** | AI API key ID | [readonly]
+**org_uuid** | **uuid::Uuid** | Organization UUID that owns this key | [readonly]
+**created_at** | **String** | Creation timestamp | [readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

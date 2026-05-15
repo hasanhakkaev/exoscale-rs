@@ -14,35 +14,35 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListModelsResponseEntry {
     /// Update time
-    #[serde(rename = "updated-at", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
+    #[serde(rename = "updated-at")]
+    pub updated_at: String,
     /// Model name
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "name")]
+    pub name: String,
     /// Model state
-    #[serde(rename = "state", skip_serializing_if = "Option::is_none")]
-    pub state: Option<State>,
+    #[serde(rename = "state")]
+    pub state: State,
     /// Model ID
-    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
-    pub id: Option<uuid::Uuid>,
-    /// Model size (nullable)
-    #[serde(rename = "model-size", skip_serializing_if = "Option::is_none")]
-    pub model_size: Option<u64>,
+    #[serde(rename = "id")]
+    pub id: uuid::Uuid,
+    /// Model size in bytes
+    #[serde(rename = "model-size")]
+    pub model_size: u64,
     /// Creation time
-    #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    #[serde(rename = "created-at")]
+    pub created_at: String,
 }
 
 impl ListModelsResponseEntry {
     /// AI model
-    pub fn new() -> ListModelsResponseEntry {
+    pub fn new(updated_at: String, name: String, state: State, id: uuid::Uuid, model_size: u64, created_at: String) -> ListModelsResponseEntry {
         ListModelsResponseEntry {
-            updated_at: None,
-            name: None,
-            state: None,
-            id: None,
-            model_size: None,
-            created_at: None,
+            updated_at,
+            name,
+            state,
+            id,
+            model_size,
+            created_at,
         }
     }
 }

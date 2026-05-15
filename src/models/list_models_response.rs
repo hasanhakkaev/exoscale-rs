@@ -13,15 +13,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListModelsResponse {
-    #[serde(rename = "models", skip_serializing_if = "Option::is_none")]
-    pub models: Option<Vec<models::ListModelsResponseEntry>>,
+    #[serde(rename = "models")]
+    pub models: Vec<models::ListModelsResponseEntry>,
 }
 
 impl ListModelsResponse {
     /// AI model list
-    pub fn new() -> ListModelsResponse {
+    pub fn new(models: Vec<models::ListModelsResponseEntry>) -> ListModelsResponse {
         ListModelsResponse {
-            models: None,
+            models,
         }
     }
 }

@@ -22,6 +22,7 @@ pub struct ModelRef {
 }
 
 impl ModelRef {
+    /// Model reference
     pub fn new() -> ModelRef {
         ModelRef {
             name: None,

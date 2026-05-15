@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **postcode** | Option<**String**> | Organization postcode | [optional][readonly]
 **city** | Option<**String**> | Organization city | [optional][readonly]
 **country** | Option<**String**> | Organization country | [optional][readonly]
-**balance** | Option<**f64**> | Organization balance | [optional][readonly]
+**balance** | Option<**f64**> | Organization balance. DEPRECATED: use the dedicated `live-balance` endpoint | [optional][readonly]
 **currency** | Option<**String**> | Organization currency | [optional][readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

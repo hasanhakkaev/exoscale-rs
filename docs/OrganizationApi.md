@@ -5,6 +5,7 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_env_impact**](OrganizationApi.md#get_env_impact) | **GET** /env-impact/{period} | [BETA] Retrieve organization environmental impact reports
+[**get_live_balance**](OrganizationApi.md#get_live_balance) | **GET** /live-balance | [BETA] Retrieve the live-balance
 [**get_organization**](OrganizationApi.md#get_organization) | **GET** /organization | Retrieve an organization
 [**get_usage_report**](OrganizationApi.md#get_usage_report) | **GET** /usage-report | Retrieve organization usage reports
 
@@ -27,6 +28,33 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::EnvImpactReport**](env-impact-report.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_live_balance
+
+> models::LiveBalance get_live_balance()
+[BETA] Retrieve the live-balance
+
+[BETA] Returns the live-balance of the current organization.
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::LiveBalance**](live-balance.md)
 
 ### Authorization
 

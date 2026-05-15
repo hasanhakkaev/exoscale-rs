@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**list_deployments**](DeploymentApi.md#list_deployments) | **GET** /ai/deployment | List Deployments
 [**reveal_deployment_api_key**](DeploymentApi.md#reveal_deployment_api_key) | **GET** /ai/deployment/{id}/api-key | Reveal Deployment API Key
 [**scale_deployment**](DeploymentApi.md#scale_deployment) | **POST** /ai/deployment/{id}/scale | Scale Deployment
-[**update_deployment**](DeploymentApi.md#update_deployment) | **PATCH** /ai/deployment/{id} | 
+[**update_deployment**](DeploymentApi.md#update_deployment) | **PATCH** /ai/deployment/{id} | Update Deployment
 
 
 
@@ -290,7 +290,7 @@ No authorization required
 ## update_deployment
 
 > models::Operation update_deployment(id, update_deployment_request)
-
+Update Deployment
 
 Update AI deployment
 

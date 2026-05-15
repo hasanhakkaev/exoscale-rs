@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetConfederatioUsageResponse {
-    #[serde(rename = "organizations_usages")]
+    #[serde(rename = "organizations-usages")]
     pub organizations_usages: std::collections::HashMap<String, models::OrganizationUsage>,
 }
 

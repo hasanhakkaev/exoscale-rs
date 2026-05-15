@@ -35,6 +35,9 @@ pub struct BlockStorageVolume {
     /// Volume ID
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
     pub id: Option<uuid::Uuid>,
+    /// Indicates if the block-storage volume is encrypted
+    #[serde(rename = "encrypted", skip_serializing_if = "Option::is_none")]
+    pub encrypted: Option<bool>,
     /// Volume creation date
     #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -52,6 +55,7 @@ impl BlockStorageVolume {
             blocksize: None,
             block_storage_snapshots: None,
             id: None,
+            encrypted: None,
             created_at: None,
         }
     }

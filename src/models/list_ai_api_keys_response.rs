@@ -14,12 +14,12 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListAiApiKeysResponse {
     #[serde(rename = "ai-api-keys")]
-    pub ai_api_keys: Vec<models::AiApiKey>,
+    pub ai_api_keys: Vec<models::ListAiApiKeysResponseEntry>,
 }
 
 impl ListAiApiKeysResponse {
     /// List of AI API keys
-    pub fn new(ai_api_keys: Vec<models::AiApiKey>) -> ListAiApiKeysResponse {
+    pub fn new(ai_api_keys: Vec<models::ListAiApiKeysResponseEntry>) -> ListAiApiKeysResponse {
         ListAiApiKeysResponse {
             ai_api_keys,
         }
