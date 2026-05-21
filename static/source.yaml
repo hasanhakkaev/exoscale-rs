@@ -11812,6 +11812,8 @@ paths:
                     type: string
                   secret:
                     type: string
+                  expires-at:
+                    type: string
       description: "[BETA] Request generation of key/secret that allow caller to assume
         target role"
       parameters:
@@ -16417,7 +16419,7 @@ paths:
             application/json:
               schema:
                 "$ref": "#/components/schemas/operation"
-      description: ''
+      description: Update IAM Assume role Policy
       parameters:
       - in: path
         required: true
@@ -19251,6 +19253,31 @@ paths:
           "$ref": "#/components/schemas/dbaas-user-username"
       summary: Delete a DBaaS MySQL user
       operationId: delete-dbaas-mysql-user
+  "/sks-cluster/{id}/generate-karpenter-nodepool":
+    put:
+      tags:
+      - cluster
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nodepool:
+                    type: string
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: Generate a Karpenter NodePool manifest with minimal configuration for
+        an SKS cluster
+      operationId: generate-sks-karpenter-nodepool
   "/load-balancer/{id}":
     put:
       tags:
@@ -19975,6 +20002,31 @@ paths:
           format: uuid
       summary: ''
       operationId: get-dbaas-external-endpoint-rsyslog
+  "/sks-cluster/{id}/generate-karpenter-exoscale-nodeclass":
+    put:
+      tags:
+      - cluster
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  exoscale-nodeclass:
+                    type: string
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: Generate a Karpenter ExoscaleNodeClass manifest for an SKS cluster,
+        including its default security group and feature flags if present
+      operationId: generate-sks-karpenter-exoscale-nodeclass
   "/sks-cluster/{id}/nodepool":
     post:
       tags:
