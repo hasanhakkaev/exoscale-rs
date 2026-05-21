@@ -60,6 +60,8 @@ Class | Method | HTTP request | Description
 *ClusterApi* | [**create_sks_cluster**](docs/ClusterApi.md#create_sks_cluster) | **POST** /sks-cluster | Create an SKS cluster
 *ClusterApi* | [**delete_sks_cluster**](docs/ClusterApi.md#delete_sks_cluster) | **DELETE** /sks-cluster/{id} | Delete an SKS cluster
 *ClusterApi* | [**generate_sks_cluster_kubeconfig**](docs/ClusterApi.md#generate_sks_cluster_kubeconfig) | **POST** /sks-cluster-kubeconfig/{id} | Generate a new Kubeconfig file for a SKS cluster
+*ClusterApi* | [**generate_sks_karpenter_exoscale_nodeclass**](docs/ClusterApi.md#generate_sks_karpenter_exoscale_nodeclass) | **PUT** /sks-cluster/{id}/generate-karpenter-exoscale-nodeclass | Generate a Karpenter ExoscaleNodeClass manifest for an SKS cluster, including its default security group and feature flags if present
+*ClusterApi* | [**generate_sks_karpenter_nodepool**](docs/ClusterApi.md#generate_sks_karpenter_nodepool) | **PUT** /sks-cluster/{id}/generate-karpenter-nodepool | Generate a Karpenter NodePool manifest with minimal configuration for an SKS cluster
 *ClusterApi* | [**get_sks_cluster**](docs/ClusterApi.md#get_sks_cluster) | **GET** /sks-cluster/{id} | Retrieve SKS cluster details
 *ClusterApi* | [**get_sks_cluster_authority_cert**](docs/ClusterApi.md#get_sks_cluster_authority_cert) | **GET** /sks-cluster/{id}/authority/{authority}/cert | Get the certificate for a SKS cluster authority
 *ClusterApi* | [**get_sks_cluster_inspection**](docs/ClusterApi.md#get_sks_cluster_inspection) | **GET** /sks-cluster/{id}/inspection | Get the latest inspection result
@@ -600,6 +602,8 @@ Class | Method | HTTP request | Description
  - [GenerateDataKeyRequest](docs/GenerateDataKeyRequest.md)
  - [GenerateDataKeyResponse](docs/GenerateDataKeyResponse.md)
  - [GenerateSksClusterKubeconfig200Response](docs/GenerateSksClusterKubeconfig200Response.md)
+ - [GenerateSksKarpenterExoscaleNodeclass200Response](docs/GenerateSksKarpenterExoscaleNodeclass200Response.md)
+ - [GenerateSksKarpenterNodepool200Response](docs/GenerateSksKarpenterNodepool200Response.md)
  - [GenericOAuthIntegration](docs/GenericOAuthIntegration.md)
  - [GetActiveNodepoolTemplate200Response](docs/GetActiveNodepoolTemplate200Response.md)
  - [GetAiApiKeyResponse](docs/GetAiApiKeyResponse.md)
@@ -885,4 +889,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-05-13
+Generated with latest changes from 2026-05-20

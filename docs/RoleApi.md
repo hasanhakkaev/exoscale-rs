@@ -199,7 +199,7 @@ No authorization required
 > models::Operation update_iam_role_assume_policy(id, iam_policy)
 Update IAM Assume role Policy
 
-
+Update IAM Assume role Policy
 
 ### Parameters
 

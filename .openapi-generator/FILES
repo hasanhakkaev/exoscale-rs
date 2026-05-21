@@ -239,6 +239,8 @@ docs/ForbiddenOperationResponse.md
 docs/GenerateDataKeyRequest.md
 docs/GenerateDataKeyResponse.md
 docs/GenerateSksClusterKubeconfig200Response.md
+docs/GenerateSksKarpenterExoscaleNodeclass200Response.md
+docs/GenerateSksKarpenterNodepool200Response.md
 docs/GenericOAuthIntegration.md
 docs/GetActiveNodepoolTemplate200Response.md
 docs/GetAiApiKeyResponse.md
@@ -801,6 +803,8 @@ src/models/forbidden_operation_response.rs
 src/models/generate_data_key_request.rs
 src/models/generate_data_key_response.rs
 src/models/generate_sks_cluster_kubeconfig_200_response.rs
+src/models/generate_sks_karpenter_exoscale_nodeclass_200_response.rs
+src/models/generate_sks_karpenter_nodepool_200_response.rs
 src/models/generic_o_auth_integration.rs
 src/models/get_active_nodepool_template_200_response.rs
 src/models/get_ai_api_key_response.rs

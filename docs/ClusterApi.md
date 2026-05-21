@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**create_sks_cluster**](ClusterApi.md#create_sks_cluster) | **POST** /sks-cluster | Create an SKS cluster
 [**delete_sks_cluster**](ClusterApi.md#delete_sks_cluster) | **DELETE** /sks-cluster/{id} | Delete an SKS cluster
 [**generate_sks_cluster_kubeconfig**](ClusterApi.md#generate_sks_cluster_kubeconfig) | **POST** /sks-cluster-kubeconfig/{id} | Generate a new Kubeconfig file for a SKS cluster
+[**generate_sks_karpenter_exoscale_nodeclass**](ClusterApi.md#generate_sks_karpenter_exoscale_nodeclass) | **PUT** /sks-cluster/{id}/generate-karpenter-exoscale-nodeclass | Generate a Karpenter ExoscaleNodeClass manifest for an SKS cluster, including its default security group and feature flags if present
+[**generate_sks_karpenter_nodepool**](ClusterApi.md#generate_sks_karpenter_nodepool) | **PUT** /sks-cluster/{id}/generate-karpenter-nodepool | Generate a Karpenter NodePool manifest with minimal configuration for an SKS cluster
 [**get_sks_cluster**](ClusterApi.md#get_sks_cluster) | **GET** /sks-cluster/{id} | Retrieve SKS cluster details
 [**get_sks_cluster_authority_cert**](ClusterApi.md#get_sks_cluster_authority_cert) | **GET** /sks-cluster/{id}/authority/{authority}/cert | Get the certificate for a SKS cluster authority
 [**get_sks_cluster_inspection**](ClusterApi.md#get_sks_cluster_inspection) | **GET** /sks-cluster/{id}/inspection | Get the latest inspection result
@@ -109,6 +111,66 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## generate_sks_karpenter_exoscale_nodeclass
+
+> models::GenerateSksKarpenterExoscaleNodeclass200Response generate_sks_karpenter_exoscale_nodeclass(id)
+Generate a Karpenter ExoscaleNodeClass manifest for an SKS cluster, including its default security group and feature flags if present
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**models::GenerateSksKarpenterExoscaleNodeclass200Response**](generate_sks_karpenter_exoscale_nodeclass_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## generate_sks_karpenter_nodepool
+
+> models::GenerateSksKarpenterNodepool200Response generate_sks_karpenter_nodepool(id)
+Generate a Karpenter NodePool manifest with minimal configuration for an SKS cluster
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** |  | [required] |
+
+### Return type
+
+[**models::GenerateSksKarpenterNodepool200Response**](generate_sks_karpenter_nodepool_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
