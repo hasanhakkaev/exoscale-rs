@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.5.0](https://github.com/hasanhakkaev/exoscale-rs/compare/v3.4.0...v3.5.0) (2026-06-13)
+
+
+### Features
+
+* **api:** Regenerate client from spec published on 2026-05-13 ([d67d9b1](https://github.com/hasanhakkaev/exoscale-rs/commit/d67d9b1ba00cb9e9198569a622ccb5823be3293f))
+* **api:** Regenerate client from spec published on 2026-06-12 ([a38b008](https://github.com/hasanhakkaev/exoscale-rs/commit/a38b0085e057746a5e767bf6bc796aa7c4d5bb7b))
+
 ## [3.4.0](https://github.com/hasanhakkaev/exoscale-rs/compare/v3.3.0...v3.4.0) (2026-05-15)
 
 
