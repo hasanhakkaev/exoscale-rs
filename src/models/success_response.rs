@@ -30,6 +30,8 @@ pub enum Status {
     Success,
     #[serde(rename = "target-registered")]
     TargetRegistered,
+    #[serde(rename = "already-applied")]
+    AlreadyApplied,
 }
 
 impl Default for Status {

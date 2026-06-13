@@ -30,7 +30,7 @@ pub struct CreateIamRoleRequest {
     #[serde(rename = "policy", skip_serializing_if = "Option::is_none")]
     pub policy: Option<Box<models::IamPolicy>>,
     #[serde(rename = "assume-role-policy", skip_serializing_if = "Option::is_none")]
-    pub assume_role_policy: Option<Box<models::IamPolicy>>,
+    pub assume_role_policy: Option<Box<models::IamAssumeRolePolicy>>,
     /// Maximum TTL requester is allowed to ask for when assuming a role
     #[serde(rename = "max-session-ttl", skip_serializing_if = "Option::is_none")]
     pub max_session_ttl: Option<u64>,

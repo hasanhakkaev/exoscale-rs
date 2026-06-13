@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ip_filter** | Option<**Vec<String>**> | Allowed CIDR address blocks for incoming connections | [optional]
 **backups** | Option<[**Vec<models::DbaasServiceBackup>**](DbaasServiceBackup.md)> | List of backups for the service | [optional]
 **termination_protection** | Option<**bool**> | Service is protected against termination and powering off | [optional]
+**pgaudit_settings** | Option<[**models::JsonSchemaPgaudit**](JsonSchemaPgaudit.md)> |  | [optional]
 **notifications** | Option<[**Vec<models::DbaasServiceNotification>**](DbaasServiceNotification.md)> | Service notifications | [optional]
 **components** | Option<[**Vec<models::DbaasServiceMysqlComponentsInner>**](DbaasServiceMysqlComponentsInner.md)> | Service component information objects | [optional]
 **synchronous_replication** | Option<[**models::EnumPgSynchronousReplication**](EnumPgSynchronousReplication.md)> |  | [optional]

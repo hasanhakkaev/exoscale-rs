@@ -47,7 +47,7 @@ No authorization required
 
 ## delete_ai_api_key
 
-> delete_ai_api_key(id)
+> models::Operation delete_ai_api_key(id)
 Delete AI API Key
 
 Delete AI API key
@@ -61,7 +61,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
- (empty response body)
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ No authorization required
 > models::OrgConsumptionQuotaResponse get_user_org_consumption_quota()
 Get Organization Consumption Quota
 
-Get per-org token consumption quota (tokens/min). Null means unlimited.
+Get per-org Unit Of Measurement (UOM) consumption quota (UOM/min). Null means unlimited. UOM represents weighted units across different AI workloads (e.g., tokens for LLMs, minutes for TTS, pages for OCR).
 
 ### Parameters
 

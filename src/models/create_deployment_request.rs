@@ -30,13 +30,13 @@ pub struct CreateDeploymentRequest {
     /// Optional extra inference engine server CLI args
     #[serde(rename = "inference-engine-parameters", skip_serializing_if = "Option::is_none")]
     pub inference_engine_parameters: Option<Vec<String>>,
-    #[serde(rename = "model", deserialize_with = "Option::deserialize")]
-    pub model: Option<Box<models::ModelRef>>,
+    #[serde(rename = "model")]
+    pub model: Box<models::ModelRef>,
 }
 
 impl CreateDeploymentRequest {
     /// Deploy an AI model onto a set of GPUs
-    pub fn new(gpu_count: u64, name: String, gpu_type: String, replicas: u64, model: Option<models::ModelRef>) -> CreateDeploymentRequest {
+    pub fn new(gpu_count: u64, name: String, gpu_type: String, replicas: u64, model: models::ModelRef) -> CreateDeploymentRequest {
         CreateDeploymentRequest {
             gpu_count,
             inference_engine_version: None,
@@ -44,7 +44,7 @@ impl CreateDeploymentRequest {
             gpu_type,
             replicas,
             inference_engine_parameters: None,
-            model: if let Some(x) = model {Some(Box::new(x))} else {None},
+            model: Box::new(model),
         }
     }
 }

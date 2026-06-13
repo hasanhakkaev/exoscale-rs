@@ -23,6 +23,8 @@ pub struct AssumeIamRole200Response {
     pub role_id: Option<String>,
     #[serde(rename = "secret", skip_serializing_if = "Option::is_none")]
     pub secret: Option<String>,
+    #[serde(rename = "expires-at", skip_serializing_if = "Option::is_none")]
+    pub expires_at: Option<String>,
 }
 
 impl AssumeIamRole200Response {
@@ -33,6 +35,7 @@ impl AssumeIamRole200Response {
             org_id: None,
             role_id: None,
             secret: None,
+            expires_at: None,
         }
     }
 }

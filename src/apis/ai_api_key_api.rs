@@ -18,7 +18,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateAiApiKeyError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status404(models::ErrorResponse),
     Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),
@@ -29,7 +29,7 @@ pub enum CreateAiApiKeyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeleteAiApiKeyError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -39,7 +39,7 @@ pub enum DeleteAiApiKeyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetAiApiKeyError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -58,7 +58,7 @@ pub enum GetUserOrgConsumptionQuotaError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ListAiApiKeysError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -76,7 +76,7 @@ pub enum RevealAiApiKeyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RotateAiApiKeyError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -86,7 +86,7 @@ pub enum RotateAiApiKeyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UpdateAiApiKeyError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status404(models::ErrorResponse),
     Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),
@@ -111,7 +111,7 @@ pub async fn create_ai_api_key(configuration: &configuration::Configuration, cre
     body_payload_option,
     ).await
 }
-pub async fn delete_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<(), Error<DeleteAiApiKeyError>> {
+pub async fn delete_ai_api_key(configuration: &configuration::Configuration, id: String) -> Result<models::Operation, Error<DeleteAiApiKeyError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();

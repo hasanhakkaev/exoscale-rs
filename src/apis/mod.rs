@@ -153,5 +153,6 @@ pub mod sos_api;
 pub mod ssh_key_api;
 pub mod template_api;
 pub mod user_api;
+pub mod vpc_api;
 pub mod zone_api;
 pub mod configuration;

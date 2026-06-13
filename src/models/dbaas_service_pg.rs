@@ -62,6 +62,8 @@ pub struct DbaasServicePg {
     /// Service is protected against termination and powering off
     #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
     pub termination_protection: Option<bool>,
+    #[serde(rename = "pgaudit-settings", skip_serializing_if = "Option::is_none")]
+    pub pgaudit_settings: Option<Box<models::JsonSchemaPgaudit>>,
     /// Service notifications
     #[serde(rename = "notifications", skip_serializing_if = "Option::is_none")]
     pub notifications: Option<Vec<models::DbaasServiceNotification>>,
@@ -133,6 +135,7 @@ impl DbaasServicePg {
             ip_filter: None,
             backups: None,
             termination_protection: None,
+            pgaudit_settings: None,
             notifications: None,
             components: None,
             synchronous_replication: None,

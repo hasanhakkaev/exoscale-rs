@@ -26,6 +26,9 @@ pub struct UpdateDbaasServiceValkeyRequest {
     pub ip_filter: Option<Vec<String>>,
     #[serde(rename = "migration", skip_serializing_if = "Option::is_none")]
     pub migration: Option<Box<models::UpdateDbaasServiceMysqlRequestMigration>>,
+    /// Valkey major version
+    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
+    pub version: Option<String>,
     #[serde(rename = "valkey-settings", skip_serializing_if = "Option::is_none")]
     pub valkey_settings: Option<Box<models::JsonSchemaValkey>>,
 }
@@ -38,6 +41,7 @@ impl UpdateDbaasServiceValkeyRequest {
             termination_protection: None,
             ip_filter: None,
             migration: None,
+            version: None,
             valkey_settings: None,
         }
     }

@@ -30,6 +30,8 @@ pub struct CreateDbaasServicePgRequest {
     /// Service is protected against termination and powering off
     #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
     pub termination_protection: Option<bool>,
+    #[serde(rename = "pgaudit-settings", skip_serializing_if = "Option::is_none")]
+    pub pgaudit_settings: Option<Box<models::JsonSchemaPgaudit>>,
     #[serde(rename = "fork-from-service", skip_serializing_if = "Option::is_none")]
     pub fork_from_service: Option<String>,
     #[serde(rename = "synchronous-replication", skip_serializing_if = "Option::is_none")]
@@ -74,6 +76,7 @@ impl CreateDbaasServicePgRequest {
             timescaledb_settings: None,
             ip_filter: None,
             termination_protection: None,
+            pgaudit_settings: None,
             fork_from_service: None,
             synchronous_replication: None,
             recovery_backup_time: None,

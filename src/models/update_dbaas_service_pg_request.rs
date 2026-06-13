@@ -27,6 +27,8 @@ pub struct UpdateDbaasServicePgRequest {
     /// Service is protected against termination and powering off
     #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
     pub termination_protection: Option<bool>,
+    #[serde(rename = "pgaudit-settings", skip_serializing_if = "Option::is_none")]
+    pub pgaudit_settings: Option<Box<models::JsonSchemaPgaudit>>,
     #[serde(rename = "synchronous-replication", skip_serializing_if = "Option::is_none")]
     pub synchronous_replication: Option<models::EnumPgSynchronousReplication>,
     #[serde(rename = "pglookout-settings", skip_serializing_if = "Option::is_none")]
@@ -60,6 +62,7 @@ impl UpdateDbaasServicePgRequest {
             timescaledb_settings: None,
             ip_filter: None,
             termination_protection: None,
+            pgaudit_settings: None,
             synchronous_replication: None,
             pglookout_settings: None,
             maintenance: None,

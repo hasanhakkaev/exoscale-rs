@@ -17,6 +17,9 @@ pub struct JsonSchemaValkey {
     pub ssl: Option<bool>,
     #[serde(rename = "lfu_log_factor", skip_serializing_if = "Option::is_none")]
     pub lfu_log_factor: Option<u8>,
+    /// When enabled, Valkey will create frequent local RDB snapshots. When disabled, Valkey will only take RDB snapshots when a backup is created, based on the backup schedule. This setting is ignored when `valkey_persistence` is set to `off`.
+    #[serde(rename = "frequent_snapshots", skip_serializing_if = "Option::is_none")]
+    pub frequent_snapshots: Option<bool>,
     #[serde(rename = "maxmemory_policy", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub maxmemory_policy: Option<Option<MaxmemoryPolicy>>,
     /// Set Valkey IO thread count. Changing this will cause a restart of the Valkey service.
@@ -27,6 +30,9 @@ pub struct JsonSchemaValkey {
     /// Set output buffer limit for pub / sub clients in MB. The value is the hard limit, the soft limit is 1/4 of the hard limit. When setting the limit, be mindful of the available memory in the selected service plan.
     #[serde(rename = "pubsub_client_output_buffer_limit", skip_serializing_if = "Option::is_none")]
     pub pubsub_client_output_buffer_limit: Option<u16>,
+    /// Valkey reclaims expired keys both when accessed and in the background. The background process scans for expired keys to free memory. Increasing the active-expire-effort setting (default 1, max 10) uses more CPU to reclaim expired keys faster, reducing memory usage but potentially increasing latency.
+    #[serde(rename = "active_expire_effort", skip_serializing_if = "Option::is_none")]
+    pub active_expire_effort: Option<u8>,
     #[serde(rename = "notify_keyspace_events", skip_serializing_if = "Option::is_none")]
     pub notify_keyspace_events: Option<String>,
     /// When persistence is 'rdb', Valkey does RDB dumps each 10 minutes if any key is changed. Also RDB dumps are done according to backup schedule for backup purposes. When persistence is 'off', no RDB dumps and backups are done, so data can be lost at any moment if service is restarted for any reason, or if service is powered off. Also service can't be forked.
@@ -47,10 +53,12 @@ impl JsonSchemaValkey {
         JsonSchemaValkey {
             ssl: None,
             lfu_log_factor: None,
+            frequent_snapshots: None,
             maxmemory_policy: None,
             io_threads: None,
             lfu_decay_time: None,
             pubsub_client_output_buffer_limit: None,
+            active_expire_effort: None,
             notify_keyspace_events: None,
             persistence: None,
             timeout: None,

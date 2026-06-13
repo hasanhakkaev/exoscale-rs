@@ -38,6 +38,22 @@ pub enum GenerateSksClusterKubeconfigError {
 }
 
 
+/// struct for typed errors of method [`generate_sks_karpenter_exoscale_nodeclass`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GenerateSksKarpenterExoscaleNodeclassError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`generate_sks_karpenter_nodepool`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GenerateSksKarpenterNodepoolError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`get_sks_cluster`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -194,6 +210,44 @@ pub async fn generate_sks_cluster_kubeconfig(configuration: &configuration::Conf
     configuration,
     reqwest::Method::POST,
     "/sks-cluster-kubeconfig/{id}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn generate_sks_karpenter_exoscale_nodeclass(configuration: &configuration::Configuration, id: String) -> Result<models::GenerateSksKarpenterExoscaleNodeclass200Response, Error<GenerateSksKarpenterExoscaleNodeclassError>> {
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/sks-cluster/{id}/generate-karpenter-exoscale-nodeclass",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn generate_sks_karpenter_nodepool(configuration: &configuration::Configuration, id: String) -> Result<models::GenerateSksKarpenterNodepool200Response, Error<GenerateSksKarpenterNodepoolError>> {
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/sks-cluster/{id}/generate-karpenter-nodepool",
     path_params_map,
     query_params_option,
     body_payload_option,

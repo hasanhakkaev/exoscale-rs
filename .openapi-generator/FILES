@@ -75,6 +75,7 @@ docs/CreateSecurityGroupRequest.md
 docs/CreateSksClusterRequest.md
 docs/CreateSksNodepoolRequest.md
 docs/CreateUserRequest.md
+docs/CreateVpcRequest.md
 docs/CryptoApi.md
 docs/DbaasApi.md
 docs/DbaasBackupConfig.md
@@ -235,10 +236,11 @@ docs/Event.md
 docs/EventApi.md
 docs/EvictInstancePoolMembersRequest.md
 docs/EvictSksNodepoolMembersRequest.md
-docs/ForbiddenOperationResponse.md
 docs/GenerateDataKeyRequest.md
 docs/GenerateDataKeyResponse.md
 docs/GenerateSksClusterKubeconfig200Response.md
+docs/GenerateSksKarpenterExoscaleNodeclass200Response.md
+docs/GenerateSksKarpenterNodepool200Response.md
 docs/GenericOAuthIntegration.md
 docs/GetActiveNodepoolTemplate200Response.md
 docs/GetAiApiKeyResponse.md
@@ -294,6 +296,7 @@ docs/GoogleAuthIntegration.md
 docs/GrafanaDateFormatSpecifications.md
 docs/IamApiKey.md
 docs/IamApiKeyCreated.md
+docs/IamAssumeRolePolicy.md
 docs/IamPolicy.md
 docs/IamRole.md
 docs/IamServicePolicy.md
@@ -323,6 +326,7 @@ docs/JsonSchemaKafkaRest.md
 docs/JsonSchemaMysql.md
 docs/JsonSchemaOpensearch.md
 docs/JsonSchemaPg.md
+docs/JsonSchemaPgaudit.md
 docs/JsonSchemaPgbouncer.md
 docs/JsonSchemaPglookout.md
 docs/JsonSchemaSchemaRegistry.md
@@ -378,6 +382,8 @@ docs/ListSosBucketsUsage200Response.md
 docs/ListSshKeys200Response.md
 docs/ListTemplates200Response.md
 docs/ListUsers200Response.md
+docs/ListVpcResponseEntry.md
+docs/ListVpcs200Response.md
 docs/ListZones200Response.md
 docs/LiveBalance.md
 docs/LoadBalancer.md
@@ -528,9 +534,12 @@ docs/UpdateSksClusterRequest.md
 docs/UpdateSksNodepoolRequest.md
 docs/UpdateTemplateRequest.md
 docs/UpdateUserRoleRequest.md
+docs/UpdateVpcRequest.md
 docs/UpgradeSksClusterRequest.md
 docs/User.md
 docs/UserApi.md
+docs/Vpc.md
+docs/VpcApi.md
 docs/WriteAheadLogWalSettings.md
 docs/Zone.md
 docs/ZoneApi.md
@@ -574,6 +583,7 @@ src/apis/sos_api.rs
 src/apis/ssh_key_api.rs
 src/apis/template_api.rs
 src/apis/user_api.rs
+src/apis/vpc_api.rs
 src/apis/zone_api.rs
 src/lib.rs
 src/middleware.rs
@@ -644,6 +654,7 @@ src/models/create_security_group_request.rs
 src/models/create_sks_cluster_request.rs
 src/models/create_sks_nodepool_request.rs
 src/models/create_user_request.rs
+src/models/create_vpc_request.rs
 src/models/dbaas_backup_config.rs
 src/models/dbaas_datadog_tag.rs
 src/models/dbaas_endpoint_datadog_common.rs
@@ -797,10 +808,11 @@ src/models/error_response_errors_inner.rs
 src/models/event.rs
 src/models/evict_instance_pool_members_request.rs
 src/models/evict_sks_nodepool_members_request.rs
-src/models/forbidden_operation_response.rs
 src/models/generate_data_key_request.rs
 src/models/generate_data_key_response.rs
 src/models/generate_sks_cluster_kubeconfig_200_response.rs
+src/models/generate_sks_karpenter_exoscale_nodeclass_200_response.rs
+src/models/generate_sks_karpenter_nodepool_200_response.rs
 src/models/generic_o_auth_integration.rs
 src/models/get_active_nodepool_template_200_response.rs
 src/models/get_ai_api_key_response.rs
@@ -856,6 +868,7 @@ src/models/google_auth_integration.rs
 src/models/grafana_date_format_specifications.rs
 src/models/iam_api_key.rs
 src/models/iam_api_key_created.rs
+src/models/iam_assume_role_policy.rs
 src/models/iam_policy.rs
 src/models/iam_role.rs
 src/models/iam_service_policy.rs
@@ -882,6 +895,7 @@ src/models/json_schema_kafka_rest.rs
 src/models/json_schema_mysql.rs
 src/models/json_schema_opensearch.rs
 src/models/json_schema_pg.rs
+src/models/json_schema_pgaudit.rs
 src/models/json_schema_pgbouncer.rs
 src/models/json_schema_pglookout.rs
 src/models/json_schema_schema_registry.rs
@@ -936,6 +950,8 @@ src/models/list_sos_buckets_usage_200_response.rs
 src/models/list_ssh_keys_200_response.rs
 src/models/list_templates_200_response.rs
 src/models/list_users_200_response.rs
+src/models/list_vpc_response_entry.rs
+src/models/list_vpcs_200_response.rs
 src/models/list_zones_200_response.rs
 src/models/live_balance.rs
 src/models/load_balancer.rs
@@ -1070,8 +1086,10 @@ src/models/update_sks_cluster_request.rs
 src/models/update_sks_nodepool_request.rs
 src/models/update_template_request.rs
 src/models/update_user_role_request.rs
+src/models/update_vpc_request.rs
 src/models/upgrade_sks_cluster_request.rs
 src/models/user.rs
+src/models/vpc.rs
 src/models/write_ahead_log__wal__settings.rs
 src/models/zone.rs
 src/models/zone_name.rs

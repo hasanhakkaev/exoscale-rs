@@ -60,6 +60,8 @@ Class | Method | HTTP request | Description
 *ClusterApi* | [**create_sks_cluster**](docs/ClusterApi.md#create_sks_cluster) | **POST** /sks-cluster | Create an SKS cluster
 *ClusterApi* | [**delete_sks_cluster**](docs/ClusterApi.md#delete_sks_cluster) | **DELETE** /sks-cluster/{id} | Delete an SKS cluster
 *ClusterApi* | [**generate_sks_cluster_kubeconfig**](docs/ClusterApi.md#generate_sks_cluster_kubeconfig) | **POST** /sks-cluster-kubeconfig/{id} | Generate a new Kubeconfig file for a SKS cluster
+*ClusterApi* | [**generate_sks_karpenter_exoscale_nodeclass**](docs/ClusterApi.md#generate_sks_karpenter_exoscale_nodeclass) | **PUT** /sks-cluster/{id}/generate-karpenter-exoscale-nodeclass | Generate a Karpenter ExoscaleNodeClass manifest for an SKS cluster, including its default security group and feature flags if present
+*ClusterApi* | [**generate_sks_karpenter_nodepool**](docs/ClusterApi.md#generate_sks_karpenter_nodepool) | **PUT** /sks-cluster/{id}/generate-karpenter-nodepool | Generate a Karpenter NodePool manifest with minimal configuration for an SKS cluster
 *ClusterApi* | [**get_sks_cluster**](docs/ClusterApi.md#get_sks_cluster) | **GET** /sks-cluster/{id} | Retrieve SKS cluster details
 *ClusterApi* | [**get_sks_cluster_authority_cert**](docs/ClusterApi.md#get_sks_cluster_authority_cert) | **GET** /sks-cluster/{id}/authority/{authority}/cert | Get the certificate for a SKS cluster authority
 *ClusterApi* | [**get_sks_cluster_inspection**](docs/ClusterApi.md#get_sks_cluster_inspection) | **GET** /sks-cluster/{id}/inspection | Get the latest inspection result
@@ -330,13 +332,12 @@ Class | Method | HTTP request | Description
 *ReverseDnsApi* | [**get_reverse_dns_instance**](docs/ReverseDnsApi.md#get_reverse_dns_instance) | **GET** /reverse-dns/instance/{id} | Query the PTR DNS records for an instance
 *ReverseDnsApi* | [**update_reverse_dns_elastic_ip**](docs/ReverseDnsApi.md#update_reverse_dns_elastic_ip) | **POST** /reverse-dns/elastic-ip/{id} | Update/Create the PTR DNS record for an elastic IP
 *ReverseDnsApi* | [**update_reverse_dns_instance**](docs/ReverseDnsApi.md#update_reverse_dns_instance) | **POST** /reverse-dns/instance/{id} | Update/Create the PTR DNS record for an instance
-*RoleApi* | [**assume_iam_role**](docs/RoleApi.md#assume_iam_role) | **POST** /iam-role/{target_role_id}/assume | [BETA] Request generation of key/secret that allow caller to assume target role
+*RoleApi* | [**assume_iam_role**](docs/RoleApi.md#assume_iam_role) | **POST** /iam-role/{id}/assume | [BETA] Request generation of key/secret that allow caller to assume target role
 *RoleApi* | [**create_iam_role**](docs/RoleApi.md#create_iam_role) | **POST** /iam-role | Create IAM Role
 *RoleApi* | [**delete_iam_role**](docs/RoleApi.md#delete_iam_role) | **DELETE** /iam-role/{id} | Delete IAM Role
 *RoleApi* | [**get_iam_role**](docs/RoleApi.md#get_iam_role) | **GET** /iam-role/{id} | Retrieve IAM Role
 *RoleApi* | [**list_iam_roles**](docs/RoleApi.md#list_iam_roles) | **GET** /iam-role | List IAM Roles
 *RoleApi* | [**update_iam_role**](docs/RoleApi.md#update_iam_role) | **PUT** /iam-role/{id} | Update IAM Role
-*RoleApi* | [**update_iam_role_assume_policy**](docs/RoleApi.md#update_iam_role_assume_policy) | **PUT** /iam-role/{id}:assume-role-policy | Update IAM Assume role Policy
 *RoleApi* | [**update_iam_role_policy**](docs/RoleApi.md#update_iam_role_policy) | **PUT** /iam-role/{id}:policy | Update IAM Role Policy
 *SecurityGroupApi* | [**add_external_source_to_security_group**](docs/SecurityGroupApi.md#add_external_source_to_security_group) | **PUT** /security-group/{id}:add-source | Add an external source as a member of a Security Group
 *SecurityGroupApi* | [**add_rule_to_security_group**](docs/SecurityGroupApi.md#add_rule_to_security_group) | **POST** /security-group/{id}/rules | Create a Security Group rule
@@ -371,6 +372,11 @@ Class | Method | HTTP request | Description
 *UserApi* | [**delete_user**](docs/UserApi.md#delete_user) | **DELETE** /user/{id} | Delete User
 *UserApi* | [**list_users**](docs/UserApi.md#list_users) | **GET** /user | List Users
 *UserApi* | [**update_user_role**](docs/UserApi.md#update_user_role) | **PUT** /user/{id} | Update a User's IAM role
+*VpcApi* | [**create_vpc**](docs/VpcApi.md#create_vpc) | **POST** /vpc | [BETA] Create a VPC
+*VpcApi* | [**delete_vpc**](docs/VpcApi.md#delete_vpc) | **DELETE** /vpc/{id} | [BETA] Delete a VPC
+*VpcApi* | [**get_vpc**](docs/VpcApi.md#get_vpc) | **GET** /vpc/{id} | [BETA] Retrieve VPC details
+*VpcApi* | [**list_vpcs**](docs/VpcApi.md#list_vpcs) | **GET** /vpc | [BETA] List VPCs
+*VpcApi* | [**update_vpc**](docs/VpcApi.md#update_vpc) | **PUT** /vpc/{id} | [BETA] Update a VPC
 *ZoneApi* | [**list_zones**](docs/ZoneApi.md#list_zones) | **GET** /zone | List Zones
 
 
@@ -443,6 +449,7 @@ Class | Method | HTTP request | Description
  - [CreateSksClusterRequest](docs/CreateSksClusterRequest.md)
  - [CreateSksNodepoolRequest](docs/CreateSksNodepoolRequest.md)
  - [CreateUserRequest](docs/CreateUserRequest.md)
+ - [CreateVpcRequest](docs/CreateVpcRequest.md)
  - [DbaasBackupConfig](docs/DbaasBackupConfig.md)
  - [DbaasDatadogTag](docs/DbaasDatadogTag.md)
  - [DbaasEndpointDatadogCommon](docs/DbaasEndpointDatadogCommon.md)
@@ -596,10 +603,11 @@ Class | Method | HTTP request | Description
  - [Event](docs/Event.md)
  - [EvictInstancePoolMembersRequest](docs/EvictInstancePoolMembersRequest.md)
  - [EvictSksNodepoolMembersRequest](docs/EvictSksNodepoolMembersRequest.md)
- - [ForbiddenOperationResponse](docs/ForbiddenOperationResponse.md)
  - [GenerateDataKeyRequest](docs/GenerateDataKeyRequest.md)
  - [GenerateDataKeyResponse](docs/GenerateDataKeyResponse.md)
  - [GenerateSksClusterKubeconfig200Response](docs/GenerateSksClusterKubeconfig200Response.md)
+ - [GenerateSksKarpenterExoscaleNodeclass200Response](docs/GenerateSksKarpenterExoscaleNodeclass200Response.md)
+ - [GenerateSksKarpenterNodepool200Response](docs/GenerateSksKarpenterNodepool200Response.md)
  - [GenericOAuthIntegration](docs/GenericOAuthIntegration.md)
  - [GetActiveNodepoolTemplate200Response](docs/GetActiveNodepoolTemplate200Response.md)
  - [GetAiApiKeyResponse](docs/GetAiApiKeyResponse.md)
@@ -655,6 +663,7 @@ Class | Method | HTTP request | Description
  - [GrafanaDateFormatSpecifications](docs/GrafanaDateFormatSpecifications.md)
  - [IamApiKey](docs/IamApiKey.md)
  - [IamApiKeyCreated](docs/IamApiKeyCreated.md)
+ - [IamAssumeRolePolicy](docs/IamAssumeRolePolicy.md)
  - [IamPolicy](docs/IamPolicy.md)
  - [IamRole](docs/IamRole.md)
  - [IamServicePolicy](docs/IamServicePolicy.md)
@@ -681,6 +690,7 @@ Class | Method | HTTP request | Description
  - [JsonSchemaMysql](docs/JsonSchemaMysql.md)
  - [JsonSchemaOpensearch](docs/JsonSchemaOpensearch.md)
  - [JsonSchemaPg](docs/JsonSchemaPg.md)
+ - [JsonSchemaPgaudit](docs/JsonSchemaPgaudit.md)
  - [JsonSchemaPgbouncer](docs/JsonSchemaPgbouncer.md)
  - [JsonSchemaPglookout](docs/JsonSchemaPglookout.md)
  - [JsonSchemaSchemaRegistry](docs/JsonSchemaSchemaRegistry.md)
@@ -735,6 +745,8 @@ Class | Method | HTTP request | Description
  - [ListSshKeys200Response](docs/ListSshKeys200Response.md)
  - [ListTemplates200Response](docs/ListTemplates200Response.md)
  - [ListUsers200Response](docs/ListUsers200Response.md)
+ - [ListVpcResponseEntry](docs/ListVpcResponseEntry.md)
+ - [ListVpcs200Response](docs/ListVpcs200Response.md)
  - [ListZones200Response](docs/ListZones200Response.md)
  - [LiveBalance](docs/LiveBalance.md)
  - [LoadBalancer](docs/LoadBalancer.md)
@@ -868,8 +880,10 @@ Class | Method | HTTP request | Description
  - [UpdateSksNodepoolRequest](docs/UpdateSksNodepoolRequest.md)
  - [UpdateTemplateRequest](docs/UpdateTemplateRequest.md)
  - [UpdateUserRoleRequest](docs/UpdateUserRoleRequest.md)
+ - [UpdateVpcRequest](docs/UpdateVpcRequest.md)
  - [UpgradeSksClusterRequest](docs/UpgradeSksClusterRequest.md)
  - [User](docs/User.md)
+ - [Vpc](docs/Vpc.md)
  - [WriteAheadLogWalSettings](docs/WriteAheadLogWalSettings.md)
  - [Zone](docs/Zone.md)
  - [ZoneName](docs/ZoneName.md)
@@ -885,4 +899,4 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-05-13
+Generated with latest changes from 2026-06-12

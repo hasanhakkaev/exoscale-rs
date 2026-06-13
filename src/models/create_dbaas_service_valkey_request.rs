@@ -13,39 +13,43 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateDbaasServiceValkeyRequest {
-    #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
-    pub maintenance: Option<Box<models::UpdateDbaasServiceMysqlRequestMaintenance>>,
-    /// Subscription plan
-    #[serde(rename = "plan")]
-    pub plan: String,
-    /// Service is protected against termination and powering off
-    #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
-    pub termination_protection: Option<bool>,
+    #[serde(rename = "valkey-settings", skip_serializing_if = "Option::is_none")]
+    pub valkey_settings: Option<Box<models::JsonSchemaValkey>>,
     /// Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
     #[serde(rename = "ip-filter", skip_serializing_if = "Option::is_none")]
     pub ip_filter: Option<Vec<String>>,
-    #[serde(rename = "migration", skip_serializing_if = "Option::is_none")]
-    pub migration: Option<Box<models::UpdateDbaasServiceMysqlRequestMigration>>,
-    #[serde(rename = "valkey-settings", skip_serializing_if = "Option::is_none")]
-    pub valkey_settings: Option<Box<models::JsonSchemaValkey>>,
+    /// Service is protected against termination and powering off
+    #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
+    pub termination_protection: Option<bool>,
     #[serde(rename = "fork-from-service", skip_serializing_if = "Option::is_none")]
     pub fork_from_service: Option<String>,
+    #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
+    pub maintenance: Option<Box<models::UpdateDbaasServiceMysqlRequestMaintenance>>,
+    /// Valkey major version
+    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
+    pub version: Option<String>,
     /// Name of a backup to recover from for services that support backup names
     #[serde(rename = "recovery-backup-name", skip_serializing_if = "Option::is_none")]
     pub recovery_backup_name: Option<String>,
+    /// Subscription plan
+    #[serde(rename = "plan")]
+    pub plan: String,
+    #[serde(rename = "migration", skip_serializing_if = "Option::is_none")]
+    pub migration: Option<Box<models::UpdateDbaasServiceMysqlRequestMigration>>,
 }
 
 impl CreateDbaasServiceValkeyRequest {
     pub fn new(plan: String) -> CreateDbaasServiceValkeyRequest {
         CreateDbaasServiceValkeyRequest {
-            maintenance: None,
-            plan,
-            termination_protection: None,
-            ip_filter: None,
-            migration: None,
             valkey_settings: None,
+            ip_filter: None,
+            termination_protection: None,
             fork_from_service: None,
+            maintenance: None,
+            version: None,
             recovery_backup_name: None,
+            plan,
+            migration: None,
         }
     }
 }
