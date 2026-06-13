@@ -19,7 +19,7 @@ use super::{Error, configuration};
 #[serde(untagged)]
 pub enum CreateDeploymentError {
     Status412(models::ErrorResponse),
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -29,7 +29,8 @@ pub enum CreateDeploymentError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum DeleteDeploymentError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
+    Status409(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -94,7 +95,8 @@ pub enum RevealDeploymentApiKeyError {
 #[serde(untagged)]
 pub enum ScaleDeploymentError {
     Status412(models::ErrorResponse),
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
+    Status409(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
@@ -104,7 +106,8 @@ pub enum ScaleDeploymentError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum UpdateDeploymentError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
+    Status409(models::ErrorResponse),
     Status404(models::ErrorResponse),
     Status400(models::ErrorResponse),
     UnknownValue(serde_json::Value),

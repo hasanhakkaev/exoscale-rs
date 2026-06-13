@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **timescaledb_settings** | Option<[**models::JsonSchemaTimescaledb**](JsonSchemaTimescaledb.md)> |  | [optional]
 **ip_filter** | Option<**Vec<String>**> | Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16' | [optional]
 **termination_protection** | Option<**bool**> | Service is protected against termination and powering off | [optional]
+**pgaudit_settings** | Option<[**models::JsonSchemaPgaudit**](JsonSchemaPgaudit.md)> |  | [optional]
 **fork_from_service** | Option<**String**> |  | [optional]
 **synchronous_replication** | Option<[**models::EnumPgSynchronousReplication**](EnumPgSynchronousReplication.md)> |  | [optional]
 **recovery_backup_time** | Option<**String**> | ISO time of a backup to recover from for services that support arbitrary times | [optional]

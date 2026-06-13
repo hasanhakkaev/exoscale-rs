@@ -13,16 +13,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OrgConsumptionQuotaResponse {
-    /// Per-org token consumption quota (tokens/min). Null means unlimited.
-    #[serde(rename = "quota-tokens-per-minute", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub quota_tokens_per_minute: Option<Option<serde_json::Value>>,
+    /// Per-org Unit Of Measurement (UOM) consumption quota (UOM/min). Null means unlimited. UOM represents weighted units across different AI workloads (e.g., tokens for LLMs, minutes for TTS, pages for OCR).
+    #[serde(rename = "quota-uom-per-minute", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
+    pub quota_uom_per_minute: Option<Option<serde_json::Value>>,
 }
 
 impl OrgConsumptionQuotaResponse {
-    /// Per-org token consumption quota response
+    /// Per-org Unit Of Measurement (UOM) consumption quota response
     pub fn new() -> OrgConsumptionQuotaResponse {
         OrgConsumptionQuotaResponse {
-            quota_tokens_per_minute: None,
+            quota_uom_per_minute: None,
         }
     }
 }

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**quota_tokens_per_minute** | Option<**serde_json::Value**> | Per-org token consumption quota (tokens/min). Pass null to remove the limit. | [optional]
+**quota_uom_per_minute** | Option<**serde_json::Value**> | Per-org Unit Of Measurement (UOM) consumption quota (UOM/min). Pass null to remove the limit. UOM represents weighted units across different AI workloads (e.g., tokens for LLMs, minutes for TTS, pages for OCR). | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

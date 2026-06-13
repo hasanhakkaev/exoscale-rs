@@ -22,7 +22,7 @@ pub struct IamRole {
     #[serde(rename = "permissions", skip_serializing_if = "Option::is_none")]
     pub permissions: Option<std::collections::HashSet<Permissions>>,
     #[serde(rename = "assume-role-policy", skip_serializing_if = "Option::is_none")]
-    pub assume_role_policy: Option<Box<models::IamPolicy>>,
+    pub assume_role_policy: Option<Box<models::IamAssumeRolePolicy>>,
     /// IAM Role mutability
     #[serde(rename = "editable", skip_serializing_if = "Option::is_none")]
     pub editable: Option<bool>,

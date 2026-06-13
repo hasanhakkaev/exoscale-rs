@@ -89,6 +89,9 @@ pub struct DbaasServiceMysql {
     /// List of service users
     #[serde(rename = "users", skip_serializing_if = "Option::is_none")]
     pub users: Option<Vec<models::DbaasServiceMysqlUsersInner>>,
+    /// The minimum amount of time in seconds to keep binlog entries before deletion. This may be extended for services that require binlog entries for longer than the default for example if using the MySQL Debezium Kafka connector.
+    #[serde(rename = "binlog-retention-period", skip_serializing_if = "Option::is_none")]
+    pub binlog_retention_period: Option<u64>,
 }
 
 impl DbaasServiceMysql {
@@ -122,6 +125,7 @@ impl DbaasServiceMysql {
             created_at: None,
             plan,
             users: None,
+            binlog_retention_period: None,
         }
     }
 }

@@ -51,13 +51,13 @@ pub struct GetDeploymentResponse {
     /// Optional extra inference engine server CLI args
     #[serde(rename = "inference-engine-parameters")]
     pub inference_engine_parameters: Vec<String>,
-    #[serde(rename = "model", deserialize_with = "Option::deserialize")]
-    pub model: Option<Box<models::ModelRef>>,
+    #[serde(rename = "model")]
+    pub model: Box<models::ModelRef>,
 }
 
 impl GetDeploymentResponse {
     /// AI deployment
-    pub fn new(gpu_count: u64, updated_at: String, deployment_url: String, service_level: String, inference_engine_version: models::InferenceEngineVersion, name: String, state: State, gpu_type: String, id: uuid::Uuid, replicas: u64, state_details: String, created_at: String, inference_engine_parameters: Vec<String>, model: Option<models::ModelRef>) -> GetDeploymentResponse {
+    pub fn new(gpu_count: u64, updated_at: String, deployment_url: String, service_level: String, inference_engine_version: models::InferenceEngineVersion, name: String, state: State, gpu_type: String, id: uuid::Uuid, replicas: u64, state_details: String, created_at: String, inference_engine_parameters: Vec<String>, model: models::ModelRef) -> GetDeploymentResponse {
         GetDeploymentResponse {
             gpu_count,
             updated_at,
@@ -72,7 +72,7 @@ impl GetDeploymentResponse {
             state_details,
             created_at,
             inference_engine_parameters,
-            model: if let Some(x) = model {Some(Box::new(x))} else {None},
+            model: Box::new(model),
         }
     }
 }
@@ -88,6 +88,10 @@ pub enum State {
     Error,
     #[serde(rename = "deploying")]
     Deploying,
+    #[serde(rename = "scaling")]
+    Scaling,
+    #[serde(rename = "updating")]
+    Updating,
 }
 
 impl Default for State {

@@ -6,10 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ssl** | Option<**bool**> |  | [optional][default to true]
 **lfu_log_factor** | Option<**u8**> |  | [optional][default to 10]
+**frequent_snapshots** | Option<**bool**> | When enabled, Valkey will create frequent local RDB snapshots. When disabled, Valkey will only take RDB snapshots when a backup is created, based on the backup schedule. This setting is ignored when `valkey_persistence` is set to `off`. | [optional][default to true]
 **maxmemory_policy** | Option<**MaxmemoryPolicy**> |  (enum: noeviction, allkeys-lru, volatile-lru, allkeys-random, volatile-random, volatile-ttl, volatile-lfu, allkeys-lfu) | [optional][default to Noeviction]
 **io_threads** | Option<**u8**> | Set Valkey IO thread count. Changing this will cause a restart of the Valkey service. | [optional]
 **lfu_decay_time** | Option<**u8**> |  | [optional][default to 1]
 **pubsub_client_output_buffer_limit** | Option<**u16**> | Set output buffer limit for pub / sub clients in MB. The value is the hard limit, the soft limit is 1/4 of the hard limit. When setting the limit, be mindful of the available memory in the selected service plan. | [optional]
+**active_expire_effort** | Option<**u8**> | Valkey reclaims expired keys both when accessed and in the background. The background process scans for expired keys to free memory. Increasing the active-expire-effort setting (default 1, max 10) uses more CPU to reclaim expired keys faster, reducing memory usage but potentially increasing latency. | [optional][default to 1]
 **notify_keyspace_events** | Option<**String**> |  | [optional][default to ]
 **persistence** | Option<**Persistence**> | When persistence is 'rdb', Valkey does RDB dumps each 10 minutes if any key is changed. Also RDB dumps are done according to backup schedule for backup purposes. When persistence is 'off', no RDB dumps and backups are done, so data can be lost at any moment if service is restarted for any reason, or if service is powered off. Also service can't be forked. (enum: off, rdb) | [optional]
 **timeout** | Option<**u32**> |  | [optional][default to 300]

@@ -43,13 +43,13 @@ pub struct ListDeploymentsResponseEntry {
     /// Creation time
     #[serde(rename = "created-at")]
     pub created_at: String,
-    #[serde(rename = "model", deserialize_with = "Option::deserialize")]
-    pub model: Option<Box<models::ModelRef>>,
+    #[serde(rename = "model")]
+    pub model: Box<models::ModelRef>,
 }
 
 impl ListDeploymentsResponseEntry {
     /// AI deployment
-    pub fn new(gpu_count: u64, updated_at: String, deployment_url: String, service_level: String, name: String, state: State, gpu_type: String, id: uuid::Uuid, replicas: u64, created_at: String, model: Option<models::ModelRef>) -> ListDeploymentsResponseEntry {
+    pub fn new(gpu_count: u64, updated_at: String, deployment_url: String, service_level: String, name: String, state: State, gpu_type: String, id: uuid::Uuid, replicas: u64, created_at: String, model: models::ModelRef) -> ListDeploymentsResponseEntry {
         ListDeploymentsResponseEntry {
             gpu_count,
             updated_at,
@@ -61,7 +61,7 @@ impl ListDeploymentsResponseEntry {
             id,
             replicas,
             created_at,
-            model: if let Some(x) = model {Some(Box::new(x))} else {None},
+            model: Box::new(model),
         }
     }
 }
@@ -77,6 +77,10 @@ pub enum State {
     Error,
     #[serde(rename = "deploying")]
     Deploying,
+    #[serde(rename = "scaling")]
+    Scaling,
+    #[serde(rename = "updating")]
+    Updating,
 }
 
 impl Default for State {

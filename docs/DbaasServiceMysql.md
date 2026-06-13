@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **created_at** | Option<**String**> | Service creation timestamp (ISO 8601) | [optional]
 **plan** | **String** | Subscription plan | 
 **users** | Option<[**Vec<models::DbaasServiceMysqlUsersInner>**](DbaasServiceMysqlUsersInner.md)> | List of service users | [optional]
+**binlog_retention_period** | Option<**u64**> | The minimum amount of time in seconds to keep binlog entries before deletion. This may be extended for services that require binlog entries for longer than the default for example if using the MySQL Debezium Kafka connector. | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

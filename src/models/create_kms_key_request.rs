@@ -15,21 +15,21 @@ use serde::{Deserialize, Serialize};
 pub struct CreateKmsKeyRequest {
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "description")]
-    pub description: String,
-    #[serde(rename = "usage")]
-    pub usage: Usage,
-    #[serde(rename = "multi-zone")]
-    pub multi_zone: bool,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
+    #[serde(rename = "usage", skip_serializing_if = "Option::is_none")]
+    pub usage: Option<Usage>,
+    #[serde(rename = "multi-zone", skip_serializing_if = "Option::is_none")]
+    pub multi_zone: Option<bool>,
 }
 
 impl CreateKmsKeyRequest {
-    pub fn new(name: String, description: String, usage: Usage, multi_zone: bool) -> CreateKmsKeyRequest {
+    pub fn new(name: String) -> CreateKmsKeyRequest {
         CreateKmsKeyRequest {
             name,
-            description,
-            usage,
-            multi_zone,
+            description: None,
+            usage: None,
+            multi_zone: None,
         }
     }
 }

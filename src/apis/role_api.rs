@@ -62,14 +62,6 @@ pub enum UpdateIamRoleError {
 }
 
 
-/// struct for typed errors of method [`update_iam_role_assume_policy`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum UpdateIamRoleAssumePolicyError {
-    UnknownValue(serde_json::Value),
-}
-
-
 /// struct for typed errors of method [`update_iam_role_policy`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -78,12 +70,12 @@ pub enum UpdateIamRolePolicyError {
 }
 
 
-pub async fn assume_iam_role(configuration: &configuration::Configuration, target_role_id: String, assume_iam_role_request: models::AssumeIamRoleRequest) -> Result<models::AssumeIamRole200Response, Error<AssumeIamRoleError>> {
-    let local_var_target_role_id = target_role_id;
+pub async fn assume_iam_role(configuration: &configuration::Configuration, id: String, assume_iam_role_request: models::AssumeIamRoleRequest) -> Result<models::AssumeIamRole200Response, Error<AssumeIamRoleError>> {
+    let local_var_id = id;
     let local_var_assume_iam_role_request = assume_iam_role_request;
 
     let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("target_role_id".to_string(), crate::apis::urlencode(local_var_target_role_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
@@ -92,7 +84,7 @@ pub async fn assume_iam_role(configuration: &configuration::Configuration, targe
     utils::execute_request(
     configuration,
     reqwest::Method::POST,
-    "/iam-role/{target_role_id}/assume",
+    "/iam-role/{id}/assume",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -186,26 +178,6 @@ pub async fn update_iam_role(configuration: &configuration::Configuration, id: S
     configuration,
     reqwest::Method::PUT,
     "/iam-role/{id}",
-    path_params_map,
-    query_params_option,
-    body_payload_option,
-    ).await
-}
-pub async fn update_iam_role_assume_policy(configuration: &configuration::Configuration, id: String, iam_policy: models::IamPolicy) -> Result<models::Operation, Error<UpdateIamRoleAssumePolicyError>> {
-    let local_var_id = id;
-    let local_var_iam_policy = iam_policy;
-
-    let mut path_params_map = std::collections::HashMap::new();
-                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
-
-    let query_params_vec: Vec<(&str, String)> = Vec::new();
-    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_iam_policy);
-
-    utils::execute_request(
-    configuration,
-    reqwest::Method::PUT,
-    "/iam-role/{id}:assume-role-policy",
     path_params_map,
     query_params_option,
     body_payload_option,

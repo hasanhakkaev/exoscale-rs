@@ -103,6 +103,8 @@ pub enum Family {
     Memory,
     #[serde(rename = "gpua5000")]
     Gpua5000,
+    #[serde(rename = "gpub300")]
+    Gpub300,
     #[serde(rename = "gpurtx6000pro")]
     Gpurtx6000pro,
     #[serde(rename = "storage")]

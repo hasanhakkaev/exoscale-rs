@@ -18,7 +18,7 @@ use super::{Error, configuration};
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateModelError {
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -28,7 +28,7 @@ pub enum CreateModelError {
 #[serde(untagged)]
 pub enum DeleteModelError {
     Status412(models::DeleteModelConflictResponse),
-    Status403(models::ForbiddenOperationResponse),
+    Status403(models::ErrorResponse),
     Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }

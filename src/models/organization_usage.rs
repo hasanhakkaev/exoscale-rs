@@ -13,16 +13,36 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OrganizationUsage {
-    /// Total GPU count
+    /// GPU3 count
+    #[serde(rename = "gpu3", skip_serializing_if = "Option::is_none")]
+    pub gpu3: Option<u64>,
+    /// GPUA30 count
+    #[serde(rename = "gpua30", skip_serializing_if = "Option::is_none")]
+    pub gpua30: Option<u64>,
+    /// GPU3080TI count
+    #[serde(rename = "gpu3080ti", skip_serializing_if = "Option::is_none")]
+    pub gpu3080ti: Option<u64>,
+    /// Total GPU count (sum of all GPU types)
     #[serde(rename = "gpu")]
     pub gpu: u64,
+    /// GPUA5000 count
+    #[serde(rename = "gpua5000", skip_serializing_if = "Option::is_none")]
+    pub gpua5000: Option<u64>,
+    /// GPURTX6000PRO count
+    #[serde(rename = "gpurtx6000pro", skip_serializing_if = "Option::is_none")]
+    pub gpurtx6000pro: Option<u64>,
 }
 
 impl OrganizationUsage {
     /// Organization GPU usage
     pub fn new(gpu: u64) -> OrganizationUsage {
         OrganizationUsage {
+            gpu3: None,
+            gpua30: None,
+            gpu3080ti: None,
             gpu,
+            gpua5000: None,
+            gpurtx6000pro: None,
         }
     }
 }

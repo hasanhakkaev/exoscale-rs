@@ -13,23 +13,23 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ModelUsageCounters {
-    /// Total completion/output tokens across all calls in this flush window
-    #[serde(rename = "output-tokens")]
-    pub output_tokens: u32,
-    /// Total prompt/input tokens across all calls in this flush window
-    #[serde(rename = "input-tokens")]
-    pub input_tokens: u32,
+    /// Total completion/output Unit Of Measurement (UOM) across all calls in this flush window (e.g., tokens for LLMs, minutes for TTS, pages for OCR)
+    #[serde(rename = "output-uom")]
+    pub output_uom: u32,
+    /// Total prompt/input Unit Of Measurement (UOM) across all calls in this flush window (e.g., tokens for LLMs, minutes for TTS, pages for OCR)
+    #[serde(rename = "input-uom")]
+    pub input_uom: u32,
     /// Number of inference calls in this flush window
     #[serde(rename = "call-count")]
     pub call_count: u32,
 }
 
 impl ModelUsageCounters {
-    /// Accumulated token counters for one model over a flush window
-    pub fn new(output_tokens: u32, input_tokens: u32, call_count: u32) -> ModelUsageCounters {
+    /// Accumulated Unit Of Measurement (UOM) counters for one model over a flush window
+    pub fn new(output_uom: u32, input_uom: u32, call_count: u32) -> ModelUsageCounters {
         ModelUsageCounters {
-            output_tokens,
-            input_tokens,
+            output_uom,
+            input_uom,
             call_count,
         }
     }

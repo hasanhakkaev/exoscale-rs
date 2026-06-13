@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **deployment_url** | **String** | Deployment inference endpoint URL | 
 **service_level** | **String** | Service level | 
 **name** | **String** | Deployment name | 
-**state** | **State** | Deployment state (enum: ready, creating, preparing, error, deploying) | 
+**state** | **State** | Deployment state (enum: ready, creating, preparing, error, deploying, scaling, updating) | 
 **gpu_type** | **String** | GPU type family | 
 **id** | **uuid::Uuid** | Deployment ID | [readonly]
 **replicas** | **u64** | Number of replicas (>=0) | 
 **created_at** | **String** | Creation time | [readonly]
-**model** | Option<[**models::ModelRef**](ModelRef.md)> |  | 
+**model** | [**models::ModelRef**](ModelRef.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

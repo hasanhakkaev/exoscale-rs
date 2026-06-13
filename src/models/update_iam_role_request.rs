@@ -24,6 +24,8 @@ pub struct UpdateIamRoleRequest {
     /// Maximum TTL requester is allowed to ask for when assuming a role
     #[serde(rename = "max-session-ttl", skip_serializing_if = "Option::is_none")]
     pub max_session_ttl: Option<u64>,
+    #[serde(rename = "assume-role-policy", skip_serializing_if = "Option::is_none")]
+    pub assume_role_policy: Option<Box<models::IamAssumeRolePolicy>>,
 }
 
 impl UpdateIamRoleRequest {
@@ -33,6 +35,7 @@ impl UpdateIamRoleRequest {
             permissions: None,
             labels: None,
             max_session_ttl: None,
+            assume_role_policy: None,
         }
     }
 }

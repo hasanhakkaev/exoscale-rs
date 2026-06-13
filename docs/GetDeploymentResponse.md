@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **service_level** | **String** | Service level | 
 **inference_engine_version** | [**models::InferenceEngineVersion**](InferenceEngineVersion.md) |  | 
 **name** | **String** | Deployment name | 
-**state** | **State** | Deployment state (enum: ready, creating, preparing, error, deploying) | 
+**state** | **State** | Deployment state (enum: ready, creating, preparing, error, deploying, scaling, updating) | 
 **gpu_type** | **String** | GPU type family | 
 **id** | **uuid::Uuid** | Deployment ID | [readonly]
 **replicas** | **u64** | Number of replicas (>=0) | 
 **state_details** | **String** | Deployment state details | 
 **created_at** | **String** | Creation time | [readonly]
 **inference_engine_parameters** | **Vec<String>** | Optional extra inference engine server CLI args | 
-**model** | Option<[**models::ModelRef**](ModelRef.md)> |  | 
+**model** | [**models::ModelRef**](ModelRef.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
