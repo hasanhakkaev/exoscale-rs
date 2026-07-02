@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## attach_instance_to_elastic_ip
 
-> models::Operation attach_instance_to_elastic_ip(id, attach_block_storage_volume_to_instance_request)
+> models::Operation attach_instance_to_elastic_ip(id, attach_instance_to_subnet_request)
 Attach a Compute instance to an Elastic IP
 
 
@@ -28,7 +28,7 @@ Attach a Compute instance to an Elastic IP
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** |  | [required] |
-**attach_block_storage_volume_to_instance_request** | [**AttachBlockStorageVolumeToInstanceRequest**](AttachBlockStorageVolumeToInstanceRequest.md) |  | [required] |
+**attach_instance_to_subnet_request** | [**AttachInstanceToSubnetRequest**](AttachInstanceToSubnetRequest.md) |  | [required] |
 
 ### Return type
 
@@ -108,7 +108,7 @@ No authorization required
 
 ## detach_instance_from_elastic_ip
 
-> models::Operation detach_instance_from_elastic_ip(id, attach_block_storage_volume_to_instance_request)
+> models::Operation detach_instance_from_elastic_ip(id, attach_instance_to_subnet_request)
 Detach a Compute instance from an Elastic IP
 
 
@@ -119,7 +119,7 @@ Detach a Compute instance from an Elastic IP
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** |  | [required] |
-**attach_block_storage_volume_to_instance_request** | [**AttachBlockStorageVolumeToInstanceRequest**](AttachBlockStorageVolumeToInstanceRequest.md) |  | [required] |
+**attach_instance_to_subnet_request** | [**AttachInstanceToSubnetRequest**](AttachInstanceToSubnetRequest.md) |  | [required] |
 
 ### Return type
 

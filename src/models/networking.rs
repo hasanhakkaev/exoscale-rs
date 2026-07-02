@@ -16,13 +16,13 @@ pub struct Networking {
     /// CIDR Range for Pods in cluster. This must not overlap with any IP ranges assigned to pods. Max of two, comma-separated, dual-stack CIDRs is allowed.               If not specified, defaults to 192.168.0.0/16.
     #[serde(rename = "cluster-cidr", skip_serializing_if = "Option::is_none")]
     pub cluster_cidr: Option<String>,
-    /// CIDR range for service cluster IPs. This must not overlap with any IP ranges assigned to nodes or pods. Max of two, comma-separated, dual-stack CIDRs is allowed.               If not specified, defaults to 10.96.0.0/12.
+    /// CIDR range for service cluster IPs. This must not overlap with any IP ranges assigned to nodes or pods. Max of two, comma-separated, dual-stack CIDRs is allowed. The IPv6 range must be no larger than a /108 (upstream Kubernetes apiserver limit).               If not specified, defaults to 10.96.0.0/12.
     #[serde(rename = "service-cluster-ip-range", skip_serializing_if = "Option::is_none")]
     pub service_cluster_ip_range: Option<String>,
-    /// Mask size for node cidr in cluster. It must be larger than the Pod CIDR subnet mask. Defaults to 24
+    /// Mask size for node cidr in cluster. It must be larger than, and at most 16 bits longer than, the Pod CIDR subnet mask. Defaults to 24
     #[serde(rename = "node-cidr-mask-size-ipv4", skip_serializing_if = "Option::is_none")]
     pub node_cidr_mask_size_ipv4: Option<u64>,
-    /// Mask size for node cidr in cluster. It must be larger than the Pod CIDR subnet mask. Defaults to 64
+    /// Mask size for node cidr in cluster. It must be larger than, and at most 16 bits longer than, the Pod CIDR subnet mask. Defaults to 64
     #[serde(rename = "node-cidr-mask-size-ipv6", skip_serializing_if = "Option::is_none")]
     pub node_cidr_mask_size_ipv6: Option<u64>,
 }

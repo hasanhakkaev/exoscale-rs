@@ -18,6 +18,8 @@
 | Variant0210 | 0.21.0 |
 | Variant0220 | 0.22.0 |
 | Variant0221 | 0.22.1 |
+| Variant0230 | 0.23.0 |
+| Variant0240 | 0.24.0 |
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

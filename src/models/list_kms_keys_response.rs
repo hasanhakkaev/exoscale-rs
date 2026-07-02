@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListKmsKeysResponse {
+    /// An array containing metadata entries for all available keys for your organization in the requested zone.
     #[serde(rename = "kms-keys")]
     pub kms_keys: Vec<models::ListKmsKeysResponseEntry>,
 }

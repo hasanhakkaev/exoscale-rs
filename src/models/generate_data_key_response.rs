@@ -16,9 +16,11 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GenerateDataKeyResponse {
+    /// The Base64-encoded raw symmetric data key payload. Expose only securely during active application setups.
     #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "plaintext")]
     pub plaintext: Vec<u8>,
+    /// The identical symmetric data key, returned safely wrapped/encrypted using the designated root parent KMS key.
     #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "ciphertext")]
     pub ciphertext: Vec<u8>,

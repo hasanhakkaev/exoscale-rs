@@ -20,6 +20,7 @@ pub struct GenerateDataKeyRequest {
     pub key_spec: Option<KeySpec>,
     #[serde(rename = "bytes-count", skip_serializing_if = "Option::is_none")]
     pub bytes_count: Option<u16>,
+    /// Base64-encoded Additional Authenticated Data binding key generation parameters securely to operational scope.
     #[serde_as(as = "super::DoubleOption<serde_with::base64::Base64>")]
     #[serde(rename = "encryption-context", default, skip_serializing_if = "Option::is_none")]
     pub encryption_context: Option<Option<Vec<u8>>>,

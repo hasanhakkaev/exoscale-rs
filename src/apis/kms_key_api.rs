@@ -28,7 +28,6 @@ pub enum CancelKmsKeyDeletionError {
 #[serde(untagged)]
 pub enum CreateKmsKeyError {
     Status400(models::ErrorResponse),
-    Status409(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -74,7 +73,6 @@ pub enum EnableKmsKeyRotationError {
 #[serde(untagged)]
 pub enum GetKmsKeyError {
     Status400(models::ErrorResponse),
-    Status404(models::ErrorResponse),
     UnknownValue(serde_json::Value),
 }
 
@@ -332,7 +330,7 @@ pub async fn rotate_kms_key(configuration: &configuration::Configuration, id: St
     body_payload_option,
     ).await
 }
-pub async fn schedule_kms_key_deletion(configuration: &configuration::Configuration, id: String, schedule_kms_key_deletion_request: models::ScheduleKmsKeyDeletionRequest) -> Result<models::SuccessResponse, Error<ScheduleKmsKeyDeletionError>> {
+pub async fn schedule_kms_key_deletion(configuration: &configuration::Configuration, id: String, schedule_kms_key_deletion_request: models::ScheduleKmsKeyDeletionRequest) -> Result<models::ScheduleKmsKeyDeletionResponse, Error<ScheduleKmsKeyDeletionError>> {
     let local_var_id = id;
     let local_var_schedule_kms_key_deletion_request = schedule_kms_key_deletion_request;
 

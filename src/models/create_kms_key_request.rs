@@ -13,12 +13,15 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateKmsKeyRequest {
+    /// A human-readable display name uniquely identifying the KMS key within the tenant space.
     #[serde(rename = "name")]
     pub name: String,
+    /// An optional detailed description providing additional context about the key's intended use case.
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
     #[serde(rename = "usage", skip_serializing_if = "Option::is_none")]
     pub usage: Option<Usage>,
+    /// True if this is a multi-zone key.
     #[serde(rename = "multi-zone", skip_serializing_if = "Option::is_none")]
     pub multi_zone: Option<bool>,
 }

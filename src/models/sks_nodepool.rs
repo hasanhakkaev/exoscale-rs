@@ -66,6 +66,8 @@ pub struct SksNodepool {
     /// Nodepool version
     #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
     pub version: Option<String>,
+    #[serde(rename = "nvidia-mig-profiles", skip_serializing_if = "Option::is_none")]
+    pub nvidia_mig_profiles: Option<Box<models::NvidiaMigProfiles>>,
     /// Nodepool creation date
     #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
     pub created_at: Option<String>,
@@ -95,6 +97,7 @@ impl SksNodepool {
             id: None,
             disk_size: None,
             version: None,
+            nvidia_mig_profiles: None,
             created_at: None,
         }
     }

@@ -4,27 +4,27 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_kms_key_deletion**](KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | [BETA] Cancel KMS Key Deletion
-[**create_kms_key**](KmsKeyApi.md#create_kms_key) | **POST** /kms-key | [BETA] Create KMS Key
-[**disable_kms_key**](KmsKeyApi.md#disable_kms_key) | **POST** /kms-key/{id}/disable | [BETA] Disable KMS Key
-[**disable_kms_key_rotation**](KmsKeyApi.md#disable_kms_key_rotation) | **POST** /kms-key/{id}/disable-key-rotation | [BETA] Disable Key Rotation
-[**enable_kms_key**](KmsKeyApi.md#enable_kms_key) | **POST** /kms-key/{id}/enable | [BETA] Enable KMS Key
-[**enable_kms_key_rotation**](KmsKeyApi.md#enable_kms_key_rotation) | **POST** /kms-key/{id}/enable-key-rotation | [BETA] Enable Key Rotation
-[**get_kms_key**](KmsKeyApi.md#get_kms_key) | **GET** /kms-key/{id} | [BETA] Get KMS Key
-[**list_kms_key_rotations**](KmsKeyApi.md#list_kms_key_rotations) | **GET** /kms-key/{id}/list-key-rotations | [BETA] List KMS Key Rotations
-[**list_kms_keys**](KmsKeyApi.md#list_kms_keys) | **GET** /kms-key | [BETA] List KMS Keys
-[**replicate_kms_key**](KmsKeyApi.md#replicate_kms_key) | **POST** /kms-key/{id}/replicate | [BETA] Replicate KMS Key
-[**rotate_kms_key**](KmsKeyApi.md#rotate_kms_key) | **POST** /kms-key/{id}/rotate | [BETA] Rotate Key
-[**schedule_kms_key_deletion**](KmsKeyApi.md#schedule_kms_key_deletion) | **POST** /kms-key/{id}/schedule-deletion | [BETA] Schedule KMS Key Deletion
+[**cancel_kms_key_deletion**](KmsKeyApi.md#cancel_kms_key_deletion) | **POST** /kms-key/{id}/cancel-deletion | Cancel KMS Key Deletion
+[**create_kms_key**](KmsKeyApi.md#create_kms_key) | **POST** /kms-key | Create KMS Key
+[**disable_kms_key**](KmsKeyApi.md#disable_kms_key) | **POST** /kms-key/{id}/disable | Disable KMS Key
+[**disable_kms_key_rotation**](KmsKeyApi.md#disable_kms_key_rotation) | **POST** /kms-key/{id}/disable-key-rotation | Disable Key Rotation
+[**enable_kms_key**](KmsKeyApi.md#enable_kms_key) | **POST** /kms-key/{id}/enable | Enable KMS Key
+[**enable_kms_key_rotation**](KmsKeyApi.md#enable_kms_key_rotation) | **POST** /kms-key/{id}/enable-key-rotation | Enable Key Rotation
+[**get_kms_key**](KmsKeyApi.md#get_kms_key) | **GET** /kms-key/{id} | Get KMS Key
+[**list_kms_key_rotations**](KmsKeyApi.md#list_kms_key_rotations) | **GET** /kms-key/{id}/list-key-rotations | List KMS Key Rotations
+[**list_kms_keys**](KmsKeyApi.md#list_kms_keys) | **GET** /kms-key | List KMS Keys
+[**replicate_kms_key**](KmsKeyApi.md#replicate_kms_key) | **POST** /kms-key/{id}/replicate | Replicate KMS Key
+[**rotate_kms_key**](KmsKeyApi.md#rotate_kms_key) | **POST** /kms-key/{id}/rotate | Rotate Key
+[**schedule_kms_key_deletion**](KmsKeyApi.md#schedule_kms_key_deletion) | **POST** /kms-key/{id}/schedule-deletion | Schedule KMS Key Deletion
 
 
 
 ## cancel_kms_key_deletion
 
 > models::SuccessResponse cancel_kms_key_deletion(id)
-[BETA] Cancel KMS Key Deletion
+Cancel KMS Key Deletion
 
-Cancel the scheduled deletion of a KMS Key.
+Cancels the scheduled deletion of a KMS Key.
 
 ### Parameters
 
@@ -52,9 +52,9 @@ No authorization required
 ## create_kms_key
 
 > models::CreateKmsKeyResponse create_kms_key(create_kms_key_request)
-[BETA] Create KMS Key
+Create KMS Key
 
-Create a KMS Key in a given zone with a given name.
+Create a customer-managed unique KMS Key in your organization. A KMS Key is a logical represention of a cryptographic key material. It also includes metadata such as a UUID, a name and its state.
 
 ### Parameters
 
@@ -82,9 +82,9 @@ No authorization required
 ## disable_kms_key
 
 > models::SuccessResponse disable_kms_key(id)
-[BETA] Disable KMS Key
+Disable KMS Key
 
-Disable a KMS Key
+Disables a KMS Key by setting its state to \"disabled\". This prevents the use of the KMS key for cryptographic and key lifecycle operations.
 
 ### Parameters
 
@@ -112,7 +112,7 @@ No authorization required
 ## disable_kms_key_rotation
 
 > models::DisableKmsKeyRotationResponse disable_kms_key_rotation(id)
-[BETA] Disable Key Rotation
+Disable Key Rotation
 
 Disable the periodic rotation of a KMS Key.
 
@@ -142,9 +142,9 @@ No authorization required
 ## enable_kms_key
 
 > models::SuccessResponse enable_kms_key(id)
-[BETA] Enable KMS Key
+Enable KMS Key
 
-Enable a KMS Key\"
+Enables a KMS Key by setting its stated to \"enabled\". It restores the ability to fully use the KMS key for cryptographic operations and key lifecycle operations.
 
 ### Parameters
 
@@ -172,7 +172,7 @@ No authorization required
 ## enable_kms_key_rotation
 
 > models::EnableKmsKeyRotationResponse enable_kms_key_rotation(id, enable_kms_key_rotation_request)
-[BETA] Enable Key Rotation
+Enable Key Rotation
 
 Enable the periodic rotation of a KMS Key.
 
@@ -203,7 +203,7 @@ No authorization required
 ## get_kms_key
 
 > models::GetKmsKeyResponse get_kms_key(id)
-[BETA] Get KMS Key
+Get KMS Key
 
 Retrieve KMS Key details.
 
@@ -233,7 +233,7 @@ No authorization required
 ## list_kms_key_rotations
 
 > models::ListKmsKeyRotationsResponse list_kms_key_rotations(id)
-[BETA] List KMS Key Rotations
+List KMS Key Rotations
 
 List all the key material versions of a KMS Key.
 
@@ -263,9 +263,9 @@ No authorization required
 ## list_kms_keys
 
 > models::ListKmsKeysResponse list_kms_keys()
-[BETA] List KMS Keys
+List KMS Keys
 
-List KMS Keys details for an organization in a given zone.
+Lists all KMS Keys in your organization in a given zone.
 
 ### Parameters
 
@@ -290,7 +290,7 @@ No authorization required
 ## replicate_kms_key
 
 > models::SuccessResponse replicate_kms_key(id, replicate_kms_key_request)
-[BETA] Replicate KMS Key
+Replicate KMS Key
 
 Replicate a KMS key to a target zone.
 
@@ -321,9 +321,9 @@ No authorization required
 ## rotate_kms_key
 
 > models::RotateKmsKeyResponse rotate_kms_key(id)
-[BETA] Rotate Key
+Rotate Key
 
-Perform a manual rotation of the key material for a symmetric key.
+Performs an immediate rotation of the key material for a symmetric key.
 
 ### Parameters
 
@@ -350,10 +350,10 @@ No authorization required
 
 ## schedule_kms_key_deletion
 
-> models::SuccessResponse schedule_kms_key_deletion(id, schedule_kms_key_deletion_request)
-[BETA] Schedule KMS Key Deletion
+> models::ScheduleKmsKeyDeletionResponse schedule_kms_key_deletion(id, schedule_kms_key_deletion_request)
+Schedule KMS Key Deletion
 
-Schedule a KMS key for deletion after a delay.
+Schedules a KMS key for deletion after a delay. You can specify a delay of 7-30 days.
 
 ### Parameters
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::SuccessResponse**](success-response.md)
+[**models::ScheduleKmsKeyDeletionResponse**](schedule-kms-key-deletion-response.md)
 
 ### Authorization
 

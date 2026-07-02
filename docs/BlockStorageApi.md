@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ## attach_block_storage_volume_to_instance
 
-> models::Operation attach_block_storage_volume_to_instance(id, attach_block_storage_volume_to_instance_request)
+> models::Operation attach_block_storage_volume_to_instance(id, attach_instance_to_subnet_request)
 Attach block storage volume to an instance
 
 
@@ -33,7 +33,7 @@ Attach block storage volume to an instance
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** |  | [required] |
-**attach_block_storage_volume_to_instance_request** | [**AttachBlockStorageVolumeToInstanceRequest**](AttachBlockStorageVolumeToInstanceRequest.md) |  | [required] |
+**attach_instance_to_subnet_request** | [**AttachInstanceToSubnetRequest**](AttachInstanceToSubnetRequest.md) |  | [required] |
 
 ### Return type
 

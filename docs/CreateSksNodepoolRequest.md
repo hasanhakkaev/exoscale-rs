@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **deploy_target** | Option<[**models::DeployTargetRef**](DeployTargetRef.md)> |  | [optional]
 **addons** | Option<**HashSet<Addons>**> | Nodepool addons (enum: storage-lvm) | [optional]
 **disk_size** | **u64** | Nodepool instances disk size in GiB | 
+**nvidia_mig_profiles** | Option<[**models::NvidiaMigProfiles**](NvidiaMigProfiles.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

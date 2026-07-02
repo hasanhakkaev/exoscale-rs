@@ -13,10 +13,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ReplicaFailure {
+    /// The target sync sequence watermark that triggered the replication failure.
     #[serde(rename = "attempted-watermark")]
     pub attempted_watermark: i32,
+    /// A descriptive message containing error logs or system details regarding the sync failure.
     #[serde(rename = "error")]
     pub error: String,
+    /// The UTC timestamp showing exactly when the replication sync window failed.
     #[serde(rename = "failed-at")]
     pub failed_at: String,
 }

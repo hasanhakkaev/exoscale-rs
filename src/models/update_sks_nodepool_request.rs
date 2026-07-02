@@ -47,6 +47,8 @@ pub struct UpdateSksNodepoolRequest {
     /// Nodepool instances disk size in GiB
     #[serde(rename = "disk-size", skip_serializing_if = "Option::is_none")]
     pub disk_size: Option<u64>,
+    #[serde(rename = "nvidia-mig-profiles", skip_serializing_if = "Option::is_none")]
+    pub nvidia_mig_profiles: Option<Box<models::NvidiaMigProfiles>>,
 }
 
 impl UpdateSksNodepoolRequest {
@@ -65,6 +67,7 @@ impl UpdateSksNodepoolRequest {
             instance_prefix: None,
             deploy_target: None,
             disk_size: None,
+            nvidia_mig_profiles: None,
         }
     }
 }

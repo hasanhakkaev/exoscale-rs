@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **id** | Option<**uuid::Uuid**> | Nodepool ID | [optional][readonly]
 **disk_size** | Option<**u64**> | Nodepool instances disk size in GiB | [optional]
 **version** | Option<**String**> | Nodepool version | [optional][readonly]
+**nvidia_mig_profiles** | Option<[**models::NvidiaMigProfiles**](NvidiaMigProfiles.md)> |  | [optional]
 **created_at** | Option<**String**> | Nodepool creation date | [optional][readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

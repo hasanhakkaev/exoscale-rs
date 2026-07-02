@@ -16,6 +16,7 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ReEncryptResponse {
+    /// The new Base64-encoded ciphertext block safely wrapped by the chosen destination key parameters.
     #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "ciphertext")]
     pub ciphertext: Vec<u8>,

@@ -13,8 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RevisionStamp {
+    /// The timestamp recording exactly when this specific revision iteration occurred.
     #[serde(rename = "at")]
     pub at: String,
+    /// Monotonically increasing sequencing value utilized for optimistic concurrency control locks.
     #[serde(rename = "seq")]
     pub seq: u32,
 }

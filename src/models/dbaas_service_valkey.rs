@@ -25,7 +25,7 @@ pub struct DbaasServiceValkey {
     #[serde(rename = "node-cpu-count", skip_serializing_if = "Option::is_none")]
     pub node_cpu_count: Option<u64>,
     #[serde(rename = "prometheus-uri")]
-    pub prometheus_uri: Box<models::DbaasServiceMysqlPrometheusUri>,
+    pub prometheus_uri: Box<models::DbaasServiceClickhousePrometheusUri>,
     /// Service integrations
     #[serde(rename = "integrations", skip_serializing_if = "Option::is_none")]
     pub integrations: Option<Vec<models::DbaasIntegration>>,
@@ -57,7 +57,7 @@ pub struct DbaasServiceValkey {
     pub notifications: Option<Vec<models::DbaasServiceNotification>>,
     /// Service component information objects
     #[serde(rename = "components", skip_serializing_if = "Option::is_none")]
-    pub components: Option<Vec<models::DbaasServiceThanosComponentsInner>>,
+    pub components: Option<Vec<models::DbaasServiceClickhouseComponentsInner>>,
     #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
     pub maintenance: Option<Box<models::DbaasServiceMaintenance>>,
     /// TODO UNIT disk space for data storage
@@ -87,7 +87,7 @@ pub struct DbaasServiceValkey {
 }
 
 impl DbaasServiceValkey {
-    pub fn new(prometheus_uri: models::DbaasServiceMysqlPrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceValkey {
+    pub fn new(prometheus_uri: models::DbaasServiceClickhousePrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceValkey {
         DbaasServiceValkey {
             updated_at: None,
             node_count: None,
