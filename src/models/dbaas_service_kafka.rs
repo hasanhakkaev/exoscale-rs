@@ -30,7 +30,7 @@ pub struct DbaasServiceKafka {
     #[serde(rename = "kafka-rest-enabled", skip_serializing_if = "Option::is_none")]
     pub kafka_rest_enabled: Option<bool>,
     #[serde(rename = "prometheus-uri")]
-    pub prometheus_uri: Box<models::DbaasServiceMysqlPrometheusUri>,
+    pub prometheus_uri: Box<models::DbaasServiceClickhousePrometheusUri>,
     /// Service integrations
     #[serde(rename = "integrations", skip_serializing_if = "Option::is_none")]
     pub integrations: Option<Vec<models::DbaasIntegration>>,
@@ -104,7 +104,7 @@ pub struct DbaasServiceKafka {
 }
 
 impl DbaasServiceKafka {
-    pub fn new(prometheus_uri: models::DbaasServiceMysqlPrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceKafka {
+    pub fn new(prometheus_uri: models::DbaasServiceClickhousePrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceKafka {
         DbaasServiceKafka {
             updated_at: None,
             authentication_methods: None,

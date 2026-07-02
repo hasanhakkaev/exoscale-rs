@@ -78,16 +78,16 @@ pub enum UpdateElasticIpError {
 }
 
 
-pub async fn attach_instance_to_elastic_ip(configuration: &configuration::Configuration, id: String, attach_block_storage_volume_to_instance_request: models::AttachBlockStorageVolumeToInstanceRequest) -> Result<models::Operation, Error<AttachInstanceToElasticIpError>> {
+pub async fn attach_instance_to_elastic_ip(configuration: &configuration::Configuration, id: String, attach_instance_to_subnet_request: models::AttachInstanceToSubnetRequest) -> Result<models::Operation, Error<AttachInstanceToElasticIpError>> {
     let local_var_id = id;
-    let local_var_attach_block_storage_volume_to_instance_request = attach_block_storage_volume_to_instance_request;
+    let local_var_attach_instance_to_subnet_request = attach_instance_to_subnet_request;
 
     let mut path_params_map = std::collections::HashMap::new();
                 path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_attach_block_storage_volume_to_instance_request);
+            let body_payload_option = Some(local_var_attach_instance_to_subnet_request);
 
     utils::execute_request(
     configuration,
@@ -135,16 +135,16 @@ pub async fn delete_elastic_ip(configuration: &configuration::Configuration, id:
     body_payload_option,
     ).await
 }
-pub async fn detach_instance_from_elastic_ip(configuration: &configuration::Configuration, id: String, attach_block_storage_volume_to_instance_request: models::AttachBlockStorageVolumeToInstanceRequest) -> Result<models::Operation, Error<DetachInstanceFromElasticIpError>> {
+pub async fn detach_instance_from_elastic_ip(configuration: &configuration::Configuration, id: String, attach_instance_to_subnet_request: models::AttachInstanceToSubnetRequest) -> Result<models::Operation, Error<DetachInstanceFromElasticIpError>> {
     let local_var_id = id;
-    let local_var_attach_block_storage_volume_to_instance_request = attach_block_storage_volume_to_instance_request;
+    let local_var_attach_instance_to_subnet_request = attach_instance_to_subnet_request;
 
     let mut path_params_map = std::collections::HashMap::new();
                 path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
 
     let query_params_vec: Vec<(&str, String)> = Vec::new();
     let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
-            let body_payload_option = Some(local_var_attach_block_storage_volume_to_instance_request);
+            let body_payload_option = Some(local_var_attach_instance_to_subnet_request);
 
     utils::execute_request(
     configuration,

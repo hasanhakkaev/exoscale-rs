@@ -16,10 +16,10 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ReEncryptRequestDestination {
-    /// The ID of the target key.
+    /// The ID of the target key chosen to encapsulate the newly shifted data translation.
     #[serde(rename = "key")]
     pub key: uuid::Uuid,
-    /// Optional encryption context appended to the AAD.
+    /// Optional new Base64-encoded encryption context to apply under the target destination envelope.
     #[serde_as(as = "super::DoubleOption<serde_with::base64::Base64>")]
     #[serde(rename = "encryption-context", default, skip_serializing_if = "Option::is_none")]
     pub encryption_context: Option<Option<Vec<u8>>>,

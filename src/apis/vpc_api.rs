@@ -14,10 +14,50 @@ use crate::{models, utils,apis::ResponseContent};
 use super::{Error, configuration};
 
 
+/// struct for typed errors of method [`attach_instance_to_subnet`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum AttachInstanceToSubnetError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`create_route`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CreateRouteError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`create_subnet`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CreateSubnetError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`create_vpc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateVpcError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`delete_route`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteRouteError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`delete_subnet`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteSubnetError {
     UnknownValue(serde_json::Value),
 }
 
@@ -30,10 +70,50 @@ pub enum DeleteVpcError {
 }
 
 
+/// struct for typed errors of method [`detach_instance_from_subnet`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DetachInstanceFromSubnetError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`get_subnet`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetSubnetError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`get_vpc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetVpcError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`list_routes`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ListRoutesError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`list_subnets`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ListSubnetsError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`list_vpc_routes`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ListVpcRoutesError {
     UnknownValue(serde_json::Value),
 }
 
@@ -46,6 +126,14 @@ pub enum ListVpcsError {
 }
 
 
+/// struct for typed errors of method [`update_subnet`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UpdateSubnetError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`update_vpc`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -54,6 +142,70 @@ pub enum UpdateVpcError {
 }
 
 
+pub async fn attach_instance_to_subnet(configuration: &configuration::Configuration, vpc_id: String, subnet_id: String, attach_instance_to_subnet_request: models::AttachInstanceToSubnetRequest) -> Result<models::Operation, Error<AttachInstanceToSubnetError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_subnet_id = subnet_id;
+    let local_var_attach_instance_to_subnet_request = attach_instance_to_subnet_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("subnet_id".to_string(), crate::apis::urlencode(local_var_subnet_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_attach_instance_to_subnet_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/vpc/{vpc_id}/subnet/{subnet_id}/attach",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn create_route(configuration: &configuration::Configuration, vpc_id: String, subnet_id: String, create_route_request: models::CreateRouteRequest) -> Result<models::Route, Error<CreateRouteError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_subnet_id = subnet_id;
+    let local_var_create_route_request = create_route_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("subnet_id".to_string(), crate::apis::urlencode(local_var_subnet_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_create_route_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::POST,
+    "/vpc/{vpc_id}/subnet/{subnet_id}/route",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn create_subnet(configuration: &configuration::Configuration, vpc_id: String, create_subnet_request: models::CreateSubnetRequest) -> Result<models::Operation, Error<CreateSubnetError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_create_subnet_request = create_subnet_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_create_subnet_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::POST,
+    "/vpc/{vpc_id}/subnet",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn create_vpc(configuration: &configuration::Configuration, create_vpc_request: models::CreateVpcRequest) -> Result<models::Operation, Error<CreateVpcError>> {
     let local_var_create_vpc_request = create_vpc_request;
 
@@ -72,7 +224,51 @@ pub async fn create_vpc(configuration: &configuration::Configuration, create_vpc
     body_payload_option,
     ).await
 }
-pub async fn delete_vpc(configuration: &configuration::Configuration, id: String) -> Result<models::Operation, Error<DeleteVpcError>> {
+pub async fn delete_route(configuration: &configuration::Configuration, vpc_id: String, subnet_id: String, id: String) -> Result<serde_json::Value, Error<DeleteRouteError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_subnet_id = subnet_id;
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("subnet_id".to_string(), crate::apis::urlencode(local_var_subnet_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::DELETE,
+    "/vpc/{vpc_id}/subnet/{subnet_id}/route/{id}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn delete_subnet(configuration: &configuration::Configuration, vpc_id: String, id: String) -> Result<serde_json::Value, Error<DeleteSubnetError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::DELETE,
+    "/vpc/{vpc_id}/subnet/{id}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn delete_vpc(configuration: &configuration::Configuration, id: String) -> Result<serde_json::Value, Error<DeleteVpcError>> {
     let local_var_id = id;
 
     let mut path_params_map = std::collections::HashMap::new();
@@ -86,6 +282,49 @@ pub async fn delete_vpc(configuration: &configuration::Configuration, id: String
     configuration,
     reqwest::Method::DELETE,
     "/vpc/{id}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn detach_instance_from_subnet(configuration: &configuration::Configuration, vpc_id: String, subnet_id: String, attach_instance_to_subnet_request: models::AttachInstanceToSubnetRequest) -> Result<models::Operation, Error<DetachInstanceFromSubnetError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_subnet_id = subnet_id;
+    let local_var_attach_instance_to_subnet_request = attach_instance_to_subnet_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("subnet_id".to_string(), crate::apis::urlencode(local_var_subnet_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_attach_instance_to_subnet_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/vpc/{vpc_id}/subnet/{subnet_id}/detach",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn get_subnet(configuration: &configuration::Configuration, vpc_id: String, id: String) -> Result<models::Subnet, Error<GetSubnetError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_id = id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/vpc/{vpc_id}/subnet/{id}",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -110,6 +349,65 @@ pub async fn get_vpc(configuration: &configuration::Configuration, id: String) -
     body_payload_option,
     ).await
 }
+pub async fn list_routes(configuration: &configuration::Configuration, vpc_id: String, subnet_id: String) -> Result<models::ListVpcRoutes200Response, Error<ListRoutesError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_subnet_id = subnet_id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("subnet_id".to_string(), crate::apis::urlencode(local_var_subnet_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/vpc/{vpc_id}/subnet/{subnet_id}/route",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn list_subnets(configuration: &configuration::Configuration, vpc_id: String) -> Result<models::ListSubnets200Response, Error<ListSubnetsError>> {
+    let local_var_vpc_id = vpc_id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/vpc/{vpc_id}/subnet",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn list_vpc_routes(configuration: &configuration::Configuration, vpc_id: String) -> Result<models::ListVpcRoutes200Response, Error<ListVpcRoutesError>> {
+    let local_var_vpc_id = vpc_id;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/vpc/{vpc_id}/route",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn list_vpcs(configuration: &configuration::Configuration, ) -> Result<models::ListVpcs200Response, Error<ListVpcsError>> {
 
     let path_params_map = std::collections::HashMap::new();
@@ -122,6 +420,28 @@ pub async fn list_vpcs(configuration: &configuration::Configuration, ) -> Result
     configuration,
     reqwest::Method::GET,
     "/vpc",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn update_subnet(configuration: &configuration::Configuration, vpc_id: String, id: String, update_subnet_request: models::UpdateSubnetRequest) -> Result<models::Subnet, Error<UpdateSubnetError>> {
+    let local_var_vpc_id = vpc_id;
+    let local_var_id = id;
+    let local_var_update_subnet_request = update_subnet_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("vpc_id".to_string(), crate::apis::urlencode(local_var_vpc_id));
+                path_params_map.insert("id".to_string(), crate::apis::urlencode(local_var_id));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_update_subnet_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/vpc/{vpc_id}/subnet/{id}",
     path_params_map,
     query_params_option,
     body_payload_option,

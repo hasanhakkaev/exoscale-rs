@@ -16,6 +16,7 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DecryptResponse {
+    /// The recovered Base64-encoded original plaintext payload.
     #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "plaintext")]
     pub plaintext: Vec<u8>,

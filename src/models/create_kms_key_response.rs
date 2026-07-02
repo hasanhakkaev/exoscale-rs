@@ -13,34 +13,42 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateKmsKeyResponse {
-    #[serde(rename = "description")]
-    pub description: String,
+    /// An optional detailed description providing additional context about the key's intended use case.
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
     #[serde(rename = "revision")]
     pub revision: Box<models::RevisionStamp>,
+    /// The display name assigned to the KMS key.
     #[serde(rename = "name")]
     pub name: String,
+    /// True if this is a multi-zone key.
     #[serde(rename = "multi-zone")]
     pub multi_zone: bool,
     #[serde(rename = "source")]
     pub source: Source,
+    /// The cryptographic operation constraints allowed on this key.
     #[serde(rename = "usage")]
     pub usage: String,
     #[serde(rename = "status")]
     pub status: Status,
+    /// The timestamp indicating exactly when the current key status was last transitioned.
     #[serde(rename = "status-since")]
     pub status_since: String,
+    /// The globally unique identifier (UUID) assigned to the newly created KMS key.
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
+    /// The creation zone of the KMS key.
     #[serde(rename = "origin-zone")]
     pub origin_zone: String,
+    /// The UTC timestamp showing when the KMS key was originally provisioned.
     #[serde(rename = "created-at")]
     pub created_at: String,
 }
 
 impl CreateKmsKeyResponse {
-    pub fn new(description: String, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, usage: String, status: Status, status_since: String, id: uuid::Uuid, origin_zone: String, created_at: String) -> CreateKmsKeyResponse {
+    pub fn new(revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, usage: String, status: Status, status_since: String, id: uuid::Uuid, origin_zone: String, created_at: String) -> CreateKmsKeyResponse {
         CreateKmsKeyResponse {
-            description,
+            description: None,
             revision: Box::new(revision),
             name,
             multi_zone,

@@ -13,44 +13,57 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct GetKmsKeyResponse {
-    #[serde(rename = "description")]
-    pub description: String,
+    /// An optional detailed description providing additional context about the key's intended use case.
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
     #[serde(rename = "rotation")]
     pub rotation: Box<models::KeyRotationConfig>,
     #[serde(rename = "revision")]
     pub revision: Box<models::RevisionStamp>,
+    #[serde(rename = "delete-at", skip_serializing_if = "Option::is_none")]
+    pub delete_at: Option<String>,
+    /// The display name of the KMS key.
     #[serde(rename = "name")]
     pub name: String,
+    /// True if this is a multi-zone key.
     #[serde(rename = "multi-zone")]
     pub multi_zone: bool,
     #[serde(rename = "source")]
     pub source: Source,
+    /// The cryptographic operation constraints allowed on this key.
     #[serde(rename = "usage")]
     pub usage: String,
+    /// Detailed synchronization metrics for each regional replica mirror.
     #[serde(rename = "replicas-status", skip_serializing_if = "Option::is_none")]
     pub replicas_status: Option<Vec<models::ReplicaState>>,
     #[serde(rename = "status")]
     pub status: Status,
+    /// The timestamp indicating exactly when the current key status was last transitioned.
     #[serde(rename = "status-since")]
     pub status_since: String,
+    /// The globally unique identifier (UUID) of the retrieved KMS key.
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
-    #[serde(rename = "replicas")]
-    pub replicas: Vec<String>,
+    /// A list of availability zones where this specific key has active replica mirrors.
+    #[serde(rename = "replicas", skip_serializing_if = "Option::is_none")]
+    pub replicas: Option<Vec<String>>,
     #[serde(rename = "material")]
     pub material: Box<models::KeyMaterial>,
+    /// The creation zone of the KMS key.
     #[serde(rename = "origin-zone")]
     pub origin_zone: String,
+    /// The UTC timestamp showing when the KMS key was originally provisioned.
     #[serde(rename = "created-at")]
     pub created_at: String,
 }
 
 impl GetKmsKeyResponse {
-    pub fn new(description: String, rotation: models::KeyRotationConfig, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, usage: String, status: Status, status_since: String, id: uuid::Uuid, replicas: Vec<String>, material: models::KeyMaterial, origin_zone: String, created_at: String) -> GetKmsKeyResponse {
+    pub fn new(rotation: models::KeyRotationConfig, revision: models::RevisionStamp, name: String, multi_zone: bool, source: Source, usage: String, status: Status, status_since: String, id: uuid::Uuid, material: models::KeyMaterial, origin_zone: String, created_at: String) -> GetKmsKeyResponse {
         GetKmsKeyResponse {
-            description,
+            description: None,
             rotation: Box::new(rotation),
             revision: Box::new(revision),
+            delete_at: None,
             name,
             multi_zone,
             source,
@@ -59,7 +72,7 @@ impl GetKmsKeyResponse {
             status,
             status_since,
             id,
-            replicas,
+            replicas: None,
             material: Box::new(material),
             origin_zone,
             created_at,

@@ -5,6 +5,7 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**attach_dbaas_service_to_endpoint**](DbaasApi.md#attach_dbaas_service_to_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/attach | 
+[**create_dbaas_clickhouse_user**](DbaasApi.md#create_dbaas_clickhouse_user) | **POST** /dbaas-clickhouse/{service_name}/user | [BETA] Create a DBaaS ClickHouse user
 [**create_dbaas_external_endpoint_datadog**](DbaasApi.md#create_dbaas_external_endpoint_datadog) | **POST** /dbaas-external-endpoint-datadog/{name} | 
 [**create_dbaas_external_endpoint_elasticsearch**](DbaasApi.md#create_dbaas_external_endpoint_elasticsearch) | **POST** /dbaas-external-endpoint-elasticsearch/{name} | 
 [**create_dbaas_external_endpoint_opensearch**](DbaasApi.md#create_dbaas_external_endpoint_opensearch) | **POST** /dbaas-external-endpoint-opensearch/{name} | 
@@ -21,6 +22,7 @@ Method | HTTP request | Description
 [**create_dbaas_pg_database**](DbaasApi.md#create_dbaas_pg_database) | **POST** /dbaas-postgres/{service_name}/database | Create a DBaaS Postgres database
 [**create_dbaas_pg_upgrade_check**](DbaasApi.md#create_dbaas_pg_upgrade_check) | **POST** /dbaas-postgres/{service}/upgrade-check | 
 [**create_dbaas_postgres_user**](DbaasApi.md#create_dbaas_postgres_user) | **POST** /dbaas-postgres/{service_name}/user | Create a DBaaS Postgres user
+[**create_dbaas_service_clickhouse**](DbaasApi.md#create_dbaas_service_clickhouse) | **POST** /dbaas-clickhouse/{name} | [BETA] Create a DBaaS ClickHouse service
 [**create_dbaas_service_grafana**](DbaasApi.md#create_dbaas_service_grafana) | **POST** /dbaas-grafana/{name} | 
 [**create_dbaas_service_kafka**](DbaasApi.md#create_dbaas_service_kafka) | **POST** /dbaas-kafka/{name} | Create a DBaaS Kafka service
 [**create_dbaas_service_mysql**](DbaasApi.md#create_dbaas_service_mysql) | **POST** /dbaas-mysql/{name} | Create a DBaaS MySQL service
@@ -30,6 +32,7 @@ Method | HTTP request | Description
 [**create_dbaas_service_valkey**](DbaasApi.md#create_dbaas_service_valkey) | **POST** /dbaas-valkey/{name} | Create a DBaaS Valkey service
 [**create_dbaas_task_migration_check**](DbaasApi.md#create_dbaas_task_migration_check) | **POST** /dbaas-task-migration-check/{service} | 
 [**create_dbaas_valkey_user**](DbaasApi.md#create_dbaas_valkey_user) | **POST** /dbaas-valkey/{service_name}/user | Create a DBaaS Valkey user
+[**delete_dbaas_clickhouse_user**](DbaasApi.md#delete_dbaas_clickhouse_user) | **DELETE** /dbaas-clickhouse/{service_name}/user/{username} | [BETA] Delete a DBaaS ClickHouse user
 [**delete_dbaas_external_endpoint_datadog**](DbaasApi.md#delete_dbaas_external_endpoint_datadog) | **DELETE** /dbaas-external-endpoint-datadog/{endpoint_id} | 
 [**delete_dbaas_external_endpoint_elasticsearch**](DbaasApi.md#delete_dbaas_external_endpoint_elasticsearch) | **DELETE** /dbaas-external-endpoint-elasticsearch/{endpoint_id} | 
 [**delete_dbaas_external_endpoint_opensearch**](DbaasApi.md#delete_dbaas_external_endpoint_opensearch) | **DELETE** /dbaas-external-endpoint-opensearch/{endpoint_id} | 
@@ -46,6 +49,7 @@ Method | HTTP request | Description
 [**delete_dbaas_pg_database**](DbaasApi.md#delete_dbaas_pg_database) | **DELETE** /dbaas-postgres/{service_name}/database/{database_name} | Delete a DBaaS Postgres database
 [**delete_dbaas_postgres_user**](DbaasApi.md#delete_dbaas_postgres_user) | **DELETE** /dbaas-postgres/{service_name}/user/{username} | Delete a DBaaS Postgres user
 [**delete_dbaas_service**](DbaasApi.md#delete_dbaas_service) | **DELETE** /dbaas-service/{name} | Delete a DBaaS service
+[**delete_dbaas_service_clickhouse**](DbaasApi.md#delete_dbaas_service_clickhouse) | **DELETE** /dbaas-clickhouse/{name} | [BETA] Delete a ClickHouse service
 [**delete_dbaas_service_grafana**](DbaasApi.md#delete_dbaas_service_grafana) | **DELETE** /dbaas-grafana/{name} | Delete a Grafana service
 [**delete_dbaas_service_kafka**](DbaasApi.md#delete_dbaas_service_kafka) | **DELETE** /dbaas-kafka/{name} | Delete a Kafka service
 [**delete_dbaas_service_mysql**](DbaasApi.md#delete_dbaas_service_mysql) | **DELETE** /dbaas-mysql/{name} | Delete a MySQL service
@@ -57,6 +61,7 @@ Method | HTTP request | Description
 [**detach_dbaas_service_from_endpoint**](DbaasApi.md#detach_dbaas_service_from_endpoint) | **PUT** /dbaas-external-endpoint/{source_service_name}/detach | 
 [**enable_dbaas_mysql_writes**](DbaasApi.md#enable_dbaas_mysql_writes) | **PUT** /dbaas-mysql/{name}/enable/writes | Temporarily enable writes for MySQL services in read-only mode due to filled up storage
 [**get_dbaas_ca_certificate**](DbaasApi.md#get_dbaas_ca_certificate) | **GET** /dbaas-ca-certificate | Get DBaaS CA Certificate
+[**get_dbaas_clickhouse_acl_config**](DbaasApi.md#get_dbaas_clickhouse_acl_config) | **GET** /dbaas-clickhouse/{service_name}/acl-config | [BETA] Get DBaaS ClickHouse ACL configuration
 [**get_dbaas_external_endpoint_datadog**](DbaasApi.md#get_dbaas_external_endpoint_datadog) | **GET** /dbaas-external-endpoint-datadog/{endpoint_id} | 
 [**get_dbaas_external_endpoint_elasticsearch**](DbaasApi.md#get_dbaas_external_endpoint_elasticsearch) | **GET** /dbaas-external-endpoint-elasticsearch/{endpoint_id} | 
 [**get_dbaas_external_endpoint_opensearch**](DbaasApi.md#get_dbaas_external_endpoint_opensearch) | **GET** /dbaas-external-endpoint-opensearch/{endpoint_id} | 
@@ -68,6 +73,7 @@ Method | HTTP request | Description
 [**get_dbaas_kafka_acl_config**](DbaasApi.md#get_dbaas_kafka_acl_config) | **GET** /dbaas-kafka/{name}/acl-config | Get DBaaS kafka ACL configuration
 [**get_dbaas_migration_status**](DbaasApi.md#get_dbaas_migration_status) | **GET** /dbaas-migration-status/{name} | Get a DBaaS migration status
 [**get_dbaas_opensearch_acl_config**](DbaasApi.md#get_dbaas_opensearch_acl_config) | **GET** /dbaas-opensearch/{name}/acl-config | Get DBaaS OpenSearch ACL configuration
+[**get_dbaas_service_clickhouse**](DbaasApi.md#get_dbaas_service_clickhouse) | **GET** /dbaas-clickhouse/{name} | [BETA] Get a DBaaS ClickHouse service
 [**get_dbaas_service_grafana**](DbaasApi.md#get_dbaas_service_grafana) | **GET** /dbaas-grafana/{name} | Get a DBaaS Grafana service
 [**get_dbaas_service_kafka**](DbaasApi.md#get_dbaas_service_kafka) | **GET** /dbaas-kafka/{name} | Get a DBaaS Kafka service
 [**get_dbaas_service_logs**](DbaasApi.md#get_dbaas_service_logs) | **POST** /dbaas-service-logs/{service_name} | Get logs of DBaaS service
@@ -78,6 +84,7 @@ Method | HTTP request | Description
 [**get_dbaas_service_thanos**](DbaasApi.md#get_dbaas_service_thanos) | **GET** /dbaas-thanos/{name} | 
 [**get_dbaas_service_type**](DbaasApi.md#get_dbaas_service_type) | **GET** /dbaas-service-type/{service_type_name} | Get a DBaaS service type
 [**get_dbaas_service_valkey**](DbaasApi.md#get_dbaas_service_valkey) | **GET** /dbaas-valkey/{name} | 
+[**get_dbaas_settings_clickhouse**](DbaasApi.md#get_dbaas_settings_clickhouse) | **GET** /dbaas-settings-clickhouse | [BETA] Get DBaaS ClickHouse settings
 [**get_dbaas_settings_grafana**](DbaasApi.md#get_dbaas_settings_grafana) | **GET** /dbaas-settings-grafana | Get DBaaS Grafana settings
 [**get_dbaas_settings_kafka**](DbaasApi.md#get_dbaas_settings_kafka) | **GET** /dbaas-settings-kafka | Get DBaaS Kafka settings
 [**get_dbaas_settings_mysql**](DbaasApi.md#get_dbaas_settings_mysql) | **GET** /dbaas-settings-mysql | Get DBaaS MySQL settings
@@ -86,6 +93,7 @@ Method | HTTP request | Description
 [**get_dbaas_settings_thanos**](DbaasApi.md#get_dbaas_settings_thanos) | **GET** /dbaas-settings-thanos | Get DBaaS Thanos settings
 [**get_dbaas_settings_valkey**](DbaasApi.md#get_dbaas_settings_valkey) | **GET** /dbaas-settings-valkey | Get DBaaS Valkey settings
 [**get_dbaas_task**](DbaasApi.md#get_dbaas_task) | **GET** /dbaas-task/{service}/{id} | Get a DBaaS task
+[**list_dbaas_clickhouse_users**](DbaasApi.md#list_dbaas_clickhouse_users) | **GET** /dbaas-clickhouse/{service_name}/user | [BETA] List DBaaS ClickHouse users
 [**list_dbaas_external_endpoint_types**](DbaasApi.md#list_dbaas_external_endpoint_types) | **GET** /dbaas-external-endpoint-types | 
 [**list_dbaas_external_endpoints**](DbaasApi.md#list_dbaas_external_endpoints) | **GET** /dbaas-external-endpoints | 
 [**list_dbaas_external_integrations**](DbaasApi.md#list_dbaas_external_integrations) | **GET** /dbaas-external-integrations/{service_name} | 
@@ -94,12 +102,14 @@ Method | HTTP request | Description
 [**list_dbaas_service_types**](DbaasApi.md#list_dbaas_service_types) | **GET** /dbaas-service-type | DBaaS Service Types
 [**list_dbaas_services**](DbaasApi.md#list_dbaas_services) | **GET** /dbaas-service | List DBaaS services
 [**list_dbaas_valkey_users**](DbaasApi.md#list_dbaas_valkey_users) | **GET** /dbaas-valkey/{service_name}/user | List DBaaS Valkey users with ACL configuration
+[**reset_dbaas_clickhouse_user_password**](DbaasApi.md#reset_dbaas_clickhouse_user_password) | **PUT** /dbaas-clickhouse/{service_name}/user/{username}/password/reset | [BETA] Reset the credentials of a DBaaS ClickHouse user
 [**reset_dbaas_grafana_user_password**](DbaasApi.md#reset_dbaas_grafana_user_password) | **PUT** /dbaas-grafana/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Grafana user
 [**reset_dbaas_kafka_user_password**](DbaasApi.md#reset_dbaas_kafka_user_password) | **PUT** /dbaas-kafka/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Kafka user
 [**reset_dbaas_mysql_user_password**](DbaasApi.md#reset_dbaas_mysql_user_password) | **PUT** /dbaas-mysql/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS mysql user
 [**reset_dbaas_opensearch_user_password**](DbaasApi.md#reset_dbaas_opensearch_user_password) | **PUT** /dbaas-opensearch/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS OpenSearch user
 [**reset_dbaas_postgres_user_password**](DbaasApi.md#reset_dbaas_postgres_user_password) | **PUT** /dbaas-postgres/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Postgres user
 [**reset_dbaas_valkey_user_password**](DbaasApi.md#reset_dbaas_valkey_user_password) | **PUT** /dbaas-valkey/{service_name}/user/{username}/password/reset | Reset the credentials of a DBaaS Valkey user
+[**reveal_dbaas_clickhouse_user_password**](DbaasApi.md#reveal_dbaas_clickhouse_user_password) | **GET** /dbaas-clickhouse/{service_name}/user/{username}/password/reveal | [BETA] Reveal the secrets of a DBaaS ClickHouse user
 [**reveal_dbaas_grafana_user_password**](DbaasApi.md#reveal_dbaas_grafana_user_password) | **GET** /dbaas-grafana/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Grafana user
 [**reveal_dbaas_kafka_connect_password**](DbaasApi.md#reveal_dbaas_kafka_connect_password) | **GET** /dbaas-kafka/{service_name}/connect/password/reveal | Reveal the secrets for DBaaS Kafka Connect
 [**reveal_dbaas_kafka_user_password**](DbaasApi.md#reveal_dbaas_kafka_user_password) | **GET** /dbaas-kafka/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Kafka user
@@ -108,6 +118,7 @@ Method | HTTP request | Description
 [**reveal_dbaas_postgres_user_password**](DbaasApi.md#reveal_dbaas_postgres_user_password) | **GET** /dbaas-postgres/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Postgres user
 [**reveal_dbaas_thanos_user_password**](DbaasApi.md#reveal_dbaas_thanos_user_password) | **GET** /dbaas-thanos/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Thanos user
 [**reveal_dbaas_valkey_user_password**](DbaasApi.md#reveal_dbaas_valkey_user_password) | **GET** /dbaas-valkey/{service_name}/user/{username}/password/reveal | Reveal the secrets of a DBaaS Valkey user
+[**start_dbaas_clickhouse_maintenance**](DbaasApi.md#start_dbaas_clickhouse_maintenance) | **PUT** /dbaas-clickhouse/{name}/maintenance/start | [BETA] Initiate ClickHouse maintenance update
 [**start_dbaas_grafana_maintenance**](DbaasApi.md#start_dbaas_grafana_maintenance) | **PUT** /dbaas-grafana/{name}/maintenance/start | Initiate Grafana maintenance update
 [**start_dbaas_kafka_maintenance**](DbaasApi.md#start_dbaas_kafka_maintenance) | **PUT** /dbaas-kafka/{name}/maintenance/start | Initiate Kafka maintenance update
 [**start_dbaas_mysql_maintenance**](DbaasApi.md#start_dbaas_mysql_maintenance) | **PUT** /dbaas-mysql/{name}/maintenance/start | Initiate MySQL maintenance update
@@ -128,6 +139,7 @@ Method | HTTP request | Description
 [**update_dbaas_opensearch_acl_config**](DbaasApi.md#update_dbaas_opensearch_acl_config) | **PUT** /dbaas-opensearch/{name}/acl-config | Create a DBaaS OpenSearch ACL configuration
 [**update_dbaas_pg_connection_pool**](DbaasApi.md#update_dbaas_pg_connection_pool) | **PUT** /dbaas-postgres/{service_name}/connection-pool/{connection_pool_name} | Update a DBaaS PostgreSQL connection pool
 [**update_dbaas_postgres_allow_replication**](DbaasApi.md#update_dbaas_postgres_allow_replication) | **PUT** /dbaas-postgres/{service_name}/user/{username}/allow-replication | Update access control for one service user
+[**update_dbaas_service_clickhouse**](DbaasApi.md#update_dbaas_service_clickhouse) | **PUT** /dbaas-clickhouse/{name} | [BETA] Update a DBaaS ClickHouse service
 [**update_dbaas_service_grafana**](DbaasApi.md#update_dbaas_service_grafana) | **PUT** /dbaas-grafana/{name} | Update a DBaaS Grafana service
 [**update_dbaas_service_kafka**](DbaasApi.md#update_dbaas_service_kafka) | **PUT** /dbaas-kafka/{name} | Update a DBaaS Kafka service
 [**update_dbaas_service_mysql**](DbaasApi.md#update_dbaas_service_mysql) | **PUT** /dbaas-mysql/{name} | Update a DBaaS MySQL service
@@ -153,6 +165,35 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **source_service_name** | **String** |  | [required] |
 **attach_dbaas_service_to_endpoint_request** | [**AttachDbaasServiceToEndpointRequest**](AttachDbaasServiceToEndpointRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## create_dbaas_clickhouse_user
+
+> models::Operation create_dbaas_clickhouse_user(service_name, create_dbaas_clickhouse_user_request)
+[BETA] Create a DBaaS ClickHouse user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+**create_dbaas_clickhouse_user_request** | [**CreateDbaasClickhouseUserRequest**](CreateDbaasClickhouseUserRequest.md) |  | [required] |
 
 ### Return type
 
@@ -649,6 +690,35 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## create_dbaas_service_clickhouse
+
+> models::Operation create_dbaas_service_clickhouse(name, create_dbaas_service_clickhouse_request)
+[BETA] Create a DBaaS ClickHouse service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+**create_dbaas_service_clickhouse_request** | [**CreateDbaasServiceClickhouseRequest**](CreateDbaasServiceClickhouseRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## create_dbaas_service_grafana
 
 > models::Operation create_dbaas_service_grafana(name, create_dbaas_service_grafana_request)
@@ -919,6 +989,35 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## delete_dbaas_clickhouse_user
+
+> models::Operation delete_dbaas_clickhouse_user(service_name, username)
+[BETA] Delete a DBaaS ClickHouse user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+**username** | **String** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1397,6 +1496,34 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## delete_dbaas_service_clickhouse
+
+> models::Operation delete_dbaas_service_clickhouse(name)
+[BETA] Delete a ClickHouse service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## delete_dbaas_service_grafana
 
 > models::Operation delete_dbaas_service_grafana(name)
@@ -1695,6 +1822,34 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::GetDbaasCaCertificate200Response**](get_dbaas_ca_certificate_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_dbaas_clickhouse_acl_config
+
+> models::DbaasClickhouseAclConfig get_dbaas_clickhouse_acl_config(service_name)
+[BETA] Get DBaaS ClickHouse ACL configuration
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasClickhouseAclConfig**](dbaas-clickhouse-acl-config.md)
 
 ### Authorization
 
@@ -2034,6 +2189,34 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## get_dbaas_service_clickhouse
+
+> models::DbaasServiceClickhouse get_dbaas_service_clickhouse(name)
+[BETA] Get a DBaaS ClickHouse service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasServiceClickhouse**](dbaas-service-clickhouse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## get_dbaas_service_grafana
 
 > models::DbaasServiceGrafana get_dbaas_service_grafana(name)
@@ -2332,6 +2515,31 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## get_dbaas_settings_clickhouse
+
+> models::GetDbaasSettingsClickhouse200Response get_dbaas_settings_clickhouse()
+[BETA] Get DBaaS ClickHouse settings
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**models::GetDbaasSettingsClickhouse200Response**](get_dbaas_settings_clickhouse_200_response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## get_dbaas_settings_grafana
 
 > models::GetDbaasSettingsGrafana200Response get_dbaas_settings_grafana()
@@ -2539,6 +2747,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::DbaasTask**](dbaas-task.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## list_dbaas_clickhouse_users
+
+> models::DbaasClickhouseUsers list_dbaas_clickhouse_users(service_name)
+[BETA] List DBaaS ClickHouse users
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasClickhouseUsers**](dbaas-clickhouse-users.md)
 
 ### Authorization
 
@@ -2777,6 +3013,36 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## reset_dbaas_clickhouse_user_password
+
+> models::Operation reset_dbaas_clickhouse_user_password(service_name, username, reset_dbaas_valkey_user_password_request)
+[BETA] Reset the credentials of a DBaaS ClickHouse user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+**username** | **String** |  | [required] |
+**reset_dbaas_valkey_user_password_request** | [**ResetDbaasValkeyUserPasswordRequest**](ResetDbaasValkeyUserPasswordRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## reset_dbaas_grafana_user_password
 
 > models::Operation reset_dbaas_grafana_user_password(service_name, username, reset_dbaas_valkey_user_password_request)
@@ -2964,6 +3230,35 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## reveal_dbaas_clickhouse_user_password
+
+> models::DbaasUserClickhouseSecrets reveal_dbaas_clickhouse_user_password(service_name, username)
+[BETA] Reveal the secrets of a DBaaS ClickHouse user
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**service_name** | **String** |  | [required] |
+**username** | **String** |  | [required] |
+
+### Return type
+
+[**models::DbaasUserClickhouseSecrets**](dbaas-user-clickhouse-secrets.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -3187,6 +3482,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::DbaasUserValkeySecrets**](dbaas-user-valkey-secrets.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## start_dbaas_clickhouse_maintenance
+
+> models::Operation start_dbaas_clickhouse_maintenance(name)
+[BETA] Initiate ClickHouse maintenance update
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
 
 ### Authorization
 
@@ -3775,6 +4098,35 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::DbaasPostgresUsers**](dbaas-postgres-users.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## update_dbaas_service_clickhouse
+
+> models::Operation update_dbaas_service_clickhouse(name, update_dbaas_service_clickhouse_request)
+[BETA] Update a DBaaS ClickHouse service
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**name** | **String** |  | [required] |
+**update_dbaas_service_clickhouse_request** | [**UpdateDbaasServiceClickhouseRequest**](UpdateDbaasServiceClickhouseRequest.md) |  | [required] |
+
+### Return type
+
+[**models::Operation**](operation.md)
 
 ### Authorization
 

@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListKmsKeyRotationsResponse {
+    /// A chronologically ordered collection tracking historical rotation lifecycle occurrences for this resource.
     #[serde(rename = "rotations")]
     pub rotations: Vec<models::ListKmsKeyRotationsResponseEntry>,
 }

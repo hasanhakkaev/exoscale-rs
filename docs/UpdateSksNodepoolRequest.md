@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **instance_prefix** | Option<**String**> | Prefix to apply to managed instances names (default: pool), lowercase only | [optional]
 **deploy_target** | Option<[**models::DeployTargetRef**](DeployTargetRef.md)> |  | [optional]
 **disk_size** | Option<**u64**> | Nodepool instances disk size in GiB | [optional]
+**nvidia_mig_profiles** | Option<[**models::NvidiaMigProfiles**](NvidiaMigProfiles.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

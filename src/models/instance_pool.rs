@@ -64,6 +64,8 @@ pub struct InstancePool {
     /// Instances
     #[serde(rename = "instances", skip_serializing_if = "Option::is_none")]
     pub instances: Option<Vec<models::InstanceRef>>,
+    #[serde(rename = "error-reason", skip_serializing_if = "Option::is_none")]
+    pub error_reason: Option<Box<models::InstancePoolErrorReason>>,
     #[serde(rename = "deploy-target", skip_serializing_if = "Option::is_none")]
     pub deploy_target: Option<Box<models::DeployTargetRef>>,
     /// Enable IPv6 for instances
@@ -103,6 +105,7 @@ impl InstancePool {
             user_data: None,
             manager: None,
             instances: None,
+            error_reason: None,
             deploy_target: None,
             ipv6_enabled: None,
             id: None,
@@ -127,6 +130,8 @@ pub enum State {
     Running,
     #[serde(rename = "updating")]
     Updating,
+    #[serde(rename = "error")]
+    Error,
 }
 
 impl Default for State {

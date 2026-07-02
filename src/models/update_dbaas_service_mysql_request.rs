@@ -13,39 +13,43 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateDbaasServiceMysqlRequest {
-    #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
-    pub maintenance: Option<Box<models::UpdateDbaasServiceMysqlRequestMaintenance>>,
-    /// Subscription plan
-    #[serde(rename = "plan", skip_serializing_if = "Option::is_none")]
-    pub plan: Option<String>,
-    /// Service is protected against termination and powering off
-    #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
-    pub termination_protection: Option<bool>,
+    #[serde(rename = "backup-schedule", skip_serializing_if = "Option::is_none")]
+    pub backup_schedule: Option<Box<models::UpdateDbaasServiceMysqlRequestBackupSchedule>>,
     /// Allow incoming connections from CIDR address block, e.g. '10.20.0.0/16'
     #[serde(rename = "ip-filter", skip_serializing_if = "Option::is_none")]
     pub ip_filter: Option<Vec<String>>,
+    /// Service is protected against termination and powering off
+    #[serde(rename = "termination-protection", skip_serializing_if = "Option::is_none")]
+    pub termination_protection: Option<bool>,
     #[serde(rename = "mysql-settings", skip_serializing_if = "Option::is_none")]
     pub mysql_settings: Option<Box<models::JsonSchemaMysql>>,
+    #[serde(rename = "maintenance", skip_serializing_if = "Option::is_none")]
+    pub maintenance: Option<Box<models::UpdateDbaasServiceMysqlRequestMaintenance>>,
+    /// MySQL version
+    #[serde(rename = "version", skip_serializing_if = "Option::is_none")]
+    pub version: Option<String>,
+    /// Subscription plan
+    #[serde(rename = "plan", skip_serializing_if = "Option::is_none")]
+    pub plan: Option<String>,
     #[serde(rename = "migration", skip_serializing_if = "Option::is_none")]
     pub migration: Option<Box<models::UpdateDbaasServiceMysqlRequestMigration>>,
     /// The minimum amount of time in seconds to keep binlog entries before deletion. This may be extended for services that require binlog entries for longer than the default for example if using the MySQL Debezium Kafka connector.
     #[serde(rename = "binlog-retention-period", skip_serializing_if = "Option::is_none")]
     pub binlog_retention_period: Option<u64>,
-    #[serde(rename = "backup-schedule", skip_serializing_if = "Option::is_none")]
-    pub backup_schedule: Option<Box<models::UpdateDbaasServiceMysqlRequestBackupSchedule>>,
 }
 
 impl UpdateDbaasServiceMysqlRequest {
     pub fn new() -> UpdateDbaasServiceMysqlRequest {
         UpdateDbaasServiceMysqlRequest {
-            maintenance: None,
-            plan: None,
-            termination_protection: None,
+            backup_schedule: None,
             ip_filter: None,
+            termination_protection: None,
             mysql_settings: None,
+            maintenance: None,
+            version: None,
+            plan: None,
             migration: None,
             binlog_retention_period: None,
-            backup_schedule: None,
         }
     }
 }

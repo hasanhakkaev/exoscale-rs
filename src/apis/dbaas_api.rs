@@ -22,6 +22,14 @@ pub enum AttachDbaasServiceToEndpointError {
 }
 
 
+/// struct for typed errors of method [`create_dbaas_clickhouse_user`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CreateDbaasClickhouseUserError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`create_dbaas_external_endpoint_datadog`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -150,6 +158,14 @@ pub enum CreateDbaasPostgresUserError {
 }
 
 
+/// struct for typed errors of method [`create_dbaas_service_clickhouse`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CreateDbaasServiceClickhouseError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`create_dbaas_service_grafana`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -218,6 +234,14 @@ pub enum CreateDbaasTaskMigrationCheckError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum CreateDbaasValkeyUserError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`delete_dbaas_clickhouse_user`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteDbaasClickhouseUserError {
     UnknownValue(serde_json::Value),
 }
 
@@ -350,6 +374,14 @@ pub enum DeleteDbaasServiceError {
 }
 
 
+/// struct for typed errors of method [`delete_dbaas_service_clickhouse`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum DeleteDbaasServiceClickhouseError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`delete_dbaas_service_grafana`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -434,6 +466,14 @@ pub enum EnableDbaasMysqlWritesError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDbaasCaCertificateError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`get_dbaas_clickhouse_acl_config`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetDbaasClickhouseAclConfigError {
     UnknownValue(serde_json::Value),
 }
 
@@ -526,6 +566,14 @@ pub enum GetDbaasOpensearchAclConfigError {
 }
 
 
+/// struct for typed errors of method [`get_dbaas_service_clickhouse`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetDbaasServiceClickhouseError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`get_dbaas_service_grafana`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -606,6 +654,14 @@ pub enum GetDbaasServiceValkeyError {
 }
 
 
+/// struct for typed errors of method [`get_dbaas_settings_clickhouse`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum GetDbaasSettingsClickhouseError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`get_dbaas_settings_grafana`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -666,6 +722,14 @@ pub enum GetDbaasSettingsValkeyError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum GetDbaasTaskError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`list_dbaas_clickhouse_users`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ListDbaasClickhouseUsersError {
     UnknownValue(serde_json::Value),
 }
 
@@ -734,6 +798,14 @@ pub enum ListDbaasValkeyUsersError {
 }
 
 
+/// struct for typed errors of method [`reset_dbaas_clickhouse_user_password`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum ResetDbaasClickhouseUserPasswordError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`reset_dbaas_grafana_user_password`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -778,6 +850,14 @@ pub enum ResetDbaasPostgresUserPasswordError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ResetDbaasValkeyUserPasswordError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`reveal_dbaas_clickhouse_user_password`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum RevealDbaasClickhouseUserPasswordError {
     UnknownValue(serde_json::Value),
 }
 
@@ -842,6 +922,14 @@ pub enum RevealDbaasThanosUserPasswordError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum RevealDbaasValkeyUserPasswordError {
+    UnknownValue(serde_json::Value),
+}
+
+
+/// struct for typed errors of method [`start_dbaas_clickhouse_maintenance`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum StartDbaasClickhouseMaintenanceError {
     UnknownValue(serde_json::Value),
 }
 
@@ -1006,6 +1094,14 @@ pub enum UpdateDbaasPostgresAllowReplicationError {
 }
 
 
+/// struct for typed errors of method [`update_dbaas_service_clickhouse`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum UpdateDbaasServiceClickhouseError {
+    UnknownValue(serde_json::Value),
+}
+
+
 /// struct for typed errors of method [`update_dbaas_service_grafana`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -1085,6 +1181,26 @@ pub async fn attach_dbaas_service_to_endpoint(configuration: &configuration::Con
     configuration,
     reqwest::Method::PUT,
     "/dbaas-external-endpoint/{source_service_name}/attach",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn create_dbaas_clickhouse_user(configuration: &configuration::Configuration, service_name: &str, create_dbaas_clickhouse_user_request: models::CreateDbaasClickhouseUserRequest) -> Result<models::Operation, Error<CreateDbaasClickhouseUserError>> {
+    let local_var_service_name = service_name;
+    let local_var_create_dbaas_clickhouse_user_request = create_dbaas_clickhouse_user_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_create_dbaas_clickhouse_user_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::POST,
+    "/dbaas-clickhouse/{service_name}/user",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -1408,6 +1524,26 @@ pub async fn create_dbaas_postgres_user(configuration: &configuration::Configura
     body_payload_option,
     ).await
 }
+pub async fn create_dbaas_service_clickhouse(configuration: &configuration::Configuration, name: &str, create_dbaas_service_clickhouse_request: models::CreateDbaasServiceClickhouseRequest) -> Result<models::Operation, Error<CreateDbaasServiceClickhouseError>> {
+    let local_var_name = name;
+    let local_var_create_dbaas_service_clickhouse_request = create_dbaas_service_clickhouse_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_create_dbaas_service_clickhouse_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::POST,
+    "/dbaas-clickhouse/{name}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn create_dbaas_service_grafana(configuration: &configuration::Configuration, name: &str, create_dbaas_service_grafana_request: models::CreateDbaasServiceGrafanaRequest) -> Result<models::Operation, Error<CreateDbaasServiceGrafanaError>> {
     let local_var_name = name;
     let local_var_create_dbaas_service_grafana_request = create_dbaas_service_grafana_request;
@@ -1583,6 +1719,27 @@ pub async fn create_dbaas_valkey_user(configuration: &configuration::Configurati
     configuration,
     reqwest::Method::POST,
     "/dbaas-valkey/{service_name}/user",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn delete_dbaas_clickhouse_user(configuration: &configuration::Configuration, service_name: &str, username: &str) -> Result<models::Operation, Error<DeleteDbaasClickhouseUserError>> {
+    let local_var_service_name = service_name;
+    let local_var_username = username;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::DELETE,
+    "/dbaas-clickhouse/{service_name}/user/{username}",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -1910,6 +2067,25 @@ pub async fn delete_dbaas_service(configuration: &configuration::Configuration, 
     body_payload_option,
     ).await
 }
+pub async fn delete_dbaas_service_clickhouse(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<DeleteDbaasServiceClickhouseError>> {
+    let local_var_name = name;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::DELETE,
+    "/dbaas-clickhouse/{name}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn delete_dbaas_service_grafana(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<DeleteDbaasServiceGrafanaError>> {
     let local_var_name = name;
 
@@ -2115,6 +2291,25 @@ pub async fn get_dbaas_ca_certificate(configuration: &configuration::Configurati
     configuration,
     reqwest::Method::GET,
     "/dbaas-ca-certificate",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn get_dbaas_clickhouse_acl_config(configuration: &configuration::Configuration, service_name: &str) -> Result<models::DbaasClickhouseAclConfig, Error<GetDbaasClickhouseAclConfigError>> {
+    let local_var_service_name = service_name;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/dbaas-clickhouse/{service_name}/acl-config",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -2329,6 +2524,25 @@ pub async fn get_dbaas_opensearch_acl_config(configuration: &configuration::Conf
     body_payload_option,
     ).await
 }
+pub async fn get_dbaas_service_clickhouse(configuration: &configuration::Configuration, name: &str) -> Result<models::DbaasServiceClickhouse, Error<GetDbaasServiceClickhouseError>> {
+    let local_var_name = name;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/dbaas-clickhouse/{name}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn get_dbaas_service_grafana(configuration: &configuration::Configuration, name: &str) -> Result<models::DbaasServiceGrafana, Error<GetDbaasServiceGrafanaError>> {
     let local_var_name = name;
 
@@ -2521,6 +2735,23 @@ pub async fn get_dbaas_service_valkey(configuration: &configuration::Configurati
     body_payload_option,
     ).await
 }
+pub async fn get_dbaas_settings_clickhouse(configuration: &configuration::Configuration, ) -> Result<models::GetDbaasSettingsClickhouse200Response, Error<GetDbaasSettingsClickhouseError>> {
+
+    let path_params_map = std::collections::HashMap::new();
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/dbaas-settings-clickhouse",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn get_dbaas_settings_grafana(configuration: &configuration::Configuration, ) -> Result<models::GetDbaasSettingsGrafana200Response, Error<GetDbaasSettingsGrafanaError>> {
 
     let path_params_map = std::collections::HashMap::new();
@@ -2656,6 +2887,25 @@ pub async fn get_dbaas_task(configuration: &configuration::Configuration, servic
     configuration,
     reqwest::Method::GET,
     "/dbaas-task/{service}/{id}",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn list_dbaas_clickhouse_users(configuration: &configuration::Configuration, service_name: &str) -> Result<models::DbaasClickhouseUsers, Error<ListDbaasClickhouseUsersError>> {
+    let local_var_service_name = service_name;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/dbaas-clickhouse/{service_name}/user",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -2807,6 +3057,28 @@ pub async fn list_dbaas_valkey_users(configuration: &configuration::Configuratio
     body_payload_option,
     ).await
 }
+pub async fn reset_dbaas_clickhouse_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str, reset_dbaas_valkey_user_password_request: models::ResetDbaasValkeyUserPasswordRequest) -> Result<models::Operation, Error<ResetDbaasClickhouseUserPasswordError>> {
+    let local_var_service_name = service_name;
+    let local_var_username = username;
+    let local_var_reset_dbaas_valkey_user_password_request = reset_dbaas_valkey_user_password_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_reset_dbaas_valkey_user_password_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/dbaas-clickhouse/{service_name}/user/{username}/password/reset",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
 pub async fn reset_dbaas_grafana_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str, reset_dbaas_valkey_user_password_request: models::ResetDbaasValkeyUserPasswordRequest) -> Result<models::Operation, Error<ResetDbaasGrafanaUserPasswordError>> {
     let local_var_service_name = service_name;
     let local_var_username = username;
@@ -2934,6 +3206,27 @@ pub async fn reset_dbaas_valkey_user_password(configuration: &configuration::Con
     configuration,
     reqwest::Method::PUT,
     "/dbaas-valkey/{service_name}/user/{username}/password/reset",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn reveal_dbaas_clickhouse_user_password(configuration: &configuration::Configuration, service_name: &str, username: &str) -> Result<models::DbaasUserClickhouseSecrets, Error<RevealDbaasClickhouseUserPasswordError>> {
+    let local_var_service_name = service_name;
+    let local_var_username = username;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("service_name".to_string(), crate::apis::urlencode(local_var_service_name));
+                path_params_map.insert("username".to_string(), crate::apis::urlencode(local_var_username));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::GET,
+    "/dbaas-clickhouse/{service_name}/user/{username}/password/reveal",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -3100,6 +3393,25 @@ pub async fn reveal_dbaas_valkey_user_password(configuration: &configuration::Co
     configuration,
     reqwest::Method::GET,
     "/dbaas-valkey/{service_name}/user/{username}/password/reveal",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn start_dbaas_clickhouse_maintenance(configuration: &configuration::Configuration, name: &str) -> Result<models::Operation, Error<StartDbaasClickhouseMaintenanceError>> {
+    let local_var_name = name;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+        let body_payload_option: Option<()> = None;
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/dbaas-clickhouse/{name}/maintenance/start",
     path_params_map,
     query_params_option,
     body_payload_option,
@@ -3494,6 +3806,26 @@ pub async fn update_dbaas_postgres_allow_replication(configuration: &configurati
     configuration,
     reqwest::Method::PUT,
     "/dbaas-postgres/{service_name}/user/{username}/allow-replication",
+    path_params_map,
+    query_params_option,
+    body_payload_option,
+    ).await
+}
+pub async fn update_dbaas_service_clickhouse(configuration: &configuration::Configuration, name: &str, update_dbaas_service_clickhouse_request: models::UpdateDbaasServiceClickhouseRequest) -> Result<models::Operation, Error<UpdateDbaasServiceClickhouseError>> {
+    let local_var_name = name;
+    let local_var_update_dbaas_service_clickhouse_request = update_dbaas_service_clickhouse_request;
+
+    let mut path_params_map = std::collections::HashMap::new();
+                path_params_map.insert("name".to_string(), crate::apis::urlencode(local_var_name));
+
+    let query_params_vec: Vec<(&str, String)> = Vec::new();
+    let query_params_option = if query_params_vec.is_empty() { None } else { Some(query_params_vec.as_slice())};
+            let body_payload_option = Some(local_var_update_dbaas_service_clickhouse_request);
+
+    utils::execute_request(
+    configuration,
+    reqwest::Method::PUT,
+    "/dbaas-clickhouse/{name}",
     path_params_map,
     query_params_option,
     body_payload_option,

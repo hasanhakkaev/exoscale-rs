@@ -4,19 +4,19 @@ All URIs are relative to *https://api-ch-gva-2.exoscale.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**decrypt**](CryptoApi.md#decrypt) | **POST** /kms-key/{id}/decrypt | [BETA] Decrypt
-[**encrypt**](CryptoApi.md#encrypt) | **POST** /kms-key/{id}/encrypt | [BETA] Encrypt
-[**generate_data_key**](CryptoApi.md#generate_data_key) | **POST** /kms-key/{id}/generate-data-key | [BETA] Generate Data Key
-[**re_encrypt**](CryptoApi.md#re_encrypt) | **POST** /kms-key/{id}/re-encrypt | [BETA] Re-encrypt
+[**decrypt**](CryptoApi.md#decrypt) | **POST** /kms-key/{id}/decrypt | Decrypt
+[**encrypt**](CryptoApi.md#encrypt) | **POST** /kms-key/{id}/encrypt | Encrypt
+[**generate_data_key**](CryptoApi.md#generate_data_key) | **POST** /kms-key/{id}/generate-data-key | Generate Data Encryption Key
+[**re_encrypt**](CryptoApi.md#re_encrypt) | **POST** /kms-key/{id}/re-encrypt | Re-encrypt
 
 
 
 ## decrypt
 
 > models::DecryptResponse decrypt(id, decrypt_request)
-[BETA] Decrypt
+Decrypt
 
-Decrypt a ciphertext.
+Decrypts a ciphertext.
 
 ### Parameters
 
@@ -45,9 +45,9 @@ No authorization required
 ## encrypt
 
 > models::EncryptResponse encrypt(id, encrypt_request)
-[BETA] Encrypt
+Encrypt
 
-Encrypt a plaintext.
+Encrypts a plaintext.
 
 ### Parameters
 
@@ -76,7 +76,7 @@ No authorization required
 ## generate_data_key
 
 > models::GenerateDataKeyResponse generate_data_key(id, generate_data_key_request)
-[BETA] Generate Data Key
+Generate Data Encryption Key
 
 Generate a Data Encryption Key from a given KMS Key.
 
@@ -107,7 +107,7 @@ No authorization required
 ## re_encrypt
 
 > models::ReEncryptResponse re_encrypt(id, re_encrypt_request)
-[BETA] Re-encrypt
+Re-encrypt
 
 Decrypts an existing ciphertext using its original key material and re-encrypts the underlying plaintext using a specified KMS key or the latest key material of the same KMS Key.
 
