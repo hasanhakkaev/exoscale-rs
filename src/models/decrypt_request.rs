@@ -16,9 +16,11 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct DecryptRequest {
+    /// The exact Base64-encoded Additional Authenticated Data (AAD) used during encryption to verify data integrity.
     #[serde_as(as = "super::DoubleOption<serde_with::base64::Base64>")]
     #[serde(rename = "encryption-context", default, skip_serializing_if = "Option::is_none")]
     pub encryption_context: Option<Option<Vec<u8>>>,
+    /// The Base64-encoded ciphertext payload to be decrypted.
     #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "ciphertext")]
     pub ciphertext: Vec<u8>,

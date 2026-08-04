@@ -24,6 +24,9 @@ pub struct CreateDeploymentRequest {
     /// GPU type family (e.g., gpua5000, gpu3080ti)
     #[serde(rename = "gpu-type")]
     pub gpu_type: String,
+    /// Billing identifier for this deployment. Used by the Router for usage counters and Kafka events.
+    #[serde(rename = "product-name", skip_serializing_if = "Option::is_none")]
+    pub product_name: Option<String>,
     /// Number of replicas (>=1)
     #[serde(rename = "replicas")]
     pub replicas: u64,
@@ -42,6 +45,7 @@ impl CreateDeploymentRequest {
             inference_engine_version: None,
             name,
             gpu_type,
+            product_name: None,
             replicas,
             inference_engine_parameters: None,
             model: Box::new(model),

@@ -14,7 +14,7 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListVpcs200Response {
     #[serde(rename = "vpcs", skip_serializing_if = "Option::is_none")]
-    pub vpcs: Option<Vec<models::ListVpcResponseEntry>>,
+    pub vpcs: Option<Vec<models::ListVpcEntry>>,
 }
 
 impl ListVpcs200Response {

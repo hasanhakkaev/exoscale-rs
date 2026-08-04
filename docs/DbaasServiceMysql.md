@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **connection_info** | Option<[**models::DbaasServiceMysqlConnectionInfo**](DbaasServiceMysqlConnectionInfo.md)> |  | [optional]
 **backup_schedule** | Option<[**models::DbaasServiceMysqlBackupSchedule**](DbaasServiceMysqlBackupSchedule.md)> |  | [optional]
 **node_cpu_count** | Option<**u64**> | Number of CPUs for each node | [optional]
-**prometheus_uri** | [**models::DbaasServiceMysqlPrometheusUri**](DbaasServiceMysqlPrometheusUri.md) |  | 
+**prometheus_uri** | [**models::DbaasServiceClickhousePrometheusUri**](DbaasServiceClickhousePrometheusUri.md) |  | 
 **integrations** | Option<[**Vec<models::DbaasIntegration>**](DbaasIntegration.md)> | Service integrations | [optional]
 **zone** | Option<**String**> | The zone where the service is running | [optional]
 **node_states** | Option<[**Vec<models::DbaasNodeState>**](DbaasNodeState.md)> | State of individual service nodes | [optional]

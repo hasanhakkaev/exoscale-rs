@@ -13,18 +13,17 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ErrorResponse {
+    /// An absolute or relative URI reference pointing to human-readable documentation concerning the specific problem type encountered.
     #[serde(rename = "type")]
     pub r#type: String,
+    /// A brief summary defining the class of failure, optimal for quick user interface groupings.
     #[serde(rename = "title")]
     pub title: String,
     #[serde(rename = "status")]
     pub status: u16,
+    /// A highly contextual, readable explanation breaking down explicitly what triggered this error scenario.
     #[serde(rename = "detail")]
     pub detail: String,
-    #[serde(rename = "instance", skip_serializing_if = "Option::is_none")]
-    pub instance: Option<String>,
-    #[serde(rename = "errors", skip_serializing_if = "Option::is_none")]
-    pub errors: Option<Vec<models::ErrorResponseErrorsInner>>,
 }
 
 impl ErrorResponse {
@@ -35,8 +34,6 @@ impl ErrorResponse {
             title,
             status,
             detail,
-            instance: None,
-            errors: None,
         }
     }
 }

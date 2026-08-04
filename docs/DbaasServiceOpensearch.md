@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **node_count** | Option<**u64**> | Number of service nodes in the active plan | [optional]
 **connection_info** | Option<[**models::DbaasServiceOpensearchConnectionInfo**](DbaasServiceOpensearchConnectionInfo.md)> |  | [optional]
 **node_cpu_count** | Option<**u64**> | Number of CPUs for each node | [optional]
-**prometheus_uri** | [**models::DbaasServiceMysqlPrometheusUri**](DbaasServiceMysqlPrometheusUri.md) |  | 
+**prometheus_uri** | [**models::DbaasServiceClickhousePrometheusUri**](DbaasServiceClickhousePrometheusUri.md) |  | 
 **integrations** | Option<[**Vec<models::DbaasIntegration>**](DbaasIntegration.md)> | Service integrations | [optional]
 **zone** | Option<**String**> | The zone where the service is running | [optional]
 **node_states** | Option<[**Vec<models::DbaasNodeState>**](DbaasNodeState.md)> | State of individual service nodes | [optional]

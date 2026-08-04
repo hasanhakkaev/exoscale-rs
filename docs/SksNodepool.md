@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **instance_type** | Option<[**models::InstanceTypeRef**](InstanceTypeRef.md)> |  | [optional]
 **private_networks** | Option<[**HashSet<models::PrivateNetworkRef>**](PrivateNetworkRef.md)> | Nodepool Private Networks | [optional]
 **template** | Option<[**models::TemplateRef**](TemplateRef.md)> |  | [optional]
-**state** | Option<**State**> | Nodepool state (enum: renewing-token, creating, deleting, running, scaling, updating, error) | [optional][readonly]
+**state** | Option<**State**> | Nodepool state (enum: renewing-token, creating, deleting, running, degraded, scaling, updating, error) | [optional][readonly]
 **size** | Option<**u64**> | Number of instances | [optional]
 **kubelet_image_gc** | Option<[**models::KubeletImageGc**](KubeletImageGc.md)> |  | [optional]
 **instance_pool** | Option<[**models::InstancePoolRef**](InstancePoolRef.md)> |  | [optional]
@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **id** | Option<**uuid::Uuid**> | Nodepool ID | [optional][readonly]
 **disk_size** | Option<**u64**> | Nodepool instances disk size in GiB | [optional]
 **version** | Option<**String**> | Nodepool version | [optional][readonly]
+**nvidia_mig_profiles** | Option<[**models::NvidiaMigProfiles**](NvidiaMigProfiles.md)> |  | [optional]
 **created_at** | Option<**String**> | Nodepool creation date | [optional][readonly]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

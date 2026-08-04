@@ -24,6 +24,8 @@ pub struct SksCluster {
     /// Enable auto upgrade of the control plane to the latest patch version available
     #[serde(rename = "auto-upgrade", skip_serializing_if = "Option::is_none")]
     pub auto_upgrade: Option<bool>,
+    #[serde(rename = "oidc", skip_serializing_if = "Option::is_none")]
+    pub oidc: Option<Box<models::SksOidc>>,
     /// Cluster name
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -75,6 +77,7 @@ impl SksCluster {
             labels: None,
             cni: None,
             auto_upgrade: None,
+            oidc: None,
             name: None,
             enable_operators_ca: None,
             default_security_group_id: None,

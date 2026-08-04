@@ -211,11 +211,21 @@ tags:
   x-display-name: DBaaS Valkey
   x-weight: 460
   x-icon: exo-db-valkey
+- description: View the impact of your past usage, and estimate the impact of future
+    usage.
+  parent: general
+  externalDocs:
+    description: Read more
+    url: https://www.exoscale.com/sustainability/
+  name: environmental-impact
+  x-display-name: Environmental Impact
+  x-weight: 1150
+  x-icon: exo-license
 - description: Operations for KMS Key lifecycle management.
   parent: kms
   externalDocs:
     description: Read more
-    url: https://community.exoscale.com/documentation/kms/kms-key
+    url: https://community.exoscale.com/documentation/security/kms/overview
   name: kms-key
   x-display-name: KMS Key
   x-weight: 1130
@@ -260,6 +270,15 @@ tags:
   x-display-name: Object Storage
   x-weight: 500
   x-icon: exo-object-storage
+- description: "[BETA] Create and manipulate routing rules"
+  parent: vpc
+  externalDocs:
+    description: Read more
+    url: https://community.exoscale.com/documentation/compute/
+  name: vpc-route
+  x-display-name: VPC
+  x-weight: 195
+  x-icon: exo-vpc
 - description: |-
     Snapshots provide a way to get point-in-time recovery
                        for your Compute instance.
@@ -372,7 +391,7 @@ tags:
   parent: kms
   externalDocs:
     description: Read more
-    url: https://community.exoscale.com/documentation/kms/crypto
+    url: https://community.exoscale.com/documentation/security/kms/overview
   name: crypto
   x-display-name: Cryptographic Operations
   x-weight: 1140
@@ -429,7 +448,7 @@ tags:
     lets you create, control and manage the lifecycle of cryptographic keys.
   externalDocs:
     description: Read more
-    url: https://community.exoscale.com/documentation/kms/
+    url: https://community.exoscale.com/documentation/security/kms/
   name: kms
   x-display-name: KMS
   x-weight: 1120
@@ -461,6 +480,15 @@ tags:
   x-display-name: User
   x-weight: 830
   x-icon: exo-iam
+- description: "[BETA] Create and manipulate VPCs"
+  parent: vpc
+  externalDocs:
+    description: Read more
+    url: https://community.exoscale.com/documentation/compute/
+  name: vpc-management
+  x-display-name: VPC
+  x-weight: 195
+  x-icon: exo-vpc
 - description: Nodepool templates are Exoscale-managed instance templates for SKS
     worker nodes.
   parent: sks
@@ -482,6 +510,15 @@ tags:
   x-display-name: SKS
   x-weight: 300
   x-icon: exo-sks
+- description: "[BETA] Configure VPC subnets and attach instances to them"
+  parent: vpc
+  externalDocs:
+    description: Read more
+    url: https://community.exoscale.com/documentation/compute/
+  name: vpc-subnet
+  x-display-name: VPC
+  x-weight: 195
+  x-icon: exo-vpc
 - description: The Organization Policy is an IAM policy that applies as a first layer
     across your entire Exoscale organization.
   parent: iam
@@ -601,6 +638,172 @@ components:
           required:
           - url
           - index-prefix
+    dbaas-service-clickhouse:
+      type: object
+      properties:
+        updated-at:
+          type: string
+          format: date-time
+          description: Service last update timestamp (ISO 8601)
+        node-count:
+          type: integer
+          format: int64
+          minimum: 0
+          exclusiveMinimum: false
+          description: Number of service nodes in the active plan
+        connection-info:
+          type: object
+          properties:
+            uri:
+              type: array
+              items:
+                type: string
+            mysql-uri:
+              type: string
+            arrowflight-uri:
+              type: string
+          description: ClickHouse connection information properties
+        node-cpu-count:
+          type: integer
+          format: int64
+          minimum: 0
+          exclusiveMinimum: false
+          description: Number of CPUs for each node
+        prometheus-uri:
+          type: object
+          properties:
+            host:
+              type: string
+            port:
+              type: integer
+              format: int64
+              minimum: 0
+              maximum: 65535
+              exclusiveMinimum: false
+              exclusiveMaximum: false
+          description: Prometheus integration URI
+        integrations:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-integration"
+          description: Service integrations
+        zone:
+          type: string
+          description: The zone where the service is running
+        node-states:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-node-state"
+          description: State of individual service nodes
+        name:
+          "$ref": "#/components/schemas/dbaas-service-name"
+          description: Service name
+        type:
+          "$ref": "#/components/schemas/dbaas-service-type-name"
+          description: Service type code
+        state:
+          "$ref": "#/components/schemas/enum-service-state"
+          description: State of the service
+        ip-filter:
+          type: array
+          items:
+            type: string
+          description: Allowed CIDR address blocks for incoming connections
+        backups:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-service-backup"
+          description: List of backups for the service
+        termination-protection:
+          type: boolean
+          description: Service is protected against termination and powering off
+        clickhouse-settings:
+          "$ref": "#/components/schemas/json-schema-clickhouse"
+          description: ClickHouse-specific settings
+        notifications:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-service-notification"
+          description: Service notifications
+        components:
+          type: array
+          items:
+            type: object
+            properties:
+              component:
+                type: string
+                description: Service component name
+              host:
+                type: string
+                description: DNS name for connecting to the service component
+              port:
+                type: integer
+                format: int64
+                minimum: 0
+                maximum: 65535
+                exclusiveMinimum: false
+                exclusiveMaximum: false
+                description: Port number for connecting to the service component
+              route:
+                "$ref": "#/components/schemas/enum-component-route"
+                description: Network access route
+              ssl:
+                type: boolean
+                description: |-
+                  Whether the endpoint is encrypted or accepts plaintext.
+                               By default endpoints are always encrypted and
+                               this property is only included for service components that may disable encryption.
+              usage:
+                "$ref": "#/components/schemas/enum-component-usage"
+                description: DNS usage name
+            required:
+            - component
+            - host
+            - port
+            - route
+            - usage
+          description: Service component information objects
+        maintenance:
+          "$ref": "#/components/schemas/dbaas-service-maintenance"
+          description: Automatic maintenance settings
+        disk-size:
+          type: integer
+          format: int64
+          minimum: 0
+          exclusiveMinimum: false
+          description: TODO UNIT disk space for data storage
+        node-memory:
+          type: integer
+          format: int64
+          minimum: 0
+          exclusiveMinimum: false
+          description: TODO UNIT of memory for each node
+        uri:
+          type: string
+          description: URI for connecting to the service (may be absent)
+        uri-params:
+          type: object
+          description: service_uri parameterized into key-value pairs
+        version:
+          type: string
+          description: ClickHouse version
+        created-at:
+          type: string
+          format: date-time
+          description: Service creation timestamp (ISO 8601)
+        plan:
+          type: string
+          description: Subscription plan
+        users:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-user"
+          description: List of ClickHouse users
+      required:
+      - name
+      - plan
+      - type
+      - prometheus-uri
     encrypt-response:
       type: object
       required:
@@ -609,6 +812,7 @@ components:
         ciphertext:
           type: string
           format: byte
+          description: The resulting Base64-encoded ciphertext after encryption.
     private-network-ref:
       type: object
       properties:
@@ -621,6 +825,13 @@ components:
       type: string
       maxLength: 2000
       minLength: 1
+    schedule-kms-key-deletion-response:
+      type: object
+      properties:
+        delete-at:
+          type: string
+          description: Timestamp of the key deletion
+          format: date-time
     get-deployment-logs-response:
       description: Deployment logs
       properties:
@@ -775,6 +986,13 @@ components:
           type: string
       type: object
       minProperties: 1
+    dbaas-clickhouse-users:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-user"
     dbaas-pg-pool-size:
       type: integer
       format: int64
@@ -782,6 +1000,37 @@ components:
       maximum: 10000
       exclusiveMinimum: false
       exclusiveMaximum: false
+    json-schema-clickhouse:
+      properties:
+        server_settings:
+          additionalProperties: false
+          description: ClickHouse server settings, which can be found in the `system.server_settings`
+            table.
+          properties:
+            vector_similarity_index_cache_size:
+              default: 0.07
+              description: Fraction of total server memory allocated to the vector
+                similarity index cache. 0 disables the cache. Default is 0.07 (7%
+                of server memory). Only effective on ClickHouse 25.8+.
+              example: 0.07
+              maximum: 0.5
+              minimum: 0
+              title: vector_similarity_index_cache_size
+              type: number
+          title: ClickHouse server settings
+          type: object
+        tiered_storage_move_factor:
+          default: 0.2
+          description: The percentage of free disk space required on local storage
+            before data is moved to object storage. A value of 0.2 means data is moved
+            when local storage has less than 20% free space.
+          example: 0.2
+          maximum: 1
+          minimum: 0
+          title: Tiered storage move factor
+          type: number
+      title: ClickHouse settings
+      type: object
     block-storage-snapshot-ref:
       type: object
       properties:
@@ -876,6 +1125,8 @@ components:
           type: string
           format: byte
           nullable: true
+          description: Base64-encoded Additional Authenticated Data binding key generation
+            parameters securely to operational scope.
     recompute-bundle-response:
       description: Response from bundle recompute operation
       properties:
@@ -950,6 +1201,9 @@ components:
         name:
           description: Human-readable name for the AI API key
           type: string
+        value:
+          description: Plaintext AI API key value
+          type: string
         scope:
           description: 'Key scope: ''public'' for all deployments, or a specific deployment
             UUID'
@@ -977,6 +1231,7 @@ components:
       - scope
       - created-at
       - updated-at
+      - value
     sks-audit-bearer-token:
       type: string
       maxLength: 2000
@@ -1023,6 +1278,74 @@ components:
       type: object
       required:
       - parameters
+    subnet:
+      type: object
+      properties:
+        description:
+          type: string
+          maxLength: 4096
+          description: Subnet description
+        labels:
+          "$ref": "#/components/schemas/labels"
+          description: Resource labels
+        name:
+          type: string
+          maxLength: 255
+          minLength: 1
+          description: Subnet name
+        ipv4-block:
+          type: string
+          description: Subnet ipv4 CIDR
+        addressfamily:
+          type: string
+          enum:
+          - inet4
+          - dual
+          description: Subnet address family
+        address-space:
+          type: string
+          enum:
+          - private
+          description: Subnet address space
+        instances:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                format: uuid
+                description: Instance uuid
+              ipv4:
+                type: string
+                format: ipv4
+                description: Instance Ipv4 address
+            description: Subnet attachements
+          description: Instances attached to the subnet
+        id:
+          type: string
+          format: uuid
+          description: Subnet ID
+        created-at:
+          type: string
+          format: date-time
+          description: Subnet creation date
+      description: Subnet
+    zone-impact:
+      type: object
+      description: Hierarchical breakdown of impact in a given zone
+      required:
+      - impact
+      - resources
+      properties:
+        impact:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/impact-value-with-unit"
+        resources:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/impact-resource-tree-node"
     dbaas-user-valkey-secrets:
       type: object
       properties:
@@ -1088,6 +1411,16 @@ components:
               exclusiveMinimum: false
               exclusiveMaximum: false
               description: Rsyslog max message size
+    dbaas-user-clickhouse-secrets:
+      type: object
+      properties:
+        username:
+          type: string
+          description: ClickHouse username
+        password:
+          type: string
+          description: ClickHouse password
+      description: ClickHouse User secrets
     json-schema-grafana:
       properties:
         allow_embedding:
@@ -1931,6 +2264,21 @@ components:
           format: ipv4
           description: Private Network end IP address
       description: Private Network
+    dbaas-clickhouse-user-privilege:
+      type: object
+      properties:
+        access-type:
+          type: string
+        column:
+          type: string
+        database:
+          type: string
+        grant-option:
+          type: boolean
+        partial-revoke:
+          type: boolean
+        table:
+          type: string
     dbaas-endpoint-rsyslog:
       type: object
       properties:
@@ -1981,19 +2329,6 @@ components:
       enum:
       - primary
       - replica
-    operation-resource-ref:
-      type: object
-      required:
-      - id
-      - command
-      properties:
-        id:
-          type: string
-          format: uuid
-        link:
-          type: string
-        command:
-          type: string
     json-schema-pgaudit:
       description: System-wide settings for the pgaudit extension.
       properties:
@@ -2003,8 +2338,6 @@ components:
           pattern: "^[_A-Za-z0-9][-._A-Za-z0-9]{0,63}$"
           title: Role
           type: string
-          user_error: Must consist of alpha-numeric characters, dots, underscores
-            or dashes, may not start with dash or dot, max 64 characters
         log_parameter:
           default: false
           description: Specifies that audit logging should include the parameters
@@ -2139,6 +2472,44 @@ components:
             type: string
           description: 'Patterns use standard glob syntax and must be separated by
             a single space. Example: cache:* session:*.'
+    list-subnet-entry:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Subnet ID
+        name:
+          type: string
+          maxLength: 255
+          minLength: 1
+          description: Subnet name
+        description:
+          type: string
+          maxLength: 4096
+          description: Subnet description
+        created-at:
+          type: string
+          format: date-time
+          description: Subnet creation date
+        addressfamily:
+          type: string
+          enum:
+          - inet4
+          - dual
+          description: Subnet address family
+        address-space:
+          type: string
+          enum:
+          - private
+          description: Subnet address space
+        ipv4-block:
+          type: string
+          description: Subnet ipv4 CIDR
+        labels:
+          "$ref": "#/components/schemas/labels"
+          description: Resource labels
+      description: Subnet
     dbaas-service-logs:
       type: object
       properties:
@@ -2349,6 +2720,19 @@ components:
           type: string
         removed-release:
           type: string
+    dbaas-clickhouse-user:
+      type: object
+      properties:
+        username:
+          "$ref": "#/components/schemas/dbaas-user-username"
+          description: Username
+        uuid:
+          type: string
+          format: uuid
+        required:
+          type: boolean
+      required:
+      - username
     api-key-usage-entry:
       description: Usage breakdown for one API key, grouped by model
       properties:
@@ -2373,6 +2757,7 @@ components:
           minimum: 90
           maximum: 2560
           default: 365
+          description: The number of days between each automatic key rotation.
     elastic-ip:
       type: object
       properties:
@@ -2443,7 +2828,12 @@ components:
       - 0.21.0
       - 0.22.0
       - 0.22.1
-      default: 0.22.1
+      - 0.23.0
+      - 0.24.0
+      - 0.25.0
+      - 0.25.1
+      - 0.26.0
+      default: 0.26.0
       type: string
     dbaas-user-opensearch-secrets:
       type: object
@@ -2489,6 +2879,7 @@ components:
       - zone
       properties:
         zone:
+          description: The targeted cloud zone where the KMS key should be replicated.
           type: string
     json-schema-kafka:
       additionalProperties: false
@@ -2855,6 +3246,19 @@ components:
           type: integer
       title: Kafka broker configuration values
       type: object
+    nvidia-mig-profiles:
+      type: object
+      properties:
+        a30.24gb:
+          "$ref": "#/components/schemas/nvidia-mig-profile-a30.24gb"
+          description: Nvidia A30 MIG Profile
+        rtxpro6000.96gb:
+          "$ref": "#/components/schemas/nvidia-mig-profile-rtxpro6000.96gb"
+          description: Nvidia RTXPRO6000 MIG Profile
+        b300.269gb:
+          "$ref": "#/components/schemas/nvidia-mig-profile-b300.269gb"
+          description: Nvidia B300 MIG Profile
+      description: Nvidia MIG Profiles enabled
     dbaas-external-integration:
       type: object
       properties:
@@ -3698,6 +4102,32 @@ components:
           type: number
       title: mysql.conf configuration values
       type: object
+    nvidia-mig-profile-rtxpro6000.96gb:
+      type: string
+      enum:
+      - 1g.24gb
+      - 1g.24gb+me
+      - 1g.24gb+gfx
+      - 1g.24gb+me.all
+      - 1g.24gb-me
+      - 2g.48gb
+      - 2g.48gb+gfx
+      - 2g.48gb+me.all
+      - 2g.48gb-me
+      - 4g.96gb
+      - 4g.96gb+gfx
+      x-go-enum-varnames:
+      - 1G24Gb
+      - 1G24GbMe
+      - 1G24GbGfx
+      - 1G24GbMeAll
+      - 1G24GbNoMe
+      - 2G48Gb
+      - 2G48GbGfx
+      - 2G48GbMeAll
+      - 2G48GbNoMe
+      - 4G96Gb
+      - 4G96GbGfx
     dbaas-pg-database-name:
       type: string
       maxLength: 63
@@ -4343,6 +4773,30 @@ components:
       - plan
       - type
       - prometheus-uri
+    route:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Route ID
+        kind:
+          type: string
+          enum:
+          - Subnet
+          - Vpc
+          description: Route kind
+        description:
+          type: string
+          maxLength: 4096
+          description: Route description
+        destination:
+          type: string
+          description: Route destination CIDR
+        target:
+          type: string
+          description: Route target
+      description: Route
     env-impact-detail:
       type: object
       properties:
@@ -4509,6 +4963,27 @@ components:
       properties:
         rotation:
           "$ref": "#/components/schemas/key-rotation-config"
+    dbaas-clickhouse-role-privilege:
+      type: object
+      properties:
+        name:
+          "$ref": "#/components/schemas/dbaas-user-username"
+          description: Access type
+        database:
+          type: string
+          description: Database
+        table:
+          type: string
+          description: Table
+        grant-option:
+          type: boolean
+        column:
+          type: string
+          description: Column
+        is-partial-revoke:
+          type: boolean
+      required:
+      - name
     replica-failure:
       type: object
       required:
@@ -4518,11 +4993,17 @@ components:
       properties:
         attempted-watermark:
           type: integer
+          description: The target sync sequence watermark that triggered the replication
+            failure.
         error:
           type: string
+          description: A descriptive message containing error logs or system details
+            regarding the sync failure.
         failed-at:
           type: string
           format: date-time
+          description: The UTC timestamp showing exactly when the replication sync
+            window failed.
     env-product:
       type: object
       properties:
@@ -4646,9 +5127,13 @@ components:
         at:
           type: string
           format: date-time
+          description: The timestamp recording exactly when this specific revision
+            iteration occurred.
         seq:
           type: integer
           minimum: 0
+          description: Monotonically increasing sequencing value utilized for optimistic
+            concurrency control locks.
     snapshot:
       type: object
       properties:
@@ -4706,6 +5191,37 @@ components:
           description: Indicates whether the snapshot was taken using an application-consistent
             method
       description: Snapshot
+    dbaas-clickhouse-roles:
+      type: object
+      properties:
+        roles:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-role"
+    list-vpc-entry:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: VPC ID
+        name:
+          type: string
+          maxLength: 255
+          minLength: 1
+          description: VPC name
+        description:
+          type: string
+          maxLength: 4096
+          description: VPC description
+        created-at:
+          type: string
+          format: date-time
+          description: VPC creation date
+        labels:
+          "$ref": "#/components/schemas/labels"
+          description: Resource labels
+      description: VPC
     dbaas-endpoint-rsyslog-secrets:
       type: object
       properties:
@@ -4826,6 +5342,20 @@ components:
       - inet4
       - dual
       - none
+    impact-breakdown:
+      type: object
+      required:
+      - impact
+      - zones
+      properties:
+        impact:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/impact-value-with-unit"
+        zones:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/zone-impact"
     elastic-ip-healthcheck:
       type: object
       properties:
@@ -4990,9 +5520,13 @@ components:
         plaintext:
           type: string
           format: byte
+          description: The Base64-encoded raw symmetric data key payload. Expose only
+            securely during active application setups.
         ciphertext:
           type: string
           format: byte
+          description: The identical symmetric data key, returned safely wrapped/encrypted
+            using the designated root parent KMS key.
     access-key-operation:
       type: object
       properties:
@@ -5005,6 +5539,17 @@ components:
             type: string
           description: Tags associated with the operation
       description: Access key operation
+    impact-value-with-unit:
+      type: object
+      required:
+      - unit
+      - value
+      properties:
+        unit:
+          type: string
+        value:
+          type: number
+          format: double
     ssh-key:
       type: object
       properties:
@@ -5137,6 +5682,18 @@ components:
             "$ref": "#/components/schemas/access-key-resource"
           description: IAM Access Key Resources
       description: IAM Access Key
+    dbaas-clickhouse-user-role:
+      type: object
+      properties:
+        default:
+          type: boolean
+        name:
+          type: string
+        uuid:
+          type: string
+          format: uuid
+        with-admin-option:
+          type: boolean
     list-ai-api-keys-response:
       description: List of AI API keys
       properties:
@@ -5155,6 +5712,25 @@ components:
           created-at: '2026-03-25T10:00:00Z'
       required:
       - ai-api-keys
+    dbaas-clickhouse-user-acl-config:
+      type: object
+      properties:
+        username:
+          "$ref": "#/components/schemas/dbaas-user-username"
+          description: Username
+        uuid:
+          type: string
+          format: uuid
+        roles:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-user-role"
+        privileges:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-user-privilege"
+      required:
+      - username
     list-ai-instance-types-response:
       description: List of available instance types with authorization status
       properties:
@@ -5203,30 +5779,20 @@ components:
         type:
           type: string
           format: uri-reference
+          description: An absolute or relative URI reference pointing to human-readable
+            documentation concerning the specific problem type encountered.
         title:
           type: string
+          description: A brief summary defining the class of failure, optimal for
+            quick user interface groupings.
         status:
           type: integer
           minimum: 100
           maximum: 599
         detail:
           type: string
-        instance:
-          type: string
-          format: uri-reference
-        errors:
-          type: array
-          items:
-            type: object
-            properties:
-              path:
-                type: string
-              detail:
-                type: string
-              pointer:
-                type: string
-              location:
-                type: string
+          description: A highly contextual, readable explanation breaking down explicitly
+            what triggered this error scenario.
     enum-kafka-auth-method:
       type: string
       enum:
@@ -5359,30 +5925,6 @@ components:
           - target-registered
           - already-applied
           default: success
-    list-vpc-response-entry:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          description: VPC ID
-        name:
-          type: string
-          maxLength: 255
-          minLength: 1
-          description: VPC name
-        description:
-          type: string
-          maxLength: 4096
-          description: VPC description
-        created-at:
-          type: string
-          format: date-time
-          description: VPC creation date
-        labels:
-          "$ref": "#/components/schemas/labels"
-          description: Resource labels
-      description: VPC
     elastic-ip-ref:
       type: object
       properties:
@@ -5499,6 +6041,25 @@ components:
           format: uuid
           description: Snapshot ID
       description: Snapshot reference
+    impact-resource-tree-node:
+      type: object
+      description: Hierarchical breakdown of impact for a given level in the catalog
+        tree
+      required:
+      - impact
+      - usage
+      - resources
+      properties:
+        impact:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/impact-value-with-unit"
+        usage:
+          "$ref": "#/components/schemas/impact-value-with-unit"
+        resources:
+          type: object
+          additionalProperties:
+            "$ref": "#/components/schemas/impact-resource-tree-node"
     rate-limited:
       type: object
       properties:
@@ -5519,13 +6080,21 @@ components:
       properties:
         manual-count:
           type: integer
+          description: Total running tally of manual key rotation tasks executed by
+            users over this key resource's lifecycle.
         automatic:
           type: boolean
+          description: When set to true, dictates that the system automatically rotates
+            material periodically.
         rotation-period:
           type: integer
+          description: The set frequency period (measured in days) for triggers monitoring
+            auto-rotation loops.
         next-at:
           type: string
           format: date-time
+          description: Scheduled deadline calculation pinpointing the next automated
+            rotational iteration target date.
     private-network-options:
       type: object
       properties:
@@ -5850,9 +6419,12 @@ components:
           type: string
           format: byte
           nullable: true
+          description: Base64-encoded bytes to be used as the Additional Authenticated
+            Data (AAD) for encryption integrity.
         plaintext:
           type: string
           format: byte
+          description: The Base64-encoded plaintext data you wish to encrypt.
     dbaas-integration:
       type: object
       properties:
@@ -6065,6 +6637,20 @@ components:
           readOnly: true
           description: Operation status
       description: Operation
+    dbaas-clickhouse-granted-role:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Granted role name
+        uuid:
+          type: string
+        is-default:
+          type: boolean
+        with-admin-option:
+          type: boolean
+      required:
+      - name
     iam-api-key-created:
       type: object
       properties:
@@ -6142,6 +6728,13 @@ components:
           format: date-time
           type: string
           readOnly: true
+        visibility:
+          description: 'Deployment visibility: private for your organization''s deployments,
+            public for Exoscale Managed Inference deployments.'
+          enum:
+          - public
+          - private
+          type: string
         inference-engine-parameters:
           description: Optional extra inference engine server CLI args
           type: array
@@ -6151,20 +6744,35 @@ components:
           "$ref": "#/components/schemas/model-ref"
       type: object
       required:
-      - id
       - name
       - state
-      - state-details
-      - gpu-type
-      - gpu-count
-      - replicas
-      - service-level
       - deployment-url
-      - inference-engine-parameters
-      - inference-engine-version
       - model
-      - created-at
-      - updated-at
+      - visibility
+    list-route-entry:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Route ID
+        kind:
+          type: string
+          enum:
+          - Subnet
+          - Vpc
+          description: Route kind
+        description:
+          type: string
+          maxLength: 4096
+          description: Route description
+        destination:
+          type: string
+          description: Route destination CIDR
+        target:
+          type: string
+          description: Route target
+      description: Route
     iam-policy:
       type: object
       properties:
@@ -6203,8 +6811,12 @@ components:
       properties:
         zone:
           type: string
+          description: The destination target zone tracking this specific replica
+            instance.
         last-applied-watermark:
           type: integer
+          description: The latest logical sequence number or state watermark successfully
+            synced to this regional replica.
         last-failure:
           "$ref": "#/components/schemas/replica-failure"
     reverse-dns-record:
@@ -6272,6 +6884,8 @@ components:
         ciphertext:
           type: string
           format: byte
+          description: The new Base64-encoded ciphertext block safely wrapped by the
+            chosen destination key parameters.
     decrypt-request:
       type: object
       required:
@@ -6281,9 +6895,12 @@ components:
           type: string
           format: byte
           nullable: true
+          description: The exact Base64-encoded Additional Authenticated Data (AAD)
+            used during encryption to verify data integrity.
         ciphertext:
           type: string
           format: byte
+          description: The Base64-encoded ciphertext payload to be decrypted.
     enum-pg-pool-mode:
       type: string
       enum:
@@ -6296,6 +6913,9 @@ components:
         name:
           description: Human-readable name for the AI API key
           type: string
+          minLength: 1
+          maxLength: 50
+          pattern: "^[A-Za-z0-9](?:[A-Za-z0-9 _'()-]*[A-Za-z0-9])?$"
         scope:
           description: 'Key scope: ''public'' for all deployments, or a specific deployment
             UUID'
@@ -6505,6 +7125,15 @@ components:
       required:
       - url
       - index-prefix
+    dbaas-clickhouse-user-role-input:
+      type: object
+      properties:
+        uuid:
+          type: string
+          format: uuid
+          description: Role UUID
+      required:
+      - uuid
     decrypt-response:
       type: object
       required:
@@ -6513,6 +7142,7 @@ components:
         plaintext:
           type: string
           format: byte
+          description: The recovered Base64-encoded original plaintext payload.
     schedule-kms-key-deletion-request:
       type: object
       properties:
@@ -6578,6 +7208,9 @@ components:
               description: Maximum number of partition contexts to send. Applies only
                 when attached to kafka services.
           description: External integration DataDog configuration
+    empty:
+      type: object
+      description: An empty map response
     list-models-response:
       description: AI model list
       properties:
@@ -6823,8 +7456,12 @@ components:
       properties:
         name:
           type: string
+          description: A human-readable display name uniquely identifying the KMS
+            key within the tenant space.
         description:
           type: string
+          description: An optional detailed description providing additional context
+            about the key's intended use case.
         usage:
           type: string
           enum:
@@ -6833,6 +7470,7 @@ components:
         multi-zone:
           type: boolean
           default: false
+          description: True if this is a multi-zone key.
     inference-engine-parameter-entry:
       description: inference-engine parameter definition
       properties:
@@ -7023,21 +7661,22 @@ components:
           format: date-time
           type: string
           readOnly: true
+        visibility:
+          description: 'Deployment visibility: private for your organization''s deployments,
+            public for Exoscale Managed Inference deployments.'
+          enum:
+          - public
+          - private
+          type: string
         model:
           "$ref": "#/components/schemas/model-ref"
       type: object
       required:
-      - id
       - name
       - state
-      - gpu-type
-      - gpu-count
-      - replicas
-      - service-level
       - deployment-url
       - model
-      - created-at
-      - updated-at
+      - visibility
     dbaas-endpoint-elasticsearch-secrets:
       type: object
       properties:
@@ -7056,23 +7695,25 @@ components:
         service-cluster-ip-range:
           type: string
           description: |-
-            CIDR range for service cluster IPs. This must not overlap with any IP ranges assigned to nodes or pods. Max of two, comma-separated, dual-stack CIDRs is allowed.
+            CIDR range for service cluster IPs. This must not overlap with any IP ranges assigned to nodes or pods. Max of two, comma-separated, dual-stack CIDRs is allowed. The IPv6 range must be no larger than a /108 (upstream Kubernetes apiserver limit).
                           If not specified, defaults to 10.96.0.0/12.
         node-cidr-mask-size-ipv4:
           type: integer
           format: int64
           minimum: 0
           exclusiveMinimum: true
-          description: Mask size for node cidr in cluster. It must be larger than
-            the Pod CIDR subnet mask. Defaults to 24
+          description: Mask size for node cidr in cluster. It must be larger than,
+            and at most 16 bits longer than, the Pod CIDR subnet mask. Defaults to
+            24
         node-cidr-mask-size-ipv6:
           type: integer
           format: int64
           minimum: 0
           exclusiveMinimum: true
-          description: Mask size for node cidr in cluster. It must be larger than
-            the Pod CIDR subnet mask. Defaults to 64
-      description: Cluster networking configuration.
+          description: Mask size for node cidr in cluster. It must be larger than,
+            and at most 16 bits longer than, the Pod CIDR subnet mask. Defaults to
+            64
+      description: 'EXPERIMENTAL: Cluster networking configuration.'
     dbaas-user-grafana-secrets:
       type: object
       properties:
@@ -7103,6 +7744,10 @@ components:
           type: boolean
           description: Enable auto upgrade of the control plane to the latest patch
             version available
+        oidc:
+          "$ref": "#/components/schemas/sks-oidc"
+          nullable: true
+          description: Cluster OpenID configmap
         name:
           type: string
           maxLength: 255
@@ -7189,6 +7834,24 @@ components:
           readOnly: true
           description: Cluster endpoint
       description: SKS Cluster
+    dbaas-clickhouse-role:
+      type: object
+      properties:
+        name:
+          "$ref": "#/components/schemas/dbaas-user-username"
+          description: Role name
+        uuid:
+          type: string
+        privileges:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-role-privilege"
+        granted-roles:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-granted-role"
+      required:
+      - name
     dbaas-valkey-users:
       type: object
       properties:
@@ -7360,6 +8023,24 @@ components:
           format: uuid
           description: Block storage volume ID
       description: Target block storage volume
+    nvidia-mig-profile-b300.269gb:
+      type: string
+      enum:
+      - 1g.34gb
+      - 1g.34gb+me
+      - 1g.67gb
+      - 2g.67gb
+      - 3g.135gb
+      - 4g.135gb
+      - 7g.269gb
+      x-go-enum-varnames:
+      - 1G34Gb
+      - 1G34GbMe
+      - 1G67Gb
+      - 2G67Gb
+      - 3G135Gb
+      - 4G135Gb
+      - 7G269Gb
     scale-deployment-request:
       description: Scale AI deployment
       properties:
@@ -7457,7 +8138,6 @@ components:
       required:
       - id
       - name
-      - description
       - usage
       - source
       - status
@@ -7466,26 +8146,33 @@ components:
       - rotation
       - multi-zone
       - origin-zone
-      - replicas
       - created-at
       - revision
       properties:
         description:
           type: string
+          description: An optional detailed description providing additional context
+            about the key's intended use case.
         rotation:
           "$ref": "#/components/schemas/key-rotation-config"
         revision:
           "$ref": "#/components/schemas/revision-stamp"
+        delete-at:
+          type: string
+          format: date-time
         name:
           type: string
+          description: The display name of the KMS key.
         multi-zone:
           type: boolean
+          description: True if this is a multi-zone key.
         source:
           type: string
           enum:
           - exoscale-kms
         usage:
           type: string
+          description: The cryptographic operation constraints allowed on this key.
         status:
           type: string
           enum:
@@ -7495,20 +8182,27 @@ components:
         status-since:
           type: string
           format: date-time
+          description: The precise time when the key entered its current configuration
+            phase.
         id:
           type: string
           format: uuid
+          description: The globally unique identifier (UUID) tracking this key entity.
         replicas:
           type: array
           items:
             type: string
+          description: Array tracking target zones currently maintaining copies of
+            this item.
         material:
           "$ref": "#/components/schemas/key-material"
         origin-zone:
           type: string
+          description: The creation zone of the KMS key.
         created-at:
           type: string
           format: date-time
+          description: The UTC timestamp showing when the KMS key was originally provisioned.
     sks-nodepool:
       type: object
       properties:
@@ -7572,6 +8266,7 @@ components:
           - creating
           - deleting
           - running
+          - degraded
           - scaling
           - updating
           - error
@@ -7624,6 +8319,9 @@ components:
           type: string
           readOnly: true
           description: Nodepool version
+        nvidia-mig-profiles:
+          "$ref": "#/components/schemas/nvidia-mig-profiles"
+          description: Nvidia MIG Profiles
         created-at:
           type: string
           format: date-time
@@ -8190,20 +8888,20 @@ components:
           additionalProperties:
             "$ref": "#/components/schemas/api-key-usage-entry"
           type: object
-        router-id:
-          description: Router instance identifier that produced this flush
-          type: string
-          minLength: 1
-        created-at:
+        timestamp:
           description: ISO-8601 UTC timestamp when the flush snapshot was created
             (truncated to minute boundary for bucketing)
           format: date-time
           type: string
+        router-id:
+          description: Router instance identifier that produced this flush
+          type: string
+          minLength: 1
       type: object
       required:
       - flush-id
       - router-id
-      - created-at
+      - timestamp
       - usage
     create-ai-api-key-request:
       description: Request to create a new AI API key
@@ -8211,6 +8909,9 @@ components:
         name:
           description: Human-readable name for the AI API key
           type: string
+          minLength: 1
+          maxLength: 50
+          pattern: "^[A-Za-z0-9](?:[A-Za-z0-9 _'()-]*[A-Za-z0-9])?$"
         scope:
           description: 'Key scope: ''public'' for all deployments, or a specific deployment
             UUID'
@@ -8697,11 +9398,17 @@ components:
       properties:
         version:
           type: integer
+          description: The incremental index tracing internal key rotation cycles
+            for the key material.
         created-at:
           type: string
           format: date-time
+          description: The UTC date-time indicating when this particular generation
+            of physical cryptographic material was seeded.
         automatic:
           type: boolean
+          description: A boolean flag indicating whether this specific material version
+            was created during an automated system rotation window.
     anti-affinity-group:
       type: object
       properties:
@@ -8883,6 +9590,13 @@ components:
           type: string
           description: Postgres password
       description: Postgres User secrets
+    dbaas-clickhouse-acl-config:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            "$ref": "#/components/schemas/dbaas-clickhouse-user-acl-config"
     ai-api-key-value:
       description: AI API key plaintext value
       properties:
@@ -8901,11 +9615,33 @@ components:
       properties:
         version:
           type: integer
+          description: The absolute increment index referencing this specific historical
+            structural material setup.
         rotated-at:
           type: string
           format: date-time
+          description: The UTC timestamp tracking precisely when this historical adjustment
+            pass finished processing.
         automatic:
           type: boolean
+          description: Flag stating whether an automation run handled this historic
+            mutation or if manual actor keys initiated it.
+    impact-error-response:
+      type: object
+      description: Error response
+      required:
+      - title
+      - status
+      - detail
+      properties:
+        title:
+          type: string
+        status:
+          type: integer
+          minimum: 100
+          maximum: 599
+        detail:
+          type: string
     dbaas-endpoint-rsyslog-input-create:
       type: object
       properties:
@@ -9062,12 +9798,25 @@ components:
       type: object
       required:
       - gpu
+    nvidia-mig-profile-a30.24gb:
+      type: string
+      enum:
+      - 1g.6gb
+      - 1g.6gb+me
+      - 2g.12gb
+      - 2g.12gb+me
+      - 4g.24gb
+      x-go-enum-varnames:
+      - 1G6Gb
+      - 1G6GbMe
+      - 2G12Gb
+      - 2G12GbMe
+      - 4G24Gb
     get-kms-key-response:
       type: object
       required:
       - id
       - name
-      - description
       - usage
       - source
       - status
@@ -9076,30 +9825,39 @@ components:
       - rotation
       - multi-zone
       - origin-zone
-      - replicas
       - created-at
       - revision
       properties:
         description:
           type: string
+          description: An optional detailed description providing additional context
+            about the key's intended use case.
         rotation:
           "$ref": "#/components/schemas/key-rotation-config"
         revision:
           "$ref": "#/components/schemas/revision-stamp"
+        delete-at:
+          type: string
+          format: date-time
         name:
           type: string
+          description: The display name of the KMS key.
         multi-zone:
           type: boolean
+          description: True if this is a multi-zone key.
         source:
           type: string
           enum:
           - exoscale-kms
         usage:
           type: string
+          description: The cryptographic operation constraints allowed on this key.
         replicas-status:
           type: array
           items:
             "$ref": "#/components/schemas/replica-state"
+          description: Detailed synchronization metrics for each regional replica
+            mirror.
         status:
           type: string
           enum:
@@ -9109,20 +9867,28 @@ components:
         status-since:
           type: string
           format: date-time
+          description: The timestamp indicating exactly when the current key status
+            was last transitioned.
         id:
           type: string
           format: uuid
+          description: The globally unique identifier (UUID) of the retrieved KMS
+            key.
         replicas:
           type: array
           items:
             type: string
+          description: A list of availability zones where this specific key has active
+            replica mirrors.
         material:
           "$ref": "#/components/schemas/key-material"
         origin-zone:
           type: string
+          description: The creation zone of the KMS key.
         created-at:
           type: string
           format: date-time
+          description: The UTC timestamp showing when the KMS key was originally provisioned.
     model-usage-counters:
       description: Accumulated Unit Of Measurement (UOM) counters for one model over
         a flush window
@@ -9153,7 +9919,6 @@ components:
       required:
       - id
       - name
-      - description
       - usage
       - source
       - status
@@ -9165,18 +9930,23 @@ components:
       properties:
         description:
           type: string
+          description: An optional detailed description providing additional context
+            about the key's intended use case.
         revision:
           "$ref": "#/components/schemas/revision-stamp"
         name:
           type: string
+          description: The display name assigned to the KMS key.
         multi-zone:
           type: boolean
+          description: True if this is a multi-zone key.
         source:
           type: string
           enum:
           - exoscale-kms
         usage:
           type: string
+          description: The cryptographic operation constraints allowed on this key.
         status:
           type: string
           enum:
@@ -9186,14 +9956,20 @@ components:
         status-since:
           type: string
           format: date-time
+          description: The timestamp indicating exactly when the current key status
+            was last transitioned.
         id:
           type: string
           format: uuid
+          description: The globally unique identifier (UUID) assigned to the newly
+            created KMS key.
         origin-zone:
           type: string
+          description: The creation zone of the KMS key.
         created-at:
           type: string
           format: date-time
+          description: The UTC timestamp showing when the KMS key was originally provisioned.
     dbaas-service-type-name:
       type: string
       maxLength: 64
@@ -10546,6 +11322,8 @@ components:
           type: array
           items:
             "$ref": "#/components/schemas/list-kms-key-rotations-response-entry"
+          description: A chronologically ordered collection tracking historical rotation
+            lifecycle occurrences for this resource.
     sks-audit:
       type: object
       properties:
@@ -10678,15 +11456,19 @@ components:
             key:
               type: string
               format: uuid
-              description: The ID of the source key.
+              description: The ID of the source key currently protecting the data
+                payload.
             encryption-context:
               type: string
               format: byte
-              description: Optional encryption context appended to the AAD.
+              description: Optional Base64-encoded encryption context originally appended
+                to the AAD to confirm package validation rules.
               nullable: true
             ciphertext:
               type: string
               format: byte
+              description: The Base64-encoded encrypted payload package ready to undergo
+                source-side key decryption.
         destination:
           type: object
           required:
@@ -10695,11 +11477,13 @@ components:
             key:
               type: string
               format: uuid
-              description: The ID of the target key.
+              description: The ID of the target key chosen to encapsulate the newly
+                shifted data translation.
             encryption-context:
               type: string
               format: byte
-              description: Optional encryption context appended to the AAD.
+              description: Optional new Base64-encoded encryption context to apply
+                under the target destination envelope.
               nullable: true
     create-deployment-request:
       description: Deploy an AI model onto a set of GPUs
@@ -10718,6 +11502,11 @@ components:
         gpu-type:
           description: GPU type family (e.g., gpua5000, gpu3080ti)
           type: string
+        product-name:
+          description: Billing identifier for this deployment. Used by the Router
+            for usage counters and Kafka events.
+          type: string
+          minLength: 1
         replicas:
           description: Number of replicas (>=1)
           format: int64
@@ -10869,6 +11658,8 @@ components:
           type: array
           items:
             "$ref": "#/components/schemas/list-kms-keys-response-entry"
+          description: An array containing metadata entries for all available keys
+            for your organization in the requested zone.
     dbaas-service-backup:
       type: object
       properties:
@@ -11508,13 +12299,30 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key rotation disabled
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/disable-kms-key-rotation-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Invalid Origin: The request was rejected because automatic key rotation can only be enabled on a KMS key with origin "exoscale-kms".
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Not on Default: The request was rejected because the operation is not allowed on the default key.
+
+            Not on Replica: The request was rejectde because the operation is not allowed on a replica.
+
+            Key is Pending Deletion: The request was rejected because it was performed on a key that is pending deletion.
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Invalid Usage: The request was rejected because the operation is only allowed on symmetric keys with usage "encrypt-decrypt".
+
+            Conflict: The request was rejected because the automatic rotation is already enabled for this KMS Key.
           content:
             application/json:
               schema:
@@ -11527,7 +12335,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Disable Key Rotation"
+      summary: Disable Key Rotation
       operationId: disable-kms-key-rotation
   "/dbaas-postgres/{service}/upgrade-check":
     post:
@@ -11605,7 +12413,7 @@ paths:
       - deployment
       responses:
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -11810,6 +12618,44 @@ paths:
             schema:
               type: object
               properties:
+                backup-schedule:
+                  type: object
+                  properties:
+                    backup-hour:
+                      type: integer
+                      format: int64
+                      minimum: 0
+                      maximum: 23
+                      exclusiveMinimum: false
+                      exclusiveMaximum: false
+                      nullable: true
+                      description: The hour of day (in UTC) when backup for the service
+                        is started. New backup is only started if previous backup
+                        has already completed.
+                    backup-minute:
+                      type: integer
+                      format: int64
+                      minimum: 0
+                      maximum: 59
+                      exclusiveMinimum: false
+                      exclusiveMaximum: false
+                      nullable: true
+                      description: The minute of an hour when backup for the service
+                        is started. New backup is only started if previous backup
+                        has already completed.
+                ip-filter:
+                  type: array
+                  items:
+                    type: string
+                  description: Allow incoming connections from CIDR address block,
+                    e.g. '10.20.0.0/16'
+                termination-protection:
+                  type: boolean
+                  description: Service is protected against termination and powering
+                    off
+                mysql-settings:
+                  "$ref": "#/components/schemas/json-schema-mysql"
+                  description: MySQL-specific settings
                 maintenance:
                   type: object
                   properties:
@@ -11834,24 +12680,14 @@ paths:
                   - dow
                   - time
                   description: Automatic maintenance settings
+                version:
+                  type: string
+                  description: MySQL version
                 plan:
                   type: string
                   maxLength: 128
                   minLength: 1
                   description: Subscription plan
-                termination-protection:
-                  type: boolean
-                  description: Service is protected against termination and powering
-                    off
-                ip-filter:
-                  type: array
-                  items:
-                    type: string
-                  description: Allow incoming connections from CIDR address block,
-                    e.g. '10.20.0.0/16'
-                mysql-settings:
-                  "$ref": "#/components/schemas/json-schema-mysql"
-                  description: MySQL-specific settings
                 migration:
                   type: object
                   properties:
@@ -11916,31 +12752,6 @@ paths:
                     entries before deletion. This may be extended for services that
                     require binlog entries for longer than the default for example
                     if using the MySQL Debezium Kafka connector.
-                backup-schedule:
-                  type: object
-                  properties:
-                    backup-hour:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      maximum: 23
-                      exclusiveMinimum: false
-                      exclusiveMaximum: false
-                      nullable: true
-                      description: The hour of day (in UTC) when backup for the service
-                        is started. New backup is only started if previous backup
-                        has already completed.
-                    backup-minute:
-                      type: integer
-                      format: int64
-                      minimum: 0
-                      maximum: 59
-                      exclusiveMinimum: false
-                      exclusiveMaximum: false
-                      nullable: true
-                      description: The minute of an hour when backup for the service
-                        is started. New backup is only started if previous backup
-                        has already completed.
       operationId: update-dbaas-service-mysql
     get:
       tags:
@@ -12280,25 +13091,65 @@ paths:
               required:
               - ttl
       operationId: assume-iam-role
-  "/kms-key/{id}":
-    get:
+  "/vpc/{vpc-id}/subnet/{subnet-id}/attach":
+    put:
       tags:
-      - kms-key
+      - vpc-subnet
       responses:
         '200':
           description: '200'
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/get-kms-key-response"
-        '400':
-          description: '400'
+                "$ref": "#/components/schemas/operation"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: subnet-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Attach a Compute instance to a Subnet"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                instance:
+                  "$ref": "#/components/schemas/instance-ref"
+                  description: Compute instance
+                ipv4:
+                  type: string
+                  format: ipv4
+                  description: Instance IPv4
+              required:
+              - instance
+      operationId: attach-instance-to-subnet
+  "/kms-key/{id}":
+    get:
+      tags:
+      - kms-key
+      responses:
+        '200':
+          description: KMS Key Details
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/error-response"
-        '404':
-          description: '404'
+                "$ref": "#/components/schemas/get-kms-key-response"
+        '400':
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
           content:
             application/json:
               schema:
@@ -12311,7 +13162,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Get KMS Key"
+      summary: Get KMS Key
       operationId: get-kms-key
   "/dbaas-thanos/{name}/maintenance/start":
     put:
@@ -12406,13 +13257,13 @@ paths:
       - model
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -12437,18 +13288,13 @@ paths:
       - model
       responses:
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/list-models-response"
       description: List Models
-      parameters:
-      - in: query
-        required: false
-        name: visibility
-        schema:
-          type: string
+      parameters: []
       summary: List Models
       operationId: list-models
   "/dbaas-mysql/{service-name}/user":
@@ -12512,31 +13358,31 @@ paths:
       - deployment
       responses:
         '412':
-          description: '412'
+          description: Precondition Failed
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '409':
-          description: '409'
+          description: Conflict
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -12578,6 +13424,199 @@ paths:
           format: uuid
       summary: Retrieve Instance Type details
       operationId: get-instance-type
+  "/dbaas-clickhouse/{name}":
+    delete:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: name
+        schema:
+          type: string
+      summary: "[BETA] Delete a ClickHouse service"
+      operationId: delete-dbaas-service-clickhouse
+    get:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-service-clickhouse"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] Get a DBaaS ClickHouse service"
+      operationId: get-dbaas-service-clickhouse
+    post:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] Create a DBaaS ClickHouse service"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                maintenance:
+                  type: object
+                  properties:
+                    dow:
+                      type: string
+                      enum:
+                      - saturday
+                      - tuesday
+                      - never
+                      - wednesday
+                      - sunday
+                      - friday
+                      - monday
+                      - thursday
+                      description: Day of week for installing updates
+                    time:
+                      type: string
+                      maxLength: 8
+                      minLength: 8
+                      description: Time for installing updates, UTC
+                  required:
+                  - dow
+                  - time
+                  description: Automatic maintenance settings
+                plan:
+                  type: string
+                  maxLength: 128
+                  minLength: 1
+                  description: Subscription plan
+                termination-protection:
+                  type: boolean
+                  description: Service is protected against termination and powering
+                    off
+                version:
+                  type: string
+                  minLength: 1
+                  description: ClickHouse major version
+                ip-filter:
+                  type: array
+                  items:
+                    type: string
+                  description: Allow incoming connections from CIDR address block,
+                    e.g. '10.20.0.0/16'
+                clickhouse-settings:
+                  "$ref": "#/components/schemas/json-schema-clickhouse"
+                  description: ClickHouse-specific settings
+                fork-from-service:
+                  "$ref": "#/components/schemas/dbaas-service-name"
+                  description: Service to fork from
+                recovery-backup-name:
+                  type: string
+                  minLength: 1
+                  description: Name of a backup to recover from for services that
+                    support backup names
+              required:
+              - plan
+      operationId: create-dbaas-service-clickhouse
+    put:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] Update a DBaaS ClickHouse service"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                maintenance:
+                  type: object
+                  properties:
+                    dow:
+                      type: string
+                      enum:
+                      - saturday
+                      - tuesday
+                      - never
+                      - wednesday
+                      - sunday
+                      - friday
+                      - monday
+                      - thursday
+                      description: Day of week for installing updates
+                    time:
+                      type: string
+                      maxLength: 8
+                      minLength: 8
+                      description: Time for installing updates, UTC
+                  required:
+                  - dow
+                  - time
+                  description: Automatic maintenance settings
+                plan:
+                  type: string
+                  maxLength: 128
+                  minLength: 1
+                  description: Subscription plan
+                termination-protection:
+                  type: boolean
+                  description: Service is protected against termination and powering
+                    off
+                version:
+                  type: string
+                  minLength: 1
+                  description: ClickHouse major version
+                ip-filter:
+                  type: array
+                  items:
+                    type: string
+                  description: Allow incoming connections from CIDR address block,
+                    e.g. '10.20.0.0/16'
+                clickhouse-settings:
+                  "$ref": "#/components/schemas/json-schema-clickhouse"
+                  description: ClickHouse-specific settings
+      operationId: update-dbaas-service-clickhouse
   "/instance/{id}:password":
     get:
       tags:
@@ -13119,6 +14158,52 @@ paths:
       parameters: []
       summary: Get DBaaS Grafana settings
       operationId: get-dbaas-settings-grafana
+  "/environmental-impact/estimate":
+    post:
+      tags: []
+      responses:
+        '200':
+          description: Impact estimate
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - impact
+                properties:
+                  impact:
+                    type: object
+                    additionalProperties:
+                      "$ref": "#/components/schemas/impact-value-with-unit"
+        '400':
+          description: Invalid request (e.g. product does not exist)
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/impact-error-response"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/impact-error-response"
+      description: ''
+      parameters: []
+      summary: Return an estimate of the impact of a given usage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - sku
+              properties:
+                sku:
+                  type: string
+                metadata:
+                  type: object
+      operationId: get-impact-estimate
   "/deploy-target":
     get:
       tags:
@@ -13165,25 +14250,25 @@ paths:
       - deployment
       responses:
         '412':
-          description: '412'
+          description: 412 (probably insufficient GPUs)
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/operation"
         '400':
-          description: '400'
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -13203,13 +14288,13 @@ paths:
       - deployment
       responses:
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/list-deployments-response"
         '400':
-          description: '400'
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -13269,6 +14354,26 @@ paths:
           "$ref": "#/components/schemas/dbaas-pg-database-name"
       summary: Delete a DBaaS Postgres database
       operationId: delete-dbaas-pg-database
+  "/dbaas-clickhouse/{service-name}/role":
+    get:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-clickhouse-roles"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] List DBaaS ClickHouse roles"
+      operationId: list-dbaas-clickhouse-roles
   "/block-storage/{id}:attach":
     put:
       tags:
@@ -13309,18 +14414,25 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key enabled
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/success-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Pending Deletion: The request was rejected because it was performed on a key that is pending deletion.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Enable a KMS Key"
+      description: Enables a KMS Key by setting its state to "enabled". It restores
+        the ability to fully use the KMS key for cryptographic operations and key
+        lifecycle operations.
       parameters:
       - in: path
         required: true
@@ -13328,7 +14440,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Enable KMS Key"
+      summary: Enable KMS Key
       operationId: enable-kms-key
   "/dbaas-postgres/{name}/migration/stop":
     post:
@@ -13685,6 +14797,32 @@ paths:
                   required:
                   - id
       operationId: update-private-network-instance-ip
+  "/vpc/{vpc-id}/route":
+    get:
+      tags:
+      - vpc-route
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  routes:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/list-route-entry"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] List VPC routes"
+      operationId: list-vpc-routes
   "/sks-cluster/{id}/nodepool/{sks-nodepool-id}":
     put:
       tags:
@@ -13788,6 +14926,10 @@ paths:
                   exclusiveMinimum: false
                   exclusiveMaximum: false
                   description: Nodepool instances disk size in GiB
+                nvidia-mig-profiles:
+                  "$ref": "#/components/schemas/nvidia-mig-profiles"
+                  nullable: true
+                  description: Nvidia MIG Profiles
       operationId: update-sks-nodepool
     get:
       tags:
@@ -13924,13 +15066,17 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: The list of all historical rotations for the requested KMS
+            key.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/list-kms-key-rotations-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
           content:
             application/json:
               schema:
@@ -13943,7 +15089,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] List KMS Key Rotations"
+      summary: List KMS Key Rotations
       operationId: list-kms-key-rotations
   "/dbaas-postgres/{service-name}/user":
     post:
@@ -14226,19 +15372,19 @@ paths:
       - ai-api-key
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -14251,26 +15397,26 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: Delete AI API Key
+      summary: "[BETA] Delete AI API Key"
       operationId: delete-ai-api-key
     get:
       tags:
       - ai-api-key
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -14283,32 +15429,32 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: Get AI API Key
+      summary: "[BETA] Get AI API Key"
       operationId: get-ai-api-key
     patch:
       tags:
       - ai-api-key
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/update-ai-api-key-response"
         '400':
-          description: '400'
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -14321,7 +15467,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: Update AI API Key
+      summary: "[BETA] Update AI API Key"
       requestBody:
         required: true
         content:
@@ -14402,7 +15548,7 @@ paths:
   "/vpc":
     post:
       tags:
-      - vpc
+      - vpc-management
       responses:
         '200':
           description: '200'
@@ -14437,7 +15583,7 @@ paths:
       operationId: create-vpc
     get:
       tags:
-      - vpc
+      - vpc-management
       responses:
         '200':
           description: '200'
@@ -14449,7 +15595,7 @@ paths:
                   vpcs:
                     type: array
                     items:
-                      "$ref": "#/components/schemas/list-vpc-response-entry"
+                      "$ref": "#/components/schemas/list-vpc-entry"
       description: ''
       parameters: []
       summary: "[BETA] List VPCs"
@@ -14460,19 +15606,19 @@ paths:
       - ai-api-key
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -14485,7 +15631,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: Rotate AI API Key
+      summary: "[BETA] Rotate AI API Key"
       operationId: rotate-ai-api-key
   "/instance/{id}:start":
     put:
@@ -14600,6 +15746,32 @@ paths:
           format: uuid
       summary: Delete a Security Group
       operationId: delete-security-group
+  "/dbaas-clickhouse/{service-name}/role/{role-uuid}":
+    delete:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      - in: path
+        required: true
+        name: role-uuid
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Delete a DBaaS ClickHouse role"
+      operationId: delete-dbaas-clickhouse-role
   "/sks-cluster/{id}/authority/{authority}/cert":
     get:
       tags:
@@ -14661,13 +15833,13 @@ paths:
       - deployment
       responses:
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -14687,31 +15859,31 @@ paths:
       - deployment
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '409':
-          description: '409'
+          description: Conflict
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/operation"
         '400':
-          description: '400'
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -14737,25 +15909,25 @@ paths:
       - deployment
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '409':
-          description: '409'
+          description: Conflict
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -14796,13 +15968,32 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Periodic key rotation enabled
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/enable-kms-key-rotation-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Invalid Origin: The request was rejected because automatic key rotation can only be enabled on a KMS key with origin "exoscale-kms".
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Not on Default: The request was rejected because the operation is not allowed on the default key.
+
+            Not on Replica: The request was rejectde because the operation is not allowed on a replica.
+
+            Key is Pending Deletion: The request was rejected because it was performed on a key that is pending deletion.
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Invalid Usage: The request was rejected because the operation is only allowed on symmetric keys with usage "encrypt-decrypt".
+
+            Conflict: The request was rejected because the automatic rotation is already enabled for this KMS Key.
+
+            Bad Request: The request was rejected because of an invalid request body or path parameter.
           content:
             application/json:
               schema:
@@ -14815,7 +16006,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Enable Key Rotation"
+      summary: Enable Key Rotation
       requestBody:
         required: true
         content:
@@ -14823,6 +16014,84 @@ paths:
             schema:
               "$ref": "#/components/schemas/enable-kms-key-rotation-request"
       operationId: enable-kms-key-rotation
+  "/vpc/{vpc-id}/subnet/{subnet-id}/route":
+    get:
+      tags:
+      - vpc-route
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  routes:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/list-route-entry"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: subnet-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] List Subnet routes"
+      operationId: list-routes
+    post:
+      tags:
+      - vpc-route
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/route"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: subnet-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Create a route"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  maxLength: 4096
+                  description: Route description
+                destination:
+                  type: string
+                  description: Route destination CIDR
+                target:
+                  type: string
+                  description: Route target
+              required:
+              - destination
+              - target
+      operationId: create-route
   "/elastic-ip/{id}/{field}":
     delete:
       tags:
@@ -14871,6 +16140,88 @@ paths:
           type: string
       summary: Retrieve Resource Quota
       operationId: get-quota
+  "/vpc/{vpc-id}/subnet":
+    get:
+      tags:
+      - vpc-subnet
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  subnets:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/list-subnet-entry"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] List Subnets"
+      operationId: list-subnets
+    post:
+      tags:
+      - vpc-subnet
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Create a Subnet"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  maxLength: 255
+                  minLength: 1
+                  description: Subnet name
+                description:
+                  type: string
+                  maxLength: 4096
+                  description: Subnet description
+                labels:
+                  "$ref": "#/components/schemas/labels"
+                  description: Resource labels
+                addressfamily:
+                  type: string
+                  enum:
+                  - inet4
+                  description: Subnet address family
+                address-space:
+                  type: string
+                  enum:
+                  - private
+                  description: Subnet address space
+                ipv4-block:
+                  type: string
+                  description: Subnet ipv4 CIDR
+              required:
+              - name
+              - addressfamily
+              - address-space
+      operationId: create-subnet
   "/sks-cluster-deprecated-resources/{id}":
     get:
       tags:
@@ -15233,7 +16584,7 @@ paths:
       - deployment
       responses:
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -15991,18 +17342,32 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key rotated
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/rotate-kms-key-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Pending Deletion: The request was rejected because it was performed on a key that is pending deletion.
+
+            Not on a Replica: The request was rejected because the operation is not allowed on a replica.
+
+            Invalid Usage: The request was rejected because the operation is only allowed on symmetric keys with usage "encrypt-decrypt".
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Manual Rotation Limit: The request was rejected because you reached your limit of 10 manual rotations per key for this KMS key.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Perform a manual rotation of the key material for a symmetric key.
+      description: Performs an immediate rotation of the key material for a symmetric
+        key.
       parameters:
       - in: path
         required: true
@@ -16010,7 +17375,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Rotate Key"
+      summary: Rotate Key
       operationId: rotate-kms-key
   "/dbaas-settings-thanos":
     get:
@@ -16138,6 +17503,37 @@ paths:
               - flow-direction
               - protocol
       operationId: add-rule-to-security-group
+  "/dbaas-settings-clickhouse":
+    get:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  settings:
+                    type: object
+                    properties:
+                      clickhouse:
+                        type: object
+                        properties:
+                          properties:
+                            type: object
+                          additionalProperties:
+                            type: boolean
+                          type:
+                            type: string
+                          title:
+                            type: string
+                        description: ClickHouse configuration values
+      description:
+      parameters: []
+      summary: "[BETA] Get DBaaS ClickHouse settings"
+      operationId: get-dbaas-settings-clickhouse
   "/dbaas-opensearch/{service-name}/user":
     post:
       tags:
@@ -16729,18 +18125,25 @@ paths:
       - crypto
       responses:
         '200':
-          description: '200'
+          description: Base64 encoded plaintext.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/decrypt-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Invalid Usage: The request was rejected because the operation is only allowed on symmetric keys with usage "encrypt-decrypt".
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Decrypt a ciphertext.
+      description: Decrypts a ciphertext.
       parameters:
       - in: path
         required: true
@@ -16748,7 +18151,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Decrypt"
+      summary: Decrypt
       requestBody:
         required: true
         content:
@@ -17124,6 +18527,41 @@ paths:
                   "$ref": "#/components/schemas/dbaas-user-password"
                   description: New password
       operationId: reset-dbaas-grafana-user-password
+  "/dbaas-clickhouse/{service-name}/user/{username}/password/reset":
+    put:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-user-clickhouse-secrets"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      - in: path
+        required: true
+        name: username
+        schema:
+          "$ref": "#/components/schemas/dbaas-user-username"
+      summary: "[BETA] Reset the credentials of a DBaaS ClickHouse user"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  "$ref": "#/components/schemas/dbaas-user-password"
+                  description: New password
+      operationId: reset-dbaas-clickhouse-user-password
   "/security-group/{id}:detach":
     put:
       tags:
@@ -17157,6 +18595,85 @@ paths:
               required:
               - instance
       operationId: detach-instance-from-security-group
+  "/dbaas-clickhouse/{service-name}/acl-config":
+    get:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-clickhouse-acl-config"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] Get DBaaS ClickHouse ACL configuration"
+      operationId: get-dbaas-clickhouse-acl-config
+  "/dbaas-clickhouse/{service-name}/user":
+    get:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-clickhouse-users"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] List DBaaS ClickHouse users"
+      operationId: list-dbaas-clickhouse-users
+    post:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-user-clickhouse-secrets"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] Create a DBaaS ClickHouse user"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  "$ref": "#/components/schemas/dbaas-user-username"
+                  description: Username
+                password:
+                  "$ref": "#/components/schemas/dbaas-user-password"
+                  description: Password
+                roles:
+                  type: array
+                  items:
+                    "$ref": "#/components/schemas/dbaas-clickhouse-user-role-input"
+                  description: ClickHouse roles to grant to the user
+              required:
+              - username
+      operationId: create-dbaas-clickhouse-user
   "/sks-cluster/{id}/nodepool/{sks-nodepool-id}:evict":
     put:
       tags:
@@ -17263,18 +18780,26 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key disabled
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/success-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Pending Deletion: The request was rejected because it was performed on a key that is pending deletion.
+
+            Not on Default: The request was rejected because the operation is not allowed on the default key.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Disable a KMS Key
+      description: Disables a KMS Key by setting its state to "disabled". This prevents
+        the use of the KMS key for cryptographic and key lifecycle operations.
       parameters:
       - in: path
         required: true
@@ -17282,7 +18807,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Disable KMS Key"
+      summary: Disable KMS Key
       operationId: disable-kms-key
   "/dbaas-kafka/{name}/schema-registry/acl-config/{acl-id}":
     delete:
@@ -17553,25 +19078,25 @@ paths:
       - model
       responses:
         '412':
-          description: '412'
+          description: Precondition Failed
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/delete-model-conflict-response"
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -17591,13 +19116,13 @@ paths:
       - model
       responses:
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -17876,24 +19401,64 @@ paths:
           "$ref": "#/components/schemas/dbaas-user-username"
       summary: Reveal the secrets of a DBaaS Kafka user
       operationId: reveal-dbaas-kafka-user-password
-  "/kms-key/{id}/encrypt":
-    post:
+  "/vpc/{vpc-id}/subnet/{subnet-id}/route/{id}":
+    delete:
       tags:
-      - crypto
+      - vpc-route
       responses:
         '200':
           description: '200'
           content:
             application/json:
               schema:
+                "$ref": "#/components/schemas/empty"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: subnet-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Delete a route"
+      operationId: delete-route
+  "/kms-key/{id}/encrypt":
+    post:
+      tags:
+      - crypto
+      responses:
+        '200':
+          description: Base64 encoded ciphertext
+          content:
+            application/json:
+              schema:
                 "$ref": "#/components/schemas/encrypt-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Invalid Usage: The request was rejected because the operation is only allowed on symmetric keys with usage "encrypt-decrypt".
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Encrypt a plaintext.
+      description: Encrypts a plaintext.
       parameters:
       - in: path
         required: true
@@ -17901,7 +19466,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Encrypt"
+      summary: Encrypt
       requestBody:
         required: true
         content:
@@ -18204,6 +19769,31 @@ paths:
               required:
               - name
       operationId: promote-snapshot-to-template
+  "/dbaas-clickhouse/{service-name}/user/{username}/password/reveal":
+    get:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/dbaas-user-clickhouse-secrets"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      - in: path
+        required: true
+        name: username
+        schema:
+          "$ref": "#/components/schemas/dbaas-user-username"
+      summary: "[BETA] Reveal the secrets of a DBaaS ClickHouse user"
+      operationId: reveal-dbaas-clickhouse-user-password
   "/sks-cluster":
     post:
       tags:
@@ -18706,6 +20296,32 @@ paths:
           "$ref": "#/components/schemas/dbaas-user-username"
       summary: Reveal the secrets of a DBaaS Thanos user
       operationId: reveal-dbaas-thanos-user-password
+  "/dbaas-clickhouse/{service-name}/user/{user-uuid}":
+    delete:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: service-name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      - in: path
+        required: true
+        name: user-uuid
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Delete a DBaaS ClickHouse user"
+      operationId: delete-dbaas-clickhouse-user
   "/dbaas-settings-pg":
     get:
       tags:
@@ -19282,6 +20898,111 @@ paths:
           "$ref": "#/components/schemas/dbaas-service-name"
       summary: Stop a DBaaS MySQL migration
       operationId: stop-dbaas-mysql-migration
+  "/vpc/{vpc-id}/subnet/{id}":
+    delete:
+      tags:
+      - vpc-subnet
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/empty"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Delete a Subnet"
+      operationId: delete-subnet
+    put:
+      tags:
+      - vpc-subnet
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/subnet"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Update a Subnet"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  maxLength: 255
+                  minLength: 1
+                  nullable: true
+                  description: Subnet name
+                description:
+                  type: string
+                  maxLength: 4096
+                  nullable: true
+                  description: Subnet description
+                labels:
+                  "$ref": "#/components/schemas/labels"
+                  nullable: true
+                  description: Resource labels
+                ipv4-block:
+                  type: string
+                  nullable: true
+                  description: Subnet CIDR
+      operationId: update-subnet
+    get:
+      tags:
+      - vpc-subnet
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/subnet"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Retrieve Subnet details"
+      operationId: get-subnet
   "/dbaas-external-endpoints":
     get:
       tags:
@@ -19417,26 +21138,27 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Created new KMS key
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/create-kms-key-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Name Conflict: The request was rejected because a key with the same name already exists in the target zone.
+
+            Bad Request: The request was rejected because of an invalid request body or path parameter.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-        '409':
-          description: '409'
-          content:
-            application/json:
-              schema:
-                "$ref": "#/components/schemas/error-response"
-      description: Create a KMS Key in a given zone with a given name.
+      description: Create a customer-managed unique KMS Key in your organization.
+        A KMS Key is a logical representation of a cryptographic key material. It
+        also includes metadata such as a UUID, a name and its state.
       parameters: []
-      summary: "[BETA] Create KMS Key"
+      summary: Create KMS Key
       requestBody:
         required: true
         content:
@@ -19449,20 +21171,23 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: A list of all KMS keys in the target zone
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/list-kms-keys-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Bad Request: The request was rejected because of an invalid request body or path parameter.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: List KMS Keys details for an organization in a given zone.
+      description: Lists all KMS Keys in your organization in a given zone.
       parameters: []
-      summary: "[BETA] List KMS Keys"
+      summary: List KMS Keys
       operationId: list-kms-keys
   "/dbaas-thanos/{name}":
     get:
@@ -19835,6 +21560,45 @@ paths:
           type: string
       summary: Delete a DBaaS service
       operationId: delete-dbaas-service
+  "/vpc/{vpc-id}/subnet/{subnet-id}/detach":
+    put:
+      tags:
+      - vpc-subnet
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description: ''
+      parameters:
+      - in: path
+        required: true
+        name: vpc-id
+        schema:
+          type: string
+          format: uuid
+      - in: path
+        required: true
+        name: subnet-id
+        schema:
+          type: string
+          format: uuid
+      summary: "[BETA] Detach a Compute instance from a Subnet"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                instance:
+                  "$ref": "#/components/schemas/instance-ref"
+                  description: Compute instance
+              required:
+              - instance
+      operationId: detach-instance-from-subnet
   "/dbaas-mysql/{service-name}/database":
     post:
       tags:
@@ -20006,6 +21770,42 @@ paths:
           format: uuid
       summary: Reboot a Compute instance
       operationId: reboot-instance
+  "/environmental-impact/report":
+    get:
+      tags: []
+      responses:
+        '200':
+          description: Environmental impact report
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/impact-breakdown"
+        '400':
+          description: Invalid request (e.g. to date before from date)
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/impact-error-response"
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/impact-error-response"
+      description: ''
+      parameters:
+      - in: query
+        required: false
+        name: from
+        schema:
+          type: string
+      - in: query
+        required: false
+        name: to
+        schema:
+          type: string
+      summary: Return an environmental impact report for the given period
+      operationId: get-impact-report
   "/dbaas-settings-kafka":
     get:
       tags:
@@ -20188,18 +21988,28 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key deletion scheduled
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/success-response"
+                "$ref": "#/components/schemas/schedule-kms-key-deletion-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Not on Default: The request was rejected because the operation is not allowed on the default key.
+
+            Not on Replica: The request was rejectde because the operation is not allowed on a replica.
+
+            Bad Request: The request was rejected because of an invalid request body or path parameter.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Schedule a KMS key for deletion after a delay.
+      description: Schedules a KMS key for deletion after a delay. You can specify
+        a delay of 7-30 days.
       parameters:
       - in: path
         required: true
@@ -20207,7 +22017,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Schedule KMS Key Deletion"
+      summary: Schedule KMS Key Deletion
       requestBody:
         required: true
         content:
@@ -20595,6 +22405,9 @@ paths:
                   exclusiveMinimum: false
                   exclusiveMaximum: false
                   description: Nodepool instances disk size in GiB
+                nvidia-mig-profiles:
+                  "$ref": "#/components/schemas/nvidia-mig-profiles"
+                  description: Nvidia MIG Profiles
               required:
               - name
               - size
@@ -20633,13 +22446,13 @@ paths:
       - ai-api-key
       responses:
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -20652,7 +22465,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: Reveal AI API Key
+      summary: "[BETA] Reveal AI API Key"
       operationId: reveal-ai-api-key
   "/dbaas-opensearch/{name}/maintenance/start":
     put:
@@ -20735,52 +22548,52 @@ paths:
       - ai-api-key
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/list-ai-api-keys-response"
       description: List AI API keys for an organization
       parameters: []
-      summary: List AI API Keys
+      summary: "[BETA] List AI API Keys"
       operationId: list-ai-api-keys
     post:
       tags:
       - ai-api-key
       responses:
         '403':
-          description: '403'
+          description: Forbidden
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/create-ai-api-key-response"
         '400':
-          description: '400'
+          description: Bad Request
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
       description: Create a new AI API key
       parameters: []
-      summary: Create AI API Key
+      summary: "[BETA] Create AI API Key"
       requestBody:
         required: true
         content:
@@ -20794,13 +22607,22 @@ paths:
       - crypto
       responses:
         '200':
-          description: '200'
+          description: Base64 encoded ciphertext
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/re-encrypt-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Not on Default: The request was rejected because the operation is not allowed on the default key.
+
+            Bad Request: The request was rejected because of an invalid request body or path parameter.
           content:
             application/json:
               schema:
@@ -20815,7 +22637,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Re-encrypt"
+      summary: Re-encrypt
       requestBody:
         required: true
         content:
@@ -21338,13 +23160,13 @@ paths:
       - ai-api-key
       responses:
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -21353,7 +23175,7 @@ paths:
         Null means unlimited. UOM represents weighted units across different AI workloads
         (e.g., tokens for LLMs, minutes for TTS, pages for OCR).
       parameters: []
-      summary: Get Organization Consumption Quota
+      summary: "[BETA] Get Organization Consumption Quota"
       operationId: get-user-org-consumption-quota
   "/dbaas-postgres/{name}":
     put:
@@ -22016,13 +23838,13 @@ paths:
       - deployment
       responses:
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
@@ -22084,13 +23906,26 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key replication target registered
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/success-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Pending Deletion: The request was rejected because it was performed on a key that is pending deletion.
+
+            Not on Default: The request was rejected because the operation is not allowed on the default key.
+
+            Not Multizone: The request was rejected because the KMS key is not a multi-zone key.
+
+            Conflict: The request was rejected because the key is already replicated in the target zone.
+
+            Invalid Argument: The request was rejected because the target zone is invalid.
           content:
             application/json:
               schema:
@@ -22103,7 +23938,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Replicate KMS Key"
+      summary: Replicate KMS Key
       requestBody:
         required: true
         content:
@@ -22503,31 +24338,51 @@ paths:
       parameters: []
       summary: List Users
       operationId: list-users
+  "/dbaas-clickhouse/{name}/maintenance/start":
+    put:
+      tags:
+      - dbaas
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/operation"
+      description:
+      parameters:
+      - in: path
+        required: true
+        name: name
+        schema:
+          "$ref": "#/components/schemas/dbaas-service-name"
+      summary: "[BETA] Initiate ClickHouse maintenance update"
+      operationId: start-dbaas-clickhouse-maintenance
   "/ai/deployment/{id}/logs":
     get:
       tags:
       - deployment
       responses:
         '500':
-          description: '500'
+          description: Internal Server Error
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '404':
-          description: '404'
+          description: Not Found
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
         '200':
-          description: '200'
+          description: OK
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/get-deployment-logs-response"
         '400':
-          description: '400'
+          description: Bad Request
           content:
             application/json:
               schema:
@@ -22593,18 +24448,25 @@ paths:
       - kms-key
       responses:
         '200':
-          description: '200'
+          description: Key deletion cancelled
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/success-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Not on Replica: The request was rejectde because the operation is not allowed on a replica.
+
+            Not Pending Deletion: The request was rejected because the key is not pending deletion.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/error-response"
-      description: Cancel the scheduled deletion of a KMS Key.
+      description: Cancels the scheduled deletion of a KMS Key.
       parameters:
       - in: path
         required: true
@@ -22612,7 +24474,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Cancel KMS Key Deletion"
+      summary: Cancel KMS Key Deletion
       operationId: cancel-kms-key-deletion
   "/kms-key/{id}/generate-data-key":
     post:
@@ -22620,13 +24482,21 @@ paths:
       - crypto
       responses:
         '200':
-          description: '200'
+          description: Data Encryption Key in the clear and in its base64 encoded
+            encrypted format.
           content:
             application/json:
               schema:
                 "$ref": "#/components/schemas/generate-data-key-response"
         '400':
-          description: '400'
+          description: |
+            ### Errors
+
+            Key Not Found: The request was rejected because the specified KMS Key could not be found.
+
+            Key is Disabled: The request was rejected because the specified KMS key is disabled.
+
+            Invalid Usage: The request was rejected because the operation is only allowed on symmetric keys with usage "encrypt-decrypt".
           content:
             application/json:
               schema:
@@ -22639,7 +24509,7 @@ paths:
         schema:
           type: string
           format: uuid
-      summary: "[BETA] Generate Data Key"
+      summary: Generate Data Encryption Key
       requestBody:
         required: true
         content:
@@ -22650,7 +24520,7 @@ paths:
   "/vpc/{id}":
     put:
       tags:
-      - vpc
+      - vpc-management
       responses:
         '200':
           description: '200'
@@ -22692,7 +24562,7 @@ paths:
       operationId: update-vpc
     get:
       tags:
-      - vpc
+      - vpc-management
       responses:
         '200':
           description: '200'
@@ -22712,14 +24582,14 @@ paths:
       operationId: get-vpc
     delete:
       tags:
-      - vpc
+      - vpc-management
       responses:
         '200':
           description: '200'
           content:
             application/json:
               schema:
-                "$ref": "#/components/schemas/operation"
+                "$ref": "#/components/schemas/empty"
       description: ''
       parameters:
       - in: path

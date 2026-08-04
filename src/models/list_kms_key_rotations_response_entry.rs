@@ -13,10 +13,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListKmsKeyRotationsResponseEntry {
+    /// The absolute increment index referencing this specific historical structural material setup.
     #[serde(rename = "version")]
     pub version: i32,
+    /// The UTC timestamp tracking precisely when this historical adjustment pass finished processing.
     #[serde(rename = "rotated-at")]
     pub rotated_at: String,
+    /// Flag stating whether an automation run handled this historic mutation or if manual actor keys initiated it.
     #[serde(rename = "automatic")]
     pub automatic: bool,
 }

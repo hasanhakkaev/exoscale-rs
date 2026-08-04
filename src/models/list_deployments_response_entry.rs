@@ -14,17 +14,17 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ListDeploymentsResponseEntry {
     /// Number of GPUs
-    #[serde(rename = "gpu-count")]
-    pub gpu_count: u64,
+    #[serde(rename = "gpu-count", skip_serializing_if = "Option::is_none")]
+    pub gpu_count: Option<u64>,
     /// Update time
-    #[serde(rename = "updated-at")]
-    pub updated_at: String,
+    #[serde(rename = "updated-at", skip_serializing_if = "Option::is_none")]
+    pub updated_at: Option<String>,
     /// Deployment inference endpoint URL
     #[serde(rename = "deployment-url")]
     pub deployment_url: String,
     /// Service level
-    #[serde(rename = "service-level")]
-    pub service_level: String,
+    #[serde(rename = "service-level", skip_serializing_if = "Option::is_none")]
+    pub service_level: Option<String>,
     /// Deployment name
     #[serde(rename = "name")]
     pub name: String,
@@ -32,35 +32,39 @@ pub struct ListDeploymentsResponseEntry {
     #[serde(rename = "state")]
     pub state: State,
     /// GPU type family
-    #[serde(rename = "gpu-type")]
-    pub gpu_type: String,
+    #[serde(rename = "gpu-type", skip_serializing_if = "Option::is_none")]
+    pub gpu_type: Option<String>,
     /// Deployment ID
-    #[serde(rename = "id")]
-    pub id: uuid::Uuid,
+    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
+    pub id: Option<uuid::Uuid>,
     /// Number of replicas (>=0)
-    #[serde(rename = "replicas")]
-    pub replicas: u64,
+    #[serde(rename = "replicas", skip_serializing_if = "Option::is_none")]
+    pub replicas: Option<u64>,
     /// Creation time
-    #[serde(rename = "created-at")]
-    pub created_at: String,
+    #[serde(rename = "created-at", skip_serializing_if = "Option::is_none")]
+    pub created_at: Option<String>,
+    /// Deployment visibility: private for your organization's deployments, public for Exoscale Managed Inference deployments.
+    #[serde(rename = "visibility")]
+    pub visibility: Visibility,
     #[serde(rename = "model")]
     pub model: Box<models::ModelRef>,
 }
 
 impl ListDeploymentsResponseEntry {
     /// AI deployment
-    pub fn new(gpu_count: u64, updated_at: String, deployment_url: String, service_level: String, name: String, state: State, gpu_type: String, id: uuid::Uuid, replicas: u64, created_at: String, model: models::ModelRef) -> ListDeploymentsResponseEntry {
+    pub fn new(deployment_url: String, name: String, state: State, visibility: Visibility, model: models::ModelRef) -> ListDeploymentsResponseEntry {
         ListDeploymentsResponseEntry {
-            gpu_count,
-            updated_at,
+            gpu_count: None,
+            updated_at: None,
             deployment_url,
-            service_level,
+            service_level: None,
             name,
             state,
-            gpu_type,
-            id,
-            replicas,
-            created_at,
+            gpu_type: None,
+            id: None,
+            replicas: None,
+            created_at: None,
+            visibility,
             model: Box::new(model),
         }
     }
@@ -86,6 +90,19 @@ pub enum State {
 impl Default for State {
     fn default() -> State {
         Self::Ready
+    }
+}
+#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
+pub enum Visibility {
+    #[serde(rename = "public")]
+    Public,
+    #[serde(rename = "private")]
+    Private,
+}
+
+impl Default for Visibility {
+    fn default() -> Visibility {
+        Self::Public
     }
 }
 

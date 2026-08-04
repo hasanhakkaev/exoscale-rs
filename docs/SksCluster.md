@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **labels** | Option<**std::collections::HashMap<String, String>**> |  | [optional]
 **cni** | Option<**Cni**> | Cluster CNI (enum: calico, cilium) | [optional]
 **auto_upgrade** | Option<**bool**> | Enable auto upgrade of the control plane to the latest patch version available | [optional]
+**oidc** | Option<[**models::SksOidc**](SksOidc.md)> |  | [optional]
 **name** | Option<**String**> | Cluster name | [optional]
 **enable_operators_ca** | Option<**bool**> | Indicates whether to add operators certificate authority (CA) as part of trusted CAs for the API server. | [optional]
 **default_security_group_id** | Option<**uuid::Uuid**> | Cluster default Security Group ID | [optional][readonly]

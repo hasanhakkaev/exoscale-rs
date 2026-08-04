@@ -13,10 +13,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct KeyMaterial {
+    /// The incremental index tracing internal key rotation cycles for the key material.
     #[serde(rename = "version")]
     pub version: i32,
+    /// The UTC date-time indicating when this particular generation of physical cryptographic material was seeded.
     #[serde(rename = "created-at")]
     pub created_at: String,
+    /// A boolean flag indicating whether this specific material version was created during an automated system rotation window.
     #[serde(rename = "automatic")]
     pub automatic: bool,
 }

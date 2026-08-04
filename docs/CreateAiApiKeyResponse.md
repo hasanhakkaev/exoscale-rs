@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **updated_at** | **String** | Last update timestamp | [readonly]
 **name** | **String** | Human-readable name for the AI API key | 
+**value** | **String** | Plaintext AI API key value | 
 **scope** | **String** | Key scope: 'public' for all deployments, or a specific deployment UUID | 
 **id** | **uuid::Uuid** | AI API key ID | [readonly]
 **org_uuid** | **uuid::Uuid** | Organization UUID that owns this key | [readonly]
