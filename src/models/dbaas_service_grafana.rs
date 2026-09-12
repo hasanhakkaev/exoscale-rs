@@ -28,7 +28,7 @@ pub struct DbaasServiceGrafana {
     #[serde(rename = "node-cpu-count", skip_serializing_if = "Option::is_none")]
     pub node_cpu_count: Option<u64>,
     #[serde(rename = "prometheus-uri")]
-    pub prometheus_uri: Box<models::DbaasServiceMysqlPrometheusUri>,
+    pub prometheus_uri: Box<models::DbaasServiceClickhousePrometheusUri>,
     /// Service integrations
     #[serde(rename = "integrations", skip_serializing_if = "Option::is_none")]
     pub integrations: Option<Vec<models::DbaasIntegration>>,
@@ -90,7 +90,7 @@ pub struct DbaasServiceGrafana {
 }
 
 impl DbaasServiceGrafana {
-    pub fn new(prometheus_uri: models::DbaasServiceMysqlPrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceGrafana {
+    pub fn new(prometheus_uri: models::DbaasServiceClickhousePrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceGrafana {
         DbaasServiceGrafana {
             description: None,
             updated_at: None,

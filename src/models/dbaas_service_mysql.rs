@@ -27,7 +27,7 @@ pub struct DbaasServiceMysql {
     #[serde(rename = "node-cpu-count", skip_serializing_if = "Option::is_none")]
     pub node_cpu_count: Option<u64>,
     #[serde(rename = "prometheus-uri")]
-    pub prometheus_uri: Box<models::DbaasServiceMysqlPrometheusUri>,
+    pub prometheus_uri: Box<models::DbaasServiceClickhousePrometheusUri>,
     /// Service integrations
     #[serde(rename = "integrations", skip_serializing_if = "Option::is_none")]
     pub integrations: Option<Vec<models::DbaasIntegration>>,
@@ -95,7 +95,7 @@ pub struct DbaasServiceMysql {
 }
 
 impl DbaasServiceMysql {
-    pub fn new(prometheus_uri: models::DbaasServiceMysqlPrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceMysql {
+    pub fn new(prometheus_uri: models::DbaasServiceClickhousePrometheusUri, name: String, r#type: String, plan: String) -> DbaasServiceMysql {
         DbaasServiceMysql {
             updated_at: None,
             node_count: None,

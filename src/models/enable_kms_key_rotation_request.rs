@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct EnableKmsKeyRotationRequest {
+    /// The number of days between each automatic key rotation.
     #[serde(rename = "rotation-period", skip_serializing_if = "Option::is_none")]
     pub rotation_period: Option<u16>,
 }

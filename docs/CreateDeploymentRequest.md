@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **inference_engine_version** | Option<[**models::InferenceEngineVersion**](InferenceEngineVersion.md)> |  | [optional]
 **name** | **String** | Deployment name | 
 **gpu_type** | **String** | GPU type family (e.g., gpua5000, gpu3080ti) | 
+**product_name** | Option<**String**> | Billing identifier for this deployment. Used by the Router for usage counters and Kafka events. | [optional]
 **replicas** | **u64** | Number of replicas (>=1) | 
 **inference_engine_parameters** | Option<**Vec<String>**> | Optional extra inference engine server CLI args | [optional]
 **model** | [**models::ModelRef**](ModelRef.md) |  | 

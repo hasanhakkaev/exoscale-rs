@@ -103,17 +103,14 @@ No authorization required
 
 ## list_models
 
-> models::ListModelsResponse list_models(visibility)
+> models::ListModelsResponse list_models()
 List Models
 
 List Models
 
 ### Parameters
 
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**visibility** | Option<**String**> |  |  |
+This endpoint does not need any parameter.
 
 ### Return type
 

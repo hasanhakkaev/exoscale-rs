@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ReplicateKmsKeyRequest {
+    /// The targeted cloud zone where the KMS key should be replicated.
     #[serde(rename = "zone")]
     pub zone: String,
 }

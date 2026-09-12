@@ -19,6 +19,9 @@ pub struct CreateAiApiKeyResponse {
     /// Human-readable name for the AI API key
     #[serde(rename = "name")]
     pub name: String,
+    /// Plaintext AI API key value
+    #[serde(rename = "value")]
+    pub value: String,
     /// Key scope: 'public' for all deployments, or a specific deployment UUID
     #[serde(rename = "scope")]
     pub scope: String,
@@ -35,10 +38,11 @@ pub struct CreateAiApiKeyResponse {
 
 impl CreateAiApiKeyResponse {
     /// Create AI API key response
-    pub fn new(updated_at: String, name: String, scope: String, id: uuid::Uuid, org_uuid: uuid::Uuid, created_at: String) -> CreateAiApiKeyResponse {
+    pub fn new(updated_at: String, name: String, value: String, scope: String, id: uuid::Uuid, org_uuid: uuid::Uuid, created_at: String) -> CreateAiApiKeyResponse {
         CreateAiApiKeyResponse {
             updated_at,
             name,
+            value,
             scope,
             id,
             org_uuid,

@@ -13,8 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ReplicaState {
+    /// The destination target zone tracking this specific replica instance.
     #[serde(rename = "zone")]
     pub zone: String,
+    /// The latest logical sequence number or state watermark successfully synced to this regional replica.
     #[serde(rename = "last-applied-watermark")]
     pub last_applied_watermark: i32,
     #[serde(rename = "last-failure", skip_serializing_if = "Option::is_none")]

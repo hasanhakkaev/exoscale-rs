@@ -13,12 +13,16 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct KeyRotationConfig {
+    /// Total running tally of manual key rotation tasks executed by users over this key resource's lifecycle.
     #[serde(rename = "manual-count")]
     pub manual_count: i32,
+    /// When set to true, dictates that the system automatically rotates material periodically.
     #[serde(rename = "automatic")]
     pub automatic: bool,
+    /// The set frequency period (measured in days) for triggers monitoring auto-rotation loops.
     #[serde(rename = "rotation-period")]
     pub rotation_period: i32,
+    /// Scheduled deadline calculation pinpointing the next automated rotational iteration target date.
     #[serde(rename = "next-at")]
     pub next_at: String,
 }

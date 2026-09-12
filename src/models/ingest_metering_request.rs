@@ -19,22 +19,22 @@ pub struct IngestMeteringRequest {
     /// Map of api-key-uuid to usage entry. Keys are API key UUIDs. Mirrors the router's in-memory accumulator structure directly.
     #[serde(rename = "usage")]
     pub usage: std::collections::HashMap<String, models::ApiKeyUsageEntry>,
+    /// ISO-8601 UTC timestamp when the flush snapshot was created (truncated to minute boundary for bucketing)
+    #[serde(rename = "timestamp")]
+    pub timestamp: String,
     /// Router instance identifier that produced this flush
     #[serde(rename = "router-id")]
     pub router_id: String,
-    /// ISO-8601 UTC timestamp when the flush snapshot was created (truncated to minute boundary for bucketing)
-    #[serde(rename = "created-at")]
-    pub created_at: String,
 }
 
 impl IngestMeteringRequest {
     /// Router flush payload: the router's full in-memory usage map with flush identity fields
-    pub fn new(flush_id: uuid::Uuid, usage: std::collections::HashMap<String, models::ApiKeyUsageEntry>, router_id: String, created_at: String) -> IngestMeteringRequest {
+    pub fn new(flush_id: uuid::Uuid, usage: std::collections::HashMap<String, models::ApiKeyUsageEntry>, timestamp: String, router_id: String) -> IngestMeteringRequest {
         IngestMeteringRequest {
             flush_id,
             usage,
+            timestamp,
             router_id,
-            created_at,
         }
     }
 }

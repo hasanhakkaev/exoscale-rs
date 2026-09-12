@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **node_count** | Option<**u64**> | Number of service nodes in the active plan | [optional]
 **connection_info** | Option<[**models::DbaasServiceThanosConnectionInfo**](DbaasServiceThanosConnectionInfo.md)> |  | [optional]
 **node_cpu_count** | Option<**u64**> | Number of CPUs for each node | [optional]
-**prometheus_uri** | [**models::DbaasServiceMysqlPrometheusUri**](DbaasServiceMysqlPrometheusUri.md) |  | 
+**prometheus_uri** | [**models::DbaasServiceClickhousePrometheusUri**](DbaasServiceClickhousePrometheusUri.md) |  | 
 **integrations** | Option<[**Vec<models::DbaasIntegration>**](DbaasIntegration.md)> | Service integrations | [optional]
 **zone** | Option<**String**> | The zone where the service is running | [optional]
 **node_states** | Option<[**Vec<models::DbaasNodeState>**](DbaasNodeState.md)> | State of individual service nodes | [optional]
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **backups** | Option<[**Vec<models::DbaasServiceBackup>**](DbaasServiceBackup.md)> | List of backups for the service | [optional]
 **termination_protection** | Option<**bool**> | Service is protected against termination and powering off | [optional]
 **notifications** | Option<[**Vec<models::DbaasServiceNotification>**](DbaasServiceNotification.md)> | Service notifications | [optional]
-**components** | Option<[**Vec<models::DbaasServiceThanosComponentsInner>**](DbaasServiceThanosComponentsInner.md)> | Service component information objects | [optional]
+**components** | Option<[**Vec<models::DbaasServiceClickhouseComponentsInner>**](DbaasServiceClickhouseComponentsInner.md)> | Service component information objects | [optional]
 **maintenance** | Option<[**models::DbaasServiceMaintenance**](DbaasServiceMaintenance.md)> |  | [optional]
 **disk_size** | Option<**u64**> | TODO UNIT disk space for data storage | [optional]
 **node_memory** | Option<**u64**> | TODO UNIT of memory for each node | [optional]

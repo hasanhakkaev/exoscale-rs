@@ -16,13 +16,14 @@ use serde_with::serde_as;
 #[serde_as]
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ReEncryptRequestSource {
-    /// The ID of the source key.
+    /// The ID of the source key currently protecting the data payload.
     #[serde(rename = "key")]
     pub key: uuid::Uuid,
-    /// Optional encryption context appended to the AAD.
+    /// Optional Base64-encoded encryption context originally appended to the AAD to confirm package validation rules.
     #[serde_as(as = "super::DoubleOption<serde_with::base64::Base64>")]
     #[serde(rename = "encryption-context", default, skip_serializing_if = "Option::is_none")]
     pub encryption_context: Option<Option<Vec<u8>>>,
+    /// The Base64-encoded encrypted payload package ready to undergo source-side key decryption.
     #[serde_as(as = "serde_with::base64::Base64")]
     #[serde(rename = "ciphertext")]
     pub ciphertext: Vec<u8>,
