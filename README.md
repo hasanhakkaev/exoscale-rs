@@ -969,4 +969,3 @@ cargo doc --open
 
 support@exoscale.com
 
-Generated with latest changes from 2026-08-04

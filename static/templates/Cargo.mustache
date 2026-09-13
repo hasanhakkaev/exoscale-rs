@@ -36,33 +36,33 @@ homepage = "https://github.com/hasanhakkaev/exoscale-rs"
 [dependencies]
 serde = { version = "^1.0", features = ["derive"] }
 {{#serdeWith}}
-serde_with = { version = "^3.12.0", default-features = false, features = ["base64", "std", "macros"] }
+serde_with = { version = "^3.23.0", default-features = false, features = ["base64", "std", "macros"] }
 {{/serdeWith}}
 serde_json = "^1.0"
 serde_repr = "^0.1"
-base64 = "0.22.1"
-hmac = "0.12.1"
-http = "1.3.1"
-sha2 = "0.10.9"
+base64 = "0.23.1"
+hmac = "0.13.0"
+http = "1.5.0"
+sha2 = "0.11.0"
 secrecy = "0.10.3"
-bytes = "1.10.1"
-async-trait = "0.1.88"
+bytes = "1.12.1"
+async-trait = "0.1.92"
 url = "^2.5"
-libc = "0.2.172"
+libc = "0.2.189"
 {{#hasUUIDs}}
-uuid = { version = "^1.8", features = ["serde", "v4"] }
+uuid = { version = "^1.26", features = ["serde", "v4"] }
 {{/hasUUIDs}}
 {{#reqwest}}
 {{^supportAsync}}
-reqwest = { version = "^0.12", default-features = false, features = ["json", "blocking", "multipart", "rustls-tls"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "blocking", "multipart", "query"] }
 {{#supportMiddleware}}
-reqwest-middleware = { version = "^0.4", features = ["json", "blocking", "multipart", "rustls-tls"] }
+reqwest-middleware = { version = "0.5.2", features = ["json", "blocking", "multipart", "query"] }
 {{/supportMiddleware}}
 {{/supportAsync}}
 {{#supportAsync}}
-reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart", "rustls-tls"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "multipart", "query"] }
 {{#supportMiddleware}}
-reqwest-middleware = { version = "^0.4", features = ["json", "multipart", "rustls-tls"] }
+reqwest-middleware = { version = "0.5.2", features = ["json", "multipart", "query"] }
 {{/supportMiddleware}}
 {{#supportTokenSource}}
 async-trait = "^0.1"
@@ -73,9 +73,9 @@ google-cloud-token = "^0.1"
 {{/reqwest}}
 {{#reqwestTrait}}
 async-trait = "^0.1"
-reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart", "rustls-tls"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "multipart", "query"] }
 {{#supportMiddleware}}
-reqwest-middleware = { version = "^0.4", features = ["json", "multipart", "rustls-tls"] }
+reqwest-middleware = { version = "0.5.2", features = ["json", "multipart", "query"] }
 {{/supportMiddleware}}
 {{#supportTokenSource}}
 # TODO: propose to Yoshidan to externalize this as non google related crate, so that it can easily be extended for other cloud providers.
@@ -90,7 +90,7 @@ bon = { version = "2.3", optional = true }
 [features]
 default = ["native-tls"]
 native-tls = ["reqwest/native-tls"]
-rustls = ["reqwest/rustls-tls"]
+rustls = ["reqwest/query"]
 {{#mockall}}
 mockall = ["dep:mockall"]
 {{/mockall}}
